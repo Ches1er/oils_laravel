@@ -84,4 +84,7 @@ Route::get('approvals/ren/all', 'Main\ApiApprovalsController@actionGetRenApprova
 // VW
 Route::get('approvals/vw/all', 'Main\ApiApprovalsController@actionGetVwApprovals');
 
+    // Images
+Route::get('images/all', 'Main\ApiImagesController@actionGetImages');
+
 
