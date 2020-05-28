@@ -9,6 +9,7 @@
 namespace App\Traits;
 
 
+use App\Models\Brand;
 use App\Models\Goods_oils;
 
 trait getObjWithAddProperties
@@ -159,5 +160,20 @@ trait getObjWithAddProperties
             $api_str = implode(',',$api_id_array);
             $object->api = $api_str;
         return $object;
+    }
+
+    public function addTypesToTheBrands($objects){
+        foreach ($objects as &$object){
+            $types = $object->types();
+            $types_id = [];
+            $types_names = [];
+            foreach ($types as $type){
+                $types_id[]=$type->id;
+                $types_names[]=$type->name;
+            }
+            $object->types = implode(',',$types_id);
+            $object->types_names = implode(',',$types_names);
+        }
+        return $objects;
     }
 }

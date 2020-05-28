@@ -37,6 +37,14 @@ class DBServiceApiImages implements ServiceApiImages
 
     public function addImage($destination_path, $file_name)
     {
-        // TODO: Implement addImage() method.
+        $path = $this->uploadUrlConfig::UPLOAD_ROOT_URL.$destination_path.'/'.$file_name;
+        if (Image::create(['name'=>$file_name, 'path'=>$path]))return [
+            'status' => true,
+            'originalName' => $file_name,
+            'generatedName' => $file_name,
+            'msg'=>"Image upload successful",
+            'imageUrl' => $path
+        ];
+        return ['response'=>'error'];
     }
 }

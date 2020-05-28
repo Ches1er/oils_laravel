@@ -13,7 +13,9 @@ class ProductTypesTableSeeder extends Seeder
     public function run()
     {
         DB::table('product_types')->insert([
-            ['name'=>'Моторные масла'],['name'=>'Трансмисионные масла'],['name' => 'Фильтры']
+            ['name'=>'Моторные масла', 'id_image'=>1],
+            ['name'=>'Трансмисионные масла', 'id_image'=>1],
+            ['name' => 'Фильтры', 'id_image'=>1]
         ]);
     }
 }

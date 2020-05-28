@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product_type extends Model
 {
     protected $table = 'product_types';
-    protected $fillable = ['name'];
+    protected $fillable = ['name','id_image'];
 
     public function Brands():array {
         $brands_array = [];

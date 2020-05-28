@@ -37,9 +37,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Products_types
+
+Route::prefix('products_types')->group(function(){
+    Route::get('/all', 'Main\ApiProductsTypesController@actionShowProductsTypes');
+    Route::post('/add', 'Main\ApiProductsTypesController@actionAddProductType');
+});
+
 // Brand
-Route::get('brands/all', 'Main\ApiBrandsController@actionShowBrands');
-Route::get('brands/bytype/{producttypeid}', 'Main\ApiBrandsController@actionShowBrandsByType');
+Route::prefix('brands')->group(function (){
+    Route::get('/all', 'Main\ApiBrandsController@actionShowBrands');
+    Route::get('/bytype/{producttypeid}', 'Main\ApiBrandsController@actionShowBrandsByType');
+    Route::post('/add', 'Main\ApiBrandsController@actionAddBrand');
+});
+
 
 // Acea
 
@@ -85,6 +96,13 @@ Route::get('approvals/ren/all', 'Main\ApiApprovalsController@actionGetRenApprova
 Route::get('approvals/vw/all', 'Main\ApiApprovalsController@actionGetVwApprovals');
 
     // Images
-Route::get('images/all', 'Main\ApiImagesController@actionGetImages');
+Route::prefix('images')->group(function (){
+    Route::get('/all', 'Main\ApiImagesController@actionGetImages');
+    Route::get('image/{name}','Main\ApiImagesController@actionGetImage');
+    Route::post('/upload_image','Main\ApiImagesController@actionUploadImage');
+});
+
+
+
 
 

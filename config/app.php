@@ -183,7 +183,8 @@ return [
         App\Providers\Custom\ServiceApiBaseProvider::class,
         App\Providers\Custom\ServiceApiApprovalProvider::class,
         App\Providers\Custom\ServiceApiMainPropertiesProvider::class,
-        App\Providers\Custom\ServiceApiImagesProvider::class
+        App\Providers\Custom\ServiceApiImagesProvider::class,
+        App\Providers\Custom\ServiceApiProductTypeProvider::class
 
     ],
 
