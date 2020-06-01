@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Volume extends Model
 {
     protected $table = 'volume';
-    protected $fillable = ['name'];
+    protected $fillable = ['volume'];
 }

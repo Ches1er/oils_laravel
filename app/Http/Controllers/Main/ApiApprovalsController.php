@@ -20,22 +20,26 @@ class ApiApprovalsController extends Controller
     }
 
 
-    public function actionGetMbApprovals(){
-         return json_encode($this->approvalService->getMb());
+    public function actionGetMbApprovals($definer){
+         return json_encode($this->approvalService->getMb($definer));
     }
-    public function actionGetBmwApprovals(){
-        return json_encode($this->approvalService->getBmw());
+    public function actionGetBmwApprovals($definer){
+        return json_encode($this->approvalService->getBmw($definer));
     }
-    public function actionGetFordApprovals(){
-        return json_encode($this->approvalService->getFord());
+    public function actionGetFordApprovals($definer){
+        return json_encode($this->approvalService->getFord($definer));
     }
-    public function actionGetFiatApprovals(){
-        return json_encode($this->approvalService->getFiat());
+    public function actionGetFiatApprovals($definer){
+        return json_encode($this->approvalService->getFiat($definer));
     }
-    public function actionGetRenApprovals(){
-        return json_encode($this->approvalService->getRen());
+    public function actionGetRenApprovals($definer){
+        return json_encode($this->approvalService->getRen($definer));
     }
-    public function actionGetVwApprovals(){
-        return json_encode($this->approvalService->getVw());
+    public function actionGetVwApprovals($definer){
+        return json_encode($this->approvalService->getVw($definer));
+    }
+    public function actionAddApproval(Request $request) {
+        $data = $request->only('definer','action','id','name');
+        return json_encode($this->approvalService->addApproval($data));
     }
 }

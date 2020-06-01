@@ -11,10 +11,11 @@ namespace App\Contracts;
 
 interface ServiceApiApprovals
 {
-    public function getMb();
-    public function getBmw();
-    public function getFiat();
-    public function getFord();
-    public function getRen();
-    public function getVw();
+    public function getMb($definer);
+    public function getBmw($definer);
+    public function getFiat($definer);
+    public function getFord($definer);
+    public function getRen($definer);
+    public function getVw($definer);
+    public function addApproval(array $data);
 }

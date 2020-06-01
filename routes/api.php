@@ -54,11 +54,13 @@ Route::prefix('brands')->group(function (){
 
 // Acea
 
-Route::get('acea/all', 'Main\ApiMainPropertiesController@actionShowAcea');
+Route::get('acea/all/{definer}', 'Main\ApiMainPropertiesController@actionShowAcea');
+Route::post('acea/add', 'Main\ApiMainPropertiesController@actionAddAcea');
 
 // API
 
-Route::get('api/all', 'Main\ApiMainPropertiesController@actionShowApi');
+Route::get('api/all/{definer}', 'Main\ApiMainPropertiesController@actionShowApi');
+Route::post('api/add', 'Main\ApiMainPropertiesController@actionAddApi');
 
 // Base
 
@@ -66,11 +68,13 @@ Route::get('base/all', 'Main\ApiBaseController@actionShowBase');
 
 // Viscosity
 
-Route::get('viscosity/all', 'Main\ApiMainPropertiesController@actionShowViscosity');
+Route::get('viscosity/all/{definer}', 'Main\ApiMainPropertiesController@actionShowViscosity');
+Route::post('viscosity/add', 'Main\ApiMainPropertiesController@actionAddViscosity');
 
 // Volume
 
-Route::get('volume/all', 'Main\ApiMainPropertiesController@actionShowVolume');
+Route::get('volume/all/{definer}', 'Main\ApiMainPropertiesController@actionShowVolume');
+Route::post('volume/add', 'Main\ApiMainPropertiesController@actionAddVolume');
 
 //Goods
 
@@ -83,17 +87,19 @@ Route::prefix('goods')->group(function (){
     // Approvals
 
 // MB
-Route::get('approvals/mb/all', 'Main\ApiApprovalsController@actionGetMbApprovals');
+Route::get('approvals/mb/all/{definer}', 'Main\ApiApprovalsController@actionGetMbApprovals');
 // BMW
-Route::get('approvals/bmw/all', 'Main\ApiApprovalsController@actionGetBmwApprovals');
+Route::get('approvals/bmw/all/{definer}', 'Main\ApiApprovalsController@actionGetBmwApprovals');
 // Ford
-Route::get('approvals/ford/all', 'Main\ApiApprovalsController@actionGetFordApprovals');
+Route::get('approvals/ford/all/{definer}', 'Main\ApiApprovalsController@actionGetFordApprovals');
 // Fiat
-Route::get('approvals/fiat/all', 'Main\ApiApprovalsController@actionGetFiatApprovals');
+Route::get('approvals/fiat/all/{definer}', 'Main\ApiApprovalsController@actionGetFiatApprovals');
 // Ren
-Route::get('approvals/ren/all', 'Main\ApiApprovalsController@actionGetRenApprovals');
+Route::get('approvals/ren/all/{definer}', 'Main\ApiApprovalsController@actionGetRenApprovals');
 // VW
-Route::get('approvals/vw/all', 'Main\ApiApprovalsController@actionGetVwApprovals');
+Route::get('approvals/vw/all/{definer}', 'Main\ApiApprovalsController@actionGetVwApprovals');
+// Add-update
+Route::post('approvals/add', 'Main\ApiApprovalsController@actionAddApproval');
 
     // Images
 Route::prefix('images')->group(function (){

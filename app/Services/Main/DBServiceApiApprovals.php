@@ -37,9 +37,14 @@ class DBServiceApiApprovals implements ServiceApiApprovals
     return $result;
     }
 
-    public function getMb()
+    /**
+     * @param string $definer
+     * @return mixed
+     */
+    public function getMb($definer)
     {
         $app_ids = [];
+        if ($definer === 'all') return Mb_approval::all();
         $approvals = Mb_approval_goods::all();
         foreach ($approvals as $approval){
             array_push($app_ids, $approval->id_approval);
@@ -47,9 +52,14 @@ class DBServiceApiApprovals implements ServiceApiApprovals
         return Mb_approval::whereIn('id', $this->getUnique($app_ids))->get();
     }
 
-    public function getBmw()
+    /**
+     * @param $definer
+     * @return mixed
+     */
+    public function getBmw($definer)
     {
         $app_ids = [];
+        if ($definer === 'all') return Bmw_approval::all();
         $approvals = Bmw_approval_goods::all();
         foreach ($approvals as $approval){
             array_push($app_ids, $approval->id_approval);
@@ -57,9 +67,14 @@ class DBServiceApiApprovals implements ServiceApiApprovals
         return Bmw_approval::whereIn('id', $this->getUnique($app_ids))->get();
     }
 
-    public function getFiat()
+    /**
+     * @param $definer
+     * @return mixed
+     */
+    public function getFiat($definer)
     {
         $app_ids = [];
+        if ($definer === 'all') return Fiat_approval::all();
         $approvals = Fiat_approval_goods::all();
         foreach ($approvals as $approval){
             array_push($app_ids, $approval->id_approval);
@@ -67,9 +82,14 @@ class DBServiceApiApprovals implements ServiceApiApprovals
         return Fiat_approval::whereIn('id', $this->getUnique($app_ids))->get();
     }
 
-    public function getFord()
+    /**
+     * @param $definer
+     * @return mixed
+     */
+    public function getFord($definer)
     {
         $app_ids = [];
+        if ($definer === 'all') return Ford_approval::all();
         $approvals = Ford_approval_goods::all();
         foreach ($approvals as $approval){
             array_push($app_ids, $approval->id_approval);
@@ -77,9 +97,10 @@ class DBServiceApiApprovals implements ServiceApiApprovals
         return Ford_approval::whereIn('id', $this->getUnique($app_ids))->get();
     }
 
-    public function getRen()
+    public function getRen($definer)
     {
         $app_ids = [];
+        if ($definer === 'all') return Ren_approval::all();
         $approvals = Ren_approval_goods::all();
         foreach ($approvals as $approval){
             array_push($app_ids, $approval->id_approval);
@@ -87,13 +108,28 @@ class DBServiceApiApprovals implements ServiceApiApprovals
         return Ren_approval::whereIn('id', $this->getUnique($app_ids))->get();
     }
 
-    public function getVw()
+    public function getVw($definer)
     {
         $app_ids = [];
+        if ($definer === 'all') return Vw_approval::all();
         $approvals = Vw_approval_goods::all();
         foreach ($approvals as $approval){
             array_push($app_ids, $approval->id_approval);
         }
         return Vw_approval::whereIn('id', $this->getUnique($app_ids))->get();
+    }
+
+    public function addApproval(array $data)
+    {
+        $eloquent = "App\Models\\" . $data['definer'].'_approval';
+        if ($eloquent::where('name',$data['name'])
+                ->first() && $data['action']==='add') return ['response'=>'this object exists'];
+        if ($eloquent::updateOrCreate(['id'=> $data['id']],[
+            'name'=>$data['name']
+        ])) {
+            if ($data['action']==='update')return ['response'=>'update success'];
+            return ['response'=>'insert success'];
+        };
+        return ['response'=>'error'];
     }
 }

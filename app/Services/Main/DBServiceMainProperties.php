@@ -27,10 +27,11 @@ class DBServiceMainProperties implements ServiceApiMainProperties
         }
         return $result;
     }
-    public function getAcea()
+    public function getAcea($definer)
     {
         $acea = [];
         $acea_ids = [];
+        if ($definer === 'all') return Acea::all();
         $goods = Goods_oils::all();
         foreach ($goods as $good){
             $acea = array_merge($acea, $good->Acea());
@@ -43,10 +44,11 @@ class DBServiceMainProperties implements ServiceApiMainProperties
         return $result;
     }
 
-    public function getApi()
+    public function getApi($definer)
     {
         $api = [];
         $api_ids = [];
+        if ($definer === 'all') return Api::all();
         $goods = Goods_oils::all();
         foreach ($goods as $good){
             $api = array_merge($api, $good->Api());
@@ -59,9 +61,10 @@ class DBServiceMainProperties implements ServiceApiMainProperties
         return $result;
     }
 
-    public function getViscosity()
+    public function getViscosity($definer)
     {
         $visc_ids = [];
+        if ($definer === 'all') return Viscosity::all();
         $goods = Goods_oils::all();
         foreach ($goods as $good){
             array_push($visc_ids, $good->id_viscosity);
@@ -71,9 +74,10 @@ class DBServiceMainProperties implements ServiceApiMainProperties
         return $result;
     }
 
-    public function getVolume()
+    public function getVolume($definer)
     {
         $volume_ids = [];
+        if ($definer === 'all') return Volume::all();
         $goods = Goods_oils::all();
         foreach ($goods as $item){
             array_push($volume_ids, $item->id_volume);
@@ -83,8 +87,59 @@ class DBServiceMainProperties implements ServiceApiMainProperties
         return $result;
     }
 
-    public function test()
+    public function addVolume(array $data)
     {
-        return 'teast';
+        // If exists
+        if (Volume::where('volume',$data['volume'])
+                ->first() && $data['action']==='add') return ['response'=>'this object exists'];
+
+        // Create-update
+        if (Volume::updateOrCreate(['id'=> $data['id']],['volume'=>$data['volume']])){
+            if ($data['action']==='update')return ['response'=>'update success'];
+            else return ['response'=>'insert success'];
+        }
+        return ['response'=>'error'];
+    }
+
+    public function addViscosity(array $data)
+    {
+        // If exists
+        if (Viscosity::where('name',$data['name'])
+                ->first() && $data['action']==='add') return ['response'=>'this object exists'];
+
+        // Create-update
+        if (Viscosity::updateOrCreate(['id'=> $data['id']],['name'=>$data['name']])){
+            if ($data['action']==='update')return ['response'=>'update success'];
+            else return ['response'=>'insert success'];
+        }
+        return ['response'=>'error'];
+    }
+
+    public function addAcea(array $data)
+    {
+        // If exists
+        if (Acea::where('name',$data['name'])
+                ->first() && $data['action']==='add') return ['response'=>'this object exists'];
+
+        // Create-update
+        if (Acea::updateOrCreate(['id'=> $data['id']],['name'=>$data['name']])){
+            if ($data['action']==='update')return ['response'=>'update success'];
+            else return ['response'=>'insert success'];
+        }
+        return ['response'=>'error'];
+    }
+
+    public function addApi(array $data)
+    {
+        // If exists
+        if (Api::where('name',$data['name'])
+                ->first() && $data['action']==='add') return ['response'=>'this object exists'];
+
+        // Create-update
+        if (Api::updateOrCreate(['id'=> $data['id']],['name'=>$data['name']])){
+            if ($data['action']==='update')return ['response'=>'update success'];
+            else return ['response'=>'insert success'];
+        }
+        return ['response'=>'error'];
     }
 }
