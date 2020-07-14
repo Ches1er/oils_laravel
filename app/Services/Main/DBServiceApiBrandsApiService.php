@@ -59,7 +59,7 @@ class DBServiceApiBrandsApiService implements ServiceApiBrands
 
             // Add product_types_brand if create
             $types = explode(',', $data['types']);
-            $brand = Brand::where('name')->first();
+            $brand = Brand::where('name',$data['name'])->first();
             foreach ($types as $type) {
                 Product_type_brand::create(['id_brand' => $brand->id, 'id_product_type'=>$type]);
             }

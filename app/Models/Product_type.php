@@ -20,7 +20,7 @@ class Product_type extends Model
         $brands_array = [];
         $collection = $this->hasManyThrough(Brand::class,
             Product_type_brand::class,
-            'id_brand', 'id', 'id', 'id_product_type')->get();
+            'id_product_type', 'id', 'id', 'id_brand')->get();
         foreach ($collection as $brand) {
             $brands_array[]=$brand;
         }

@@ -13,4 +13,5 @@ interface ServiceApiGoods
 {
     public function getGoodsOils();
     public function getGoodsOilsWProp(array $data);
+    public function addGoodsOil(array $data);
 }

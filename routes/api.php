@@ -37,6 +37,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//AUTH
+
+Route::post('login', 'Auth\ApiAuthController@actionLogin');
+Route::post('login_remember', 'Auth\ApiAuthController@actionLoginRemember');
+
+Route::post('register', 'Auth\ApiAuthController@actionRegister');
+Route::post('repeat_verification_letter', 'Auth\ApiAuthController@actionRepeatVerEmail');
+Route::get('finalregister/{verificationtoken}', 'Auth\ApiAuthController@actionEmailVerification');
+
+Route::post('user', 'Auth\ApiAuthController@actionUser');
+Route::post('roles', 'Auth\ApiAuthController@actionRoles');
+Route::post('is_admin', 'Auth\ApiAuthController@actionIsAdmin');
+Route::post('is_auth', 'Auth\ApiAuthController@actionIsAuth');
+Route::middleware('isAuth')->post('update_user', 'Auth\ApiAuthController@actionUpdateUser');
+
 // Products_types
 
 Route::prefix('products_types')->group(function(){
@@ -82,6 +97,7 @@ Route::prefix('goods')->group(function (){
     // Oils
     Route::get('/oils', 'Main\ApiGoodsController@actionGetGoodsOils');
     Route::post('/oilswprop', 'Main\ApiGoodsController@actionGetGoodsOilsWProp');
+    Route::post('/addoil', 'Main\ApiGoodsController@actionAddGoodsOil');
 });
 
     // Approvals
@@ -98,6 +114,26 @@ Route::get('approvals/fiat/all/{definer}', 'Main\ApiApprovalsController@actionGe
 Route::get('approvals/ren/all/{definer}', 'Main\ApiApprovalsController@actionGetRenApprovals');
 // VW
 Route::get('approvals/vw/all/{definer}', 'Main\ApiApprovalsController@actionGetVwApprovals');
+// Porsche
+Route::get('approvals/porsche/all/{definer}', 'Main\ApiApprovalsController@actionGetPorscheApprovals');
+//Gm
+Route::get('approvals/gm/all/{definer}', 'Main\ApiApprovalsController@actionGetGmApprovals');
+// Koenig
+Route::get('approvals/koenig/all/{definer}', 'Main\ApiApprovalsController@actionGetKoenigApprovals');
+// Chrysler
+Route::get('approvals/chrysler/all/{definer}', 'Main\ApiApprovalsController@actionGetChryslerApprovals');
+// Psa
+Route::get('approvals/psa/all/{definer}', 'Main\ApiApprovalsController@actionGetPsaApprovals');
+//Volvo
+Route::get('approvals/volvo/all/{definer}', 'Main\ApiApprovalsController@actionGetVolvoApprovals');
+// Jaguar
+Route::get('approvals/jaguar/all/{definer}', 'Main\ApiApprovalsController@actionGetJaguarApprovals');
+// Jaso
+Route::get('approvals/jaso/all/{definer}', 'Main\ApiApprovalsController@actionGetJasoApprovals');
+// Mazda
+Route::get('approvals/mazda/all/{definer}', 'Main\ApiApprovalsController@actionGetMazdaApprovals');
+// Nissan
+Route::get('approvals/nissan/all/{definer}', 'Main\ApiApprovalsController@actionGetNissanApprovals');
 // Add-update
 Route::post('approvals/add', 'Main\ApiApprovalsController@actionAddApproval');
 

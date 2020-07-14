@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Role;
+use App\Models\User_roles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +18,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'email_verified_at',
+        'api_token',
+        'phones',
+        'remember_token',
+        'confirmed_client',
+        'verification_token'
     ];
 
     /**
@@ -36,4 +46,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Roles():array {
+        $roles_array = [];
+        $collection =  $this->hasManyThrough(Role::class,User_roles::class,
+            "user_id","id","id","role_id")->get();
+        foreach ($collection as $user){
+            $roles_array[]=$user->role;
+        }
+        return $roles_array;
+    }
 }

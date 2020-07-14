@@ -110,4 +110,104 @@ class Goods_oils extends Model
         }
         return $approvals_array;
     }
+    public function PorscheApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Porsche_approval::class,
+            Porsche_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function GmApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Gm_approval::class,
+            Gm_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function KoenigApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Koenig_approval::class,
+            Koenig_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function ChryslerApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Chrysler_approval::class,
+            Chrysler_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function PsaApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Psa_approval::class,
+            Psa_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function VolvoApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Volvo_approval::class,
+            Volvo_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function JaguarApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Jaguar_approval::class,
+            Jaguar_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function JasoApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Jaso_approval::class,
+            Jaso_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function MazdaApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Mazda_approval::class,
+            Mazda_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
+    public function NissanApproval(): array {
+        $approvals_array = [];
+        $collection = $this->hasManyThrough(Nissan_approval::class,
+            Nissan_approval_goods::class,
+            'id_goods', 'id', 'id', 'id_approval')->get();
+        foreach ($collection as $approval) {
+            $approvals_array[]=$approval;
+        }
+        return $approvals_array;
+    }
 }

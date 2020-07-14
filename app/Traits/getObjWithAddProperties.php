@@ -14,6 +14,10 @@ use App\Models\Goods_oils;
 
 trait getObjWithAddProperties
 {
+    private $approvalsArray = ['mb','bmw','fiat',
+        'ford','ren','vw','porsche','gm','koenig',
+        'chrysler','psa','volvo','jaguar','jaso',
+        'mazda','nissan'];
 
     private function getOilsWithAddProperties($objects){
         if ($objects){
@@ -35,6 +39,26 @@ trait getObjWithAddProperties
                 $object = $this->addFordStr($object);
                     //Vw
                 $object = $this->addVwStr($object);
+                    //Porsche
+                $object = $this->addPorscheStr($object);
+                    //GM
+                $object = $this->addGmStr($object);
+                    //Koenig
+                $object = $this->addKoenigStr($object);
+                    //Chrysler
+                $object = $this->addChryslerStr($object);
+                    //Psa
+                $object = $this->addPsaStr($object);
+                    //Volvo
+                $object = $this->addVolvoStr($object);
+                    //Jaguar
+                $object = $this->addJaguarStr($object);
+                    //Jaso
+                $object = $this->addJasoStr($object);
+                    //Mazda
+                $object = $this->addMazdaStr($object);
+                    //Nissan
+                $object = $this->addNissanStr($object);
             }
 
         }
@@ -136,6 +160,166 @@ trait getObjWithAddProperties
             },$array);
             $str = implode(',',$array_id);
             $object->vwApproval = $str;
+            return $object;
+        }
+    }
+    private function addPorscheStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->PorscheApproval();
+        if (count($array)===0) {
+            $object->porscheApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->porscheApproval = $str;
+            return $object;
+        }
+    }
+    private function addGmStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->GmApproval();
+        if (count($array)===0) {
+            $object->gmApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->gmApproval = $str;
+            return $object;
+        }
+    }
+    private function addKoenigStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->KoenigApproval();
+        if (count($array)===0) {
+            $object->koenigApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->koenigApproval = $str;
+            return $object;
+        }
+    }
+    private function addChryslerStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->ChryslerApproval();
+        if (count($array)===0) {
+            $object->chryslerApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->chryslerApproval = $str;
+            return $object;
+        }
+    }
+    private function addPsaStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->PsaApproval();
+        if (count($array)===0) {
+            $object->psaApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->psaApproval = $str;
+            return $object;
+        }
+    }
+    private function addVolvoStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->VolvoApproval();
+        if (count($array)===0) {
+            $object->volvoApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->volvoApproval = $str;
+            return $object;
+        }
+    }
+    private function addJaguarStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->JaguarApproval();
+        if (count($array)===0) {
+            $object->jaguarApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->jaguarApproval = $str;
+            return $object;
+        }
+    }
+    private function addJasoStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->JasoApproval();
+        if (count($array)===0) {
+            $object->jasoApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->jasoApproval = $str;
+            return $object;
+        }
+    }
+    private function addMazdaStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->MazdaApproval();
+        if (count($array)===0) {
+            $object->mazdaApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->mazdaApproval = $str;
+            return $object;
+        }
+    }
+    private function addNissanStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->NissanApproval();
+        if (count($array)===0) {
+            $object->nissanApproval = null;
+            return $object;
+        }
+        else {
+            $array_id = array_map(function($e){
+                return $e->id;
+            },$array);
+            $str = implode(',',$array_id);
+            $object->nissanApproval = $str;
             return $object;
         }
     }
