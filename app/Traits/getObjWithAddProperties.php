@@ -22,6 +22,8 @@ trait getObjWithAddProperties
     private function getOilsWithAddProperties($objects){
         if ($objects){
             foreach ($objects as &$object){
+                // Brand_name
+                $object = $this->addBrandName($object);
                 // Acea
                 $object = $this->addAceaStr($object);
                 // Api
@@ -64,7 +66,12 @@ trait getObjWithAddProperties
         }
         return $objects;
     }
-
+    // Brand_name
+    private function addBrandName($object) {
+        $brand = Brand::where('id', $object->id_brand)->first();
+        $object->brand_name = $brand->name;
+        return $object;
+    }
     // MB
     private function addMbStr($object){
         /** @var Goods_oils $object */

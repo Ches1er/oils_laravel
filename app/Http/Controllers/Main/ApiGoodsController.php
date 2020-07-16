@@ -39,4 +39,7 @@ class ApiGoodsController extends Controller
             'psaApproval', 'volvoApproval', 'jaguarApproval', 'jasoApproval', 'mazdaApproval', 'nissanApproval');
         return json_encode($this->goodsService->addGoodsOil($data));
     }
+    public function actionGetGoodsOil($oilid){
+        return json_encode($this->goodsService->getGoodsOil($oilid));
+    }
 }

@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Contracts/ServiceApiAuth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Auth/DBServiceApiAuth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/configs/RedirectUrlConfig.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Motor_oil_category.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/transm_oil_category.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Contracts/ServiceApiArticles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiArticles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/fffe0dfe-db98-4eea-82c7-06eb2b22443c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fffe0dfe-db98-4eea-82c7-06eb2b22443c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Contracts/ServiceApiApprovals.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contracts/ServiceApiApprovals.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Contracts/ServiceApiGoods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contracts/ServiceApiGoods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiApprovalsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiApprovalsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Bmw_approval_goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bmw_approval_goods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Fiat_approval_goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Fiat_approval_goods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Ford_approval_goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ford_approval_goods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Goods_oils.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Goods_oils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Mb_approval_goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mb_approval_goods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product_type.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product_type.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiApprovals.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiApprovals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -73,8 +59,8 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="99" column="69" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="69" />
+            <state relative-caret-position="502">
+              <caret line="151" column="36" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="36" />
               <folding>
                 <element signature="e#7#35#0#PHP" expanded="true" />
               </folding>
@@ -82,47 +68,53 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ApiArticlesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiArticlesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#45#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBServiceApiArticles.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiArticles.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+              <folding>
+                <element signature="e#119#156#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articles" pinned="false" current-in-tab="false">
+        <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/articles">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getObjWithImagesPath.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Traits/getObjWithImagesPath.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="DBServiceApiGoodsService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="goods_oils" pinned="false" current-in-tab="false">
-        <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/goods_oils">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="goods_acea" pinned="false" current-in-tab="true">
-        <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/goods_acea">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBServiceApiBrandsApiService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="67" selection-start-line="67" selection-end-line="67" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApiGoodsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="761">
-              <caret line="39" column="68" lean-forward="true" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
+            <state relative-caret-position="218">
+              <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
+              <folding>
+                <element signature="e#422#632#0#PHP" />
+                <element signature="e#638#2584#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,14 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Models/Bmw_approval_goods.php" />
-        <option value="$PROJECT_DIR$/app/Models/Chrysler_approval_goods.php" />
-        <option value="$PROJECT_DIR$/app/Models/Fiat_approval_goods.php" />
-        <option value="$PROJECT_DIR$/app/Models/Ford_approval_goods.php" />
-        <option value="$PROJECT_DIR$/app/Models/Gm_approval.php" />
-        <option value="$PROJECT_DIR$/app/Models/Gm_approval_goods.php" />
-        <option value="$PROJECT_DIR$/app/Models/Jaguar_approval.php" />
-        <option value="$PROJECT_DIR$/app/Models/Jaguar_approval_goods.php" />
         <option value="$PROJECT_DIR$/app/Models/Jaso_approval.php" />
         <option value="$PROJECT_DIR$/app/Models/Jaso_approval_goods.php" />
         <option value="$PROJECT_DIR$/app/Models/Koenig_approval.php" />
@@ -174,18 +158,26 @@
         <option value="$PROJECT_DIR$/app/Http/Resources/UserResource.php" />
         <option value="$PROJECT_DIR$/app/configs/RedirectUrlsConfig.php" />
         <option value="$PROJECT_DIR$/app/Providers/Custom/ServiceApiAuthProvider.php" />
-        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Contracts/ServiceApiAuth.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/ApiAuthController.php" />
         <option value="$PROJECT_DIR$/app/Services/Auth/DBServiceApiAuth.php" />
         <option value="$PROJECT_DIR$/app/Models/Product_type.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" />
         <option value="$PROJECT_DIR$/app/Contracts/ServiceApiGoods.php" />
         <option value="$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_07_16_080500_create_articles_themes_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_07_16_080704_create_articles_table.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Contracts/ServiceApiArticles.php" />
+        <option value="$PROJECT_DIR$/app/Providers/Custom/ServiceApiArticlesProvider.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiArticlesController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Articles_themes.php" />
+        <option value="$PROJECT_DIR$/app/Models/Article.php" />
+        <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiArticles.php" />
       </list>
     </option>
   </component>
@@ -346,6 +338,25 @@
               <item name="oils" type="b2602c69:ProjectViewProjectNode" />
               <item name="oils" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oils" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oils" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+              <item name="Custom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oils" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -358,13 +369,13 @@
             <path>
               <item name="oils" type="b2602c69:ProjectViewProjectNode" />
               <item name="oils" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Traits" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oils" type="b2602c69:ProjectViewProjectNode" />
               <item name="oils" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -425,12 +436,12 @@
       <workItem from="1591101391387" duration="3104000" />
       <workItem from="1592310299042" duration="10925000" />
       <workItem from="1592460209524" duration="852000" />
-      <workItem from="1592898239293" duration="40928000" />
+      <workItem from="1592898239293" duration="50979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200008000" />
+    <option name="totallyTimeSpent" value="210059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -442,7 +453,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16213275" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16213275" />
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.3297062" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.120469086" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -499,111 +510,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/chrysler_approval">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/psa_approval">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/mazda_approval">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/jaso_approval">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/jaguar_approval">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/volvo_approval">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/koenig_approval">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Goods_oils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="203" column="30" lean-forward="true" selection-start-line="203" selection-start-column="30" selection-end-line="203" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/fiat_approval_goods">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiApprovalsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ivan/site/product-attributes.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://D:/ivan/site/single-product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28" />
-      </provider>
-    </entry>
-    <entry file="file://D:/ivan/site/title.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ivan/site/content-single-product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="53" column="59" lean-forward="true" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ivan/site/price.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="24" selection-start-line="24" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ivan/site/header.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/UsersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -676,20 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="187" column="58" selection-start-line="187" selection-start-column="58" selection-end-line="187" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Contracts/ServiceApiAuth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -721,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/images">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ApiAuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -739,13 +624,6 @@
       </provider>
     </entry>
     <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/product_types">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/brands">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -766,16 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="99" column="69" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="69" />
-          <folding>
-            <element signature="e#7#35#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/goods_api">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -790,52 +658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Contracts/ServiceApiGoods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="67" selection-start-line="67" selection-end-line="67" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/goods_oils">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/mb_approval_goods">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="39" column="68" lean-forward="true" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -850,6 +676,198 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Contracts/ServiceApiGoods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/brands">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="70" column="64" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_04_15_122047_create_goods_oils_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_04_21_121742_add_descriotion_goods_oil_column.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_07_16_080500_create_articles_themes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_07_16_080704_create_articles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/goods_oils">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="67" selection-start-line="67" selection-end-line="67" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiBaseController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Contracts/ServiceApiArticles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/Custom/ServiceApiApprovalProvider.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="32" column="64" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="188" column="62" selection-start-line="188" selection-start-column="62" selection-end-line="188" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/Custom/ServiceApiArticlesProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="17" column="81" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
+          <folding>
+            <element signature="e#40#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/articles_themes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Contracts/ServiceApiApprovals.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiApprovalsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" selection-start-line="16" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiArticlesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#45#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
+          <folding>
+            <element signature="e#422#632#0#PHP" />
+            <element signature="e#638#2584#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/getObjWithImagesPath.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Articles_themes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://fffe0dfe-db98-4eea-82c7-06eb2b22443c/schema/db_oils/table/articles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="90" selection-start-line="9" selection-start-column="90" selection-end-line="9" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="151" column="36" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="36" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiArticles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <folding>
+            <element signature="e#119#156#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

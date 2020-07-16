@@ -96,6 +96,7 @@ Route::post('volume/add', 'Main\ApiMainPropertiesController@actionAddVolume');
 Route::prefix('goods')->group(function (){
     // Oils
     Route::get('/oils', 'Main\ApiGoodsController@actionGetGoodsOils');
+    Route::get('/oil/{oilid}', 'Main\ApiGoodsController@actionGetGoodsOil');
     Route::post('/oilswprop', 'Main\ApiGoodsController@actionGetGoodsOilsWProp');
     Route::post('/addoil', 'Main\ApiGoodsController@actionAddGoodsOil');
 });
@@ -144,7 +145,13 @@ Route::prefix('images')->group(function (){
     Route::post('/upload_image','Main\ApiImagesController@actionUploadImage');
 });
 
+    // Articles
 
+Route::prefix('articles')->group(function (){
+    Route::get('/getthemes', 'Main\ApiArticlesController@actionGetArticlesThemes');
+    Route::get('/getbytheme/{themeid}', 'Main\ApiArticlesController@actionGetArticlesByTheme');
+    Route::get('/getarticle/{articleid}', 'Main\ApiArticlesController@actionGetArticle');
+});
 
 
 

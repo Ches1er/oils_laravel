@@ -113,7 +113,7 @@ class DBServiceApiGoodsService implements ServiceApiGoods
         foreach ($this->approvalsArray as $ar){
             $req = $ar.'Approval';
             $table = $ar.'_approval_goods';
-            if ($data[$req]){
+            if ($data[$req]!=='null'){
                 DB::table($table)->where('id_goods',$data['id'])->delete();
                 $new_approvals = explode(',', $data[$req]);
                 foreach ($new_approvals as $na){
@@ -126,7 +126,7 @@ class DBServiceApiGoodsService implements ServiceApiGoods
         foreach ($this->approvalsArray as $ar){
             $req = $ar.'Approval';
             $table = $ar.'_approval_goods';
-            if ($data[$req]!== ''){
+            if ($data[$req]!== 'null'){
                 $new_approvals = explode(',', $data[$req]);
                 foreach ($new_approvals as $na){
                     DB::table($table)->insert(['id_goods'=>$id, 'id_approval'=>$na]);
@@ -156,6 +156,13 @@ class DBServiceApiGoodsService implements ServiceApiGoods
         foreach ($new_api as $na) {
             Goods_api::create(['id_api' => $na, 'id_goods'=>$id]);
         }
+    }
+
+    public function getGoodsOil($oilid)
+    {
+        $result = Goods_oils::where('id', (int)$oilid)->get();
+        $result = $this->getWithImagePath($result);
+        return $this->getOilsWithAddProperties($result);
     }
 }
 

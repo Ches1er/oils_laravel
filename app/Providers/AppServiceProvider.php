@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Providers\Custom\ServiceApiApprovalProvider;
+use App\Providers\Custom\ServiceApiArticlesProvider;
 use App\Providers\Custom\ServiceApiAuthProvider;
 use App\Providers\Custom\ServiceApiBaseProvider;
 use App\Providers\Custom\ServiceApiBrandsProvider;
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(ServiceApiImagesProvider::class);
         $this->app->register(ServiceApiProductTypeProvider::class);
         $this->app->register(ServiceApiAuthProvider::class);
+        $this->app->register(ServiceApiArticlesProvider::class);
 
     }
 
