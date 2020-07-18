@@ -24,4 +24,12 @@ class ApiArticlesController extends Controller
     public function actionGetArticle($articleid){
         return json_encode($this->articlesService->getArticle($articleid));
     }
+    public function actionAddTheme(Request $request){
+        $data = $request->only('id','name','action');
+        return json_encode($this->articlesService->addTheme($data));
+    }
+    public function actionAddArticle(Request $request){
+        $data = $request->only('id','name','id_image','short_desc','full_desc','goods','action','id_theme');
+        return json_encode($this->articlesService->addArticle($data));
+    }
 }

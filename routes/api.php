@@ -151,6 +151,8 @@ Route::prefix('articles')->group(function (){
     Route::get('/getthemes', 'Main\ApiArticlesController@actionGetArticlesThemes');
     Route::get('/getbytheme/{themeid}', 'Main\ApiArticlesController@actionGetArticlesByTheme');
     Route::get('/getarticle/{articleid}', 'Main\ApiArticlesController@actionGetArticle');
+    Route::post('/addtheme', 'Main\ApiArticlesController@actionAddTheme');
+    Route::post('/addarticle', 'Main\ApiArticlesController@actionAddArticle');
 });
 
 
