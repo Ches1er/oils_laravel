@@ -22,6 +22,7 @@ trait getObjWithAddProperties
     private function getOilsWithAddProperties($objects){
         if ($objects){
             foreach ($objects as &$object){
+                $object->table_definer = 'goods_oils';
                 // Brand_name
                 $object = $this->addBrandName($object);
                 // Acea
@@ -364,6 +365,12 @@ trait getObjWithAddProperties
             }
             $object->types = implode(',',$types_id);
             $object->types_names = implode(',',$types_names);
+        }
+        return $objects;
+    }
+    public function addTableDefiner($objects, $definer){
+        foreach ($objects as &$object){
+            $object->table_definer = $definer;
         }
         return $objects;
     }

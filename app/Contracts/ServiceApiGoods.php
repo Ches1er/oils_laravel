@@ -13,6 +13,8 @@ interface ServiceApiGoods
 {
     public function getGoodsOils();
     public function getGoodsOil($oilid);
+    public function getGoodsUnit($id, $table_definer);
+    public function findGoods($keyword);
     public function getGoodsOilsWProp(array $data);
     public function addGoodsOil(array $data);
 }

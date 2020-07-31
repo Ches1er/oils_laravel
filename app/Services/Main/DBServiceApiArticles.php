@@ -27,6 +27,10 @@ class DBServiceApiArticles implements ServiceApiArticles
 
     public function getArticlesByTheme($themeid)
     {
+        if ($themeid === 'all'){
+            $articles = Article::all();
+            return $this->getWithImagePath($articles);
+        }
         $articles = Article::where('id_theme',$themeid)->get();
         return $this->getWithImagePath($articles);
     }

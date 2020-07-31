@@ -164,6 +164,24 @@ class DBServiceApiGoodsService implements ServiceApiGoods
         $result = $this->getWithImagePath($result);
         return $this->getOilsWithAddProperties($result);
     }
+
+    public function findGoods($keyword)
+    {
+        $goods = DB::table('goods_oils')->select(['id', 'name'])->where('name','like','%'.$keyword.'%')->get();
+        $goods = $this->addTableDefiner($goods, 'goods_oils');
+        return $goods;
+    }
+
+    public function getGoodsUnit($id, $table_definer)
+    {
+        $goods = DB::table($table_definer)->where('id',$id)->get();
+        if ($table_definer === 'goods_oils'){
+            $result = Goods_oils::hydrate($goods->toArray());
+            $result = $this->getWithImagePath($result);
+            $result = $this->getOilsWithAddProperties($result);
+            return $result;
+        }
+    }
 }
 
 

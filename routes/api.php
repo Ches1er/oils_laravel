@@ -94,9 +94,10 @@ Route::post('volume/add', 'Main\ApiMainPropertiesController@actionAddVolume');
 //Goods
 
 Route::prefix('goods')->group(function (){
+    Route::get('/find/{keyword}', 'Main\ApiGoodsController@actionFindGoods');
     // Oils
     Route::get('/oils', 'Main\ApiGoodsController@actionGetGoodsOils');
-    Route::get('/oil/{oilid}', 'Main\ApiGoodsController@actionGetGoodsOil');
+    Route::get('/unit/{id}/{table_definer}', 'Main\ApiGoodsController@actionGetGoodsUnit');
     Route::post('/oilswprop', 'Main\ApiGoodsController@actionGetGoodsOilsWProp');
     Route::post('/addoil', 'Main\ApiGoodsController@actionAddGoodsOil');
 });
