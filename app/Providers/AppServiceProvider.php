@@ -11,6 +11,7 @@ use App\Providers\Custom\ServiceApiGoodsProvider;
 use App\Providers\Custom\ServiceApiImagesProvider;
 use App\Providers\Custom\ServiceApiMainPropertiesProvider;
 use App\Providers\Custom\ServiceApiProductTypeProvider;
+use App\Providers\Custom\ServiceApiToProvider;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(ServiceApiProductTypeProvider::class);
         $this->app->register(ServiceApiAuthProvider::class);
         $this->app->register(ServiceApiArticlesProvider::class);
+        $this->app->register(ServiceApiToProvider::class);
 
     }
 

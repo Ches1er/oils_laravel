@@ -186,7 +186,8 @@ return [
         App\Providers\Custom\ServiceApiImagesProvider::class,
         App\Providers\Custom\ServiceApiProductTypeProvider::class,
         App\Providers\Custom\ServiceApiAuthProvider::class,
-        App\Providers\Custom\ServiceApiArticlesProvider::class
+        App\Providers\Custom\ServiceApiArticlesProvider::class,
+        App\Providers\Custom\ServiceApiToProvider::class
 
     ],
 

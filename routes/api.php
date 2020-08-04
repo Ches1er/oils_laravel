@@ -156,5 +156,13 @@ Route::prefix('articles')->group(function (){
     Route::post('/addarticle', 'Main\ApiArticlesController@actionAddArticle');
 });
 
+Route::prefix('to')->group(function (){
+    Route::get('/brands', 'Main\ApiToController@actionGetBrands');
+    Route::get('/autos', 'Main\ApiToController@actionGetAutos');
+    Route::get('/groups', 'Main\ApiToController@actionGetGroups');
+    Route::get('/auto/{id}', 'Main\ApiToController@actionGetAuto');
+    Route::get('/auto_goods/{id}', 'Main\ApiToController@actionGetAutoGoods');
+});
+
 
 
