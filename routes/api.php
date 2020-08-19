@@ -158,10 +158,14 @@ Route::prefix('articles')->group(function (){
 
 Route::prefix('to')->group(function (){
     Route::get('/brands', 'Main\ApiToController@actionGetBrands');
-    Route::get('/autos', 'Main\ApiToController@actionGetAutos');
+    Route::get('/autos/{idbrand}', 'Main\ApiToController@actionGetAutos');
     Route::get('/groups', 'Main\ApiToController@actionGetGroups');
+    Route::get('/exchanges', 'Main\ApiToController@actionGetExchanges');
     Route::get('/auto/{id}', 'Main\ApiToController@actionGetAuto');
-    Route::get('/auto_goods/{id}', 'Main\ApiToController@actionGetAutoGoods');
+    Route::get('/auto_goods/{id}/{exchange?}', 'Main\ApiToController@actionGetAutoGoods');
+    Route::post('/addexchange', 'Main\ApiToController@actionAddExchange');
+    Route::post('/addto', 'Main\ApiToController@actionAddTo');
+    Route::post('/addgoods', 'Main\ApiToController@actionAddGoods');
 });
 
 

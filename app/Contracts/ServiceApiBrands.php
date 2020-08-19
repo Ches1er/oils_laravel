@@ -12,6 +12,7 @@ namespace App\Contracts;
 interface ServiceApiBrands
 {
     public function getBrands();
+    public function getAutoBrands();
     public function getBrandsByProductType(int $producttypeid);
     public function addBrand(array $data);
 }

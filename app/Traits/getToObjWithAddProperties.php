@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\DB;
 
 trait getToObjWithAddProperties
 {
-    private function getToObjWProp($objects){
-        $objects = $this->getHrnPrice($objects);
+    private function getToObjWProp($objects, $exchange){
+        if ($exchange)$objects = $this->getHrnPrice($objects);
         $objects = $this->getMaxMinMidPrices($objects);
         return $objects;
     }

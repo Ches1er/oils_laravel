@@ -50,18 +50,30 @@ class DBServiceApiBrandsApiService implements ServiceApiBrands
             // Add product_types_brand if update
             if ($data['action']==='update'){
                 Product_type_brand::where('id_brand', $data['id'])->delete();
-                $types = explode(',', $data['types']);
-                foreach ($types as $type) {
-                    Product_type_brand::create(['id_brand' => $data['id'], 'id_product_type'=>$type]);
+                // Check if Brand belongs to Auto
+                if($data['types'] === 'Авто'){
+                    $pt = Product_type::where('name',$data['types'])->first();
+                    Product_type_brand::create(['id_brand' => $data['id'], 'id_product_type'=>$pt->id]);
+                } else {
+                    $types = explode(',', $data['types']);
+                    foreach ($types as $type) {
+                        Product_type_brand::create(['id_brand' => $data['id'], 'id_product_type'=>$type]);
+                    }
                 }
                 return ['response'=>'update success'];
             };
 
             // Add product_types_brand if create
-            $types = explode(',', $data['types']);
             $brand = Brand::where('name',$data['name'])->first();
-            foreach ($types as $type) {
-                Product_type_brand::create(['id_brand' => $brand->id, 'id_product_type'=>$type]);
+            // Check if Brand belongs to Auto
+            if($data['types'] === 'Авто'){
+                $pt = Product_type::where('name',$data['types'])->first();
+                Product_type_brand::create(['id_brand' => $brand->id, 'id_product_type'=>$pt->id]);
+            } else {
+                $types = explode(',', $data['types']);
+                foreach ($types as $type) {
+                    Product_type_brand::create(['id_brand' => $brand->id, 'id_product_type'=>$type]);
+                }
             }
             return ['response'=>'insert success'];
         };
@@ -72,6 +84,13 @@ class DBServiceApiBrandsApiService implements ServiceApiBrands
     {
         $producttype = Product_type::where('id', $producttypeid)->first();
         $brands = $this->getWithImagePath($producttype->Brands());
+        return $brands;
+    }
+
+    public function getAutoBrands()
+    {
+        $auto_product_group = Product_type::where('name','Авто')->first();
+        $brands = $this->getWithImagePath($auto_product_group->Brands());
         return $brands;
     }
 }
