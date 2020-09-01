@@ -102,11 +102,13 @@ class DBServiceApiTo implements ServiceApiTo
                 },$goods_ids_array);
                 return ['response'=>'update success'];
             }
-            if ($data['action']==='create'){
+            if ($data['action']!=='update' && $data['goods']){
                 $goods_ids_array = $this->addGoods($data['goods']);
-                array_map(function ($e,$data){
+                array_map(function ($e)use ($data){
                     To_auto_goods::create(['id_auto'=>$data['id'],'id_goods'=>$e]);
                 },$goods_ids_array);
+                return ['response'=>'insert success'];
+            } else {
                 return ['response'=>'insert success'];
             }
         }
@@ -115,12 +117,12 @@ class DBServiceApiTo implements ServiceApiTo
 
     private function addGoods(string $data)
     {
+        $ids = [];
         $goods_str_arr = explode(';', $data);
         $goods_arr = [];
         foreach ($goods_str_arr as $unit){
             array_push($goods_arr, json_decode($unit));
         }
-        $ids = [];
         array_map(function ($e) use (&$ids){
             $obj = To_goods::updateOrCreate(['id' => $e->pId],[
                 'name'=>$e->pName,

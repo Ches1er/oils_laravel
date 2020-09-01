@@ -15,7 +15,7 @@ class CreateToGoods extends Migration
     {
         Schema::create('to_goods', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->float('price');
             $table->string('cat_number')->unique();
             $table->bigInteger('id_group')->unsigned();

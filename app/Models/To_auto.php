@@ -8,7 +8,7 @@ class To_auto extends Model
 {
     protected $table = 'to_auto';
 
-    protected $fillable = ['name','img'];
+    protected $fillable = ['name','id_image','id_brand'];
 
     public function Goods() {
         $goods = $this->hasManyThrough(To_goods::class, To_auto_goods::class,'id_auto', 'id',

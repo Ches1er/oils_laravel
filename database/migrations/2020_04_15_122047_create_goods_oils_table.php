@@ -20,11 +20,17 @@ class CreateGoodsOilsTable extends Migration
             $table->bigInteger('id_volume')->unsigned();
             $table->bigInteger('id_viscosity')->unsigned();
             $table->bigInteger('id_base')->unsigned();
+            $table->bigInteger('id_brand')->unsigned();
+            $table->bigInteger('id_image')->unsigned();
+            $table->mediumText('short_desc');
+            $table->mediumText('full_desc');
             $table->timestamps();
 
             $table->foreign('id_volume')->references('id')->on('volume');
             $table->foreign('id_viscosity')->references('id')->on('viscosity');
             $table->foreign('id_base')->references('id')->on('base');
+            $table->foreign('id_brand')->references('id')->on('brands');
+            $table->foreign('id_image')->references('id')->on('images');
         });
 
     }

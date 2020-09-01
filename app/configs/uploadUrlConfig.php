@@ -11,5 +11,5 @@ namespace App\configs;
 
 class uploadUrlConfig
 {
-    const UPLOAD_ROOT_URL = 'http://oils/';
+    const UPLOAD_ROOT_URL = 'http://oilexpress.online/';
 }

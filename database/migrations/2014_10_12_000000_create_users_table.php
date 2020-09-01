@@ -22,6 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('verification_token')->nullable();
             $table->string('phones')->nullable();
             $table->string('confirmed_client')->nullable()->default(null);
+            $table->string('api_token', 255)->after('password')
+                ->unique()
+                ->nullable()
+                ->default(null);
             $table->rememberToken();
             $table->timestamps();
         });

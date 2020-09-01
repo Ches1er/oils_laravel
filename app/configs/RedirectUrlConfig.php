@@ -11,5 +11,5 @@ namespace App\configs;
 
 class RedirectUrlConfig
 {
-    const ROOT = 'http://localhost:4200/';
+    const ROOT = 'http://oilexpress.online/';
 }
