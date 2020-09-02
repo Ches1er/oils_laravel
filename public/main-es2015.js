@@ -2196,7 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class urlConfig {
     constructor() {
-        this.base = 'http://oils/api/';
+        this.base = 'http://oilexpress.online/api/';
         this.CORE = this.base;
         // AUTH
         this.LOGIN = this.base + 'login';
