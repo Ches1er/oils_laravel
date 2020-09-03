@@ -10,12 +10,12 @@ use App\Configs\RedirectUrlConfig;
 class ApiAuthController extends Controller
 {
     protected $authService;
-    private $redirectUrlConfigs;
+    // private $redirectUrlConfigs;
 
     public function __construct(ServiceApiAuth $serviceApiAuth)
     {
         $this->authService = $serviceApiAuth;
-        $this->redirectUrlConfigs = new RedirectUrlConfig();
+        // $this->redirectUrlConfigs = new RedirectUrlConfig();
     }
 
     public function actionLogin(Request $request){
@@ -41,7 +41,7 @@ class ApiAuthController extends Controller
 
     public function actionEmailVerification($verificationtoken){
         if($this->authService->mail_verification($verificationtoken)){
-            return redirect($this->redirectUrlConfigs::ROOT);
+            return redirect('http://oilexpress.online/');
         };
         return null;
     }

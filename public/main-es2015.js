@@ -8340,6 +8340,16 @@ let OilsComponent = class OilsComponent {
         this.pFordApprovalsIdsArray = [];
         this.pRenApprovalsIdsArray = [];
         this.pVwApprovalsIdsArray = [];
+        this.pPorscheApprovalsIdsArray = [];
+        this.pGmApprovalsIdsArray = [];
+        this.pKoenigApprovalsIdsArray = [];
+        this.pChryslerApprovalsIdsArray = [];
+        this.pPsaApprovalsIdsArray = [];
+        this.pVolvoApprovalsIdsArray = [];
+        this.pJaguarApprovalsIdsArray = [];
+        this.pJasoApprovalsIdsArray = [];
+        this.pMazdaApprovalsIdsArray = [];
+        this.pNissanApprovalsIdsArray = [];
         this.pProducts = [];
         this.pBrands = [];
         this.pAcea = [];
@@ -8353,6 +8363,16 @@ let OilsComponent = class OilsComponent {
         this.pFordApprovals = [];
         this.pRenApprovals = [];
         this.pVwApprovals = [];
+        this.pPorscheApprovals = [];
+        this.pGmApprovals = [];
+        this.pKoenigApprovals = [];
+        this.pChryslerApprovals = [];
+        this.pPsaApprovals = [];
+        this.pVolvoApprovals = [];
+        this.pJaguarApprovals = [];
+        this.pJasoApprovals = [];
+        this.pMazdaApprovals = [];
+        this.pNissanApprovals = [];
         this.pNonEmptyProductList = false;
         this.brandsOptions = [];
         this.aceaOptions = [];
@@ -8399,6 +8419,127 @@ let OilsComponent = class OilsComponent {
         this.approvalsArray = ['Mb', 'Bmw', 'Ford', 'Fiat', 'Ren', 'Vw', 'Porsche', 'Gm', 'Koenig', 'Chrysler', 'Psa', 'Volvo', 'Jaguar', 'Jaso', 'Mazda', 'Nissan'];
         this.requestItem = new _classes_RequestItem__WEBPACK_IMPORTED_MODULE_9__["RequestItem"]([], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []);
     }
+    get nissanApprovals() {
+        return this.pNissanApprovals;
+    }
+    set nissanApprovals(value) {
+        this.pNissanApprovals = value;
+    }
+    get mazdaApprovals() {
+        return this.pMazdaApprovals;
+    }
+    set mazdaApprovals(value) {
+        this.pMazdaApprovals = value;
+    }
+    get jasoApprovals() {
+        return this.pJasoApprovals;
+    }
+    set jasoApprovals(value) {
+        this.pJasoApprovals = value;
+    }
+    get jaguarApprovals() {
+        return this.pJaguarApprovals;
+    }
+    set jaguarApprovals(value) {
+        this.pJaguarApprovals = value;
+    }
+    get volvoApprovals() {
+        return this.pVolvoApprovals;
+    }
+    set volvoApprovals(value) {
+        this.pVolvoApprovals = value;
+    }
+    get psaApprovals() {
+        return this.pPsaApprovals;
+    }
+    set psaApprovals(value) {
+        this.pPsaApprovals = value;
+    }
+    get chryslerApprovals() {
+        return this.pChryslerApprovals;
+    }
+    set chryslerApprovals(value) {
+        this.pChryslerApprovals = value;
+    }
+    get koenigApprovals() {
+        return this.pKoenigApprovals;
+    }
+    set koenigApprovals(value) {
+        this.pKoenigApprovals = value;
+    }
+    get gmApprovals() {
+        return this.pGmApprovals;
+    }
+    set gmApprovals(value) {
+        this.pGmApprovals = value;
+    }
+    get porscheApprovals() {
+        return this.pPorscheApprovals;
+    }
+    set porscheApprovals(value) {
+        this.pPorscheApprovals = value;
+    }
+    get nissanApprovalsIdsArray() {
+        return this.pNissanApprovalsIdsArray;
+    }
+    set nissanApprovalsIdsArray(value) {
+        this.pNissanApprovalsIdsArray = value;
+    }
+    get mazdaApprovalsIdsArray() {
+        return this.pMazdaApprovalsIdsArray;
+    }
+    set mazdaApprovalsIdsArray(value) {
+        this.pMazdaApprovalsIdsArray = value;
+    }
+    get jasoApprovalsIdsArray() {
+        return this.pJasoApprovalsIdsArray;
+    }
+    set jasoApprovalsIdsArray(value) {
+        this.pJasoApprovalsIdsArray = value;
+    }
+    get jaguarApprovalsIdsArray() {
+        return this.pJaguarApprovalsIdsArray;
+    }
+    set jaguarApprovalsIdsArray(value) {
+        this.pJaguarApprovalsIdsArray = value;
+    }
+    get volvoApprovalsIdsArray() {
+        return this.pVolvoApprovalsIdsArray;
+    }
+    set volvoApprovalsIdsArray(value) {
+        this.pVolvoApprovalsIdsArray = value;
+    }
+    set psaApprovalsIdsArray(value) {
+        this.pPsaApprovalsIdsArray = value;
+    }
+    get psaApprovalsIdsArray() {
+        return this.pPsaApprovalsIdsArray;
+    }
+    get chryslerApprovalsIdsArray() {
+        return this.pChryslerApprovalsIdsArray;
+    }
+    set chryslerApprovalsIdsArray(value) {
+        this.pChryslerApprovalsIdsArray = value;
+    }
+    get koenigApprovalsIdsArray() {
+        return this.pKoenigApprovalsIdsArray;
+    }
+    set koenigApprovalsIdsArray(value) {
+        this.pKoenigApprovalsIdsArray = value;
+    }
+    get gmApprovalsIdsArray() {
+        return this.pGmApprovalsIdsArray;
+    }
+    set gmApprovalsIdsArray(value) {
+        this.pGmApprovalsIdsArray = value;
+    }
+    get porscheApprovalsIdsArray() {
+        return this.pPorscheApprovalsIdsArray;
+    }
+    set porscheApprovalsIdsArray(value) {
+        this.pPorscheApprovalsIdsArray = value;
+    }
+    // GETTERS AND SETTERS
     get volume() {
         return this.pVolume;
     }
@@ -8423,7 +8564,6 @@ let OilsComponent = class OilsComponent {
     set viscosityIdsArray(value) {
         this.pViscosityIdsArray = value;
     }
-    // GETTERS AND SETTERS
     get products() {
         return this.pProducts;
     }
@@ -8581,12 +8721,16 @@ let OilsComponent = class OilsComponent {
         });
         e.acea = aceaArray.map(e => Number(e));
         e.api = apiArray.map(e => Number(e));
+        e.idBrand = Number(e.idBrand);
+        e.idViscosity = Number(e.idViscosity);
+        e.idVolume = Number(e.idVolume);
         return e;
     }
     updateApprovals() {
         this.approvalsArray.forEach(model => {
             const toLowerCase = model.toLowerCase();
             this.approvalsService.approvals('prod', model).subscribe(resp => {
+                console.log(resp);
                 this[toLowerCase + 'Approvals'] = resp;
                 this[toLowerCase + 'Options'] = resp.map(r => new _classes_CheckboxItem__WEBPACK_IMPORTED_MODULE_4__["CheckboxItem"](r.id, r.name, false));
             });
@@ -8638,20 +8782,17 @@ let OilsComponent = class OilsComponent {
     }
     // Hide-Show checkboxes elements
     nullIdsArrays() {
+        const approvals = this.approvalsArray.map(model => {
+            return model.toLowerCase() + 'Approvals';
+        });
         const idsArrays = [
             'api',
             'acea',
             'base',
             'brand',
             'volume',
-            'viscosity',
-            'mbApprovals',
-            'bmwApprovals',
-            'renApprovals',
-            'fiatApprovals',
-            'fordApprovals',
-            'vwApprovals'
-        ];
+            'viscosity'
+        ].concat(approvals);
         idsArrays.forEach(e => {
             this[e + 'IdsArray'] = [];
         });
@@ -8750,6 +8891,76 @@ let OilsComponent = class OilsComponent {
             e.fade = !unique.includes(e.value);
         });
     }
+    // PorscheApprovals
+    porscheApprovalsCheckboxFade(porscheArray) {
+        const unique = this.uniqueElementsInArray(porscheArray);
+        this.porscheOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // GmApprovals
+    gmApprovalsCheckboxFade(gmArray) {
+        const unique = this.uniqueElementsInArray(gmArray);
+        this.gmOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // KoenigApprovals
+    koenigApprovalsCheckboxFade(koenigArray) {
+        const unique = this.uniqueElementsInArray(koenigArray);
+        this.koenigOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // ChryslerApprovals
+    chryslerApprovalsCheckboxFade(chryslerArray) {
+        const unique = this.uniqueElementsInArray(chryslerArray);
+        this.chryslerOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // PsaApprovals
+    psaApprovalsCheckboxFade(psaArray) {
+        const unique = this.uniqueElementsInArray(psaArray);
+        this.psaOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // VolvoApprovals
+    volvoApprovalsCheckboxFade(volvoArray) {
+        const unique = this.uniqueElementsInArray(volvoArray);
+        this.volvoOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // JaguarApprovals
+    jaguarApprovalsCheckboxFade(jaguarArray) {
+        const unique = this.uniqueElementsInArray(jaguarArray);
+        this.jaguarOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // JasoApprovals
+    jasoApprovalsCheckboxFade(jasoArray) {
+        const unique = this.uniqueElementsInArray(jasoArray);
+        this.jasoOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // MazdaApprovals
+    mazdaApprovalsCheckboxFade(mazdaArray) {
+        const unique = this.uniqueElementsInArray(mazdaArray);
+        this.mazdaOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
+    // NissanApprovals
+    nissanApprovalsCheckboxFade(nissanArray) {
+        const unique = this.uniqueElementsInArray(nissanArray);
+        this.nissanOptions.map(e => {
+            e.fade = !unique.includes(e.value);
+        });
+    }
     // Finding unique elements in array
     uniqueElementsInArray(arr) {
         const result = [];
@@ -8780,17 +8991,14 @@ let OilsComponent = class OilsComponent {
                 this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
                 this.approvalsIdsConcat(p, 'none');
             });
+            const approvals = this.approvalsArray.map(model => {
+                return model.toLowerCase() + 'Approvals';
+            });
             this.commonCheckboxFade(['base',
                 'api',
                 'acea',
                 'volume',
-                'viscosity',
-                'mbApprovals',
-                'bmwApprovals',
-                'fiatApprovals',
-                'fordApprovals',
-                'renApprovals',
-                'vwApprovals']);
+                'viscosity'].concat(approvals));
         });
     }
     // Acea
@@ -8810,21 +9018,19 @@ let OilsComponent = class OilsComponent {
                 this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
                 this.approvalsIdsConcat(p, 'none');
             });
+            const approvals = this.approvalsArray.map(model => {
+                return model.toLowerCase() + 'Approvals';
+            });
             this.commonCheckboxFade(['base',
                 'api',
                 'brand',
                 'volume',
-                'viscosity',
-                'mbApprovals',
-                'bmwApprovals',
-                'fiatApprovals',
-                'fordApprovals',
-                'renApprovals',
-                'vwApprovals']);
+                'viscosity'].concat(approvals));
         });
     }
     // Api
     onApiChange(value) {
+        console.log(this.brandsOptions);
         this.requestItem.api = value;
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
@@ -8833,24 +9039,21 @@ let OilsComponent = class OilsComponent {
             this.products = resp;
             this.products.forEach(p => {
                 this.convertStrPropertiesToArray(p);
-                this.aceaIdsArray = this.aceaIdsArray.concat(p.api);
-                this.brandIdsArray = this.brandIdsArray.concat(p.acea);
+                this.aceaIdsArray = this.aceaIdsArray.concat(p.acea);
+                this.brandIdsArray = this.brandIdsArray.concat(p.idBrand);
                 this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
                 this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
                 this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
                 this.approvalsIdsConcat(p, 'none');
             });
+            const approvals = this.approvalsArray.map(model => {
+                return model.toLowerCase() + 'Approvals';
+            });
             this.commonCheckboxFade(['base',
                 'acea',
                 'brand',
                 'volume',
-                'viscosity',
-                'mbApprovals',
-                'bmwApprovals',
-                'fiatApprovals',
-                'fordApprovals',
-                'renApprovals',
-                'vwApprovals']);
+                'viscosity'].concat(approvals));
         });
     }
     // Volume
@@ -8870,17 +9073,14 @@ let OilsComponent = class OilsComponent {
                 this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
                 this.approvalsIdsConcat(p, 'none');
             });
+            const approvals = this.approvalsArray.map(model => {
+                return model.toLowerCase() + 'Approvals';
+            });
             this.commonCheckboxFade(['base',
                 'acea',
                 'api',
                 'brand',
-                'viscosity',
-                'mbApprovals',
-                'bmwApprovals',
-                'fiatApprovals',
-                'fordApprovals',
-                'renApprovals',
-                'vwApprovals']);
+                'viscosity'].concat(approvals));
         });
     }
     // Viscosity
@@ -8900,17 +9100,14 @@ let OilsComponent = class OilsComponent {
                 this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
                 this.approvalsIdsConcat(p, 'none');
             });
+            const approvals = this.approvalsArray.map(model => {
+                return model.toLowerCase() + 'Approvals';
+            });
             this.commonCheckboxFade(['base',
                 'acea',
                 'api',
                 'brand',
-                'volume',
-                'mbApprovals',
-                'bmwApprovals',
-                'fiatApprovals',
-                'fordApprovals',
-                'renApprovals',
-                'vwApprovals']);
+                'volume'].concat(approvals));
         });
     }
     // Base
@@ -8930,17 +9127,14 @@ let OilsComponent = class OilsComponent {
                 this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
                 this.approvalsIdsConcat(p, 'none');
             });
+            const approvals = this.approvalsArray.map(model => {
+                return model.toLowerCase() + 'Approvals';
+            });
             this.commonCheckboxFade(['api',
                 'acea',
                 'brand',
                 'volume',
-                'viscosity',
-                'mbApprovals',
-                'bmwApprovals',
-                'fiatApprovals',
-                'fordApprovals',
-                'renApprovals',
-                'vwApprovals']);
+                'viscosity'].concat(approvals));
         });
     }
     // Approvals Change
@@ -8948,7 +9142,9 @@ let OilsComponent = class OilsComponent {
         this.requestItem[definer] = value;
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
-        const fullAppArray = ['mbApprovals', 'bmwApprovals', 'fiatApprovals', 'fordApprovals', 'renApprovals', 'vwApprovals'];
+        const fullAppArray = this.approvalsArray.map(model => {
+            return model.toLowerCase() + 'Approvals';
+        });
         const appArrayWithoutDefiner = fullAppArray.filter(e => e !== definer);
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
             this.nonEmptyProductList = true;
@@ -8968,7 +9164,9 @@ let OilsComponent = class OilsComponent {
         });
     }
     approvalsIdsConcat(p, exception) {
-        const approvalsArray = ['mb', 'bmw', 'ford', 'fiat', 'ren', 'vw'];
+        const approvalsArray = this.approvalsArray.map(model => {
+            return model = model.toLowerCase();
+        });
         approvalsArray.forEach(e => {
             if (e !== exception) {
                 const propertyIdsArray = e + 'ApprovalsIdsArray';
