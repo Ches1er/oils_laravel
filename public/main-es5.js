@@ -13127,7 +13127,6 @@
         this.approvalsArray.forEach(model => {
           const toLowerCase = model.toLowerCase();
           this.approvalsService.approvals('prod', model).subscribe(resp => {
-            console.log(resp);
             this[toLowerCase + 'Approvals'] = resp;
             this[toLowerCase + 'Options'] = resp.map(r => new _classes_CheckboxItem__WEBPACK_IMPORTED_MODULE_4__["CheckboxItem"](r.id, r.name, false));
           });

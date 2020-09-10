@@ -126,7 +126,7 @@ class DBServiceApiGoodsService implements ServiceApiGoods
         foreach ($this->approvalsArray as $ar){
             $req = $ar.'Approval';
             $table = $ar.'_approval_goods';
-            if ($data[$req]!== 'null'){
+            if ($data[$req]!== ''){
                 $new_approvals = explode(',', $data[$req]);
                 foreach ($new_approvals as $na){
                     DB::table($table)->insert(['id_goods'=>$id, 'id_approval'=>$na]);
