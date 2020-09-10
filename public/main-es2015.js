@@ -550,7 +550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"to_content_main\">\n  <div class=\"to_content_auto\" *ngIf=\"auto\">\n    <div class=\"auto_name\">{{auto.name}}</div>\n    <img src=\"{{auto.img}}\" alt=\"\">\n  </div>\n  <div class=\"to_content_header\">Материалы для техобслуживания</div>\n  <div class=\"to_content_goods\">\n    <div class=\"groups\" *ngIf=\"groups\">\n      <div class=\"groups_header\">\n        <div class=\"groups_header_group\">Название группы</div>\n        <div class=\"groups_header_goods\">Наименование</div>\n        <div class=\"groups_header_goods\">Номер по каталогу</div>\n        <div class=\"groups_header_goods\">Цена, грн</div>\n        <div class=\"groups_header_price\">Цена макс</div>\n        <div class=\"groups_header_price\">Цена мин</div>\n        <div class=\"groups_header_price\">Цена средняя</div>\n      </div>\n      <div class=\"group\" *ngFor=\"let group of groups\">\n        <div class=\"group_name\">{{group.name}}</div>\n        <div class=\"goods\">\n        <div *ngFor=\"let g of goods\">\n            <div class=\"goods_unit\" *ngIf=\"g.idGroup === group.id\">\n              <div class=\"goods_unit_name\">{{g.name}}</div>\n              <div class=\"goods_unit_cat\">{{g.catNumber}}</div>\n              <div class=\"goods_unit_price\">{{g.price}}</div>\n              <div class=\"goods_unit_max_min\" ><span *ngIf=\"g.max && !g.min\">max</span></div>\n              <div class=\"goods_unit_max_min\" ><span *ngIf=\"g.min && !g.max\">min</span></div>\n              <div class=\"goods_unit_max_min\" ><span *ngIf=\"g.min && g.max\">avg</span></div>\n            </div>\n        </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"to_content_main\">\n  <div class=\"to_content_auto\" *ngIf=\"auto\">\n    <div class=\"auto_name\">{{auto.name}}</div>\n    <img src=\"{{auto.img}}\" alt=\"\">\n  </div>\n  <div class=\"to_content_header\">Материалы для техобслуживания</div>\n  <div class=\"to_content_goods\">\n    <div class=\"groups\" *ngIf=\"groups\">\n      <div class=\"groups_header\">\n        <div class=\"groups_header_group\">Название группы</div>\n        <div class=\"groups_header_goods\">Наименование</div>\n        <div class=\"groups_header_goods\">Номер по каталогу</div>\n        <div class=\"groups_header_goods\">Цена, грн</div>\n        <div class=\"groups_header_price\">Цена макс</div>\n        <div class=\"groups_header_price\">Цена мин</div>\n        <div class=\"groups_header_price\">Цена средняя</div>\n      </div>\n      <div class=\"group\" *ngFor=\"let group of groups\">\n        <div class=\"group_name\">{{group.name}}</div>\n        <div class=\"goods\">\n        <div *ngFor=\"let g of goods\">\n            <div class=\"goods_unit\" *ngIf=\"g.idGroup == group.id\">\n              <div class=\"goods_unit_name\">{{g.name}}</div>\n              <div class=\"goods_unit_cat\">{{g.catNumber}}</div>\n              <div class=\"goods_unit_price\">{{g.price}}</div>\n              <div class=\"goods_unit_max_min\" ><span *ngIf=\"g.max && !g.min\">max</span></div>\n              <div class=\"goods_unit_max_min\" ><span *ngIf=\"g.min && !g.max\">min</span></div>\n              <div class=\"goods_unit_max_min\" ><span *ngIf=\"g.min && g.max\">avg</span></div>\n            </div>\n        </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -1567,6 +1567,7 @@ let CurrentUserBlockComponent = CurrentUserBlockComponent_1 = class CurrentUserB
         this.authMessagesService = authMessagesService;
         this.authService = authService;
         this.pCurrentUser = null;
+        this.isLoginByRemember = false;
         this.admin = false;
     }
     get currentUser() {
@@ -1595,6 +1596,7 @@ let CurrentUserBlockComponent = CurrentUserBlockComponent_1 = class CurrentUserB
             }
         }
         if (localStorage.length > 0 && this.tokenData.remember_token !== null) {
+            this.isLoginByRemember = true;
             this.authService.loginByRememberMeToken(this.tokenData.remember_token)
                 .subscribe(user => {
                 if (user) {
@@ -1604,8 +1606,7 @@ let CurrentUserBlockComponent = CurrentUserBlockComponent_1 = class CurrentUserB
             });
         }
         this.authMessagesService.loginSuccessMessage.subscribe(user => {
-            this.tokenData = JSON.parse(localStorage.getItem('tokenData'));
-            if (this.tokenData.remember_token === null) {
+            if (!this.isLoginByRemember) {
                 this.pCurrentUser = user;
                 this.authService.roles(user.apiToken).subscribe(roles => {
                     if (roles.includes('admin')) {
@@ -9708,7 +9709,6 @@ let ToContentComponent = class ToContentComponent {
     getGoods(id, exchange) {
         this.toService.groups.subscribe(g => this.groups = g);
         this.toService.goods(id, exchange).subscribe(g => {
-            g.idGroup = Number(g.idGroup);
             this.goods = g;
         });
     }
