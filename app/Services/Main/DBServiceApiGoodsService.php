@@ -13,6 +13,7 @@ use App\Contracts\ServiceApiGoods;
 use App\Models\Goods_acea;
 use App\Models\Goods_api;
 use App\Models\Goods_oils;
+use App\Models\Image;
 use App\Traits\getObjWithAddProperties;
 use App\Traits\getObjWithImagesPath;
 use Illuminate\Support\Facades\DB;
