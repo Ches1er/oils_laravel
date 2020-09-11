@@ -13,7 +13,6 @@ use App\Contracts\ServiceApiGoods;
 use App\Models\Goods_acea;
 use App\Models\Goods_api;
 use App\Models\Goods_oils;
-use App\Models\Image;
 use App\Traits\getObjWithAddProperties;
 use App\Traits\getObjWithImagesPath;
 use Illuminate\Support\Facades\DB;
@@ -102,10 +101,11 @@ class DBServiceApiGoodsService implements ServiceApiGoods
                 return ['response'=>'update success'];
             }
             // Add
-            $oil = Goods_oils::where('name', $data['name'])->first();
+/*            $oil = Goods_oils::where('name', $data['name'])->first();
             $this->aceaApiWhenAdd($oil->id, $data['api'], $data['acea']);
             $this->approvalsAdd($oil->id,$data);
-            return ['response'=>'insert success'];
+            return ['response'=>'insert success'];*/
+            return $data;
         }
         return ['response'=>'error'];
     }
