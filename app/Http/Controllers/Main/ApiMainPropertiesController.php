@@ -20,6 +20,9 @@ class ApiMainPropertiesController extends Controller {
     public function actionShowAcea($definer){
         return json_encode($this->mainPropService->getAcea($definer));
     }
+    public function actionShowIlsac($definer){
+        return json_encode($this->mainPropService->getIlsac($definer));
+    }
 
     public function actionShowApi($definer){
         return json_encode($this->mainPropService->getApi($definer));
@@ -45,6 +48,10 @@ class ApiMainPropertiesController extends Controller {
     public function actionAddApi(Request $request) {
         $data = $request->only('id','name','action');
         return json_encode($this->mainPropService->addApi($data));
+    }
+    public function actionAddIlsac(Request $request) {
+        $data = $request->only('id','name','action');
+        return json_encode($this->mainPropService->addIlsac($data));
     }
 
 }

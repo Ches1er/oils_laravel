@@ -86,6 +86,11 @@ Route::get('base/all', 'Main\ApiBaseController@actionShowBase');
 Route::get('viscosity/all/{definer}', 'Main\ApiMainPropertiesController@actionShowViscosity');
 Route::post('viscosity/add', 'Main\ApiMainPropertiesController@actionAddViscosity');
 
+// Ilsac
+
+Route::get('ilsac/all/{definer}', 'Main\ApiMainPropertiesController@actionShowIlsac');
+Route::post('ilsac/add', 'Main\ApiMainPropertiesController@actionAddIlsac');
+
 // Volume
 
 Route::get('volume/all/{definer}', 'Main\ApiMainPropertiesController@actionShowVolume');

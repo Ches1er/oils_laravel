@@ -13,6 +13,7 @@ use App\Contracts\ServiceApiMainProperties;
 use App\Models\Acea;
 use App\Models\Api;
 use App\Models\Goods_oils;
+use App\Models\Ilsac;
 use App\Models\Viscosity;
 use App\Models\Volume;
 
@@ -141,5 +142,27 @@ class DBServiceMainProperties implements ServiceApiMainProperties
             else return ['response'=>'insert success'];
         }
         return ['response'=>'error'];
+    }
+
+    public function getIlsac($definer)
+    {
+        $ilsac = [];
+        $ilsac_ids = [];
+        if ($definer === 'all') return Ilsac::all();
+        $goods = Goods_oils::all();
+        foreach ($goods as $good){
+            $ilsac = array_merge($ilsac, $good->Ilsac());
+        }
+        foreach ($ilsac as $item){
+            array_push($ilsac_ids, $item->id);
+        }
+        $ilsac_ids = $this->uniqueElementsInArray($ilsac_ids);
+        $result = Ilsac::whereIn('id',$ilsac_ids)->get();
+        return $result;
+    }
+
+    public function addIlsac(array $data)
+    {
+        // TODO: Implement addIlsac() method.
     }
 }

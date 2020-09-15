@@ -355,7 +355,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"admin_content_form\" [formGroup] ='addChangeVolume' (ngSubmit)='onVolumesSubmit()'>\n  <div class=\"admin_block_header_small\">Форма добавления-изменения объемов</div>\n  <div class=\"form-group\">\n    <select name=\"\" id=\"brands\" formControlName = \"id\" (change)=\"fillInVolume($event.target.value)\">\n      <option disabled selected value> -- Выберите объем -- </option>\n      <option *ngFor=\"let volume of volumes\" value=\"{{volume.id}}\">{{volume.name}}</option>\n    </select>\n  </div>\n\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Объем</p>\n    <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n    <div class=\"validation_error\"\n         *ngIf=\"addChangeVolume.get('name').getError('required') &&\n                (addChangeVolume.get('name').dirty || addChangeVolume.get('name').touched)\">\n      Введите пожалуйста объем.\n    </div>\n  </div>\n\n  <div class=\"admin_content_button_block\">\n    <div *ngIf=\"addChangeVolume.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить объем</button>\n    </div>\n    <div *ngIf=\"addChangeVolume.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n    </div>\n    <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n  </div>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"admin_content_form\" [formGroup] ='addChangeVolume' (ngSubmit)='onVolumesSubmit()'>\n  <div class=\"admin_block_header_small\">Форма добавления-изменения объемов</div>\n  <div class=\"form-group\">\n    <select name=\"\" id=\"brands\" formControlName = \"id\" (change)=\"fillInVolume($event.target.value)\">\n      <option disabled selected value> -- Выберите объем -- </option>\n      <option *ngFor=\"let volume of volumes\" value=\"{{volume.id}}\">{{volume.name}}</option>\n    </select>\n  </div>\n\n  <!-- fc - means form controls, f - form -->\n\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Объем</p>\n    <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n    <div class=\"validation_error\"\n         *ngIf=\"fc.name.getError('required') &&\n                (fc.name.dirty || fc.name.touched)\">\n      Введите пожалуйста объем.\n    </div>\n    <div class=\"validation_error\"\n         *ngIf=\"fc.name.getError('pattern') &&\n                (fc.name.dirty || fc.name.touched)\">\n      К вводу допускаются только цифры.\n    </div>\n  </div>\n\n  <div class=\"admin_content_button_block\">\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить объем</button>\n    </div>\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n    </div>\n    <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n  </div>\n</form>\n");
 
 /***/ }),
 
@@ -485,7 +485,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ngx-loading [show]=\"loading\"></ngx-loading>\n<div class=\"main_content\">\n  <div class=\"filters\">\n    <div class=\"filter_unit\">Производители</div>\n    <app-checkbox-component [options]='brandsOptions' (toggle)='onBrandsChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Объем, л.</div>\n    <app-checkbox-component [options]=\"volOptions\" (toggle)=\"onVolumeChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Вязкость</div>\n    <app-checkbox-component [options]=\"viscOptions\" (toggle)=\"onViscosityChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация ACEA</div>\n    <app-checkbox-component [options]='aceaOptions' (toggle)='onAceaChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация API</div>\n    <app-checkbox-component [options]='apiOptions' (toggle)='onApiChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">База</div>\n    <app-checkbox-component [options]='baseOptions' (toggle)='onBaseChange($event)'></app-checkbox-component>\n    <span class=\"filter_unit\" (click)=\"hideAll=!hideAll\">Допуски {{hideAll?'+':'-'}}</span>\n    <div [hidden]=\"hideAll\">\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Mercedes-Benz</div>\n          <div class=\"approval_fold\" (click)=\"hideMb=!hideMb\">{{hideMb?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideMb\"\n          [options]='mbOptions'\n          (toggle)='onApprovalChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Vw</div>\n          <div class=\"approval_fold\" (click)=\"hideVw=!hideVw\">{{hideVw?'+':'-'}}</div>\n        </div>\n            <app-checkbox-component\n              [hidden]=\"hideVw\"\n              [options]='vwOptions'\n              (toggle)='onApprovalChange($event, \"vwApprovals\")'>\n            </app-checkbox-component>\n        </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Ford</div>\n          <div class=\"approval_fold\" (click)=\"hideFord=!hideFord\">{{hideFord?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFord\"\n          [options]='fordOptions'\n          (toggle)='onApprovalChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Fiat</div>\n          <div class=\"approval_fold\" (click)=\"hideFiat=!hideFiat\">{{hideFiat?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFiat\"\n          [options]='fiatOptions'\n          (toggle)='onApprovalChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">BMW</div>\n          <div class=\"approval_fold\" (click)=\"hideBmw=!hideBmw\">{{hideBmw?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideBmw\"\n          [options]='bmwOptions'\n          (toggle)='onApprovalChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Renault</div>\n          <div class=\"approval_fold\" (click)=\"hideRen=!hideRen\">{{hideRen?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideRen\"\n          [options]='renOptions'\n          (toggle)='onApprovalChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Porsche</div>\n          <div class=\"approval_fold\" (click)=\"hidePorsche=!hidePorsche\">{{hidePorsche?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePorsche\"\n          [options]='porscheOptions'\n          (toggle)='onApprovalChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Gm</div>\n          <div class=\"approval_fold\" (click)=\"hideGm=!hideGm\">{{hideGm?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideGm\"\n          [options]='gmOptions'\n          (toggle)='onApprovalChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Koenig</div>\n          <div class=\"approval_fold\" (click)=\"hideKoenig=!hideKoenig\">{{hideKoenig?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideKoenig\"\n          [options]='koenigOptions'\n          (toggle)='onApprovalChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Chrysler</div>\n        <div class=\"approval_fold\" (click)=\"hideChrysler=!hideChrysler\">{{hideChrysler?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideChrysler\"\n        [options]='chryslerOptions'\n        (toggle)='onApprovalChange($event, \"chryslerApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Psa</div>\n          <div class=\"approval_fold\" (click)=\"hidePsa=!hidePsa\">{{hidePsa?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePsa\"\n          [options]='psaOptions'\n          (toggle)='onApprovalChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Volvo</div>\n          <div class=\"approval_fold\" (click)=\"hideVolvo=!hideVolvo\">{{hideVolvo?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideVolvo\"\n          [options]='volvoOptions'\n          (toggle)='onApprovalChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaguar</div>\n          <div class=\"approval_fold\" (click)=\"hideJaguar=!hideJaguar\">{{hideJaguar?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaguar\"\n          [options]='jaguarOptions'\n          (toggle)='onApprovalChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaso</div>\n          <div class=\"approval_fold\" (click)=\"hideJaso=!hideJaso\">{{hideJaso?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaso\"\n          [options]='jasoOptions'\n          (toggle)='onApprovalChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Mazda</div>\n        <div class=\"approval_fold\" (click)=\"hideMazda=!hideMazda\">{{hideMazda?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideMazda\"\n        [options]='mazdaOptions'\n        (toggle)='onApprovalChange($event, \"mazdaApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Nissan</div>\n          <div class=\"approval_fold\" (click)=\"hideNissan=!hideNissan\">{{hideNissan?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideNissan\"\n          [options]='nissanOptions'\n          (toggle)='onApprovalChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n\n\n    </div>\n  </div>\n  <div class=\"products\">\n    <div class=\"products_header\">Список моторных масел</div>\n    <div *ngIf=\"!nonEmptyProductList\">Товаров нет</div>\n    <div class=\"products_list\" *ngIf=\"nonEmptyProductList\">\n        <div class=\"product\" *ngFor=\"let product of products; let i = index\" (click)=\"onClickProduct(product.id)\">\n          <div *ngIf=\"product.show\">\n            <div class=\"product_name\">{{product.name}}</div>\n            <img class=\"product_img\" src=\"{{product.img}}\" alt=\"\">\n          </div>\n        </div>\n    </div>\n  </div>\n</div>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ngx-loading [show]=\"loading\"></ngx-loading>\n<div class=\"main_content\">\n  <div class=\"filters\">\n    <div class=\"filter_unit\">Производители</div>\n    <app-checkbox-component [options]='brandsOptions' (toggle)='onBrandsChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Объем, л.</div>\n    <app-checkbox-component [options]=\"volOptions\" (toggle)=\"onVolumeChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Вязкость</div>\n    <app-checkbox-component [options]=\"viscOptions\" (toggle)=\"onViscosityChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация ACEA</div>\n    <app-checkbox-component [options]='aceaOptions' (toggle)='onAceaChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация API</div>\n    <app-checkbox-component [options]='apiOptions' (toggle)='onApiChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">База</div>\n    <app-checkbox-component [options]='baseOptions' (toggle)='onBaseChange($event)'></app-checkbox-component>\n    <span class=\"filter_unit\" (click)=\"hideAll=!hideAll\">Допуски {{hideAll?'+':'-'}}</span>\n    <div [hidden]=\"hideAll\">\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Mercedes-Benz</div>\n          <div class=\"approval_fold\" (click)=\"hideMb=!hideMb\">{{hideMb?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideMb\"\n          [options]='mbOptions'\n          (toggle)='onApprovalChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Vw</div>\n          <div class=\"approval_fold\" (click)=\"hideVw=!hideVw\">{{hideVw?'+':'-'}}</div>\n        </div>\n            <app-checkbox-component\n              [hidden]=\"hideVw\"\n              [options]='vwOptions'\n              (toggle)='onApprovalChange($event, \"vwApprovals\")'>\n            </app-checkbox-component>\n        </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Ford</div>\n          <div class=\"approval_fold\" (click)=\"hideFord=!hideFord\">{{hideFord?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFord\"\n          [options]='fordOptions'\n          (toggle)='onApprovalChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Fiat</div>\n          <div class=\"approval_fold\" (click)=\"hideFiat=!hideFiat\">{{hideFiat?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFiat\"\n          [options]='fiatOptions'\n          (toggle)='onApprovalChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">BMW</div>\n          <div class=\"approval_fold\" (click)=\"hideBmw=!hideBmw\">{{hideBmw?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideBmw\"\n          [options]='bmwOptions'\n          (toggle)='onApprovalChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Renault</div>\n          <div class=\"approval_fold\" (click)=\"hideRen=!hideRen\">{{hideRen?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideRen\"\n          [options]='renOptions'\n          (toggle)='onApprovalChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Porsche</div>\n          <div class=\"approval_fold\" (click)=\"hidePorsche=!hidePorsche\">{{hidePorsche?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePorsche\"\n          [options]='porscheOptions'\n          (toggle)='onApprovalChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Gm</div>\n          <div class=\"approval_fold\" (click)=\"hideGm=!hideGm\">{{hideGm?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideGm\"\n          [options]='gmOptions'\n          (toggle)='onApprovalChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Koenig</div>\n          <div class=\"approval_fold\" (click)=\"hideKoenig=!hideKoenig\">{{hideKoenig?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideKoenig\"\n          [options]='koenigOptions'\n          (toggle)='onApprovalChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Chrysler</div>\n        <div class=\"approval_fold\" (click)=\"hideChrysler=!hideChrysler\">{{hideChrysler?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideChrysler\"\n        [options]='chryslerOptions'\n        (toggle)='onApprovalChange($event, \"chryslerApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Psa</div>\n          <div class=\"approval_fold\" (click)=\"hidePsa=!hidePsa\">{{hidePsa?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePsa\"\n          [options]='psaOptions'\n          (toggle)='onApprovalChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Volvo</div>\n          <div class=\"approval_fold\" (click)=\"hideVolvo=!hideVolvo\">{{hideVolvo?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideVolvo\"\n          [options]='volvoOptions'\n          (toggle)='onApprovalChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaguar</div>\n          <div class=\"approval_fold\" (click)=\"hideJaguar=!hideJaguar\">{{hideJaguar?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaguar\"\n          [options]='jaguarOptions'\n          (toggle)='onApprovalChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaso</div>\n          <div class=\"approval_fold\" (click)=\"hideJaso=!hideJaso\">{{hideJaso?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaso\"\n          [options]='jasoOptions'\n          (toggle)='onApprovalChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Mazda</div>\n        <div class=\"approval_fold\" (click)=\"hideMazda=!hideMazda\">{{hideMazda?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideMazda\"\n        [options]='mazdaOptions'\n        (toggle)='onApprovalChange($event, \"mazdaApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Nissan</div>\n          <div class=\"approval_fold\" (click)=\"hideNissan=!hideNissan\">{{hideNissan?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideNissan\"\n          [options]='nissanOptions'\n          (toggle)='onApprovalChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n\n\n    </div>\n  </div>\n  <div class=\"products\">\n    <div class=\"products_header\">Список моторных масел</div>\n    <div *ngIf=\"!nonEmptyProductList\">Товаров нет</div>\n    <div class=\"products_list\" *ngIf=\"nonEmptyProductList\">\n        <div class=\"product\" *ngFor=\"let product of products| paginate: { itemsPerPage: 5, currentPage: p, totalItems: totalItems }\" (click)=\"onClickProduct(product.id)\">\n          <div *ngIf=\"product.show\">\n            <div class=\"product_name\">{{product.name}}</div>\n            <img class=\"product_img\" src=\"{{product.img}}\" alt=\"\">\n          </div>\n        </div>\n    </div>\n  </div>\n</div>\n<div class=\"pagination\">\n  <!--https://www.npmjs.com/package/ngx-pagination-->\n  <pagination-controls (pageChange)=\"p = $event\" previousLabel=\"Предыдущая\" nextLabel=\"Следующая\"></pagination-controls>\n</div>\n\n\n");
 
 /***/ }),
 
@@ -538,6 +538,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div *ngFor='let item of options'>\n  <div *ngIf=\"!item.fade\">\n    <input type='checkbox' [(ngModel)]='item.checked' (change)='onToggle()'>{{item.label}}\n  </div>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/shared/pagination/pagination/pagination.component.html":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/shared/pagination/pagination/pagination.component.html ***!
+  \**********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"pagination\" *ngIf=\"count > 0\">\n  <span>{{ getMin() }} of {{ getMax() }} of {{ count }}</span>\n  <span>{{ totalPages() }} pages</span>\n<!--  <button (click)=\"onPrev()\" [disabled]=\"page === 1 || loading\">Previous</button>-->\n  <button *ngFor=\"let pageNum of getPages()\" (click)=\"onPage(pageNum)\"></button>\n  <!--<button (click)=\"onNext()\" [disabled]=\"lastPage() || loading\">Next</button>-->\n</div>\n");
 
 /***/ }),
 
@@ -7054,7 +7067,7 @@ let AdminParamsVolumeComponent = class AdminParamsVolumeComponent {
         this.pVolumes = [];
         this.addChangeVolume = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormGroup"]({
             id: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
-            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required)
+            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].pattern('^[0-9]*$')])
         });
     }
     get volumes() {
@@ -7073,6 +7086,8 @@ let AdminParamsVolumeComponent = class AdminParamsVolumeComponent {
         this.whatHaveToDo = 'add';
         this.updateVolumes();
     }
+    get fc() { return this.addChangeVolume.controls; }
+    get f() { return this.addChangeVolume; }
     updateVolumes() {
         this.mainProperties.volume('all').subscribe(resp => {
             this.pVolumes = resp;
@@ -8281,7 +8296,7 @@ ImagesPickerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  width: 100%;\n}\n.main_content {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.main_content .filters {\n  margin-right: 10px;\n  width: 19%;\n}\n.main_content .filters .filter_unit {\n  display: block;\n  color: #0a196f;\n  text-transform: uppercase;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  font-family: 'Varela Round', sans-serif;\n}\n.main_content .filters span {\n  cursor: pointer;\n}\n.main_content .filters .approval {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  text-transform: uppercase;\n  margin-bottom: 5px;\n  margin-top: 5px;\n}\n.main_content .filters .approval .approval_data {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n}\n.main_content .filters .approval .approval_data .approval_name {\n  color: red;\n}\n.main_content .filters .approval .approval_data .approval_fold {\n  cursor: pointer;\n  margin-left: 10px;\n  color: blue;\n}\n.main_content .products {\n  width: 80%;\n}\n.main_content .products .products_header {\n  font-size: 24px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 10px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n}\n.main_content .products .products_list {\n  width: 100%;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  justify-content: space-around;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row wrap;\n}\n.main_content .products .products_list .product {\n  margin: 5px;\n  font-family: 'Oswald';\n  text-transform: uppercase;\n  color: #626262;\n  padding: 5px;\n  border: 1px solid #b7b7b7;\n  box-sizing: border-box;\n  width: 310px;\n  cursor: pointer;\n}\n.main_content .products .products_list .product:hover {\n  color: #1b6ab8;\n  border-color: #1b6ab8;\n}\n.main_content .products .products_list .product .product_name {\n  border-bottom: 1px solid #b7b7b7;\n  margin-bottom: 5px;\n}\n@media (min-width: 480px) and (max-width: 640px) {\n  .main_content .filters {\n    width: 25%;\n  }\n  .main_content .filters .filter_unit {\n    font-size: 14px;\n  }\n  .main_content .products {\n    width: 75%;\n  }\n  .main_content .products .products_header {\n    font-size: 20px;\n    text-align: center;\n  }\n  .main_content .products .products_list .product {\n    width: 210px;\n  }\n  .main_content .products .products_list .product .product_name {\n    font-size: 14px;\n  }\n  .main_content .products .products_list .product .product_img {\n    width: 200px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wcm9kdWN0cy9vaWxzL0M6L1VzZXJzL0l2YW4vRGVza3RvcC9vaWxzL29pbHMvc3JjL2FwcC9tb2R1bGVzL3Byb2R1Y3RzL29pbHMvb2lscy5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvbW9kdWxlcy9wcm9kdWN0cy9vaWxzL29pbHMuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFBTyxXQUFBO0FDQ1A7QURBQTtFQUNFLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEscUJBQUE7RUFDQSxXQUFBO0FDRUY7QURMQTtFQUtJLGtCQUFBO0VBQ0EsVUFBQTtBQ0dKO0FEVEE7RUFRTSxjQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLHVDQUFBO0FDSU47QURqQkE7RUFnQk0sZUFBQTtBQ0lOO0FEcEJBO0VBb0JNLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSx3QkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FDR047QUQxQkE7RUF5QlEsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDhCQUFBO0VBQUEsNkJBQUE7VUFBQSxxQkFBQTtBQ0lSO0FEOUJBO0VBNEJVLFVBQUE7QUNLVjtBRGpDQTtFQStCVSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxXQUFBO0FDS1Y7QUR0Q0E7RUF1Q0ksVUFBQTtBQ0VKO0FEekNBO0VBeUNNLGVBQUE7RUFDQSxnQ0FBQTtFQUNBLGNBQUE7RUFDQSxtQkFBQTtFQUNBLDhDQUFBO0VBQ0EsaUJBQUE7QUNHTjtBRGpEQTtFQWlETSxXQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDZCQUFBO0VBQ0EsOEJBQUE7RUFBQSw2QkFBQTtVQUFBLG1CQUFBO0FDR047QUR2REE7RUFzRFEsV0FBQTtFQUNBLHFCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtBQ0lSO0FESFE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7QUNLVjtBRHRFQTtFQW9FVSxnQ0FBQTtFQUNBLGtCQUFBO0FDS1Y7QURFQTtFQUNFO0lBRUksVUFBQTtFQ0RKO0VEREE7SUFJTSxlQUFBO0VDQU47RURKQTtJQWtCSSxVQUFBO0VDWEo7RURQQTtJQW9CTSxlQUFBO0lBQ0Esa0JBQUE7RUNWTjtFRFhBO0lBeUJRLFlBQUE7RUNYUjtFRGRBO0lBNkJVLGVBQUE7RUNaVjtFRGpCQTtJQWdDVSxZQUFBO0VDWlY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvb2lscy9vaWxzLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uLy4uL2NvbW1vblwiO1xuOmhvc3Qge3dpZHRoOiAxMDAlfVxuLm1haW5fY29udGVudHtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG4gIC5maWx0ZXJzIHtcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgd2lkdGg6IDE5JTtcbiAgICAuZmlsdGVyX3VuaXR7XG4gICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgIGNvbG9yOiBAZmlsdGVyX2ZvbnRfY29sb3I7XG4gICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgICBmb250LWZhbWlseTogQG5hdl9maWx0ZXJzX2ZvbnQ7XG4gICAgfVxuICAgIHNwYW4ge1xuICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIH1cbiAgICAuYXBwcm92YWx7XG5cbiAgICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICBtYXJnaW4tYm90dG9tOiA1cHg7XG4gICAgICBtYXJnaW4tdG9wOiA1cHg7XG4gICAgICAuYXBwcm92YWxfZGF0YXtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICAgICAgLmFwcHJvdmFsX25hbWUge1xuICAgICAgICAgIGNvbG9yOiByZWQ7XG4gICAgICAgIH1cbiAgICAgICAgLmFwcHJvdmFsX2ZvbGQge1xuICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgICBtYXJnaW4tbGVmdDogMTBweDtcbiAgICAgICAgICBjb2xvcjogYmx1ZTtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuICAucHJvZHVjdHN7XG4gICAgd2lkdGg6IDgwJTtcbiAgICAucHJvZHVjdHNfaGVhZGVye1xuICAgICAgZm9udC1zaXplOiAyNHB4O1xuICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAgICAgY29sb3I6IEBtYWluX25hdl9mb250X2NvbG9yO1xuICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgIGZvbnQtZmFtaWx5OiBAaGVhZGVyc19mb250O1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICAgIC5wcm9kdWN0c19saXN0e1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xuICAgICAgZmxleC1mbG93OiByb3cgd3JhcDtcbiAgICAgIC5wcm9kdWN0IHtcbiAgICAgICAgbWFyZ2luOiA1cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiBAcHJvZHVjdHNfbmFtZV9mb250O1xuICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICBjb2xvcjogQG1haW5fY29udGVudF9mb250X2NvbG9yO1xuICAgICAgICBwYWRkaW5nOiA1cHg7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgICAgICB3aWR0aDogMzEwcHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgJjpob3ZlcntcbiAgICAgICAgICBjb2xvcjogIzFiNmFiODtcbiAgICAgICAgICBib3JkZXItY29sb3I6IEBtYWluX2NvbnRlbnRfYm9yZGVyX2hvdmVyO1xuICAgICAgICB9XG4gICAgICAgIC5wcm9kdWN0X25hbWV7XG4gICAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAgICAgICAgIG1hcmdpbi1ib3R0b206IDVweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuXG5AbWVkaWEgKG1pbi13aWR0aDogNDgwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCl7XG4gIC5tYWluX2NvbnRlbnR7XG4gICAgLmZpbHRlcnMge1xuICAgICAgd2lkdGg6IDI1JTtcbiAgICAgIC5maWx0ZXJfdW5pdHtcbiAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgfVxuICAgICAgc3BhbiB7XG4gICAgICB9XG4gICAgICAuYXBwcm92YWx7XG4gICAgICAgIC5hcHByb3ZhbF9kYXRhe1xuICAgICAgICAgIC5hcHByb3ZhbF9uYW1lIHtcbiAgICAgICAgICB9XG4gICAgICAgICAgLmFwcHJvdmFsX2ZvbGQge1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgICAucHJvZHVjdHN7XG4gICAgICB3aWR0aDogNzUlO1xuICAgICAgLnByb2R1Y3RzX2hlYWRlcntcbiAgICAgICAgZm9udC1zaXplOiAyMHB4O1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICB9XG4gICAgICAucHJvZHVjdHNfbGlzdHtcbiAgICAgICAgLnByb2R1Y3Qge1xuICAgICAgICAgIHdpZHRoOiAyMTBweDtcbiAgICAgICAgICAmOmhvdmVye1xuICAgICAgICAgIH1cbiAgICAgICAgICAucHJvZHVjdF9uYW1le1xuICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICAucHJvZHVjdF9pbWd7XG4gICAgICAgICAgICB3aWR0aDogMjAwcHg7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLm1haW5fY29udGVudCB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xufVxuLm1haW5fY29udGVudCAuZmlsdGVycyB7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgd2lkdGg6IDE5JTtcbn1cbi5tYWluX2NvbnRlbnQgLmZpbHRlcnMgLmZpbHRlcl91bml0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIGNvbG9yOiAjMGExOTZmO1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBmb250LWZhbWlseTogJ1ZhcmVsYSBSb3VuZCcsIHNhbnMtc2VyaWY7XG59XG4ubWFpbl9jb250ZW50IC5maWx0ZXJzIHNwYW4ge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG4ubWFpbl9jb250ZW50IC5maWx0ZXJzIC5hcHByb3ZhbCB7XG4gIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICBtYXJnaW4tdG9wOiA1cHg7XG59XG4ubWFpbl9jb250ZW50IC5maWx0ZXJzIC5hcHByb3ZhbCAuYXBwcm92YWxfZGF0YSB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG59XG4ubWFpbl9jb250ZW50IC5maWx0ZXJzIC5hcHByb3ZhbCAuYXBwcm92YWxfZGF0YSAuYXBwcm92YWxfbmFtZSB7XG4gIGNvbG9yOiByZWQ7XG59XG4ubWFpbl9jb250ZW50IC5maWx0ZXJzIC5hcHByb3ZhbCAuYXBwcm92YWxfZGF0YSAuYXBwcm92YWxfZm9sZCB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gIGNvbG9yOiBibHVlO1xufVxuLm1haW5fY29udGVudCAucHJvZHVjdHMge1xuICB3aWR0aDogODAlO1xufVxuLm1haW5fY29udGVudCAucHJvZHVjdHMgLnByb2R1Y3RzX2hlYWRlciB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGNvbG9yOiAjNWE1YTVhO1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICBmb250LWZhbWlseTogJ09wZW4gU2FucyBDb25kZW5zZWQnLCBzYW5zLXNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIC5wcm9kdWN0c19saXN0IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgZmxleC1mbG93OiByb3cgd3JhcDtcbn1cbi5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIC5wcm9kdWN0c19saXN0IC5wcm9kdWN0IHtcbiAgbWFyZ2luOiA1cHg7XG4gIGZvbnQtZmFtaWx5OiAnT3N3YWxkJztcbiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgY29sb3I6ICM2MjYyNjI7XG4gIHBhZGRpbmc6IDVweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2I3YjdiNztcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgd2lkdGg6IDMxMHB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG4ubWFpbl9jb250ZW50IC5wcm9kdWN0cyAucHJvZHVjdHNfbGlzdCAucHJvZHVjdDpob3ZlciB7XG4gIGNvbG9yOiAjMWI2YWI4O1xuICBib3JkZXItY29sb3I6ICMxYjZhYjg7XG59XG4ubWFpbl9jb250ZW50IC5wcm9kdWN0cyAucHJvZHVjdHNfbGlzdCAucHJvZHVjdCAucHJvZHVjdF9uYW1lIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbn1cbkBtZWRpYSAobWluLXdpZHRoOiA0ODBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KSB7XG4gIC5tYWluX2NvbnRlbnQgLmZpbHRlcnMge1xuICAgIHdpZHRoOiAyNSU7XG4gIH1cbiAgLm1haW5fY29udGVudCAuZmlsdGVycyAuZmlsdGVyX3VuaXQge1xuICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgfVxuICAubWFpbl9jb250ZW50IC5wcm9kdWN0cyB7XG4gICAgd2lkdGg6IDc1JTtcbiAgfVxuICAubWFpbl9jb250ZW50IC5wcm9kdWN0cyAucHJvZHVjdHNfaGVhZGVyIHtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB9XG4gIC5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIC5wcm9kdWN0c19saXN0IC5wcm9kdWN0IHtcbiAgICB3aWR0aDogMjEwcHg7XG4gIH1cbiAgLm1haW5fY29udGVudCAucHJvZHVjdHMgLnByb2R1Y3RzX2xpc3QgLnByb2R1Y3QgLnByb2R1Y3RfbmFtZSB7XG4gICAgZm9udC1zaXplOiAxNHB4O1xuICB9XG4gIC5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIC5wcm9kdWN0c19saXN0IC5wcm9kdWN0IC5wcm9kdWN0X2ltZyB7XG4gICAgd2lkdGg6IDIwMHB4O1xuICB9XG59XG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  width: 100%;\n}\n.main_content {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.main_content .filters {\n  margin-right: 10px;\n  width: 19%;\n}\n.main_content .filters .filter_unit {\n  display: block;\n  color: #0a196f;\n  text-transform: uppercase;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  font-family: 'Varela Round', sans-serif;\n}\n.main_content .filters span {\n  cursor: pointer;\n}\n.main_content .filters .approval {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  text-transform: uppercase;\n  margin-bottom: 5px;\n  margin-top: 5px;\n}\n.main_content .filters .approval .approval_data {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n}\n.main_content .filters .approval .approval_data .approval_name {\n  color: red;\n}\n.main_content .filters .approval .approval_data .approval_fold {\n  cursor: pointer;\n  margin-left: 10px;\n  color: blue;\n}\n.main_content .products {\n  width: 80%;\n}\n.main_content .products .products_header {\n  width: 100%;\n  text-align: center;\n  font-size: 24px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 20px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n}\n.main_content .products .products_list {\n  width: 100%;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  justify-content: space-around;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row wrap;\n}\n.main_content .products .products_list .product {\n  margin: 5px;\n  font-family: 'Oswald';\n  text-transform: uppercase;\n  color: #626262;\n  padding: 5px;\n  border: 1px solid #b7b7b7;\n  box-sizing: border-box;\n  width: 310px;\n  cursor: pointer;\n}\n.main_content .products .products_list .product:hover {\n  color: #1b6ab8;\n  border-color: #1b6ab8;\n}\n.main_content .products .products_list .product .product_name {\n  border-bottom: 1px solid #b7b7b7;\n  margin-bottom: 5px;\n}\n@media (min-width: 480px) and (max-width: 640px) {\n  .main_content .filters {\n    width: 25%;\n  }\n  .main_content .filters .filter_unit {\n    font-size: 14px;\n  }\n  .main_content .products {\n    width: 75%;\n  }\n  .main_content .products .products_header {\n    font-size: 20px;\n    text-align: center;\n  }\n  .main_content .products .products_list .product {\n    width: 210px;\n  }\n  .main_content .products .products_list .product .product_name {\n    font-size: 14px;\n  }\n  .main_content .products .products_list .product .product_img {\n    width: 200px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wcm9kdWN0cy9vaWxzL0M6L1VzZXJzL0l2YW4vRGVza3RvcC9vaWxzL29pbHMvc3JjL2FwcC9tb2R1bGVzL3Byb2R1Y3RzL29pbHMvb2lscy5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvbW9kdWxlcy9wcm9kdWN0cy9vaWxzL29pbHMuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFBTyxXQUFBO0FDQ1A7QURBQTtFQUNFLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEscUJBQUE7RUFDQSxXQUFBO0FDRUY7QURMQTtFQUtJLGtCQUFBO0VBQ0EsVUFBQTtBQ0dKO0FEVEE7RUFRTSxjQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLHVDQUFBO0FDSU47QURqQkE7RUFnQk0sZUFBQTtBQ0lOO0FEcEJBO0VBb0JNLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSx3QkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FDR047QUQxQkE7RUF5QlEsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDhCQUFBO0VBQUEsNkJBQUE7VUFBQSxxQkFBQTtBQ0lSO0FEOUJBO0VBNEJVLFVBQUE7QUNLVjtBRGpDQTtFQStCVSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxXQUFBO0FDS1Y7QUR0Q0E7RUF1Q0ksVUFBQTtBQ0VKO0FEekNBO0VBeUNNLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxnQ0FBQTtFQUNBLGNBQUE7RUFDQSxtQkFBQTtFQUNBLDhDQUFBO0VBQ0EsaUJBQUE7QUNHTjtBRG5EQTtFQW1ETSxXQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDZCQUFBO0VBQ0EsOEJBQUE7RUFBQSw2QkFBQTtVQUFBLG1CQUFBO0FDR047QUR6REE7RUF3RFEsV0FBQTtFQUNBLHFCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtBQ0lSO0FESFE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7QUNLVjtBRHhFQTtFQXNFVSxnQ0FBQTtFQUNBLGtCQUFBO0FDS1Y7QURFQTtFQUNFO0lBRUksVUFBQTtFQ0RKO0VEREE7SUFJTSxlQUFBO0VDQU47RURKQTtJQWtCSSxVQUFBO0VDWEo7RURQQTtJQW9CTSxlQUFBO0lBQ0Esa0JBQUE7RUNWTjtFRFhBO0lBeUJRLFlBQUE7RUNYUjtFRGRBO0lBNkJVLGVBQUE7RUNaVjtFRGpCQTtJQWdDVSxZQUFBO0VDWlY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvb2lscy9vaWxzLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uLy4uL2NvbW1vblwiO1xuOmhvc3Qge3dpZHRoOiAxMDAlfVxuLm1haW5fY29udGVudHtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG4gIC5maWx0ZXJzIHtcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgd2lkdGg6IDE5JTtcbiAgICAuZmlsdGVyX3VuaXR7XG4gICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgIGNvbG9yOiBAZmlsdGVyX2ZvbnRfY29sb3I7XG4gICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgICBmb250LWZhbWlseTogQG5hdl9maWx0ZXJzX2ZvbnQ7XG4gICAgfVxuICAgIHNwYW4ge1xuICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIH1cbiAgICAuYXBwcm92YWx7XG5cbiAgICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICBtYXJnaW4tYm90dG9tOiA1cHg7XG4gICAgICBtYXJnaW4tdG9wOiA1cHg7XG4gICAgICAuYXBwcm92YWxfZGF0YXtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICAgICAgLmFwcHJvdmFsX25hbWUge1xuICAgICAgICAgIGNvbG9yOiByZWQ7XG4gICAgICAgIH1cbiAgICAgICAgLmFwcHJvdmFsX2ZvbGQge1xuICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgICBtYXJnaW4tbGVmdDogMTBweDtcbiAgICAgICAgICBjb2xvcjogYmx1ZTtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuICAucHJvZHVjdHN7XG4gICAgd2lkdGg6IDgwJTtcbiAgICAucHJvZHVjdHNfaGVhZGVye1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICBmb250LXNpemU6IDI0cHg7XG4gICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgICBjb2xvcjogQG1haW5fbmF2X2ZvbnRfY29sb3I7XG4gICAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICAgICAgZm9udC1mYW1pbHk6IEBoZWFkZXJzX2ZvbnQ7XG4gICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICB9XG4gICAgLnByb2R1Y3RzX2xpc3R7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG4gICAgICBmbGV4LWZsb3c6IHJvdyB3cmFwO1xuICAgICAgLnByb2R1Y3Qge1xuICAgICAgICBtYXJnaW46IDVweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBwcm9kdWN0c19uYW1lX2ZvbnQ7XG4gICAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICAgIGNvbG9yOiBAbWFpbl9jb250ZW50X2ZvbnRfY29sb3I7XG4gICAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgIHdpZHRoOiAzMTBweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAmOmhvdmVye1xuICAgICAgICAgIGNvbG9yOiAjMWI2YWI4O1xuICAgICAgICAgIGJvcmRlci1jb2xvcjogQG1haW5fY29udGVudF9ib3JkZXJfaG92ZXI7XG4gICAgICAgIH1cbiAgICAgICAgLnByb2R1Y3RfbmFtZXtcbiAgICAgICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgICAgICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG5cbkBtZWRpYSAobWluLXdpZHRoOiA0ODBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KXtcbiAgLm1haW5fY29udGVudHtcbiAgICAuZmlsdGVycyB7XG4gICAgICB3aWR0aDogMjUlO1xuICAgICAgLmZpbHRlcl91bml0e1xuICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICB9XG4gICAgICBzcGFuIHtcbiAgICAgIH1cbiAgICAgIC5hcHByb3ZhbHtcbiAgICAgICAgLmFwcHJvdmFsX2RhdGF7XG4gICAgICAgICAgLmFwcHJvdmFsX25hbWUge1xuICAgICAgICAgIH1cbiAgICAgICAgICAuYXBwcm92YWxfZm9sZCB7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICAgIC5wcm9kdWN0c3tcbiAgICAgIHdpZHRoOiA3NSU7XG4gICAgICAucHJvZHVjdHNfaGVhZGVye1xuICAgICAgICBmb250LXNpemU6IDIwcHg7XG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIH1cbiAgICAgIC5wcm9kdWN0c19saXN0e1xuICAgICAgICAucHJvZHVjdCB7XG4gICAgICAgICAgd2lkdGg6IDIxMHB4O1xuICAgICAgICAgICY6aG92ZXJ7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5wcm9kdWN0X25hbWV7XG4gICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5wcm9kdWN0X2ltZ3tcbiAgICAgICAgICAgIHdpZHRoOiAyMDBweDtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgd2lkdGg6IDEwMCU7XG59XG4ubWFpbl9jb250ZW50IHtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG59XG4ubWFpbl9jb250ZW50IC5maWx0ZXJzIHtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB3aWR0aDogMTklO1xufVxuLm1haW5fY29udGVudCAuZmlsdGVycyAuZmlsdGVyX3VuaXQge1xuICBkaXNwbGF5OiBibG9jaztcbiAgY29sb3I6ICMwYTE5NmY7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGZvbnQtZmFtaWx5OiAnVmFyZWxhIFJvdW5kJywgc2Fucy1zZXJpZjtcbn1cbi5tYWluX2NvbnRlbnQgLmZpbHRlcnMgc3BhbiB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5tYWluX2NvbnRlbnQgLmZpbHRlcnMgLmFwcHJvdmFsIHtcbiAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBtYXJnaW4tYm90dG9tOiA1cHg7XG4gIG1hcmdpbi10b3A6IDVweDtcbn1cbi5tYWluX2NvbnRlbnQgLmZpbHRlcnMgLmFwcHJvdmFsIC5hcHByb3ZhbF9kYXRhIHtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbn1cbi5tYWluX2NvbnRlbnQgLmZpbHRlcnMgLmFwcHJvdmFsIC5hcHByb3ZhbF9kYXRhIC5hcHByb3ZhbF9uYW1lIHtcbiAgY29sb3I6IHJlZDtcbn1cbi5tYWluX2NvbnRlbnQgLmZpbHRlcnMgLmFwcHJvdmFsIC5hcHByb3ZhbF9kYXRhIC5hcHByb3ZhbF9mb2xkIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBtYXJnaW4tbGVmdDogMTBweDtcbiAgY29sb3I6IGJsdWU7XG59XG4ubWFpbl9jb250ZW50IC5wcm9kdWN0cyB7XG4gIHdpZHRoOiA4MCU7XG59XG4ubWFpbl9jb250ZW50IC5wcm9kdWN0cyAucHJvZHVjdHNfaGVhZGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC1zaXplOiAyNHB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2I3YjdiNztcbiAgY29sb3I6ICM1YTVhNWE7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gIGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zIENvbmRlbnNlZCcsIHNhbnMtc2VyaWY7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuLm1haW5fY29udGVudCAucHJvZHVjdHMgLnByb2R1Y3RzX2xpc3Qge1xuICB3aWR0aDogMTAwJTtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xuICBmbGV4LWZsb3c6IHJvdyB3cmFwO1xufVxuLm1haW5fY29udGVudCAucHJvZHVjdHMgLnByb2R1Y3RzX2xpc3QgLnByb2R1Y3Qge1xuICBtYXJnaW46IDVweDtcbiAgZm9udC1mYW1pbHk6ICdPc3dhbGQnO1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBjb2xvcjogIzYyNjI2MjtcbiAgcGFkZGluZzogNXB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjYjdiN2I3O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICB3aWR0aDogMzEwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIC5wcm9kdWN0c19saXN0IC5wcm9kdWN0OmhvdmVyIHtcbiAgY29sb3I6ICMxYjZhYjg7XG4gIGJvcmRlci1jb2xvcjogIzFiNmFiODtcbn1cbi5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIC5wcm9kdWN0c19saXN0IC5wcm9kdWN0IC5wcm9kdWN0X25hbWUge1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2I3YjdiNztcbiAgbWFyZ2luLWJvdHRvbTogNXB4O1xufVxuQG1lZGlhIChtaW4td2lkdGg6IDQ4MHB4KSBhbmQgKG1heC13aWR0aDogNjQwcHgpIHtcbiAgLm1haW5fY29udGVudCAuZmlsdGVycyB7XG4gICAgd2lkdGg6IDI1JTtcbiAgfVxuICAubWFpbl9jb250ZW50IC5maWx0ZXJzIC5maWx0ZXJfdW5pdCB7XG4gICAgZm9udC1zaXplOiAxNHB4O1xuICB9XG4gIC5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIHtcbiAgICB3aWR0aDogNzUlO1xuICB9XG4gIC5tYWluX2NvbnRlbnQgLnByb2R1Y3RzIC5wcm9kdWN0c19oZWFkZXIge1xuICAgIGZvbnQtc2l6ZTogMjBweDtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIH1cbiAgLm1haW5fY29udGVudCAucHJvZHVjdHMgLnByb2R1Y3RzX2xpc3QgLnByb2R1Y3Qge1xuICAgIHdpZHRoOiAyMTBweDtcbiAgfVxuICAubWFpbl9jb250ZW50IC5wcm9kdWN0cyAucHJvZHVjdHNfbGlzdCAucHJvZHVjdCAucHJvZHVjdF9uYW1lIHtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gIH1cbiAgLm1haW5fY29udGVudCAucHJvZHVjdHMgLnByb2R1Y3RzX2xpc3QgLnByb2R1Y3QgLnByb2R1Y3RfaW1nIHtcbiAgICB3aWR0aDogMjAwcHg7XG4gIH1cbn1cbiJdfQ== */");
 
 /***/ }),
 
@@ -8419,6 +8434,9 @@ let OilsComponent = class OilsComponent {
         this.hideMazda = true;
         this.hideNissan = true;
         this.pProductType = 1;
+        // Pagination
+        this.totalItems = 0;
+        this.p = 1;
         this.approvalsArray = ['Mb', 'Bmw', 'Ford', 'Fiat', 'Ren', 'Vw', 'Porsche', 'Gm', 'Koenig', 'Chrysler', 'Psa', 'Volvo', 'Jaguar', 'Jaso', 'Mazda', 'Nissan'];
         this.requestItem = new _classes_RequestItem__WEBPACK_IMPORTED_MODULE_9__["RequestItem"]([], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []);
     }
@@ -8740,6 +8758,8 @@ let OilsComponent = class OilsComponent {
     }
     updateOils() {
         this.productsService.oils.subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             resp.forEach(e => {
                 this.convertStrPropertiesToArray(e);
             });
@@ -8982,6 +9002,8 @@ let OilsComponent = class OilsComponent {
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             this.nonEmptyProductList = true;
             this.products = resp;
             this.products.forEach(p => {
@@ -9009,6 +9031,8 @@ let OilsComponent = class OilsComponent {
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             this.nonEmptyProductList = true;
             this.products = resp;
             this.products.forEach(p => {
@@ -9037,6 +9061,8 @@ let OilsComponent = class OilsComponent {
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             this.nonEmptyProductList = true;
             this.products = resp;
             this.products.forEach(p => {
@@ -9064,6 +9090,8 @@ let OilsComponent = class OilsComponent {
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             this.nonEmptyProductList = true;
             this.products = resp;
             this.products.forEach(p => {
@@ -9091,6 +9119,8 @@ let OilsComponent = class OilsComponent {
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             this.nonEmptyProductList = true;
             this.products = resp;
             this.products.forEach(p => {
@@ -9118,6 +9148,8 @@ let OilsComponent = class OilsComponent {
         this.nullIdsArrays();
         this.nonEmptyProductList = false;
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             this.nonEmptyProductList = true;
             this.products = resp;
             this.products.forEach(p => {
@@ -9149,6 +9181,8 @@ let OilsComponent = class OilsComponent {
         });
         const appArrayWithoutDefiner = fullAppArray.filter(e => e !== definer);
         this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+            // Summarize items for pagination;
+            this.totalItems = resp.length;
             this.nonEmptyProductList = true;
             this.products = resp;
             this.products.forEach(p => {
@@ -9285,6 +9319,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/modules/shared/shared.module.ts");
 /* harmony import */ var ngx_loading__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-loading */ "./node_modules/ngx-loading/fesm2015/ngx-loading.js");
+/* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
+
 
 
 
@@ -9317,7 +9353,7 @@ ProductsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes),
-            _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], ngx_pagination__WEBPACK_IMPORTED_MODULE_10__["NgxPaginationModule"]
         ]
     })
 ], ProductsModule);
@@ -9597,6 +9633,134 @@ CheckboxComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/modules/shared/pagination/pagination/pagination.component.less":
+/*!********************************************************************************!*\
+  !*** ./src/app/modules/shared/pagination/pagination/pagination.component.less ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvc2hhcmVkL3BhZ2luYXRpb24vcGFnaW5hdGlvbi9wYWdpbmF0aW9uLmNvbXBvbmVudC5sZXNzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/modules/shared/pagination/pagination/pagination.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/modules/shared/pagination/pagination/pagination.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: PaginationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginationComponent", function() { return PaginationComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_messages_shared_module_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/messages/shared-module.service */ "./src/app/services/messages/shared-module.service.ts");
+
+
+
+let PaginationComponent = class PaginationComponent {
+    constructor(sharedModuleMessages) {
+        this.sharedModuleMessages = sharedModuleMessages;
+        this.page = 1; // the current page
+        this.pagesToShow = 5; // how many pages between next/prev
+        this.goPrev = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.goNext = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.goPage = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    ngOnInit() {
+    }
+    getMin() {
+        return ((this.perPage * this.page) - this.perPage) + 1;
+    }
+    getMax() {
+        let max = this.perPage * this.page;
+        if (max > this.count) {
+            max = this.count;
+        }
+        return max;
+    }
+    onPage(n) {
+        this.goPage.emit(n);
+    }
+    onPrev() {
+        this.goPrev.emit(true);
+    }
+    onNext(next) {
+        this.goNext.emit(next);
+    }
+    totalPages() {
+        return Math.ceil(this.count / this.perPage) || 0;
+    }
+    lastPage() {
+        return this.perPage * this.page > this.count;
+    }
+    getPages() {
+        const c = Math.ceil(this.count / this.perPage);
+        const p = this.page || 1;
+        const pagesToShow = this.pagesToShow || 9;
+        const pages = [];
+        pages.push(p);
+        const times = pagesToShow - 1;
+        for (let i = 0; i < times; i++) {
+            if (pages.length < pagesToShow) {
+                if (Math.min.apply(null, pages) > 1) {
+                    pages.push(Math.min.apply(null, pages) - 1);
+                }
+            }
+            if (pages.length < pagesToShow) {
+                if (Math.max.apply(null, pages) < c) {
+                    pages.push(Math.max.apply(null, pages) + 1);
+                }
+            }
+        }
+        pages.sort((a, b) => a - b);
+        return pages;
+    }
+};
+PaginationComponent.ctorParameters = () => [
+    { type: _services_messages_shared_module_service__WEBPACK_IMPORTED_MODULE_2__["SharedModuleService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], PaginationComponent.prototype, "count", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], PaginationComponent.prototype, "perPage", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], PaginationComponent.prototype, "loading", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], PaginationComponent.prototype, "goPrev", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], PaginationComponent.prototype, "goNext", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], PaginationComponent.prototype, "goPage", void 0);
+PaginationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-pagination',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./pagination.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/shared/pagination/pagination/pagination.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./pagination.component.less */ "./src/app/modules/shared/pagination/pagination/pagination.component.less")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_messages_shared_module_service__WEBPACK_IMPORTED_MODULE_2__["SharedModuleService"]])
+], PaginationComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/modules/shared/shared.module.ts":
 /*!*************************************************!*\
   !*** ./src/app/modules/shared/shared.module.ts ***!
@@ -9612,6 +9776,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _checkbox_component_checkbox_component_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./checkbox-component/checkbox-component.component */ "./src/app/modules/shared/checkbox-component/checkbox-component.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _pagination_pagination_pagination_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pagination/pagination/pagination.component */ "./src/app/modules/shared/pagination/pagination/pagination.component.ts");
+
 
 
 
@@ -9621,7 +9787,7 @@ let SharedModule = class SharedModule {
 };
 SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_checkbox_component_checkbox_component_component__WEBPACK_IMPORTED_MODULE_3__["CheckboxComponentComponent"]],
+        declarations: [_checkbox_component_checkbox_component_component__WEBPACK_IMPORTED_MODULE_3__["CheckboxComponentComponent"], _pagination_pagination_pagination_component__WEBPACK_IMPORTED_MODULE_5__["PaginationComponent"]],
         imports: [
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -10900,6 +11066,34 @@ AuthMessagesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
 ], AuthMessagesService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/messages/shared-module.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/services/messages/shared-module.service.ts ***!
+  \************************************************************/
+/*! exports provided: SharedModuleService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModuleService", function() { return SharedModuleService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let SharedModuleService = class SharedModuleService {
+    constructor() { }
+};
+SharedModuleService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], SharedModuleService);
 
 
 

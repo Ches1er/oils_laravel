@@ -7,8 +7,10 @@ interface ServiceApiMainProperties {
     public function getApi($definer);
     public function getViscosity($definer);
     public function getVolume($definer);
+    public function getIlsac($definer);
     public function addVolume(array $data);
     public function addViscosity(array $data);
     public function addAcea(array $data);
     public function addApi(array $data);
+    public function addIlsac(array $data);
 }

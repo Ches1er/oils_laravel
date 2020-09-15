@@ -49,6 +49,16 @@ class Goods_oils extends Model
         }
         return $api_array;
     }
+    public function Ilsac():array {
+        $array = [];
+        $collection = $this->hasManyThrough(Ilsac::class,
+            Goods_ilsac::class,
+            'id_goods', 'id', 'id', 'id_ilsac')->get();
+        foreach ($collection as $item) {
+            $array[]=$item;
+        }
+        return $array;
+    }
 
     public function MbApproval(): array {
         $approvals_array = [];
