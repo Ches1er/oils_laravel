@@ -53,6 +53,14 @@ class DBServiceApiGoodsService implements ServiceApiGoods
             }
             $goods = $goods->whereIn('id', $goods_arr);
         }
+        if ($data['ilsac'][0] !== ''){
+            $ilsac = DB::table('goods_ilsac')->whereIn('id_ilsac',$data['ilsac'])->get();
+            $goods_arr = [];
+            foreach ($ilsac as $unit){
+                array_push($goods_arr, $unit->id_goods);
+            }
+            $goods = $goods->whereIn('id', $goods_arr);
+        }
 
         // Approvals
         foreach ($this->approvalsArray as $item){

@@ -29,6 +29,9 @@ trait getObjWithAddProperties
                 $object = $this->addAceaStr($object);
                 // Api
                 $object = $this->addApiStr($object);
+                // Ilsac
+                $object = $this->addIlsacStr($object);
+
                 // Approvals
                     //Mb
                 $object = $this->addMbStr($object);
@@ -340,6 +343,17 @@ trait getObjWithAddProperties
             }, $acea_array);
             $acea_str = implode(',',$acea_id_array);
             $object->acea = $acea_str;
+        return $object;
+    }
+
+    private function addIlsacStr($object){
+        /** @var Goods_oils $object */
+        $array = $object->Ilsac();
+        $id_array = array_map(function($e){
+            return $e->id;
+        }, $array);
+        $str = implode(',',$id_array);
+        $object->ilsac = $str;
         return $object;
     }
 

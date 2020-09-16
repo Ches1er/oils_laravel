@@ -22,7 +22,7 @@ class ApiGoodsController extends Controller
         return json_encode($this->goodsService->getGoodsOils());
     }
     public function actionGetGoodsOilsWProp(Request $request){
-        $data = $request->only('brands','base','api','acea',
+        $data = $request->only('brands','base','api','acea', 'ilsac',
             'mb','bmw','fiat','ford', 'ren','vw','porsche',
             'gm','koenig', 'chrysler','psa', 'volvo',
             'jaguar','jaso','mazda', 'nissan',
