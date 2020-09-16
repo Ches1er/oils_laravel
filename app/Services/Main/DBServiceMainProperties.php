@@ -163,6 +163,15 @@ class DBServiceMainProperties implements ServiceApiMainProperties
 
     public function addIlsac(array $data)
     {
-        // TODO: Implement addIlsac() method.
+        // If exists
+        if (Ilsac::where('name',$data['name'])
+                ->first() && $data['action']==='add') return ['response'=>'this object exists'];
+
+        // Create-update
+        if (Ilsac::updateOrCreate(['id'=> $data['id']],['name'=>$data['name']])){
+            if ($data['action']==='update')return ['response'=>'update success'];
+            else return ['response'=>'insert success'];
+        }
+        return ['response'=>'error'];
     }
 }

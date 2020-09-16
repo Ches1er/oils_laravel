@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php" afterDir="false" />
-    </list>
+    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBServiceApiGoodsService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBServiceApiGoodsService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1497">
-              <caret line="165" column="37" selection-start-line="165" selection-start-column="37" selection-end-line="165" selection-end-column="37" />
+            <state relative-caret-position="529">
+              <caret line="61" column="55" lean-forward="true" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
               <folding>
                 <element signature="e#119#153#0#PHP" expanded="true" />
               </folding>
@@ -71,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiGoodsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApiGoodsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
@@ -127,7 +124,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/ApiAuthController.php" />
         <option value="$PROJECT_DIR$/../содержимое этой папки не менять/.htaccess" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Contracts/ServiceApiMainProperties.php" />
@@ -139,6 +135,7 @@
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php" />
         <option value="$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" />
+        <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" />
       </list>
     </option>
   </component>
@@ -374,12 +371,12 @@
       <workItem from="1597232543109" duration="26719000" />
       <workItem from="1598516486530" duration="20916000" />
       <workItem from="1599036166333" duration="16414000" />
-      <workItem from="1599466046613" duration="25962000" />
+      <workItem from="1599466046613" duration="26828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348354000" />
+    <option name="totallyTimeSpent" value="349220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -391,8 +388,8 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13384113" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14392324" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13384113" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14392324" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13326226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -706,20 +703,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1497">
-          <caret line="165" column="37" selection-start-line="165" selection-start-column="37" selection-end-line="165" selection-end-column="37" />
-          <folding>
-            <element signature="e#119#153#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="61" column="55" lean-forward="true" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+          <folding>
+            <element signature="e#119#153#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
