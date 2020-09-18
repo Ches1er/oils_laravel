@@ -11,6 +11,7 @@ namespace App\Services\Main;
 
 use App\Contracts\ServiceApiBrands;
 use App\Models\Brand;
+use App\Models\Goods_oils;
 use App\Models\Image;
 use App\Models\Product_type;
 use App\Models\Product_type_brand;
@@ -80,11 +81,31 @@ class DBServiceApiBrandsApiService implements ServiceApiBrands
         return ['response'=>'error'];
     }
 
-    public function getBrandsByProductType(int $producttypeid)
+    /**
+     * @param int $producttypeid
+     * @param string $definer
+     * @return mixed
+     */
+    public function getBrandsByProductType(int $producttypeid, string $definer=null)
     {
         $producttype = Product_type::where('id', $producttypeid)->first();
-        $brands = $this->getWithImagePath($producttype->Brands());
-        return $brands;
+        $brand_ids = [];
+        $brands = [];
+        if ($definer === 'prod') {
+            $goods = Goods_oils::all();
+            foreach ($goods as $good){
+                array_push($brand_ids, $good->id_brand);
+            }
+            $brands_ = $this->getWithImagePath($producttype->Brands());
+            foreach ($brands_ as $brand){
+                if (in_array($brand->id,$brand_ids)){
+                    array_push($brands, $brand);
+                }
+            }
+            return $brands;
+        }
+        return $this->getWithImagePath($producttype->Brands());
+
     }
 
     public function getAutoBrands()

@@ -13,6 +13,6 @@ interface ServiceApiBrands
 {
     public function getBrands();
     public function getAutoBrands();
-    public function getBrandsByProductType(int $producttypeid);
+    public function getBrandsByProductType(int $producttypeid, string $definer=null);
     public function addBrand(array $data);
 }

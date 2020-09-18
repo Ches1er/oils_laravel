@@ -62,7 +62,7 @@ Route::prefix('products_types')->group(function(){
 // Brand
 Route::prefix('brands')->group(function (){
     Route::get('/all', 'Main\ApiBrandsController@actionShowBrands');
-    Route::get('/bytype/{producttypeid}', 'Main\ApiBrandsController@actionShowBrandsByType');
+    Route::get('/bytype/{producttypeid}/{definer}', 'Main\ApiBrandsController@actionShowBrandsByType');
     Route::post('/add', 'Main\ApiBrandsController@actionAddBrand');
 });
 

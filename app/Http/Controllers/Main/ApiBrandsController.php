@@ -23,8 +23,8 @@ class ApiBrandsController extends Controller
     public function actionShowBrands(){
         return json_encode($this->brandsService->getBrands());
     }
-    public function actionShowBrandsByType($producttypeid){
-        return json_encode($this->brandsService->getBrandsByProductType($producttypeid));
+    public function actionShowBrandsByType($producttypeid, $definer){
+        return json_encode($this->brandsService->getBrandsByProductType($producttypeid, $definer));
     }
     public function actionAddBrand(Request $request) {
         $data = $request->only('id','action','name','id_image','types');
