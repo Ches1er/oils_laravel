@@ -238,7 +238,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"header_title\">\n  <div class=\"header_logo\">\n    <!--<img *ngIf=\"logo\" src=\"{{logo.path}}\" alt=\"\">-->\n  </div>\n  <div class=\"header_text\">\n    <div class=\"header_text_main\">\n      Oil Express\n    </div>\n  </div>\n\n</div>\n<div class=\"header_nav\">\n  <div class=\"header_menu\">\n    <app-header-nav></app-header-nav>\n  </div>\n  <div class=\"header_find\">\n    <app-header-search></app-header-search>\n  </div>\n  <div class=\"header_auth\">\n    <app-header-auth-block></app-header-auth-block>\n  </div>\n</div>\n\n";
+    __webpack_exports__["default"] = "<div class=\"header_title\">\n  <div class=\"header_logo\">\n    <img src=\"http://oilexpress.online/img/logo.jpg\" alt=\"\">\n  </div>\n  <div class=\"header_text\">\n    <div class=\"header_text_main\">\n      Oil Express\n    </div>\n  </div>\n\n</div>\n<div class=\"header_nav\">\n  <div class=\"header_menu\">\n    <app-header-nav></app-header-nav>\n  </div>\n  <div class=\"header_find\">\n    <app-header-search></app-header-search>\n  </div>\n  <div class=\"header_auth\">\n    <app-header-auth-block></app-header-auth-block>\n  </div>\n</div>\n\n";
     /***/
   },
 
@@ -378,7 +378,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ngx-loading [show]=\"loading\"></ngx-loading>\n<form class=\"admin_content_form\" [formGroup]=\"addChangeGoods\" (ngSubmit)=\"onChangeGoodsSubmit()\">\n  <div class=\"admin_block_header_small\">Форма добавления-изменения моторного масла</div>\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Для изменения товара, выберите его из списка</p>\n    <select name=\"\" id=\"brands\" formControlName = \"id\" (change)=\"fillInGoods($event.target.value)\">\n      <option disabled selected value> -- Выберите значение товар -- </option>\n      <option *ngFor=\"let good of goods\" value=\"{{good.id}}\">{{good.name}}</option>\n    </select>\n  </div>\n\n  <!-- Название, артикул, производитель, картинка, вязкость, объем  -->\n<div class=\"main_prop\">\n  <p class=\"admin_content_block_label\">Название, артикул, производитель, картинка, вязкость, объем</p>\n  <div class=\"main_prop_block\">\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Артикул товара</p>\n      <input class=\"admin_content_input\" type=\"text\" id=\"art\" formControlName = \"art\">\n      <div class=\"validation_error\"\n           *ngIf=\"addChangeGoods.get('art').getError('required') &&\n                (addChangeGoods.get('art').dirty || addChangeGoods.get('art').touched)\">\n        Введите пожалуйста артикул.\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Название товара</p>\n      <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n      <div class=\"validation_error\"\n           *ngIf=\"addChangeGoods.get('name').getError('required') &&\n                (addChangeGoods.get('name').dirty || addChangeGoods.get('name').touched)\">\n        Введите пожалуйста название.\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите производителя товара</p>\n      <select name=\"\" id=\"brand\" (change)='onPropertiesChange($event.target.value, \"idBrand\")' formControlName = \"idBrand\">\n        <option disabled selected value> -- Выберите производителя -- </option>\n        <option *ngFor=\"let br of brand\" value=\"{{br.id}}\">{{br.name}}</option>\n      </select>\n    </div>\n\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите картинку товара</p>\n      <div class=\"form-group\" *ngIf=\"choosenImg\">\n        <img class=\"choosenImg\" src=\"{{choosenImg.path}}\" alt=\"\">\n      </div>\n      <p class=\"admin_content_block_label_small\" *ngIf=\"!choosenImg\">\n        *Если картинка не будет выбрана, то будет установлена картинка по-умолчанию\n      </p>\n      <button class=\"admin-btn\" (click)=\"imagesPickerShow($event)\">Выберите картинку товара</button>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите объем из списка</p>\n      <select name=\"\" id=\"volume\" (change)='onPropertiesChange($event.target.value, \"idVolume\")' formControlName = \"idVolume\">\n        <option disabled selected value> -- Выберите объем -- </option>\n        <option *ngFor=\"let vol of volume\" value=\"{{vol.id}}\">{{vol.name}} л.</option>\n      </select>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите вязкость из списка</p>\n      <select name=\"\" id=\"viscosity\" (change)='onPropertiesChange($event.target.value, \"idViscosity\")' formControlName = \"idViscosity\">\n        <option disabled selected value> -- Выберите вязкость -- </option>\n        <option *ngFor=\"let visc of viscosity\" value=\"{{visc.id}}\">{{visc.name}}</option>\n      </select>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Введите короткое описание товара</p>\n      <textarea name=\"\" id=\"short_news\" cols=\"30\" rows=\"10\" formControlName = \"shortDesc\"></textarea>\n      <div class=\"validation_error\"\n           *ngIf=\"addChangeGoods.get('shortDesc').getError('required') &&\n                (addChangeGoods.get('shortDesc').dirty || addChangeGoods.get('shortDesc').touched)\">\n        Добавьте пожалуйста короткое описание товара.\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Введите полное описание товара</p>\n      <angular-editor formControlName=\"fullDesc\" [config]=\"config\" style=\"background-color: white\"></angular-editor>\n      <div class=\"validation_error\"\n           *ngIf=\"addChangeGoods.get('fullDesc').getError('required') &&\n                (addChangeGoods.get('fullDesc').dirty || addChangeGoods.get('fullDesc').touched)\">\n        Добавьте полное описание товара.\n      </div>\n    </div>\n</div>\n\n  </div>\n\n  <!-- допуски, асеа, апи -->\n\n  <div class=\"main_prop\">\n    <p class=\"admin_content_block_label\">Список основных свойств моторного масла и допуски</p>\n    <div class=\"main_prop_block\">\n\n      <!--Acea-->\n\n      <div class=\"form-group\">\n        <p *ngIf=\"acea.length>0\" class=\"admin_content_block_label\">Значения Acea</p>\n        <div class=\"validation_error\"\n             *ngIf=\"addChangeGoods.get('acea').getError('required')\">\n              Acea товара - обязательно.\n        </div>\n        <div class=\"used_types\" *ngIf=\"acea\">\n          <div *ngFor=\"let ac of acea\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения Acea</p>\n        <app-checkbox-component [options]='aceaOptions'\n                                (toggle)='onPropertiesChange($event, \"acea\")'\n                                >\n        </app-checkbox-component>\n      </div>\n\n      <!--Api-->\n\n      <div class=\"form-group\">\n        <p *ngIf=\"api.length>0\" class=\"admin_content_block_label\">Значения Api</p>\n        <div class=\"validation_error\"\n             *ngIf=\"addChangeGoods.get('api').getError('required')\">\n          Api товара - обязательно.\n        </div>\n        <div class=\"used_types\" *ngIf=\"api\">\n          <div *ngFor=\"let ac of api\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения Api</p>\n        <app-checkbox-component [options]='apiOptions'\n                                (toggle)='onPropertiesChange($event, \"api\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Mb-->\n      <div class=\"form-group\">\n        <p *ngIf=\"mbApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков MB</p>\n        <div class=\"used_types\" *ngIf=\"mbApprovals\">\n          <div *ngFor=\"let ac of mbApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков MB</p>\n        <app-checkbox-component [options]='mbApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Bmw-->\n      <div class=\"form-group\">\n        <p *ngIf=\"bmwApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков BMW</p>\n        <div class=\"used_types\" *ngIf=\"bmwApprovals\">\n          <div *ngFor=\"let ac of bmwApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков BMW</p>\n        <app-checkbox-component [options]='bmwApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Fiat-->\n      <div class=\"form-group\">\n        <p *ngIf=\"fiatApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Fiat</p>\n        <div class=\"used_types\" *ngIf=\"fiatApprovals\">\n          <div *ngFor=\"let ac of fiatApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Fiat</p>\n        <app-checkbox-component [options]='fiatApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Ford-->\n      <div class=\"form-group\">\n        <p *ngIf=\"fordApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Ford</p>\n        <div class=\"used_types\" *ngIf=\"fordApprovals\">\n          <div *ngFor=\"let ac of fordApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Ford</p>\n        <app-checkbox-component [options]='fordApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Renault-->\n      <div class=\"form-group\">\n        <p *ngIf=\"renApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Renault</p>\n        <div class=\"used_types\" *ngIf=\"renApprovals\">\n          <div *ngFor=\"let ac of renApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Renault</p>\n        <app-checkbox-component [options]='renApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Vw-->\n      <div class=\"form-group\">\n        <p *ngIf=\"vwApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков VW</p>\n        <div class=\"used_types\" *ngIf=\"vwApprovals\">\n          <div *ngFor=\"let ac of vwApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков VW</p>\n        <app-checkbox-component [options]='vwApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"vwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Porsche-->\n      <div class=\"form-group\">\n        <p *ngIf=\"porscheApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Porsche</p>\n        <div class=\"used_types\" *ngIf=\"porscheApprovals\">\n          <div *ngFor=\"let ac of porscheApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Porsche</p>\n        <app-checkbox-component [options]='porscheApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--GM-->\n      <div class=\"form-group\">\n        <p *ngIf=\"gmApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков GM</p>\n        <div class=\"used_types\" *ngIf=\"gmApprovals\">\n          <div *ngFor=\"let ac of gmApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Gm</p>\n        <app-checkbox-component [options]='gmApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--koenig-->\n      <div class=\"form-group\">\n        <p *ngIf=\"koenigApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Koenig</p>\n        <div class=\"used_types\" *ngIf=\"koenigApprovals\">\n          <div *ngFor=\"let ac of koenigApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Koenig</p>\n        <app-checkbox-component [options]='koenigApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--chrysler-->\n      <div class=\"form-group\">\n        <p *ngIf=\"chryslerApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Chrysler</p>\n        <div class=\"used_types\" *ngIf=\"chryslerApprovals\">\n          <div *ngFor=\"let ac of chryslerApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Chrysler</p>\n        <app-checkbox-component [options]='chryslerApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"chryslerApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--psa-->\n      <div class=\"form-group\">\n        <p *ngIf=\"psaApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Psa</p>\n        <div class=\"used_types\" *ngIf=\"psaApprovals\">\n          <div *ngFor=\"let ac of psaApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Psa</p>\n        <app-checkbox-component [options]='psaApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--volvo-->\n      <div class=\"form-group\">\n        <p *ngIf=\"volvoApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Volvo</p>\n        <div class=\"used_types\" *ngIf=\"volvoApprovals\">\n          <div *ngFor=\"let ac of volvoApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Volvo</p>\n        <app-checkbox-component [options]='volvoApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--jaguar-->\n      <div class=\"form-group\">\n        <p *ngIf=\"jaguarApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Jaguar</p>\n        <div class=\"used_types\" *ngIf=\"jaguarApprovals\">\n          <div *ngFor=\"let ac of jaguarApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Jaguar</p>\n        <app-checkbox-component [options]='jaguarApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--jaso-->\n      <div class=\"form-group\">\n        <p *ngIf=\"jasoApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Jaso</p>\n        <div class=\"used_types\" *ngIf=\"jasoApprovals\">\n          <div *ngFor=\"let ac of jasoApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Jaso</p>\n        <app-checkbox-component [options]='jasoApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--mazda-->\n      <div class=\"form-group\">\n        <p *ngIf=\"mazdaApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Mazda</p>\n        <div class=\"used_types\" *ngIf=\"mazdaApprovals\">\n          <div *ngFor=\"let ac of mazdaApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Mazda</p>\n        <app-checkbox-component [options]='mazdaApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"mazdaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--nissan-->\n      <div class=\"form-group\">\n        <p *ngIf=\"nissanApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Nissan</p>\n        <div class=\"used_types\" *ngIf=\"nissanApprovals\">\n          <div *ngFor=\"let ac of nissanApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Nissan</p>\n        <app-checkbox-component [options]='nissanApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"admin_content_button_block\">\n    <div *ngIf=\"addChangeGoods.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить значение</button>\n    </div>\n    <div *ngIf=\"addChangeGoods.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n    </div>\n    <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n  </div>\n</form>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n";
+    __webpack_exports__["default"] = "<ngx-loading [show]=\"loading\"></ngx-loading>\n<form class=\"admin_content_form\" [formGroup]=\"addChangeGoods\" (ngSubmit)=\"onChangeGoodsSubmit()\">\n  <div class=\"admin_block_header_small\">Форма добавления-изменения моторного масла</div>\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Для изменения товара, выберите его из списка</p>\n    <select name=\"\" id=\"brands\" formControlName = \"id\" (change)=\"fillInGoods($event.target.value)\">\n      <option disabled selected value> -- Выберите значение товар -- </option>\n      <option *ngFor=\"let good of goods\" value=\"{{good.id}}\">{{good.name}}</option>\n    </select>\n  </div>\n\n  <!-- Название, артикул, производитель, картинка, вязкость, объем  -->\n<div class=\"main_prop\">\n  <p class=\"admin_content_block_label\">Название, артикул, производитель, картинка, вязкость, объем</p>\n  <div class=\"main_prop_block\">\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Артикул товара</p>\n      <input class=\"admin_content_input\" type=\"text\" id=\"art\" formControlName = \"art\">\n      <div class=\"validation_error\"\n           *ngIf=\"fc.art.getError('required') &&\n                (fc.art.dirty || fc.art.touched)\">\n        Введите пожалуйста артикул.\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Название товара</p>\n      <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n      <div class=\"validation_error\"\n           *ngIf=\"fc.name.getError('required') &&\n                (fc.name.dirty || fc.name.touched)\">\n        Введите пожалуйста название.\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите производителя товара</p>\n      <select name=\"\" id=\"brand\" (change)='onPropertiesChange($event.target.value, \"idBrand\")' formControlName = \"idBrand\">\n        <option disabled selected value> -- Выберите производителя -- </option>\n        <option *ngFor=\"let br of brand\" value=\"{{br.id}}\">{{br.name}}</option>\n      </select>\n    </div>\n\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите картинку товара</p>\n      <div class=\"form-group\" *ngIf=\"choosenImg\">\n        <img class=\"choosenImg\" src=\"{{choosenImg.path}}\" alt=\"\">\n      </div>\n      <p class=\"admin_content_block_label_small\" *ngIf=\"!choosenImg\">\n        *Если картинка не будет выбрана, то будет установлена картинка по-умолчанию\n      </p>\n      <button class=\"admin-btn\" (click)=\"imagesPickerShow($event)\">Выберите картинку товара</button>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите объем из списка</p>\n      <select name=\"\" id=\"volume\" (change)='onPropertiesChange($event.target.value, \"idVolume\")' formControlName = \"idVolume\">\n        <option disabled selected value> -- Выберите объем -- </option>\n        <option *ngFor=\"let vol of volume\" value=\"{{vol.id}}\">{{vol.name}} л.</option>\n      </select>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Выберите вязкость из списка</p>\n      <select name=\"\" id=\"viscosity\" (change)='onPropertiesChange($event.target.value, \"idViscosity\")' formControlName = \"idViscosity\">\n        <option disabled selected value> -- Выберите вязкость -- </option>\n        <option *ngFor=\"let visc of viscosity\" value=\"{{visc.id}}\">{{visc.name}}</option>\n      </select>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Введите короткое описание товара</p>\n      <textarea name=\"\" id=\"short_news\" cols=\"30\" rows=\"10\" formControlName = \"shortDesc\"></textarea>\n      <div class=\"validation_error\"\n           *ngIf=\"fc.shortDesc.getError('required') &&\n                (fc.shortDesc.dirty || fc.shortDesc.touched)\">\n        Добавьте пожалуйста короткое описание товара.\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <p class=\"admin_content_block_label\">Введите полное описание товара</p>\n      <angular-editor formControlName=\"fullDesc\" [config]=\"config\" style=\"background-color: white\"></angular-editor>\n      <div class=\"validation_error\"\n           *ngIf=\"fc.fullDesc.getError('required') &&\n                (fc.fullDesc.dirty || fc.fullDesc.touched)\">\n        Добавьте полное описание товара.\n      </div>\n    </div>\n</div>\n\n  </div>\n\n  <!-- допуски, асеа, апи -->\n\n  <div class=\"main_prop\">\n    <p class=\"admin_content_block_label\">Список основных свойств моторного масла и допуски</p>\n    <div class=\"main_prop_block\">\n\n      <!--Acea-->\n\n      <div class=\"form-group\">\n        <p *ngIf=\"acea.length>0\" class=\"admin_content_block_label\">Значения Acea</p>\n        <div class=\"validation_error\"\n             *ngIf=\"fc.acea.getError('required')\">\n              Укажите Acea товара или (пусто).\n        </div>\n        <div class=\"used_types\" *ngIf=\"acea\">\n          <div *ngFor=\"let ac of acea\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения Acea</p>\n        <app-checkbox-component [options]='aceaOptions'\n                                (toggle)='onPropertiesChange($event, \"acea\")'\n                                >\n        </app-checkbox-component>\n      </div>\n\n      <!--Api-->\n\n      <div class=\"form-group\">\n        <p *ngIf=\"api.length>0\" class=\"admin_content_block_label\">Значения Api</p>\n        <div class=\"validation_error\"\n             *ngIf=\"fc.api.getError('required')\">\n          Укажите Api товара или (пусто).\n        </div>\n        <div class=\"used_types\" *ngIf=\"api\">\n          <div *ngFor=\"let ac of api\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения Api</p>\n        <app-checkbox-component [options]='apiOptions'\n                                (toggle)='onPropertiesChange($event, \"api\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Ilsac-->\n\n      <div class=\"form-group\">\n        <p *ngIf=\"ilsac.length>0\" class=\"admin_content_block_label\">Значения Ilsac</p>\n        <div class=\"validation_error\"\n             *ngIf=\"fc.ilsac.getError('required')\">\n          Укажите Ilsac товара или (пусто).\n        </div>\n        <div class=\"used_types\" *ngIf=\"ilsac\">\n          <div *ngFor=\"let ac of ilsac\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения Ilsac</p>\n        <app-checkbox-component [options]='ilsacOptions'\n                                (toggle)='onPropertiesChange($event, \"ilsac\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Mb-->\n      <div class=\"form-group\">\n        <p *ngIf=\"mbApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков MB</p>\n        <div class=\"used_types\" *ngIf=\"mbApprovals\">\n          <div *ngFor=\"let ac of mbApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков MB</p>\n        <app-checkbox-component [options]='mbApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Bmw-->\n      <div class=\"form-group\">\n        <p *ngIf=\"bmwApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков BMW</p>\n        <div class=\"used_types\" *ngIf=\"bmwApprovals\">\n          <div *ngFor=\"let ac of bmwApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков BMW</p>\n        <app-checkbox-component [options]='bmwApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Fiat-->\n      <div class=\"form-group\">\n        <p *ngIf=\"fiatApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Fiat</p>\n        <div class=\"used_types\" *ngIf=\"fiatApprovals\">\n          <div *ngFor=\"let ac of fiatApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Fiat</p>\n        <app-checkbox-component [options]='fiatApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Ford-->\n      <div class=\"form-group\">\n        <p *ngIf=\"fordApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Ford</p>\n        <div class=\"used_types\" *ngIf=\"fordApprovals\">\n          <div *ngFor=\"let ac of fordApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Ford</p>\n        <app-checkbox-component [options]='fordApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Renault-->\n      <div class=\"form-group\">\n        <p *ngIf=\"renApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Renault</p>\n        <div class=\"used_types\" *ngIf=\"renApprovals\">\n          <div *ngFor=\"let ac of renApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Renault</p>\n        <app-checkbox-component [options]='renApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Vw-->\n      <div class=\"form-group\">\n        <p *ngIf=\"vwApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков VW</p>\n        <div class=\"used_types\" *ngIf=\"vwApprovals\">\n          <div *ngFor=\"let ac of vwApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков VW</p>\n        <app-checkbox-component [options]='vwApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"vwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--Porsche-->\n      <div class=\"form-group\">\n        <p *ngIf=\"porscheApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Porsche</p>\n        <div class=\"used_types\" *ngIf=\"porscheApprovals\">\n          <div *ngFor=\"let ac of porscheApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Porsche</p>\n        <app-checkbox-component [options]='porscheApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--GM-->\n      <div class=\"form-group\">\n        <p *ngIf=\"gmApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков GM</p>\n        <div class=\"used_types\" *ngIf=\"gmApprovals\">\n          <div *ngFor=\"let ac of gmApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Gm</p>\n        <app-checkbox-component [options]='gmApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--koenig-->\n      <div class=\"form-group\">\n        <p *ngIf=\"koenigApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Koenig</p>\n        <div class=\"used_types\" *ngIf=\"koenigApprovals\">\n          <div *ngFor=\"let ac of koenigApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Koenig</p>\n        <app-checkbox-component [options]='koenigApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--chrysler-->\n      <div class=\"form-group\">\n        <p *ngIf=\"chryslerApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Chrysler</p>\n        <div class=\"used_types\" *ngIf=\"chryslerApprovals\">\n          <div *ngFor=\"let ac of chryslerApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Chrysler</p>\n        <app-checkbox-component [options]='chryslerApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"chryslerApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--psa-->\n      <div class=\"form-group\">\n        <p *ngIf=\"psaApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Psa</p>\n        <div class=\"used_types\" *ngIf=\"psaApprovals\">\n          <div *ngFor=\"let ac of psaApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Psa</p>\n        <app-checkbox-component [options]='psaApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--volvo-->\n      <div class=\"form-group\">\n        <p *ngIf=\"volvoApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Volvo</p>\n        <div class=\"used_types\" *ngIf=\"volvoApprovals\">\n          <div *ngFor=\"let ac of volvoApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Volvo</p>\n        <app-checkbox-component [options]='volvoApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--jaguar-->\n      <div class=\"form-group\">\n        <p *ngIf=\"jaguarApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Jaguar</p>\n        <div class=\"used_types\" *ngIf=\"jaguarApprovals\">\n          <div *ngFor=\"let ac of jaguarApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Jaguar</p>\n        <app-checkbox-component [options]='jaguarApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--jaso-->\n      <div class=\"form-group\">\n        <p *ngIf=\"jasoApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Jaso</p>\n        <div class=\"used_types\" *ngIf=\"jasoApprovals\">\n          <div *ngFor=\"let ac of jasoApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Jaso</p>\n        <app-checkbox-component [options]='jasoApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--mazda-->\n      <div class=\"form-group\">\n        <p *ngIf=\"mazdaApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Mazda</p>\n        <div class=\"used_types\" *ngIf=\"mazdaApprovals\">\n          <div *ngFor=\"let ac of mazdaApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Mazda</p>\n        <app-checkbox-component [options]='mazdaApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"mazdaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <!--nissan-->\n      <div class=\"form-group\">\n        <p *ngIf=\"nissanApprovals.length>0\" class=\"admin_content_block_label\">Значения допусков Nissan</p>\n        <div class=\"used_types\" *ngIf=\"nissanApprovals\">\n          <div *ngFor=\"let ac of nissanApprovals\">\n            <div class=\"used_type\">{{ac}}</div>\n          </div>\n        </div>\n        <p class=\"admin_content_block_label\">Все значения допусков Nissan</p>\n        <app-checkbox-component [options]='nissanApprovalsOptions'\n                                (toggle)='onPropertiesChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"admin_content_button_block\">\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить значение</button>\n    </div>\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n    </div>\n    <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n  </div>\n</form>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n";
     /***/
   },
 
@@ -398,7 +398,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"admin_unit_block\">\n  <div class=\"admin_block_header\">В данном блоке вы можете изменять существующие или добавлять новые параметры</div>\n  <div class=\"add_block\">\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-products-groups></app-admin-params-products-groups>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-brands></app-admin-params-brands>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-volume></app-admin-params-volume>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-visc></app-admin-params-visc>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-acea></app-admin-params-acea>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-api></app-admin-params-api>\n    </div>\n  </div>\n</div>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n";
+    __webpack_exports__["default"] = "<div class=\"admin_unit_block\">\n  <div class=\"admin_block_header\">В данном блоке вы можете изменять существующие или добавлять новые параметры</div>\n  <div class=\"add_block\">\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-products-groups></app-admin-params-products-groups>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-brands></app-admin-params-brands>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-volume></app-admin-params-volume>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-visc></app-admin-params-visc>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-acea></app-admin-params-acea>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-api></app-admin-params-api>\n    </div>\n\n    <div class=\"add_block_unit\">\n      <app-admin-params-ilsac></app-admin-params-ilsac>\n    </div>\n  </div>\n</div>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n";
     /***/
   },
 
@@ -459,6 +459,26 @@
 
 
     __webpack_exports__["default"] = "<form class=\"admin_content_form\" [formGroup] = 'addChangeBrands' (ngSubmit)=\"onBrandsSubmit()\">\n  <div class=\"admin_block_header_small\">Форма добавления-изменения брендов</div>\n  <div class=\"form-group\">\n    <select name=\"\" id=\"brands\" formControlName = \"id\" (change)=\"fillInBrand($event.target.value)\">\n      <option disabled selected value> -- Выберите бренд -- </option>\n      <option *ngFor=\"let brand of brands\" value=\"{{brand.id}}\">{{brand.name}}</option>\n    </select>\n  </div>\n\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Название бренда</p>\n    <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n    <div class=\"validation_error\"\n         *ngIf=\"addChangeBrands.get('name').getError('required') &&\n                (addChangeBrands.get('name').dirty || addChangeBrands.get('name').touched)\">\n      Введите пожалуйста название бренда.\n    </div>\n  </div>\n\n  <div class=\"form-group\">\n    <p *ngIf=\"usedTypes\" class=\"admin_content_block_label\">Типы продукции к которым уже принадлежит бренд</p>\n    <div class=\"used_types\" *ngIf=\"usedTypes\">\n      <div *ngFor=\"let type of usedTypes\">\n        <div class=\"used_type\">{{type}}</div>\n      </div>\n    </div>\n    <p class=\"admin_content_block_label\">Все типы продукции</p>\n    <app-checkbox-component [options]='typesOptions'\n                            (toggle)='onTypesChange($event)'>\n    </app-checkbox-component>\n  </div>\n\n  <div class=\"form-group\" *ngIf=\"choosenImg\">\n    <img class=\"choosenImg\" src=\"{{choosenImg.path}}\" alt=\"\">\n  </div>\n\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Выберите картинку для бренда</p>\n    <p class=\"admin_content_block_label_small\">*Если картинка не будет выбрана, то будет установлена картинка по-умолчанию</p>\n    <button class=\"admin-btn\" (click)=\"imagesPickerShow($event)\">Выберите картинку бренда</button>\n  </div>\n\n  <div class=\"admin_content_button_block\">\n    <div *ngIf=\"addChangeBrands.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить бренд</button>\n    </div>\n    <div *ngIf=\"addChangeBrands.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n    </div>\n    <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n  </div>\n</form>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.html":
+  /*!*********************************************************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.html ***!
+    \*********************************************************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppModulesAdminAdminMainAdminContentAdminOilsParamsAdminParamsIlsacAdminParamsIlsacComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<form class=\"admin_content_form\" [formGroup]=\"addChangeIlsac\" (ngSubmit)=\"onIlsacSubmit()\">\n  <div class=\"admin_block_header_small\">Форма добавления-изменения значений Ilsac</div>\n  <div class=\"form-group\">\n    <select name=\"\" id=\"brands\" formControlName = \"id\" (change)=\"fillInIlsac($event.target.value)\">\n      <option disabled selected value> -- Выберите значение Ilsac -- </option>\n      <option *ngFor=\"let item of ilsac\" value=\"{{item.id}}\">{{item.name}}</option>\n    </select>\n  </div>\n\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Значение Ilsac</p>\n    <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n    <div class=\"validation_error\"\n         *ngIf=\"fc.name.getError('required') &&\n                (fc.name.dirty || fc.name.touched)\">\n      Введите пожалуйста значение Ilsac.\n    </div>\n  </div>\n\n  <div class=\"admin_content_button_block\">\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить значение</button>\n    </div>\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n    </div>\n    <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n  </div>\n</form>\n";
     /***/
   },
 
@@ -718,7 +738,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ngx-loading [show]=\"loading\"></ngx-loading>\n<div class=\"main_content\">\n  <div class=\"filters\">\n    <div class=\"filter_unit\">Производители</div>\n    <app-checkbox-component [options]='brandsOptions' (toggle)='onBrandsChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Объем, л.</div>\n    <app-checkbox-component [options]=\"volOptions\" (toggle)=\"onVolumeChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Вязкость</div>\n    <app-checkbox-component [options]=\"viscOptions\" (toggle)=\"onViscosityChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация ACEA</div>\n    <app-checkbox-component [options]='aceaOptions' (toggle)='onAceaChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация API</div>\n    <app-checkbox-component [options]='apiOptions' (toggle)='onApiChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">База</div>\n    <app-checkbox-component [options]='baseOptions' (toggle)='onBaseChange($event)'></app-checkbox-component>\n    <span class=\"filter_unit\" (click)=\"hideAll=!hideAll\">Допуски {{hideAll?'+':'-'}}</span>\n    <div [hidden]=\"hideAll\">\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Mercedes-Benz</div>\n          <div class=\"approval_fold\" (click)=\"hideMb=!hideMb\">{{hideMb?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideMb\"\n          [options]='mbOptions'\n          (toggle)='onApprovalChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Vw</div>\n          <div class=\"approval_fold\" (click)=\"hideVw=!hideVw\">{{hideVw?'+':'-'}}</div>\n        </div>\n            <app-checkbox-component\n              [hidden]=\"hideVw\"\n              [options]='vwOptions'\n              (toggle)='onApprovalChange($event, \"vwApprovals\")'>\n            </app-checkbox-component>\n        </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Ford</div>\n          <div class=\"approval_fold\" (click)=\"hideFord=!hideFord\">{{hideFord?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFord\"\n          [options]='fordOptions'\n          (toggle)='onApprovalChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Fiat</div>\n          <div class=\"approval_fold\" (click)=\"hideFiat=!hideFiat\">{{hideFiat?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFiat\"\n          [options]='fiatOptions'\n          (toggle)='onApprovalChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">BMW</div>\n          <div class=\"approval_fold\" (click)=\"hideBmw=!hideBmw\">{{hideBmw?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideBmw\"\n          [options]='bmwOptions'\n          (toggle)='onApprovalChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Renault</div>\n          <div class=\"approval_fold\" (click)=\"hideRen=!hideRen\">{{hideRen?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideRen\"\n          [options]='renOptions'\n          (toggle)='onApprovalChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Porsche</div>\n          <div class=\"approval_fold\" (click)=\"hidePorsche=!hidePorsche\">{{hidePorsche?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePorsche\"\n          [options]='porscheOptions'\n          (toggle)='onApprovalChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Gm</div>\n          <div class=\"approval_fold\" (click)=\"hideGm=!hideGm\">{{hideGm?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideGm\"\n          [options]='gmOptions'\n          (toggle)='onApprovalChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Koenig</div>\n          <div class=\"approval_fold\" (click)=\"hideKoenig=!hideKoenig\">{{hideKoenig?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideKoenig\"\n          [options]='koenigOptions'\n          (toggle)='onApprovalChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Chrysler</div>\n        <div class=\"approval_fold\" (click)=\"hideChrysler=!hideChrysler\">{{hideChrysler?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideChrysler\"\n        [options]='chryslerOptions'\n        (toggle)='onApprovalChange($event, \"chryslerApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Psa</div>\n          <div class=\"approval_fold\" (click)=\"hidePsa=!hidePsa\">{{hidePsa?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePsa\"\n          [options]='psaOptions'\n          (toggle)='onApprovalChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Volvo</div>\n          <div class=\"approval_fold\" (click)=\"hideVolvo=!hideVolvo\">{{hideVolvo?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideVolvo\"\n          [options]='volvoOptions'\n          (toggle)='onApprovalChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaguar</div>\n          <div class=\"approval_fold\" (click)=\"hideJaguar=!hideJaguar\">{{hideJaguar?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaguar\"\n          [options]='jaguarOptions'\n          (toggle)='onApprovalChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaso</div>\n          <div class=\"approval_fold\" (click)=\"hideJaso=!hideJaso\">{{hideJaso?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaso\"\n          [options]='jasoOptions'\n          (toggle)='onApprovalChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Mazda</div>\n        <div class=\"approval_fold\" (click)=\"hideMazda=!hideMazda\">{{hideMazda?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideMazda\"\n        [options]='mazdaOptions'\n        (toggle)='onApprovalChange($event, \"mazdaApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Nissan</div>\n          <div class=\"approval_fold\" (click)=\"hideNissan=!hideNissan\">{{hideNissan?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideNissan\"\n          [options]='nissanOptions'\n          (toggle)='onApprovalChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n\n\n    </div>\n  </div>\n  <div class=\"products\">\n    <div class=\"products_header\">Список моторных масел</div>\n    <div *ngIf=\"!nonEmptyProductList\">Товаров нет</div>\n    <div class=\"products_list\" *ngIf=\"nonEmptyProductList\">\n        <div class=\"product\" *ngFor=\"let product of products| paginate: { itemsPerPage: 5, currentPage: p, totalItems: totalItems }\" (click)=\"onClickProduct(product.id)\">\n          <div *ngIf=\"product.show\">\n            <div class=\"product_name\">{{product.name}}</div>\n            <img class=\"product_img\" src=\"{{product.img}}\" alt=\"\">\n          </div>\n        </div>\n    </div>\n  </div>\n</div>\n<div class=\"pagination\">\n  <!--https://www.npmjs.com/package/ngx-pagination-->\n  <pagination-controls (pageChange)=\"p = $event\" previousLabel=\"Предыдущая\" nextLabel=\"Следующая\"></pagination-controls>\n</div>\n\n\n";
+    __webpack_exports__["default"] = "<ngx-loading [show]=\"loading\"></ngx-loading>\n<div class=\"main_content\">\n  <div class=\"filters\">\n    <div class=\"filter_unit\">Производители</div>\n    <app-checkbox-component [options]='brandsOptions' (toggle)='onBrandsChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Объем, л.</div>\n    <app-checkbox-component [options]=\"volOptions\" (toggle)=\"onVolumeChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Вязкость</div>\n    <app-checkbox-component [options]=\"viscOptions\" (toggle)=\"onViscosityChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация ACEA</div>\n    <app-checkbox-component [options]='aceaOptions' (toggle)='onAceaChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация ILSAC</div>\n    <app-checkbox-component [options]='ilsacOptions' (toggle)='onIlsacChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Классификация API</div>\n    <app-checkbox-component [options]='apiOptions' (toggle)='onApiChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">База</div>\n    <app-checkbox-component [options]='baseOptions' (toggle)='onBaseChange($event)'></app-checkbox-component>\n    <span class=\"filter_unit\" (click)=\"hideAll=!hideAll\">Допуски {{hideAll?'+':'-'}}</span>\n    <div [hidden]=\"hideAll\">\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Mercedes-Benz</div>\n          <div class=\"approval_fold\" (click)=\"hideMb=!hideMb\">{{hideMb?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideMb\"\n          [options]='mbOptions'\n          (toggle)='onApprovalChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Vw</div>\n          <div class=\"approval_fold\" (click)=\"hideVw=!hideVw\">{{hideVw?'+':'-'}}</div>\n        </div>\n            <app-checkbox-component\n              [hidden]=\"hideVw\"\n              [options]='vwOptions'\n              (toggle)='onApprovalChange($event, \"vwApprovals\")'>\n            </app-checkbox-component>\n        </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Ford</div>\n          <div class=\"approval_fold\" (click)=\"hideFord=!hideFord\">{{hideFord?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFord\"\n          [options]='fordOptions'\n          (toggle)='onApprovalChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Fiat</div>\n          <div class=\"approval_fold\" (click)=\"hideFiat=!hideFiat\">{{hideFiat?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFiat\"\n          [options]='fiatOptions'\n          (toggle)='onApprovalChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">BMW</div>\n          <div class=\"approval_fold\" (click)=\"hideBmw=!hideBmw\">{{hideBmw?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideBmw\"\n          [options]='bmwOptions'\n          (toggle)='onApprovalChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Renault</div>\n          <div class=\"approval_fold\" (click)=\"hideRen=!hideRen\">{{hideRen?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideRen\"\n          [options]='renOptions'\n          (toggle)='onApprovalChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Porsche</div>\n          <div class=\"approval_fold\" (click)=\"hidePorsche=!hidePorsche\">{{hidePorsche?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePorsche\"\n          [options]='porscheOptions'\n          (toggle)='onApprovalChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Gm</div>\n          <div class=\"approval_fold\" (click)=\"hideGm=!hideGm\">{{hideGm?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideGm\"\n          [options]='gmOptions'\n          (toggle)='onApprovalChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Koenig</div>\n          <div class=\"approval_fold\" (click)=\"hideKoenig=!hideKoenig\">{{hideKoenig?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideKoenig\"\n          [options]='koenigOptions'\n          (toggle)='onApprovalChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Chrysler</div>\n        <div class=\"approval_fold\" (click)=\"hideChrysler=!hideChrysler\">{{hideChrysler?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideChrysler\"\n        [options]='chryslerOptions'\n        (toggle)='onApprovalChange($event, \"chryslerApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Psa</div>\n          <div class=\"approval_fold\" (click)=\"hidePsa=!hidePsa\">{{hidePsa?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePsa\"\n          [options]='psaOptions'\n          (toggle)='onApprovalChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Volvo</div>\n          <div class=\"approval_fold\" (click)=\"hideVolvo=!hideVolvo\">{{hideVolvo?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideVolvo\"\n          [options]='volvoOptions'\n          (toggle)='onApprovalChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaguar</div>\n          <div class=\"approval_fold\" (click)=\"hideJaguar=!hideJaguar\">{{hideJaguar?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaguar\"\n          [options]='jaguarOptions'\n          (toggle)='onApprovalChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaso</div>\n          <div class=\"approval_fold\" (click)=\"hideJaso=!hideJaso\">{{hideJaso?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaso\"\n          [options]='jasoOptions'\n          (toggle)='onApprovalChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Mazda</div>\n        <div class=\"approval_fold\" (click)=\"hideMazda=!hideMazda\">{{hideMazda?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideMazda\"\n        [options]='mazdaOptions'\n        (toggle)='onApprovalChange($event, \"mazdaApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Nissan</div>\n          <div class=\"approval_fold\" (click)=\"hideNissan=!hideNissan\">{{hideNissan?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideNissan\"\n          [options]='nissanOptions'\n          (toggle)='onApprovalChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n\n\n    </div>\n  </div>\n  <div class=\"products\">\n    <div class=\"products_header\">Список моторных масел</div>\n    <div *ngIf=\"!nonEmptyProductList\">Товаров нет</div>\n    <div class=\"products_list\" *ngIf=\"nonEmptyProductList\">\n        <div class=\"product\" *ngFor=\"let product of products| paginate: { itemsPerPage: 5, currentPage: p, totalItems: totalItems }\" (click)=\"onClickProduct(product.id)\">\n          <div *ngIf=\"product.show\">\n            <div class=\"product_name\">{{product.name}}</div>\n            <img class=\"product_img\" src=\"{{product.img}}\" alt=\"\">\n          </div>\n        </div>\n    </div>\n  </div>\n</div>\n<div class=\"pagination\">\n  <!--https://www.npmjs.com/package/ngx-pagination-->\n  <pagination-controls (pageChange)=\"p = $event\" previousLabel=\"Предыдущая\" nextLabel=\"Следующая\"></pagination-controls>\n</div>\n\n\n";
     /***/
   },
 
@@ -1888,11 +1908,12 @@
     "./node_modules/tslib/tslib.es6.js");
 
     class RequestItem {
-      constructor(pBrand, pBase, pApi, pAcea, pVolume, pViscosity, pMbApprovals, pBmwApprovals, pFiatApprovals, pFordApprovals, pRenApprovals, pVwApprovals, pPorscheApprovals, pGmApprovals, pKoenigApprovals, pChryslerApprovals, pPsaApprovals, pVolvoApprovals, pJaguarApprovals, pJasoApprovals, pMazdaApprovals, pNissanApprovals) {
+      constructor(pBrand, pBase, pApi, pAcea, pIlsac, pVolume, pViscosity, pMbApprovals, pBmwApprovals, pFiatApprovals, pFordApprovals, pRenApprovals, pVwApprovals, pPorscheApprovals, pGmApprovals, pKoenigApprovals, pChryslerApprovals, pPsaApprovals, pVolvoApprovals, pJaguarApprovals, pJasoApprovals, pMazdaApprovals, pNissanApprovals) {
         this.pBrand = pBrand;
         this.pBase = pBase;
         this.pApi = pApi;
         this.pAcea = pAcea;
+        this.pIlsac = pIlsac;
         this.pVolume = pVolume;
         this.pViscosity = pViscosity;
         this.pMbApprovals = pMbApprovals;
@@ -1911,6 +1932,14 @@
         this.pJasoApprovals = pJasoApprovals;
         this.pMazdaApprovals = pMazdaApprovals;
         this.pNissanApprovals = pNissanApprovals;
+      }
+
+      get ilsac() {
+        return this.pIlsac;
+      }
+
+      set ilsac(value) {
+        this.pIlsac = value;
       }
 
       get porscheApprovals() {
@@ -3025,7 +3054,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".header_title {\n  width: 100%;\n  padding: 15px 0 15px 50px;\n  box-sizing: border-box;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  cursor: pointer;\n}\n.header_title .header_text {\n  width: 100%;\n  margin-left: 30px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column;\n}\n.header_title .header_text .header_text_main {\n  text-transform: uppercase;\n  font-family: 'Roboto Slab', serif;\n  /*color: @header_main_color;*/\n  font-size: 4em;\n  font-weight: bold;\n}\n.header_title .header_text .header_text_second {\n  margin-left: 2%;\n  text-transform: uppercase;\n  font-family: 'Roboto Slab', serif;\n  /*color: @header_second_color;*/\n  font-size: 2em;\n  font-weight: bold;\n}\n.header_title .header_text .header_text_third {\n  margin-left: 6%;\n  font-family: 'Pattaya', sans-serif;\n  /*color: @header_second_color;*/\n  font-size: 1.5em;\n}\n.header_title .header_text .header_text_fourth {\n  margin-left: 28%;\n  font-family: 'Pattaya', sans-serif;\n  /*      color: @header_second_color;*/\n  font-size: 1.5em;\n}\n.header_title .header_text .header_text_fifth {\n  margin-left: 32%;\n  font-family: 'Pattaya', sans-serif;\n  /*color: @header_second_color;*/\n  font-size: 1.5em;\n}\n.header_nav {\n  border-top: 1px solid #b7b7b7;\n  border-bottom: 1px solid #b7b7b7;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.header_nav .header_menu {\n  box-sizing: border-box;\n  padding: 10px;\n  width: 70%;\n  -webkit-box-flex: 1;\n          flex-grow: 1;\n}\n.header_nav .header_auth {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 5%;\n}\n.header_nav .header_find {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 25%;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  -webkit-box-align: center;\n          align-items: center;\n}\n@media print {\n  .header_nav {\n    display: none;\n  }\n}\n@media (min-width: 641px) and (max-width: 860px) {\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n  }\n  .header_nav .header_find {\n    width: 100%;\n  }\n}\n@media (min-width: 480px) and (max-width: 640px) {\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n  }\n  .header_nav .header_find {\n    width: 100%;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzovVXNlcnMvSXZhbi9EZXNrdG9wL29pbHMvb2lscy9zcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsV0FBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsOEJBQUE7RUFBQSw2QkFBQTtVQUFBLHFCQUFBO0VBQ0EsZUFBQTtBQ0RGO0FETEE7RUFRSSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLGlCQUFBO0FDQUo7QURYQTtFQWFNLHlCQUFBO0VBQ0EsaUNBQUE7RUNDSiw2QkFBNkI7RURDekIsY0FBQTtFQUNBLGlCQUFBO0FDQ047QURsQkE7RUFvQk0sZUFBQTtFQUNBLHlCQUFBO0VBQ0EsaUNBQUE7RUNDSiwrQkFBK0I7RURDM0IsY0FBQTtFQUNBLGlCQUFBO0FDQ047QUQxQkE7RUE0Qk0sZUFBQTtFQUNBLGtDQUFBO0VDQ0osK0JBQStCO0VEQzNCLGdCQUFBO0FDQ047QURoQ0E7RUFrQ00sZ0JBQUE7RUFDQSxrQ0FBQTtFQ0NKLHFDQUFxQztFRENqQyxnQkFBQTtBQ0NOO0FEdENBO0VBd0NNLGdCQUFBO0VBQ0Esa0NBQUE7RUNDSiwrQkFBK0I7RURDM0IsZ0JBQUE7QUNDTjtBRElBO0VBQ0UsNkJBQUE7RUFDQSxnQ0FBQTtFQUNBLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEscUJBQUE7RUFDQSxXQUFBO0FDRkY7QURIQTtFQU9JLHNCQUFBO0VBQ0EsYUFBQTtFQUNBLFVBQUE7RUFDQSxtQkFBQTtVQUFBLFlBQUE7QUNESjtBRFRBO0VBYUksc0JBQUE7RUFDQSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxTQUFBO0FDREo7QURmQTtFQW1CSSxzQkFBQTtFQUNBLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFVBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsOEJBQUE7RUFBQSw2QkFBQTtVQUFBLHFCQUFBO0VBQ0EseUJBQUE7VUFBQSxtQkFBQTtBQ0RKO0FESUE7RUFDRTtJQUFhLGFBQUE7RUNEYjtBQUNGO0FERUE7RUFDRTtJQUNFLDRCQUFBO0lBQUEsNkJBQUE7WUFBQSx3QkFBQTtFQ0FGO0VEREE7SUFHSSwyQkFBQTtJQUFBLG9CQUFBO0lBQ0EsOEJBQUE7SUFBQSw2QkFBQTtZQUFBLHFCQUFBO0lBQ0EsWUFBQTtJQUNBLFdBQUE7RUNDSjtFRFBBO0lBU0ksV0FBQTtFQ0NKO0VEVkE7SUFZSSxXQUFBO0VDQ0o7QUFDRjtBREVBO0VBQ0U7SUFDRSw0QkFBQTtJQUFBLDZCQUFBO1lBQUEsd0JBQUE7RUNBRjtFRERBO0lBR0ksMkJBQUE7SUFBQSxvQkFBQTtJQUNBLDhCQUFBO0lBQUEsNkJBQUE7WUFBQSxxQkFBQTtJQUNBLFlBQUE7SUFDQSxXQUFBO0VDQ0o7RURQQTtJQVNJLFdBQUE7RUNDSjtFRFZBO0lBWUksV0FBQTtFQ0NKO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vY29tbW9uXCI7XG5cbi5oZWFkZXJfdGl0bGV7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxNXB4IDAgMTVweCA1MHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIC5oZWFkZXJfdGV4dHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBtYXJnaW4tbGVmdDogMzBweDtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IGNvbHVtbjtcbiAgICAuaGVhZGVyX3RleHRfbWFpbntcbiAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gICAgICAvKmNvbG9yOiBAaGVhZGVyX21haW5fY29sb3I7Ki9cbiAgICAgIGZvbnQtc2l6ZTogNGVtO1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICAgIC5oZWFkZXJfdGV4dF9zZWNvbmR7XG4gICAgICBtYXJnaW4tbGVmdDogMiU7XG4gICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgZm9udC1mYW1pbHk6ICdSb2JvdG8gU2xhYicsIHNlcmlmO1xuICAgICAgLypjb2xvcjogQGhlYWRlcl9zZWNvbmRfY29sb3I7Ki9cbiAgICAgIGZvbnQtc2l6ZTogMmVtO1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICAgIC5oZWFkZXJfdGV4dF90aGlyZHtcbiAgICAgIG1hcmdpbi1sZWZ0OiA2JTtcbiAgICAgIGZvbnQtZmFtaWx5OiAnUGF0dGF5YScsIHNhbnMtc2VyaWY7XG4gICAgICAvKmNvbG9yOiBAaGVhZGVyX3NlY29uZF9jb2xvcjsqL1xuICAgICAgZm9udC1zaXplOiAxLjVlbTtcbiAgICB9XG4gICAgLmhlYWRlcl90ZXh0X2ZvdXJ0aHtcbiAgICAgIG1hcmdpbi1sZWZ0OiAyOCU7XG4gICAgICBmb250LWZhbWlseTogJ1BhdHRheWEnLCBzYW5zLXNlcmlmO1xuLyogICAgICBjb2xvcjogQGhlYWRlcl9zZWNvbmRfY29sb3I7Ki9cbiAgICAgIGZvbnQtc2l6ZTogMS41ZW07XG4gICAgfVxuICAgIC5oZWFkZXJfdGV4dF9maWZ0aHtcbiAgICAgIG1hcmdpbi1sZWZ0OiAzMiU7XG4gICAgICBmb250LWZhbWlseTogJ1BhdHRheWEnLCBzYW5zLXNlcmlmO1xuICAgICAgLypjb2xvcjogQGhlYWRlcl9zZWNvbmRfY29sb3I7Ki9cbiAgICAgIGZvbnQtc2l6ZTogMS41ZW07XG4gICAgfVxuICB9XG5cbn1cbi5oZWFkZXJfbmF2e1xuICBib3JkZXItdG9wOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG4gIC5oZWFkZXJfbWVudXtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgd2lkdGg6IDcwJTtcbiAgICBmbGV4LWdyb3c6IDE7XG4gIH1cbiAgLmhlYWRlcl9hdXRoe1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgcGFkZGluZzogMTBweDtcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAgIHdpZHRoOiA1JTtcbiAgfVxuICAuaGVhZGVyX2ZpbmR7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgd2lkdGg6IDI1JTtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgfVxufVxuQG1lZGlhIHByaW50IHtcbiAgLmhlYWRlcl9uYXYge2Rpc3BsYXk6IG5vbmV9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogNjQxcHgpIGFuZCAobWF4LXdpZHRoOiA4NjBweCl7XG4gIC5oZWFkZXJfbmF2e1xuICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICAuaGVhZGVyX21lbnV7XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgIH1cbiAgICAuaGVhZGVyX2F1dGh7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICB9XG4gICAgLmhlYWRlcl9maW5ke1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogNDgwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCl7XG4gIC5oZWFkZXJfbmF2e1xuICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICAuaGVhZGVyX21lbnV7XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgIH1cbiAgICAuaGVhZGVyX2F1dGh7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICB9XG4gICAgLmhlYWRlcl9maW5ke1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICB9XG59XG5cblxuXG5cblxuIiwiLmhlYWRlcl90aXRsZSB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxNXB4IDAgMTVweCA1MHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG4uaGVhZGVyX3RpdGxlIC5oZWFkZXJfdGV4dCB7XG4gIHdpZHRoOiAxMDAlO1xuICBtYXJnaW4tbGVmdDogMzBweDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uO1xufVxuLmhlYWRlcl90aXRsZSAuaGVhZGVyX3RleHQgLmhlYWRlcl90ZXh0X21haW4ge1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gIC8qY29sb3I6IEBoZWFkZXJfbWFpbl9jb2xvcjsqL1xuICBmb250LXNpemU6IDRlbTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG4uaGVhZGVyX3RpdGxlIC5oZWFkZXJfdGV4dCAuaGVhZGVyX3RleHRfc2Vjb25kIHtcbiAgbWFyZ2luLWxlZnQ6IDIlO1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gIC8qY29sb3I6IEBoZWFkZXJfc2Vjb25kX2NvbG9yOyovXG4gIGZvbnQtc2l6ZTogMmVtO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5oZWFkZXJfdGl0bGUgLmhlYWRlcl90ZXh0IC5oZWFkZXJfdGV4dF90aGlyZCB7XG4gIG1hcmdpbi1sZWZ0OiA2JTtcbiAgZm9udC1mYW1pbHk6ICdQYXR0YXlhJywgc2Fucy1zZXJpZjtcbiAgLypjb2xvcjogQGhlYWRlcl9zZWNvbmRfY29sb3I7Ki9cbiAgZm9udC1zaXplOiAxLjVlbTtcbn1cbi5oZWFkZXJfdGl0bGUgLmhlYWRlcl90ZXh0IC5oZWFkZXJfdGV4dF9mb3VydGgge1xuICBtYXJnaW4tbGVmdDogMjglO1xuICBmb250LWZhbWlseTogJ1BhdHRheWEnLCBzYW5zLXNlcmlmO1xuICAvKiAgICAgIGNvbG9yOiBAaGVhZGVyX3NlY29uZF9jb2xvcjsqL1xuICBmb250LXNpemU6IDEuNWVtO1xufVxuLmhlYWRlcl90aXRsZSAuaGVhZGVyX3RleHQgLmhlYWRlcl90ZXh0X2ZpZnRoIHtcbiAgbWFyZ2luLWxlZnQ6IDMyJTtcbiAgZm9udC1mYW1pbHk6ICdQYXR0YXlhJywgc2Fucy1zZXJpZjtcbiAgLypjb2xvcjogQGhlYWRlcl9zZWNvbmRfY29sb3I7Ki9cbiAgZm9udC1zaXplOiAxLjVlbTtcbn1cbi5oZWFkZXJfbmF2IHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjYjdiN2I3O1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICB3aWR0aDogMTAwJTtcbn1cbi5oZWFkZXJfbmF2IC5oZWFkZXJfbWVudSB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIHdpZHRoOiA3MCU7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5oZWFkZXJfbmF2IC5oZWFkZXJfYXV0aCB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgI2I3YjdiNztcbiAgd2lkdGg6IDUlO1xufVxuLmhlYWRlcl9uYXYgLmhlYWRlcl9maW5kIHtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgcGFkZGluZzogMTBweDtcbiAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjYjdiN2I3O1xuICB3aWR0aDogMjUlO1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuQG1lZGlhIHByaW50IHtcbiAgLmhlYWRlcl9uYXYge1xuICAgIGRpc3BsYXk6IG5vbmU7XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiA2NDFweCkgYW5kIChtYXgtd2lkdGg6IDg2MHB4KSB7XG4gIC5oZWFkZXJfbmF2IHtcbiAgICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9tZW51IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gICAgcGFkZGluZzogNXB4O1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfYXV0aCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9maW5kIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxufVxuQG1lZGlhIChtaW4td2lkdGg6IDQ4MHB4KSBhbmQgKG1heC13aWR0aDogNjQwcHgpIHtcbiAgLmhlYWRlcl9uYXYge1xuICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgfVxuICAuaGVhZGVyX25hdiAuaGVhZGVyX21lbnUge1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICBwYWRkaW5nOiA1cHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9hdXRoIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAuaGVhZGVyX25hdiAuaGVhZGVyX2ZpbmQge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4iXX0= */";
+    __webpack_exports__["default"] = ".header_title {\n  width: 100%;\n  padding: 15px 0 15px 50px;\n  box-sizing: border-box;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  cursor: pointer;\n  -webkit-box-align: center;\n          align-items: center;\n}\n.header_title .header_logo img {\n  width: 200px;\n}\n.header_title .header_text {\n  width: 100%;\n  margin-left: 30px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column;\n}\n.header_title .header_text .header_text_main {\n  text-transform: uppercase;\n  font-family: 'Roboto Slab', serif;\n  /*color: @header_main_color;*/\n  font-size: 4em;\n  font-weight: bold;\n}\n.header_title .header_text .header_text_second {\n  margin-left: 2%;\n  text-transform: uppercase;\n  font-family: 'Roboto Slab', serif;\n  /*color: @header_second_color;*/\n  font-size: 2em;\n  font-weight: bold;\n}\n.header_title .header_text .header_text_third {\n  margin-left: 6%;\n  font-family: 'Pattaya', sans-serif;\n  /*color: @header_second_color;*/\n  font-size: 1.5em;\n}\n.header_title .header_text .header_text_fourth {\n  margin-left: 28%;\n  font-family: 'Pattaya', sans-serif;\n  /*      color: @header_second_color;*/\n  font-size: 1.5em;\n}\n.header_title .header_text .header_text_fifth {\n  margin-left: 32%;\n  font-family: 'Pattaya', sans-serif;\n  /*color: @header_second_color;*/\n  font-size: 1.5em;\n}\n.header_nav {\n  border-top: 1px solid #b7b7b7;\n  border-bottom: 1px solid #b7b7b7;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.header_nav .header_menu {\n  box-sizing: border-box;\n  padding: 10px;\n  width: 70%;\n  -webkit-box-flex: 1;\n          flex-grow: 1;\n}\n.header_nav .header_auth {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 5%;\n}\n.header_nav .header_find {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 25%;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  -webkit-box-align: center;\n          align-items: center;\n}\n@media print {\n  .header_nav {\n    display: none;\n  }\n}\n@media (min-width: 641px) and (max-width: 860px) {\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n  }\n  .header_nav .header_find {\n    width: 100%;\n  }\n}\n@media (min-width: 480px) and (max-width: 640px) {\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n  }\n  .header_nav .header_find {\n    width: 100%;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzovVXNlcnMvSXZhbi9EZXNrdG9wL29pbHMvb2lscy9zcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsV0FBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsOEJBQUE7RUFBQSw2QkFBQTtVQUFBLHFCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNERjtBRE5BO0VBVU0sWUFBQTtBQ0ROO0FEVEE7RUFjSSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLGlCQUFBO0FDRko7QURmQTtFQW1CTSx5QkFBQTtFQUNBLGlDQUFBO0VDREosNkJBQTZCO0VER3pCLGNBQUE7RUFDQSxpQkFBQTtBQ0ROO0FEdEJBO0VBMEJNLGVBQUE7RUFDQSx5QkFBQTtFQUNBLGlDQUFBO0VDREosK0JBQStCO0VERzNCLGNBQUE7RUFDQSxpQkFBQTtBQ0ROO0FEOUJBO0VBa0NNLGVBQUE7RUFDQSxrQ0FBQTtFQ0RKLCtCQUErQjtFREczQixnQkFBQTtBQ0ROO0FEcENBO0VBd0NNLGdCQUFBO0VBQ0Esa0NBQUE7RUNESixxQ0FBcUM7RURHakMsZ0JBQUE7QUNETjtBRDFDQTtFQThDTSxnQkFBQTtFQUNBLGtDQUFBO0VDREosK0JBQStCO0VERzNCLGdCQUFBO0FDRE47QURNQTtFQUNFLDZCQUFBO0VBQ0EsZ0NBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsOEJBQUE7RUFBQSw2QkFBQTtVQUFBLHFCQUFBO0VBQ0EsV0FBQTtBQ0pGO0FEREE7RUFPSSxzQkFBQTtFQUNBLGFBQUE7RUFDQSxVQUFBO0VBQ0EsbUJBQUE7VUFBQSxZQUFBO0FDSEo7QURQQTtFQWFJLHNCQUFBO0VBQ0EsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsU0FBQTtBQ0hKO0FEYkE7RUFtQkksc0JBQUE7RUFDQSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxVQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDhCQUFBO0VBQUEsNkJBQUE7VUFBQSxxQkFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNISjtBRE1BO0VBQ0U7SUFBYSxhQUFBO0VDSGI7QUFDRjtBRElBO0VBQ0U7SUFDRSw0QkFBQTtJQUFBLDZCQUFBO1lBQUEsd0JBQUE7RUNGRjtFRENBO0lBR0ksMkJBQUE7SUFBQSxvQkFBQTtJQUNBLDhCQUFBO0lBQUEsNkJBQUE7WUFBQSxxQkFBQTtJQUNBLFlBQUE7SUFDQSxXQUFBO0VDREo7RURMQTtJQVNJLFdBQUE7RUNESjtFRFJBO0lBWUksV0FBQTtFQ0RKO0FBQ0Y7QURJQTtFQUNFO0lBQ0UsNEJBQUE7SUFBQSw2QkFBQTtZQUFBLHdCQUFBO0VDRkY7RURDQTtJQUdJLDJCQUFBO0lBQUEsb0JBQUE7SUFDQSw4QkFBQTtJQUFBLDZCQUFBO1lBQUEscUJBQUE7SUFDQSxZQUFBO0lBQ0EsV0FBQTtFQ0RKO0VETEE7SUFTSSxXQUFBO0VDREo7RURSQTtJQVlJLFdBQUE7RUNESjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2NvbW1vblwiO1xuXG4uaGVhZGVyX3RpdGxle1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTVweCAwIDE1cHggNTBweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAuaGVhZGVyX2xvZ297XG4gICAgaW1nIHtcbiAgICAgIHdpZHRoOiAyMDBweDtcbiAgICB9XG4gIH1cbiAgLmhlYWRlcl90ZXh0e1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1hcmdpbi1sZWZ0OiAzMHB4O1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogY29sdW1uO1xuICAgIC5oZWFkZXJfdGV4dF9tYWlue1xuICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvIFNsYWInLCBzZXJpZjtcbiAgICAgIC8qY29sb3I6IEBoZWFkZXJfbWFpbl9jb2xvcjsqL1xuICAgICAgZm9udC1zaXplOiA0ZW07XG4gICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICB9XG4gICAgLmhlYWRlcl90ZXh0X3NlY29uZHtcbiAgICAgIG1hcmdpbi1sZWZ0OiAyJTtcbiAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gICAgICAvKmNvbG9yOiBAaGVhZGVyX3NlY29uZF9jb2xvcjsqL1xuICAgICAgZm9udC1zaXplOiAyZW07XG4gICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICB9XG4gICAgLmhlYWRlcl90ZXh0X3RoaXJke1xuICAgICAgbWFyZ2luLWxlZnQ6IDYlO1xuICAgICAgZm9udC1mYW1pbHk6ICdQYXR0YXlhJywgc2Fucy1zZXJpZjtcbiAgICAgIC8qY29sb3I6IEBoZWFkZXJfc2Vjb25kX2NvbG9yOyovXG4gICAgICBmb250LXNpemU6IDEuNWVtO1xuICAgIH1cbiAgICAuaGVhZGVyX3RleHRfZm91cnRoe1xuICAgICAgbWFyZ2luLWxlZnQ6IDI4JTtcbiAgICAgIGZvbnQtZmFtaWx5OiAnUGF0dGF5YScsIHNhbnMtc2VyaWY7XG4vKiAgICAgIGNvbG9yOiBAaGVhZGVyX3NlY29uZF9jb2xvcjsqL1xuICAgICAgZm9udC1zaXplOiAxLjVlbTtcbiAgICB9XG4gICAgLmhlYWRlcl90ZXh0X2ZpZnRoe1xuICAgICAgbWFyZ2luLWxlZnQ6IDMyJTtcbiAgICAgIGZvbnQtZmFtaWx5OiAnUGF0dGF5YScsIHNhbnMtc2VyaWY7XG4gICAgICAvKmNvbG9yOiBAaGVhZGVyX3NlY29uZF9jb2xvcjsqL1xuICAgICAgZm9udC1zaXplOiAxLjVlbTtcbiAgICB9XG4gIH1cblxufVxuLmhlYWRlcl9uYXZ7XG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICB3aWR0aDogMTAwJTtcbiAgLmhlYWRlcl9tZW51e1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgcGFkZGluZzogMTBweDtcbiAgICB3aWR0aDogNzAlO1xuICAgIGZsZXgtZ3JvdzogMTtcbiAgfVxuICAuaGVhZGVyX2F1dGh7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgd2lkdGg6IDUlO1xuICB9XG4gIC5oZWFkZXJfZmluZHtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICB3aWR0aDogMjUlO1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICB9XG59XG5AbWVkaWEgcHJpbnQge1xuICAuaGVhZGVyX25hdiB7ZGlzcGxheTogbm9uZX1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiA2NDFweCkgYW5kIChtYXgtd2lkdGg6IDg2MHB4KXtcbiAgLmhlYWRlcl9uYXZ7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgIC5oZWFkZXJfbWVudXtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5oZWFkZXJfYXV0aHtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgIH1cbiAgICAuaGVhZGVyX2ZpbmR7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICB9XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiA0ODBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KXtcbiAgLmhlYWRlcl9uYXZ7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgIC5oZWFkZXJfbWVudXtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5oZWFkZXJfYXV0aHtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgIH1cbiAgICAuaGVhZGVyX2ZpbmR7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICB9XG4gIH1cbn1cblxuXG5cblxuXG4iLCIuaGVhZGVyX3RpdGxlIHtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDE1cHggMCAxNXB4IDUwcHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbi5oZWFkZXJfdGl0bGUgLmhlYWRlcl9sb2dvIGltZyB7XG4gIHdpZHRoOiAyMDBweDtcbn1cbi5oZWFkZXJfdGl0bGUgLmhlYWRlcl90ZXh0IHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiBjb2x1bW47XG59XG4uaGVhZGVyX3RpdGxlIC5oZWFkZXJfdGV4dCAuaGVhZGVyX3RleHRfbWFpbiB7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvIFNsYWInLCBzZXJpZjtcbiAgLypjb2xvcjogQGhlYWRlcl9tYWluX2NvbG9yOyovXG4gIGZvbnQtc2l6ZTogNGVtO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5oZWFkZXJfdGl0bGUgLmhlYWRlcl90ZXh0IC5oZWFkZXJfdGV4dF9zZWNvbmQge1xuICBtYXJnaW4tbGVmdDogMiU7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvIFNsYWInLCBzZXJpZjtcbiAgLypjb2xvcjogQGhlYWRlcl9zZWNvbmRfY29sb3I7Ki9cbiAgZm9udC1zaXplOiAyZW07XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuLmhlYWRlcl90aXRsZSAuaGVhZGVyX3RleHQgLmhlYWRlcl90ZXh0X3RoaXJkIHtcbiAgbWFyZ2luLWxlZnQ6IDYlO1xuICBmb250LWZhbWlseTogJ1BhdHRheWEnLCBzYW5zLXNlcmlmO1xuICAvKmNvbG9yOiBAaGVhZGVyX3NlY29uZF9jb2xvcjsqL1xuICBmb250LXNpemU6IDEuNWVtO1xufVxuLmhlYWRlcl90aXRsZSAuaGVhZGVyX3RleHQgLmhlYWRlcl90ZXh0X2ZvdXJ0aCB7XG4gIG1hcmdpbi1sZWZ0OiAyOCU7XG4gIGZvbnQtZmFtaWx5OiAnUGF0dGF5YScsIHNhbnMtc2VyaWY7XG4gIC8qICAgICAgY29sb3I6IEBoZWFkZXJfc2Vjb25kX2NvbG9yOyovXG4gIGZvbnQtc2l6ZTogMS41ZW07XG59XG4uaGVhZGVyX3RpdGxlIC5oZWFkZXJfdGV4dCAuaGVhZGVyX3RleHRfZmlmdGgge1xuICBtYXJnaW4tbGVmdDogMzIlO1xuICBmb250LWZhbWlseTogJ1BhdHRheWEnLCBzYW5zLXNlcmlmO1xuICAvKmNvbG9yOiBAaGVhZGVyX3NlY29uZF9jb2xvcjsqL1xuICBmb250LXNpemU6IDEuNWVtO1xufVxuLmhlYWRlcl9uYXYge1xuICBib3JkZXItdG9wOiAxcHggc29saWQgI2I3YjdiNztcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmhlYWRlcl9uYXYgLmhlYWRlcl9tZW51IHtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgcGFkZGluZzogMTBweDtcbiAgd2lkdGg6IDcwJTtcbiAgZmxleC1ncm93OiAxO1xufVxuLmhlYWRlcl9uYXYgLmhlYWRlcl9hdXRoIHtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgcGFkZGluZzogMTBweDtcbiAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjYjdiN2I3O1xuICB3aWR0aDogNSU7XG59XG4uaGVhZGVyX25hdiAuaGVhZGVyX2ZpbmQge1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3JkZXItbGVmdDogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIHdpZHRoOiAyNSU7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5AbWVkaWEgcHJpbnQge1xuICAuaGVhZGVyX25hdiB7XG4gICAgZGlzcGxheTogbm9uZTtcbiAgfVxufVxuQG1lZGlhIChtaW4td2lkdGg6IDY0MXB4KSBhbmQgKG1heC13aWR0aDogODYwcHgpIHtcbiAgLmhlYWRlcl9uYXYge1xuICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgfVxuICAuaGVhZGVyX25hdiAuaGVhZGVyX21lbnUge1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICBwYWRkaW5nOiA1cHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9hdXRoIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAuaGVhZGVyX25hdiAuaGVhZGVyX2ZpbmQge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogNDgwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCkge1xuICAuaGVhZGVyX25hdiB7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfbWVudSB7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAuaGVhZGVyX25hdiAuaGVhZGVyX2F1dGgge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfZmluZCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbn1cbiJdfQ== */";
     /***/
   },
 
@@ -3566,7 +3595,11 @@
 
         this.apiBase = this.CORE + 'api/';
         this.GETAPI = this.apiBase + 'all';
-        this.ADDAPI = this.apiBase + 'add'; // BASE
+        this.ADDAPI = this.apiBase + 'add'; // ILSAC
+
+        this.ilsacBase = this.CORE + 'ilsac/';
+        this.GETILSAC = this.ilsacBase + 'all';
+        this.ADDILSAC = this.ilsacBase + 'add'; // BASE
 
         this.baseBase = this.CORE + 'base/';
         this.GETBASE = this.baseBase + 'all'; // VISCOSITY
@@ -6641,6 +6674,117 @@
   },
 
   /***/
+  "./src/app/dto/mainProperties/Ilsac.ts":
+  /*!*********************************************!*\
+    !*** ./src/app/dto/mainProperties/Ilsac.ts ***!
+    \*********************************************/
+
+  /*! exports provided: Ilsac */
+
+  /***/
+  function srcAppDtoMainPropertiesIlsacTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Ilsac", function () {
+      return Ilsac;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    class Ilsac {
+      constructor(pId, pName) {
+        this.pId = pId;
+        this.pName = pName;
+      }
+
+      get id() {
+        return this.pId;
+      }
+
+      set id(value) {
+        this.pId = value;
+      }
+
+      get name() {
+        return this.pName;
+      }
+
+      set name(value) {
+        this.pName = value;
+      }
+
+      static fromJson(jsonObj) {
+        return new Ilsac(jsonObj.id, jsonObj.name);
+      }
+
+    }
+    /***/
+
+  },
+
+  /***/
+  "./src/app/dto/mainProperties/IlsacResponse.ts":
+  /*!*****************************************************!*\
+    !*** ./src/app/dto/mainProperties/IlsacResponse.ts ***!
+    \*****************************************************/
+
+  /*! exports provided: IlsacResponse */
+
+  /***/
+  function srcAppDtoMainPropertiesIlsacResponseTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "IlsacResponse", function () {
+      return IlsacResponse;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _Ilsac__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./Ilsac */
+    "./src/app/dto/mainProperties/Ilsac.ts");
+
+    class IlsacResponse {
+      constructor(pData) {
+        this.pData = pData;
+      }
+
+      get data() {
+        return this.pData;
+      }
+
+      set data(value) {
+        this.pData = value;
+      }
+
+      static fromJson(jsonObj) {
+        return new IlsacResponse(jsonObj.map(e => _Ilsac__WEBPACK_IMPORTED_MODULE_1__["Ilsac"].fromJson(e)));
+      }
+
+    }
+    /***/
+
+  },
+
+  /***/
   "./src/app/dto/mainProperties/Viscosity.ts":
   /*!*************************************************!*\
     !*** ./src/app/dto/mainProperties/Viscosity.ts ***!
@@ -6895,7 +7039,7 @@
     "./node_modules/@angular/common/fesm2015/http.js");
 
     class Oils {
-      constructor(pId, pArt, pName, pIdVolume, pIdViscosity, pIdBase, pIdBrand, pBrandName, pIdImage, pShortDesc, pFullDesc, pImg, pShow, pAcea, pApi, pMbApprovals, pBmwApprovals, pFordApprovals, pFiatApprovals, pRenApprovals, pVwApprovals, pPorscheApprovals, pGmApprovals, pKoenigApprovals, pChryslerApprovals, pPsaApprovals, pVolvoApprovals, pJaguarApprovals, pJasoApprovals, pMazdaApprovals, pNissanApprovals, pTableDefiner) {
+      constructor(pId, pArt, pName, pIdVolume, pIdViscosity, pIdBase, pIdBrand, pBrandName, pIdImage, pShortDesc, pFullDesc, pImg, pShow, pAcea, pApi, pIlsac, pMbApprovals, pBmwApprovals, pFordApprovals, pFiatApprovals, pRenApprovals, pVwApprovals, pPorscheApprovals, pGmApprovals, pKoenigApprovals, pChryslerApprovals, pPsaApprovals, pVolvoApprovals, pJaguarApprovals, pJasoApprovals, pMazdaApprovals, pNissanApprovals, pTableDefiner) {
         this.pId = pId;
         this.pArt = pArt;
         this.pName = pName;
@@ -6911,6 +7055,7 @@
         this.pShow = pShow;
         this.pAcea = pAcea;
         this.pApi = pApi;
+        this.pIlsac = pIlsac;
         this.pMbApprovals = pMbApprovals;
         this.pBmwApprovals = pBmwApprovals;
         this.pFordApprovals = pFordApprovals;
@@ -6929,6 +7074,14 @@
         this.pNissanApprovals = pNissanApprovals;
         this.pTableDefiner = pTableDefiner;
         this.urlEncode = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpUrlEncodingCodec"]();
+      }
+
+      get ilsac() {
+        return this.pIlsac;
+      }
+
+      set ilsac(value) {
+        this.pIlsac = value;
       }
 
       get tableDefiner() {
@@ -7188,7 +7341,7 @@
       }
 
       static fromJson(jsonObj) {
-        return new Oils(jsonObj.id, jsonObj.art, jsonObj.name, jsonObj.id_volume, jsonObj.id_viscosity, jsonObj.id_base, jsonObj.id_brand, jsonObj.brand_name, jsonObj.id_image, jsonObj.short_desc, jsonObj.full_desc, jsonObj.img, true, jsonObj.acea, jsonObj.api, jsonObj.mbApproval, jsonObj.bmwApproval, jsonObj.fordApproval, jsonObj.fiatApproval, jsonObj.renApproval, jsonObj.vwApproval, jsonObj.porscheApproval, jsonObj.gmApproval, jsonObj.koenigApproval, jsonObj.chryslerApproval, jsonObj.psaApproval, jsonObj.volvoApproval, jsonObj.jaguarApproval, jsonObj.jasoApproval, jsonObj.mazdaApproval, jsonObj.nissanApproval, jsonObj.table_definer);
+        return new Oils(jsonObj.id, jsonObj.art, jsonObj.name, jsonObj.id_volume, jsonObj.id_viscosity, jsonObj.id_base, jsonObj.id_brand, jsonObj.brand_name, jsonObj.id_image, jsonObj.short_desc, jsonObj.full_desc, jsonObj.img, true, jsonObj.acea, jsonObj.api, jsonObj.ilsac, jsonObj.mbApproval, jsonObj.bmwApproval, jsonObj.fordApproval, jsonObj.fiatApproval, jsonObj.renApproval, jsonObj.vwApproval, jsonObj.porscheApproval, jsonObj.gmApproval, jsonObj.koenigApproval, jsonObj.chryslerApproval, jsonObj.psaApproval, jsonObj.volvoApproval, jsonObj.jaguarApproval, jsonObj.jasoApproval, jsonObj.mazdaApproval, jsonObj.nissanApproval, jsonObj.table_definer);
       }
 
     }
@@ -8915,8 +9068,10 @@
         this.pNissanApprovals = [];
         this.pAcea = [];
         this.pApi = [];
+        this.pIlsac = [];
         this.aceaOptions = [];
         this.apiOptions = [];
+        this.ilsacOptions = [];
         this.mbApprovalsOptions = [];
         this.bmwApprovalsOptions = [];
         this.fiatApprovalsOptions = [];
@@ -8950,6 +9105,7 @@
           fullDesc: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
           acea: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
           api: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+          ilsac: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
           mbApprovals: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('null'),
           bmwApprovals: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('null'),
           fiatApprovals: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('null'),
@@ -8969,6 +9125,14 @@
         });
         this.angularEditorCfg = new _config_AngularEditorConfig__WEBPACK_IMPORTED_MODULE_13__["AngularEditorCfg"]();
         this.config = this.angularEditorCfg.CONFIG;
+      }
+
+      get ilsac() {
+        return this.pIlsac;
+      }
+
+      set ilsac(value) {
+        this.pIlsac = value;
       }
 
       get nissanApprovals() {
@@ -9182,6 +9346,7 @@
         this.updateBrands();
         this.updateAcea();
         this.updateApi();
+        this.updateIlsac();
         this.updateBase();
         this.updateApprovals();
         this.updateMainProperties();
@@ -9189,6 +9354,14 @@
           this.moveImageToTheFormControl(i);
           this.choosenImg = i;
         });
+      }
+
+      get f() {
+        return this.addChangeGoods;
+      }
+
+      get fc() {
+        return this.addChangeGoods.controls;
       }
 
       updateGoods() {
@@ -9222,6 +9395,12 @@
       updateApi() {
         this.apiService.Api('all').subscribe(resp => {
           this.apiOptions = resp.map(r => new _classes_CheckboxItem__WEBPACK_IMPORTED_MODULE_12__["CheckboxItem"](r.id, r.name, false));
+        });
+      }
+
+      updateIlsac() {
+        this.mainPropertiesService.ilsac('all').subscribe(resp => {
+          this.ilsacOptions = resp.map(r => new _classes_CheckboxItem__WEBPACK_IMPORTED_MODULE_12__["CheckboxItem"](r.id, r.name, false));
         });
       }
 
@@ -9267,6 +9446,7 @@
               fullDesc: item.fullDesc,
               acea: item.acea,
               api: item.api,
+              ilsac: item.ilsac,
               mbApprovals: item.mbApprovals,
               bmwApprovals: item.bmwApprovals,
               fiatApprovals: item.fiatApprovals,
@@ -9286,7 +9466,7 @@
             });
             this.choosenImg = new _dto_images_Image__WEBPACK_IMPORTED_MODULE_11__["Image"](item.id_image, 'name', item.img);
             this.whatHaveToDo = 'update';
-            this.addOilProperties(item.acea, item.api, item.mbApprovals, item.bmwApprovals, item.fiatApprovals, item.fordApprovals, item.renApprovals, item.vwApprovals, item.porscheApprovals, item.gmApprovals, item.koenigApprovals, item.chryslerApprovals, item.psaApprovals, item.volvoApprovals, item.jaguarApprovals, item.jasoApprovals, item.mazdaApprovals, item.nissanApprovals);
+            this.addOilProperties(item.acea, item.api, item.ilsac, item.mbApprovals, item.bmwApprovals, item.fiatApprovals, item.fordApprovals, item.renApprovals, item.vwApprovals, item.porscheApprovals, item.gmApprovals, item.koenigApprovals, item.chryslerApprovals, item.psaApprovals, item.volvoApprovals, item.jaguarApprovals, item.jasoApprovals, item.mazdaApprovals, item.nissanApprovals);
           }
         });
       }
@@ -9300,7 +9480,7 @@
         });
       }
 
-      addOilProperties(acea, api, mbApprovals, bmwApprovals, fiatApprovals, fordApprovals, renApprovals, vwApprovals, porscheApprovals, gmApprovals, koenigApprovals, chryslerApprovals, psaApprovals, volvoApprovals, jaguarApprovals, jasoApprovals, mazdaApprovals, nissanApprovals) {
+      addOilProperties(acea, api, ilsac, mbApprovals, bmwApprovals, fiatApprovals, fordApprovals, renApprovals, vwApprovals, porscheApprovals, gmApprovals, koenigApprovals, chryslerApprovals, psaApprovals, volvoApprovals, jaguarApprovals, jasoApprovals, mazdaApprovals, nissanApprovals) {
         this.emptyPropArrays();
 
         if (acea) {
@@ -9309,6 +9489,10 @@
 
         if (api) {
           this.optionsForItem(api, 'api');
+        }
+
+        if (ilsac) {
+          this.optionsForItem(ilsac, 'ilsac');
         }
 
         if (porscheApprovals) {
@@ -9391,7 +9575,7 @@
       }
 
       emptyPropArrays() {
-        const arrays = ['acea', 'api', 'mbApprovals', 'bmwApprovals', 'fiatApprovals', 'fordApprovals', 'renApprovals', 'vwApprovals', 'porscheApprovals', 'gmApprovals', 'koenigApprovals', 'chryslerApprovals', 'psaApprovals', 'volvoApprovals', 'jaguarApprovals', 'jasoApprovals', 'mazdaApprovals', 'nissanApprovals'];
+        const arrays = ['acea', 'api', 'ilsac', 'mbApprovals', 'bmwApprovals', 'fiatApprovals', 'fordApprovals', 'renApprovals', 'vwApprovals', 'porscheApprovals', 'gmApprovals', 'koenigApprovals', 'chryslerApprovals', 'psaApprovals', 'volvoApprovals', 'jaguarApprovals', 'jasoApprovals', 'mazdaApprovals', 'nissanApprovals'];
         arrays.map(e => {
           this[e] = [];
         });
@@ -9444,6 +9628,7 @@
           fullDesc: '',
           acea: '',
           api: '',
+          ilsac: '',
           mbApprovals: '',
           bmwApprovals: '',
           fiatApprovals: '',
@@ -10206,6 +10391,196 @@
       /*! ./admin-params-brands.component.less */
       "./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-brands/admin-params-brands.component.less")).default]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_2__["BrandsService"], _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_5__["AdminMessagesService"], _services_goods_productTypes_products_types_service__WEBPACK_IMPORTED_MODULE_6__["ProductsTypesService"]])], AdminParamsBrandsComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.less":
+  /*!*******************************************************************************************************************************!*\
+    !*** ./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.less ***!
+    \*******************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppModulesAdminAdminMainAdminContentAdminOilsParamsAdminParamsIlsacAdminParamsIlsacComponentLess(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvYWRtaW4vYWRtaW4tbWFpbi9hZG1pbi1jb250ZW50L2FkbWluLW9pbHMtcGFyYW1zL2FkbWluLXBhcmFtcy1pbHNhYy9hZG1pbi1wYXJhbXMtaWxzYWMuY29tcG9uZW50Lmxlc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.ts":
+  /*!*****************************************************************************************************************************!*\
+    !*** ./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.ts ***!
+    \*****************************************************************************************************************************/
+
+  /*! exports provided: AdminParamsIlsacComponent */
+
+  /***/
+  function srcAppModulesAdminAdminMainAdminContentAdminOilsParamsAdminParamsIlsacAdminParamsIlsacComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AdminParamsIlsacComponent", function () {
+      return AdminParamsIlsacComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _services_goods_mainProperties_main_properties_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../../../../services/goods/mainProperties/main-properties.service */
+    "./src/app/services/goods/mainProperties/main-properties.service.ts");
+    /* harmony import */
+
+
+    var _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../../../../../../services/messages/admin-messages.service */
+    "./src/app/services/messages/admin-messages.service.ts");
+
+    let AdminParamsIlsacComponent = class AdminParamsIlsacComponent {
+      constructor(mainPropService, adminMessageService) {
+        this.mainPropService = mainPropService;
+        this.adminMessageService = adminMessageService;
+        this.pIlsac = [];
+        this.addChangeIlsac = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+          id: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+          name: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+        });
+      }
+
+      get ilsac() {
+        return this.pIlsac;
+      }
+
+      set ilsac(value) {
+        this.pIlsac = value;
+      }
+
+      get whatHaveToDo() {
+        return this.pWhatHaveToDo;
+      }
+
+      set whatHaveToDo(value) {
+        this.pWhatHaveToDo = value;
+      }
+
+      get fc() {
+        return this.addChangeIlsac.controls;
+      }
+
+      get f() {
+        return this.addChangeIlsac;
+      }
+
+      ngOnInit() {
+        this.whatHaveToDo = 'add';
+        this.updateIlsac();
+      }
+
+      updateIlsac() {
+        this.mainPropService.ilsac('all').subscribe(resp => {
+          this.ilsac = resp;
+        });
+      }
+
+      fillInIlsac(value) {
+        this.ilsac.filter(i => {
+          if (i.id == value) {
+            this.f.patchValue({
+              id: i.id,
+              name: i.name
+            });
+          }
+        });
+        this.whatHaveToDo = 'update';
+      }
+
+      clearFields(e) {
+        if (e) {
+          e.preventDefault();
+        }
+
+        this.f.patchValue({
+          id: '',
+          name: ''
+        });
+        this.whatHaveToDo = 'add';
+      }
+
+      onIlsacSubmit() {
+        this.mainPropService.addIlsac(this.f.value, this.whatHaveToDo).subscribe(resp => {
+          this.adminMessageService.ShowServerResponseWindow();
+
+          if (resp === 'update success') {
+            const data = ['обновление значения Ilsac', 'Данные успешно обновлены'];
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+            this.clearFields();
+          }
+
+          if (resp === 'insert success') {
+            const data = ['добавление нового значения Ilsac', 'Данные успешно добавлены'];
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+            this.clearFields();
+          }
+
+          if (resp === 'error') {
+            const data = ['добавление нового значения Ilsac', 'Ой, что-то пошло не так! Повторите попытку.'];
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+          }
+
+          if (resp === 'this object exists') {
+            const data = ['добавление нового значения Ilsac', 'Такое значение уже существует! Если хотите изменить ее данные, выберите из списка.'];
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+          }
+
+          this.updateIlsac();
+        });
+      }
+
+    };
+
+    AdminParamsIlsacComponent.ctorParameters = () => [{
+      type: _services_goods_mainProperties_main_properties_service__WEBPACK_IMPORTED_MODULE_3__["MainPropertiesService"]
+    }, {
+      type: _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_4__["AdminMessagesService"]
+    }];
+
+    AdminParamsIlsacComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-admin-params-ilsac',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./admin-params-ilsac.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./admin-params-ilsac.component.less */
+      "./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.less")).default]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_goods_mainProperties_main_properties_service__WEBPACK_IMPORTED_MODULE_3__["MainPropertiesService"], _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_4__["AdminMessagesService"]])], AdminParamsIlsacComponent);
     /***/
   },
 
@@ -11854,6 +12229,12 @@
     var _admin_main_admin_content_admin_to_admin_to_exchange_admin_to_exchange_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
     /*! ./admin-main/admin-content/admin-to/admin-to-exchange/admin-to-exchange.component */
     "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-exchange/admin-to-exchange.component.ts");
+    /* harmony import */
+
+
+    var _admin_main_admin_content_admin_oils_params_admin_params_ilsac_admin_params_ilsac_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+    /*! ./admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component */
+    "./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.ts");
 
     const routes = [{
       path: '',
@@ -11885,7 +12266,7 @@
     }];
     let AdminModule = class AdminModule {};
     AdminModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_admin_main_admin_main_component__WEBPACK_IMPORTED_MODULE_3__["AdminMainComponent"], _admin_main_admin_nav_admin_nav_component__WEBPACK_IMPORTED_MODULE_5__["AdminNavComponent"], _admin_main_admin_content_admin_oils_params_admin_oils_params_component__WEBPACK_IMPORTED_MODULE_6__["AdminOilsParamsComponent"], _admin_main_admin_content_admin_oils_approvals_admin_oils_approvals_component__WEBPACK_IMPORTED_MODULE_7__["AdminOilsApprovalsComponent"], _admin_main_admin_content_admin_oils_goods_admin_oils_goods_component__WEBPACK_IMPORTED_MODULE_8__["AdminOilsGoodsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_products_groups_admin_params_products_groups_component__WEBPACK_IMPORTED_MODULE_11__["AdminParamsProductsGroupsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_brands_admin_params_brands_component__WEBPACK_IMPORTED_MODULE_12__["AdminParamsBrandsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_volume_admin_params_volume_component__WEBPACK_IMPORTED_MODULE_15__["AdminParamsVolumeComponent"], _admin_main_admin_content_admin_oils_params_admin_params_visc_admin_params_visc_component__WEBPACK_IMPORTED_MODULE_16__["AdminParamsViscComponent"], _admin_main_admin_content_admin_oils_params_admin_params_acea_admin_params_acea_component__WEBPACK_IMPORTED_MODULE_17__["AdminParamsAceaComponent"], _admin_main_admin_content_admin_oils_params_admin_params_api_admin_params_api_component__WEBPACK_IMPORTED_MODULE_18__["AdminParamsApiComponent"], _admin_main_admin_content_admin_articles_admin_articles_component__WEBPACK_IMPORTED_MODULE_21__["AdminArticlesComponent"], _admin_main_admin_content_admin_articles_admin_articles_themes_admin_articles_themes_component__WEBPACK_IMPORTED_MODULE_22__["AdminArticlesThemesComponent"], _admin_main_admin_content_admin_to_admin_to_component__WEBPACK_IMPORTED_MODULE_23__["AdminToComponent"], _admin_main_admin_content_admin_to_admin_to_brands_admin_to_brands_component__WEBPACK_IMPORTED_MODULE_24__["AdminToBrandsComponent"], _admin_main_admin_content_admin_to_admin_to_exchange_admin_to_exchange_component__WEBPACK_IMPORTED_MODULE_25__["AdminToExchangeComponent"]],
+      declarations: [_admin_main_admin_main_component__WEBPACK_IMPORTED_MODULE_3__["AdminMainComponent"], _admin_main_admin_nav_admin_nav_component__WEBPACK_IMPORTED_MODULE_5__["AdminNavComponent"], _admin_main_admin_content_admin_oils_params_admin_oils_params_component__WEBPACK_IMPORTED_MODULE_6__["AdminOilsParamsComponent"], _admin_main_admin_content_admin_oils_approvals_admin_oils_approvals_component__WEBPACK_IMPORTED_MODULE_7__["AdminOilsApprovalsComponent"], _admin_main_admin_content_admin_oils_goods_admin_oils_goods_component__WEBPACK_IMPORTED_MODULE_8__["AdminOilsGoodsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_products_groups_admin_params_products_groups_component__WEBPACK_IMPORTED_MODULE_11__["AdminParamsProductsGroupsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_brands_admin_params_brands_component__WEBPACK_IMPORTED_MODULE_12__["AdminParamsBrandsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_volume_admin_params_volume_component__WEBPACK_IMPORTED_MODULE_15__["AdminParamsVolumeComponent"], _admin_main_admin_content_admin_oils_params_admin_params_visc_admin_params_visc_component__WEBPACK_IMPORTED_MODULE_16__["AdminParamsViscComponent"], _admin_main_admin_content_admin_oils_params_admin_params_acea_admin_params_acea_component__WEBPACK_IMPORTED_MODULE_17__["AdminParamsAceaComponent"], _admin_main_admin_content_admin_oils_params_admin_params_api_admin_params_api_component__WEBPACK_IMPORTED_MODULE_18__["AdminParamsApiComponent"], _admin_main_admin_content_admin_articles_admin_articles_component__WEBPACK_IMPORTED_MODULE_21__["AdminArticlesComponent"], _admin_main_admin_content_admin_articles_admin_articles_themes_admin_articles_themes_component__WEBPACK_IMPORTED_MODULE_22__["AdminArticlesThemesComponent"], _admin_main_admin_content_admin_to_admin_to_component__WEBPACK_IMPORTED_MODULE_23__["AdminToComponent"], _admin_main_admin_content_admin_to_admin_to_brands_admin_to_brands_component__WEBPACK_IMPORTED_MODULE_24__["AdminToBrandsComponent"], _admin_main_admin_content_admin_to_admin_to_exchange_admin_to_exchange_component__WEBPACK_IMPORTED_MODULE_25__["AdminToExchangeComponent"], _admin_main_admin_content_admin_oils_params_admin_params_ilsac_admin_params_ilsac_component__WEBPACK_IMPORTED_MODULE_26__["AdminParamsIlsacComponent"]],
       imports: [ngx_loading__WEBPACK_IMPORTED_MODULE_19__["NgxLoadingModule"].forRoot({
         animationType: ngx_loading__WEBPACK_IMPORTED_MODULE_19__["ngxLoadingAnimationTypes"].circleSwish,
         backdropBackgroundColour: 'rgba(0,0,0,0.1)',
@@ -12658,6 +13039,7 @@
 
         this.loading = false;
         this.pApiIdsArray = [];
+        this.pIlsacIdsArray = [];
         this.pAceaIdsArray = [];
         this.pBaseIdsArray = [];
         this.pBrandIdsArray = [];
@@ -12682,6 +13064,7 @@
         this.pProducts = [];
         this.pBrands = [];
         this.pAcea = [];
+        this.pIlsac = [];
         this.pApi = [];
         this.pBase = [];
         this.pViscosity = [];
@@ -12705,6 +13088,7 @@
         this.pNonEmptyProductList = false;
         this.brandsOptions = [];
         this.aceaOptions = [];
+        this.ilsacOptions = [];
         this.apiOptions = [];
         this.baseOptions = [];
         this.volOptions = [];
@@ -12749,7 +13133,23 @@
         this.totalItems = 0;
         this.p = 1;
         this.approvalsArray = ['Mb', 'Bmw', 'Ford', 'Fiat', 'Ren', 'Vw', 'Porsche', 'Gm', 'Koenig', 'Chrysler', 'Psa', 'Volvo', 'Jaguar', 'Jaso', 'Mazda', 'Nissan'];
-        this.requestItem = new _classes_RequestItem__WEBPACK_IMPORTED_MODULE_9__["RequestItem"]([], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []);
+        this.requestItem = new _classes_RequestItem__WEBPACK_IMPORTED_MODULE_9__["RequestItem"]([], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []);
+      }
+
+      get ilsac() {
+        return this.pIlsac;
+      }
+
+      set ilsac(value) {
+        this.pIlsac = value;
+      }
+
+      get ilsacIdsArray() {
+        return this.pIlsacIdsArray;
+      }
+
+      set ilsacIdsArray(value) {
+        this.pIlsacIdsArray = value;
       }
 
       get nissanApprovals() {
@@ -13130,6 +13530,7 @@
         this.updateOils();
         this.updateBrands();
         this.updateAcea();
+        this.updateIlsac();
         this.updateApi();
         this.updateBase();
         this.updateApprovals();
@@ -13191,6 +13592,13 @@
         });
       }
 
+      updateIlsac() {
+        this.mainPropertiesService.ilsac('prod').subscribe(resp => {
+          this.ilsac = resp;
+          this.ilsacOptions = resp.map(r => new _classes_CheckboxItem__WEBPACK_IMPORTED_MODULE_4__["CheckboxItem"](r.id, r.name, false));
+        });
+      }
+
       updateApi() {
         this.apiService.Api('prod').subscribe(resp => {
           this.Api = resp;
@@ -13221,7 +13629,7 @@
         const approvals = this.approvalsArray.map(model => {
           return model.toLowerCase() + 'Approvals';
         });
-        const idsArrays = ['api', 'acea', 'base', 'brand', 'volume', 'viscosity'].concat(approvals);
+        const idsArrays = ['api', 'acea', 'ilsac', 'base', 'brand', 'volume', 'viscosity'].concat(approvals);
         idsArrays.forEach(e => {
           this[e + 'IdsArray'] = [];
         });
@@ -13243,6 +13651,14 @@
       apiCheckboxFade(apiArr) {
         const unique = this.uniqueElementsInArray(apiArr);
         this.apiOptions.map(e => {
+          e.fade = !unique.includes(e.value);
+        });
+      } // Ilsac
+
+
+      ilsacCheckboxFade(ilsacArr) {
+        const unique = this.uniqueElementsInArray(ilsacArr);
+        this.ilsacOptions.map(e => {
           e.fade = !unique.includes(e.value);
         });
       } // Acea
@@ -13446,6 +13862,7 @@
             this.convertStrPropertiesToArray(p);
             this.apiIdsArray = this.apiIdsArray.concat(p.api);
             this.aceaIdsArray = this.aceaIdsArray.concat(p.acea);
+            this.ilsacIdsArray = this.ilsacIdsArray.concat(p.ilsac);
             this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
             this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
             this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
@@ -13471,6 +13888,34 @@
           this.products.forEach(p => {
             this.convertStrPropertiesToArray(p);
             this.apiIdsArray = this.apiIdsArray.concat(p.api);
+            this.ilsacIdsArray = this.ilsacIdsArray.concat(p.ilsac);
+            this.brandIdsArray = this.brandIdsArray.concat(p.idBrand);
+            this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
+            this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
+            this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
+            this.approvalsIdsConcat(p, 'none');
+          });
+          const approvals = this.approvalsArray.map(model => {
+            return model.toLowerCase() + 'Approvals';
+          });
+          this.commonCheckboxFade(['base', 'api', 'brand', 'volume', 'viscosity'].concat(approvals));
+        });
+      } // Ilsac
+
+
+      onIlsacChange(value) {
+        this.requestItem.ilsac = value;
+        this.nullIdsArrays();
+        this.nonEmptyProductList = false;
+        this.productsService.oilsWProperties(this.requestItem).subscribe(resp => {
+          // Summarize items for pagination;
+          this.totalItems = resp.length;
+          this.nonEmptyProductList = true;
+          this.products = resp;
+          this.products.forEach(p => {
+            this.convertStrPropertiesToArray(p);
+            this.apiIdsArray = this.apiIdsArray.concat(p.api);
+            this.aceaIdsArray = this.aceaIdsArray.concat(p.acea);
             this.brandIdsArray = this.brandIdsArray.concat(p.idBrand);
             this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
             this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
@@ -13498,6 +13943,7 @@
           this.products.forEach(p => {
             this.convertStrPropertiesToArray(p);
             this.aceaIdsArray = this.aceaIdsArray.concat(p.acea);
+            this.ilsacIdsArray = this.ilsacIdsArray.concat(p.ilsac);
             this.brandIdsArray = this.brandIdsArray.concat(p.idBrand);
             this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
             this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
@@ -13525,6 +13971,7 @@
             this.convertStrPropertiesToArray(p);
             this.aceaIdsArray = this.aceaIdsArray.concat(p.acea);
             this.apiIdsArray = this.apiIdsArray.concat(p.api);
+            this.ilsacIdsArray = this.ilsacIdsArray.concat(p.ilsac);
             this.brandIdsArray = this.brandIdsArray.concat(p.idBrand);
             this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
             this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
@@ -13551,6 +13998,7 @@
             this.convertStrPropertiesToArray(p);
             this.aceaIdsArray = this.aceaIdsArray.concat(p.acea);
             this.apiIdsArray = this.apiIdsArray.concat(p.api);
+            this.ilsacIdsArray = this.ilsacIdsArray.concat(p.ilsac);
             this.brandIdsArray = this.brandIdsArray.concat(p.idBrand);
             this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
             this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
@@ -13577,6 +14025,7 @@
             this.convertStrPropertiesToArray(p);
             this.aceaIdsArray = this.aceaIdsArray.concat(p.api);
             this.brandIdsArray = this.brandIdsArray.concat(p.acea);
+            this.ilsacIdsArray = this.ilsacIdsArray.concat(p.ilsac);
             this.apiIdsArray = this.apiIdsArray.concat(p.api);
             this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
             this.viscosityIdsArray = this.viscosityIdsArray.concat(p.idViscosity);
@@ -13607,6 +14056,7 @@
             this.convertStrPropertiesToArray(p);
             this.apiIdsArray = this.apiIdsArray.concat(p.api);
             this.aceaIdsArray = this.aceaIdsArray.concat(p.acea);
+            this.ilsacIdsArray = this.ilsacIdsArray.concat(p.ilsac);
             this.brandIdsArray = this.brandIdsArray.concat(p.idBrand);
             this.baseIdsArray = this.baseIdsArray.concat(p.idBase);
             this.volumeIdsArray = this.volumeIdsArray.concat(p.idVolume);
@@ -14154,6 +14604,7 @@
 
       cancel() {
         this.visible = false;
+        window.location.reload();
       }
 
     };
@@ -15941,6 +16392,12 @@
     var _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ../../../dto/ServerResponse/ServerResponse */
     "./src/app/dto/ServerResponse/ServerResponse.ts");
+    /* harmony import */
+
+
+    var _dto_mainProperties_IlsacResponse__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ../../../dto/mainProperties/IlsacResponse */
+    "./src/app/dto/mainProperties/IlsacResponse.ts");
 
     let MainPropertiesService = class MainPropertiesService {
       constructor(http) {
@@ -15954,6 +16411,10 @@
 
       volume(definer) {
         return this.http.get(this.urlConfig.GETVOLUME + '/' + definer).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_mainProperties_VolumeResponse__WEBPACK_IMPORTED_MODULE_6__["VolumeResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(vr => vr.data));
+      }
+
+      ilsac(definer) {
+        return this.http.get(this.urlConfig.GETILSAC + '/' + definer).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_mainProperties_IlsacResponse__WEBPACK_IMPORTED_MODULE_8__["IlsacResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(ir => ir.data));
       }
 
       addVolume(data, action) {
@@ -15970,6 +16431,14 @@
         params.append('id', data.id);
         params.append('action', action);
         return this.http.post(this.urlConfig.ADDVISCOSITY, params).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_7__["ServerResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(sr => sr.response));
+      }
+
+      addIlsac(data, action) {
+        const params = new FormData();
+        params.append('name', data.name);
+        params.append('id', data.id);
+        params.append('action', action);
+        return this.http.post(this.urlConfig.ADDILSAC, params).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_7__["ServerResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(sr => sr.response));
       }
 
     };
@@ -16181,6 +16650,7 @@
         params.append('base', requestItem.base.join(','));
         params.append('api', requestItem.api.join(','));
         params.append('acea', requestItem.acea.join(','));
+        params.append('ilsac', requestItem.ilsac.join(','));
         params.append('mb', requestItem.mbApprovals.join(','));
         params.append('bmw', requestItem.bmwApprovals.join(','));
         params.append('fiat', requestItem.fiatApprovals.join(','));
@@ -16217,6 +16687,7 @@
         params.append('full_desc', data.fullDesc);
         params.append('acea', data.acea);
         params.append('api', data.api);
+        params.append('ilsac', data.ilsac);
         params.append('mbApproval', data.mbApprovals);
         params.append('bmwApproval', data.bmwApprovals);
         params.append('fiatApproval', data.fiatApprovals);
