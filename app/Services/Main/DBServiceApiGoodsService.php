@@ -12,6 +12,7 @@ namespace App\Services\Main;
 use App\Contracts\ServiceApiGoods;
 use App\Models\Goods_acea;
 use App\Models\Goods_api;
+use App\Models\Goods_ilsac;
 use App\Models\Goods_oils;
 use App\Models\Image;
 use App\Traits\getObjWithAddProperties;
@@ -105,13 +106,13 @@ class DBServiceApiGoodsService implements ServiceApiGoods
         ])){
             // Update
             if ($data['action']==='update'){
-                $this->aceaApiWhenUpdate($data['id'],$data['api'], $data['acea']);
+                $this->aceaApiIlsacWhenUpdate($data['id'],$data['api'], $data['acea'], $data['ilsac']);
                 $this->approvalsUpdate($data);
                 return ['response'=>'update success'];
             }
             // Add
             $oil = Goods_oils::where('name', $data['name'])->first();
-            $this->aceaApiWhenAdd($oil->id, $data['api'], $data['acea']);
+            $this->aceaApiIlsacWhenAdd($oil->id, $data['api'], $data['acea'], $data['ilsac']);
             $this->approvalsAdd($oil->id,$data);
             return ['response'=>'insert success'];
         }
@@ -143,27 +144,36 @@ class DBServiceApiGoodsService implements ServiceApiGoods
             }
         }
     }
-    private function aceaApiWhenAdd($id, $api, $acea){
+    private function aceaApiIlsacWhenAdd($id, $api, $acea, $ilsac){
         $new_acea = explode(',', $acea);
         $new_api = explode(',', $api);
+        $new_ilsac = explode(',', $ilsac);
         foreach ($new_acea as $na) {
             Goods_acea::create(['id_acea' => $na, 'id_goods'=>$id]);
         }
         foreach ($new_api as $na) {
             Goods_api::create(['id_api' => $na, 'id_goods'=>$id]);
+        }
+        foreach ($new_ilsac as $ni) {
+            Goods_ilsac::create(['id_ilsac' => $ni, 'id_goods'=>$id]);
         }
     }
 
-    private function aceaApiWhenUpdate($id, $api, $acea){
+    private function aceaApiIlsacWhenUpdate($id, $api, $acea, $ilsac){
         Goods_acea::where('id_goods', $id)->delete();
         Goods_api::where('id_goods', $id)->delete();
+        Goods_ilsac::where('id_goods', $id)->delete();
         $new_acea = explode(',', $acea);
         $new_api = explode(',', $api);
+        $new_ilsac = explode(',', $ilsac);
         foreach ($new_acea as $na) {
             Goods_acea::create(['id_acea' => $na, 'id_goods'=>$id]);
         }
         foreach ($new_api as $na) {
             Goods_api::create(['id_api' => $na, 'id_goods'=>$id]);
+        }
+        foreach ($new_ilsac as $ni) {
+            Goods_ilsac::create(['id_ilsac' => $ni, 'id_goods'=>$id]);
         }
     }
 

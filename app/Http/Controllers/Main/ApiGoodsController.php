@@ -34,7 +34,7 @@ class ApiGoodsController extends Controller
     }
     public function actionAddGoodsOil(Request $request){
         $data = $request->only('action', 'id', 'name', 'art', 'id_volume', 'id_viscosity', 'id_base', 'id_brand',
-            'id_image','short_desc','full_desc','acea','api','mbApproval','bmwApproval','fiatApproval','fordApproval',
+            'id_image','short_desc','full_desc','acea','api','ilsac','mbApproval','bmwApproval','fiatApproval','fordApproval',
             'renApproval', 'vwApproval', 'porscheApproval', 'gmApproval', 'koenigApproval', 'chryslerApproval',
             'psaApproval', 'volvoApproval', 'jaguarApproval', 'jasoApproval', 'mazdaApproval', 'nissanApproval');
         return json_encode($this->goodsService->addGoodsOil($data));
