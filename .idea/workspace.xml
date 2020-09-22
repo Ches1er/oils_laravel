@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Contracts/ServiceApiBrands.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contracts/ServiceApiBrands.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiBrandsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiBrandsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,20 +67,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBServiceApiBrandsApiService.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php">
+      <file leaf-file-name="DBServiceApiGoodsService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="92" column="33" lean-forward="true" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBServiceMainProperties.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="71" selection-end-column="9" />
+            <state relative-caret-position="638">
+              <caret line="143" column="43" lean-forward="true" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
+              <folding>
+                <element signature="e#119#153#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,13 +131,13 @@
         <option value="$PROJECT_DIR$/app/Models/Goods_ilsac.php" />
         <option value="$PROJECT_DIR$/app/Traits/getObjWithAddProperties.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php" />
-        <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiBrandsController.php" />
         <option value="$PROJECT_DIR$/app/Contracts/ServiceApiBrands.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php" />
+        <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" />
       </list>
     </option>
   </component>
@@ -382,12 +373,12 @@
       <workItem from="1597232543109" duration="26719000" />
       <workItem from="1598516486530" duration="20916000" />
       <workItem from="1599036166333" duration="16414000" />
-      <workItem from="1599466046613" duration="34109000" />
+      <workItem from="1599466046613" duration="35482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356501000" />
+    <option name="totallyTimeSpent" value="357874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -669,16 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
-          <folding>
-            <element signature="e#119#153#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -686,13 +667,6 @@
           <folding>
             <element signature="e#7#35#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiBrandsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="26" column="96" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -734,8 +708,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="92" column="33" lean-forward="true" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
+        <state relative-caret-position="110">
+          <caret line="94" column="25" lean-forward="true" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiBrandsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="26" column="96" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="143" column="43" lean-forward="true" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
+          <folding>
+            <element signature="e#119#153#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

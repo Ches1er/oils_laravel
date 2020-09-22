@@ -113,7 +113,8 @@ class DBServiceApiGoodsService implements ServiceApiGoods
             // Add
             $oil = Goods_oils::where('name', $data['name'])->first();
             $this->aceaApiIlsacWhenAdd($oil->id, $data['api'], $data['acea'], $data['ilsac']);
-            $this->approvalsAdd($oil->id,$data);
+            $app_server_resp = $this->approvalsAdd($oil->id,$data);
+            if ($app_server_resp) return $app_server_resp;
             return ['response'=>'insert success'];
         }
         return ['response'=>'error'];
@@ -139,7 +140,11 @@ class DBServiceApiGoodsService implements ServiceApiGoods
             if ($data[$req]!=='null'){
                 $new_approvals = explode(',', $data[$req]);
                 foreach ($new_approvals as $na){
-                    DB::table($table)->insert(['id_goods'=>$id, 'id_approval'=>$na]);
+                    try {
+                        DB::table($table)->insert(['id_goods' => $id, 'id_approval' => $na]);
+                    } catch (\Exception $e) {
+                        return response()->json(['error' => $e->getMessage()], 500);
+                    }
                 }
             }
         }
