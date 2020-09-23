@@ -41,7 +41,7 @@ class DBServiceApiTo implements ServiceApiTo
         return $this->getWithImagePath($autos);
     }
 
-    public function getGoods($id_auto, $exchange)
+    public function getGoods($id_auto, $exchange=null)
     {
         $auto = To_auto::where('id',$id_auto)->get();
         $goods = $auto[0]->goods();

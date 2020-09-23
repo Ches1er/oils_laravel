@@ -37,10 +37,10 @@ trait getToObjWithAddProperties
                   $min_id = $this->getMin($group->id)->id;
               }
               foreach ($objects as &$object){
-                  if ($object->id === $max_id){
+                  if ($object->id == $max_id){
                       $object->max = true;
                   }
-                  if ($object->id === $min_id){
+                  if ($object->id == $min_id){
                       $object->min = true;
                   }
               }
