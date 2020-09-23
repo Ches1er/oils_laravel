@@ -30,7 +30,7 @@ class ApiToController extends Controller
     public function actionGetAuto($id){
         return json_encode($this->toService->getAuto($id));
     }
-    public function actionGetAutoGoods($id, $exchange){
+    public function actionGetAutoGoods($id, $exchange=null){
         return json_encode($this->toService->getGoods($id,$exchange));
     }
     public function actionGetGroups(){
