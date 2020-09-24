@@ -206,6 +206,14 @@ class DBServiceApiGoodsService implements ServiceApiGoods
             return $result;
         }
     }
+
+    public function getGoodsOilsByBrand($brandid)
+    {
+        $goods =  Goods_oils::where('id_brand',$brandid)->get();
+        $goods = $this->getWithImagePath($goods);
+        $goods = $this->getOilsWithAddProperties($goods);
+        return $goods;
+    }
 }
 
 

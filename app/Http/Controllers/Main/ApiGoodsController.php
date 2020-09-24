@@ -45,4 +45,7 @@ class ApiGoodsController extends Controller
     public function actionFindGoods($keyword){
         return json_encode($this->goodsService->findGoods($keyword));
     }
+    public function actionGetGoodsOilsByBrand($brandid){
+        return json_encode($this->goodsService->getGoodsOilsByBrand($brandid));
+    }
 }

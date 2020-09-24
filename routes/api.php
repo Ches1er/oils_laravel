@@ -102,6 +102,7 @@ Route::prefix('goods')->group(function (){
     Route::get('/find/{keyword}', 'Main\ApiGoodsController@actionFindGoods');
     // Oils
     Route::get('/oils', 'Main\ApiGoodsController@actionGetGoodsOils');
+    Route::get('/oils_by_brand/{brandid}', 'Main\ApiGoodsController@actionGetGoodsOilsByBrand');
     Route::get('/unit/{id}/{table_definer}', 'Main\ApiGoodsController@actionGetGoodsUnit');
     Route::post('/oilswprop', 'Main\ApiGoodsController@actionGetGoodsOilsWProp');
     Route::post('/addoil', 'Main\ApiGoodsController@actionAddGoodsOil');

@@ -12,6 +12,7 @@ namespace App\Contracts;
 interface ServiceApiGoods
 {
     public function getGoodsOils();
+    public function getGoodsOilsByBrand($brandid);
     public function getGoodsOil($oilid);
     public function getGoodsUnit($id, $table_definer);
     public function findGoods($keyword);
