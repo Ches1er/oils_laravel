@@ -114,7 +114,7 @@ class DBServiceApiGoodsService implements ServiceApiGoods
             $oil = Goods_oils::where('name', $data['name'])->first();
             $this->aceaApiIlsacWhenAdd($oil->id, $data['api'], $data['acea'], $data['ilsac']);
             $app_server_resp = $this->approvalsAdd($oil->id,$data);
-            if ($app_server_resp) return $app_server_resp;
+            // if ($app_server_resp) return $app_server_resp;
             return ['response'=>'insert success'];
         }
         return ['response'=>'error'];
