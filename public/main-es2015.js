@@ -3756,6 +3756,8 @@ class VolvoResponse {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Article", function() { return Article; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 class Article {
     constructor(pId, pName, pIdImg, pShortDesc, pFullDesc, pGoods, pIdTheme, pImg) {
@@ -3767,6 +3769,7 @@ class Article {
         this.pGoods = pGoods;
         this.pIdTheme = pIdTheme;
         this.pImg = pImg;
+        this.urlEncode = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpUrlEncodingCodec"]();
     }
     get id() {
         return this.pId;
@@ -3793,7 +3796,12 @@ class Article {
         this.pShortDesc = value;
     }
     get fullDesc() {
-        return this.pFullDesc;
+        try {
+            return this.urlEncode.decodeValue(this.pFullDesc);
+        }
+        catch (e) {
+            return 'Ошибка! В тексте присутствуют символы, которые не могут быть декодированы';
+        }
     }
     set fullDesc(value) {
         this.pFullDesc = value;
@@ -4722,7 +4730,12 @@ class Oils {
         this.pShortDesc = value;
     }
     get fullDesc() {
-        return this.urlEncode.decodeValue(this.pFullDesc);
+        try {
+            return this.urlEncode.decodeValue(this.pFullDesc);
+        }
+        catch (e) {
+            return 'Ошибка! В тексте присутствуют символы, которые не могут быть декодированы';
+        }
     }
     set fullDesc(value) {
         this.pFullDesc = value;
@@ -6308,7 +6321,6 @@ let AdminOilsGoodsComponent = class AdminOilsGoodsComponent {
     onChangeGoodsSubmit() {
         this.productsService.addOils(this.addChangeGoods.value, this.whatHaveToDo).subscribe(resp => {
             this.adminMessageService.ShowServerResponseWindow();
-            console.log(resp);
             if (resp === 'update success') {
                 const data = ['обновление значения масла: ' + this.addChangeGoods.value.name, 'Данные успешно обновлены'];
                 this.adminMessageService.DataToServerResponseData(data.join(';'));
