@@ -44,10 +44,13 @@ class DBServiceApiTo implements ServiceApiTo
     {
         $auto = To_auto::where('id',$id_auto)->get();
         $goods = $auto[0]->goods();
-        print_r($this->updateExchanges());
+        $this->getExchangesFromPBApi();
         return $this->getToObjWProp($goods, $exchange);
     }
-    private function updateExchanges(){
+
+    // Update Exchanges from Privatbank API
+
+    private function getExchangesFromPBApi(){
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",
@@ -67,9 +70,17 @@ class DBServiceApiTo implements ServiceApiTo
         if ($err) {
             return "cURL Error #:" . $err;
         } else {
-            return json_decode($response);
+            $this->updateExchanges(json_decode($response));
+            return true;
         }
     }
+    private function updateExchanges($exch_array){
+        foreach ($exch_array as $e){
+            if ($e->ccy === 'USD') To_price_exchange::where('name','usd')->update(['exchange'=>$e->sale]);
+            if ($e->ccy === 'EUR') To_price_exchange::where('name','euro')->update(['exchange'=>$e->sale]);
+        }
+    }
+
 
     public function getGroups()
     {
