@@ -28,7 +28,6 @@ class DBServiceApiTo implements ServiceApiTo
     {
         $autos =  To_auto::where('id',$id)->get();
         return $this->getWithImagePath($autos);
-
     }
 
     public function getAutos($idbrand)
@@ -45,7 +44,31 @@ class DBServiceApiTo implements ServiceApiTo
     {
         $auto = To_auto::where('id',$id_auto)->get();
         $goods = $auto[0]->goods();
+        print_r($this->updateExchanges());
         return $this->getToObjWProp($goods, $exchange);
+    }
+    private function updateExchanges(){
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "Cache-Control: no-cache",
+            ),
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+        if ($err) {
+            return "cURL Error #:" . $err;
+        } else {
+            return json_decode($response);
+        }
     }
 
     public function getGroups()
