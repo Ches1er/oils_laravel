@@ -120,7 +120,7 @@ class DBServiceApiTo implements ServiceApiTo
                 ->first() && $data['action']==='add') return ['response'=>'this object exists'];
 
         // Create-update
-        if (To_auto::updateOrCreate(['id'=> $data['id']],[
+        if ($auto = To_auto::updateOrCreate(['id'=> $data['id']],[
             'name'=>$data['name'],
             'id_brand'=>(int)$data['id_brand'],
             'id_image'=>(int)$data['id_image']
@@ -138,8 +138,8 @@ class DBServiceApiTo implements ServiceApiTo
             }
             if ($data['action']!=='update' && $data['goods']){
                 $goods_ids_array = $this->addGoods($data['goods']);
-                array_map(function ($e)use ($data){
-                    To_auto_goods::create(['id_auto'=>$data['id'],'id_goods'=>$e]);
+                array_map(function ($e)use ($data, $auto){
+                    To_auto_goods::create(['id_auto'=>$auto->id,'id_goods'=>$e]);
                 },$goods_ids_array);
                 return ['response'=>'insert success'];
             } else {
@@ -155,7 +155,7 @@ class DBServiceApiTo implements ServiceApiTo
         $goods_str_arr = explode(';', $data);
         $goods_arr = [];
         foreach ($goods_str_arr as $unit){
-            array_push($goods_arr, json_decode($unit));
+            $goods_arr[] = json_decode($unit);
         }
         array_map(function ($e) use (&$ids){
             $obj = To_goods::updateOrCreate(['id' => $e->pId],[
