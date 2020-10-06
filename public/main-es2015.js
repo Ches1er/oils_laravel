@@ -407,7 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"admin_unit_block\">\n  <div class=\"admin_block_header\">В данном блоке вы можете изменять существующие или добавлять новые автомобильные марки и статьи о техобслуживании для конкретных моделей</div>\n  <div class=\"articles_main\">\n    <div class=\"articles_nav\">\n      <div *ngIf=\"!articles\">К сожалению пока-что нет статей</div>\n      <div *ngIf=\"articles\">\n        <div class=\"article\" *ngFor=\"let article of articles\" (click)=\"getArticle(article)\">\n          {{article.name}}\n        </div>\n      </div>\n    </div>\n    <div class=\"article_block\">\n      <app-admin-to-brands></app-admin-to-brands>\n      <form class=\"admin_content_form\" [formGroup]=\"addChangeArticle\" (ngSubmit)=\"onArticleSubmit()\">\n        <div class=\"admin_block_header_small\">Форма добавления-изменения статей. Для изменения существующей статьи, выберите ее из меню слева</div>\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Выберите марку</p>\n          <select name=\"\" id=\"themes\" formControlName = \"idBrand\">\n            <option disabled selected value> -- Выберите авто -- </option>\n            <option *ngFor=\"let brand of brands\" value=\"{{brand.id}}\">{{brand.name}}</option>\n          </select>\n        </div>\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Модель автомобиля</p>\n          <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n          <div class=\"validation_error\"\n               *ngIf=\"ca.get('name').getError('required') &&\n                (ca.get('name').dirty || ca.get('name').touched)\">\n            Введите пожалуйста название автомобиля.\n          </div>\n        </div>\n\n        <div class=\"form-group\" *ngIf=\"choosenImg\">\n          <img class=\"choosenImg\" src=\"{{choosenImg.path}}\" alt=\"\">\n        </div>\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Выберите картинку авто</p>\n          <p class=\"admin_content_block_label_small\">*Если картинка не будет выбрана, то будет установлена картинка по-умолчанию</p>\n          <p class=\"admin_content_block_label_small red\">*Формат картинки 400*225 px.</p>\n          <button class=\"admin-btn\" (click)=\"imagesPickerShow($event)\">Выберите картинку авто</button>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"goods\">\n            <div *ngIf=\"goods.length !== 0\">\n              <p class=\"admin_content_block_label\">Удаление-изменение товарных позиций</p>\n              <div class=\"goods_unit\" *ngFor=\"let g of goods\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.name}}\" (change)=\"nameChange($event.target.value, g.id)\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.catNumber}}\"\n                       (change)=\"catNumberChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"groupChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option\n                    *ngFor=\"let group of groups\"\n                    [selected]=\"g.idGroup == group.id\"\n                    value=\"{{group.id}}\"\n                  >\n                    {{group.name}}\n                  </option>\n                </select>\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.price}}\" (change)=\"priceChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"exchangeChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option *ngFor=\"let e of exchanges\" [selected]=\"g.idExchange === e.id\" value=\"{{e.id}}\">{{e.name}}</option>\n                </select>\n                <button class=\"admin-btn\" (click)=\"removeItemFromGoods($event, g.id)\">-</button>\n              </div>\n          </div>\n            <div class=\"new_item\">\n\n\n              <!--Add goods-->\n\n              <div class=\"form-group\">\n                <p class=\"admin_content_block_label\">Добавление товарных позиций</p>\n                <form class=\"admin_content_form\" [formGroup]=\"addGoodsItem\" (ngSubmit)=\"onGoodsItemSubmit()\">\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Название</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"name\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('name').getError('required') &&\n                (gi.get('name').dirty || gi.get('name').touched)\">\n                      Введите пожалуйста название автомобиля.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Каталожный номер</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"catNumber\">\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Группа товаров</p>\n                    <select name=\"\" formControlName=\"idGroup\">\n                      <option\n                        *ngFor=\"let group of groups\"\n                        value=\"{{group.id}}\"\n                      >\n                        {{group.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idGroup').getError('required') &&\n                (gi.get('idGroup').dirty || gi.get('idGroup').touched)\">\n                      Выберите пожалуйста группу.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Цена</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"price\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('price').getError('required') &&\n                (gi.get('price').dirty || gi.get('price').touched)\">\n                      Введите цену.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Валюта</p>\n                    <select name=\"\" formControlName=\"idExchange\">\n                      <option\n                        *ngFor=\"let e of exchanges\"\n                        value=\"{{e.id}}\"\n                      >\n                        {{e.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idExchange').getError('required') &&\n                (gi.get('idExchange').dirty || gi.get('idExchange').touched)\">\n                      Выберите пожалуйста валюту.\n                    </div>\n                  </div>\n                  <button type=\"submit\" class=\"admin-btn\">+</button>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"admin_content_button_block\">\n          <div *ngIf=\"ca.valid\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить значение</button>\n          </div>\n          <div *ngIf=\"ca.valid\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n          </div>\n          <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"admin_unit_block\">\n  <div class=\"admin_block_header\">В данном блоке вы можете изменять существующие или добавлять новые автомобильные марки и статьи о техобслуживании для конкретных моделей</div>\n  <div class=\"articles_main\">\n    <div class=\"articles_nav\">\n      <div *ngIf=\"!articles\">К сожалению пока-что нет статей</div>\n      <div *ngIf=\"articles\">\n        <div class=\"article\" *ngFor=\"let article of articles\" (click)=\"getArticle(article)\">\n          {{article.name}}\n        </div>\n      </div>\n    </div>\n    <div class=\"article_block\">\n      <app-admin-to-brands></app-admin-to-brands>\n      <form class=\"admin_content_form\" [formGroup]=\"addChangeArticle\" (ngSubmit)=\"onArticleSubmit()\">\n        <div class=\"admin_block_header_small\">Форма добавления-изменения статей. Для изменения существующей статьи, выберите ее из меню слева</div>\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Выберите марку</p>\n          <select name=\"\" id=\"themes\" formControlName = \"idBrand\">\n            <option disabled selected value> -- Выберите авто -- </option>\n            <option *ngFor=\"let brand of brands\" value=\"{{brand.id}}\">{{brand.name}}</option>\n          </select>\n        </div>\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Модель автомобиля</p>\n          <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n          <div class=\"validation_error\"\n               *ngIf=\"ca.get('name').getError('required') &&\n                (ca.get('name').dirty || ca.get('name').touched)\">\n            Введите пожалуйста название автомобиля.\n          </div>\n        </div>\n\n        <div class=\"form-group\" *ngIf=\"choosenImg\">\n          <img class=\"choosenImg\" src=\"{{choosenImg.path}}\" alt=\"\">\n        </div>\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Выберите картинку авто</p>\n          <p class=\"admin_content_block_label_small\">*Если картинка не будет выбрана, то будет установлена картинка по-умолчанию</p>\n          <p class=\"admin_content_block_label_small red\">*Формат картинки 400*225 px.</p>\n          <button class=\"admin-btn\" (click)=\"imagesPickerShow($event)\">Выберите картинку авто</button>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"goods\">\n            <div *ngIf=\"goods.length !== 0\">\n              <p class=\"admin_content_block_label\">Удаление-изменение товарных позиций</p>\n              <div class=\"goods_unit\" *ngFor=\"let g of goods\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.name}}\" (change)=\"nameChange($event.target.value, g.id)\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.catNumber}}\"\n                       (change)=\"catNumberChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"groupChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option\n                    *ngFor=\"let group of groups\"\n                    [selected]=\"g.idGroup == group.id\"\n                    value=\"{{group.id}}\"\n                  >\n                    {{group.name}}\n                  </option>\n                </select>\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.price}}\" (change)=\"priceChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"exchangeChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option *ngFor=\"let e of exchanges\" [selected]=\"g.idExchange === e.id\" value=\"{{e.id}}\">{{e.name}}</option>\n                </select>\n                <button class=\"admin-btn\" (click)=\"removeItemFromGoods($event, g.id)\">-</button>\n              </div>\n          </div>\n            <div class=\"new_item\">\n\n\n              <!--Add goods-->\n\n              <div class=\"form-group\">\n                <p class=\"admin_content_block_label\">Добавление товарных позиций</p>\n                <form class=\"admin_content_form\" [formGroup]=\"addGoodsItem\" (ngSubmit)=\"onGoodsItemSubmit()\">\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Название</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"name\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('name').getError('required') &&\n                (gi.get('name').dirty || gi.get('name').touched)\">\n                      Введите пожалуйста название автомобиля.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Каталожный номер</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"catNumber\">\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Группа товаров</p>\n                    <select name=\"\" formControlName=\"idGroup\">\n                      <option\n                        *ngFor=\"let group of groups\"\n                        value=\"{{group.id}}\"\n                      >\n                        {{group.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idGroup').getError('required') &&\n                (gi.get('idGroup').dirty || gi.get('idGroup').touched)\">\n                      Выберите пожалуйста группу.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Цена</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"price\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('price').getError('required') &&\n                (gi.get('price').dirty || gi.get('price').touched)\">\n                      Введите цену.\n                    </div>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('price').getError('pattern') &&\n                (gi.get('price').dirty || gi.get('price').touched)\">\n                      К вводу допускаются только цифры.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Валюта</p>\n                    <select name=\"\" formControlName=\"idExchange\">\n                      <option\n                        *ngFor=\"let e of exchanges\"\n                        value=\"{{e.id}}\"\n                      >\n                        {{e.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idExchange').getError('required') &&\n                (gi.get('idExchange').dirty || gi.get('idExchange').touched)\">\n                      Выберите пожалуйста валюту.\n                    </div>\n                  </div>\n                  <button type=\"submit\" class=\"admin-btn\">+</button>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"admin_content_button_block\">\n          <div *ngIf=\"ca.valid\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить значение</button>\n          </div>\n          <div *ngIf=\"goodsItemNameError.length > 0 || goodsItemArtError.length > 0 || goodsItemPriceError.length > 0\">\n            <div class=\"validation_error\">\n              <b>Ошибки в блоке: \"Удаление-изменение товарных позиций, ошибки указаны ниже:</b>\n            </div>\n            <div *ngIf=\"goodsItemNameError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemNameError\">\n                {{er}}\n              </div>\n            </div>\n            <div *ngIf=\"goodsItemArtError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemArtError\">\n                {{er}}\n              </div>\n            </div>\n            <div *ngIf=\"goodsItemPriceError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemPriceError\">\n                {{er}}\n              </div>\n            </div>\n          </div>\n          <div *ngIf=\"ca.valid && goodsItemNameError.length === 0 && goodsItemArtError.length === 0 && goodsItemPriceError.length === 0\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n          </div>\n          <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n");
 
 /***/ }),
 
@@ -7795,6 +7795,10 @@ let AdminToComponent = class AdminToComponent {
         this.pGroups = null;
         this.pChoosenImg = null;
         this.blockDefiner = false;
+        this.goodsItemNameError = [];
+        this.goodsItemArtError = [];
+        this.goodsItemPriceError = [];
+        this.prevId = 0;
         this.addChangeArticle = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormGroup"]({
             id: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
@@ -7806,7 +7810,7 @@ let AdminToComponent = class AdminToComponent {
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
             idGroup: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
             catNumber: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
-            price: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
+            price: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].pattern('^[0-9]*$')]),
             idExchange: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
         });
     }
@@ -7961,29 +7965,73 @@ let AdminToComponent = class AdminToComponent {
         this.goods.push(goodsItems);
         this.isGoodsChanges = true;
     }
-    nameChange(name, id) {
-        this.goods.map(e => {
-            if (e.id == id) {
-                e.name = name;
+    checkGoodsItemErrors(definer) {
+        let hasErrors = 0;
+        const propertyName = 'goodsItem' + definer + 'Error';
+        for (let i = 0; i < this[propertyName].length; i++) {
+            if (this[propertyName][i]) {
+                hasErrors = 1;
+                i = this[propertyName].length;
             }
-        });
+        }
+        if (!hasErrors)
+            this[propertyName] = [];
+    }
+    nameChange(name, id) {
+        if (name === '') {
+            this.goodsItemNameError.push('Название товара не должно быть пустым!');
+        }
+        if (name !== '') {
+            this.goods.map(e => {
+                if (e.id == id) {
+                    this.goodsItemNameError.pop();
+                    this.checkGoodsItemErrors('Name');
+                    e.name = name;
+                }
+            });
+        }
         this.isGoodsChanges = true;
     }
     catNumberChange(catNumber, id) {
-        this.goods.map(e => {
-            if (e.id == id) {
-                e.catNumber = catNumber;
-            }
-        });
+        if (catNumber === '') {
+            this.goodsItemArtError.push('Aртикул товара не должен быть пустым!');
+        }
+        if (catNumber !== '') {
+            this.goods.map(e => {
+                if (e.id == id) {
+                    this.goodsItemArtError.pop();
+                    this.checkGoodsItemErrors('Art');
+                    e.catNumber = catNumber;
+                }
+            });
+        }
+        else {
+            return null;
+        }
         this.isGoodsChanges = true;
     }
     priceChange(price, id) {
-        this.goods.map(e => {
-            if (e.id == id) {
-                e.price = price;
+        if (price === '' || !this.isNumber(price)) {
+            if (this.prevId === id) {
+                return null;
             }
-        });
+            this.goodsItemPriceError.push('Значение в поле "Цена товара" пустое или это не число.');
+            this.prevId = id;
+        }
+        if (price !== '' && this.isNumber(price)) {
+            this.goods.map(e => {
+                if (e.id == id) {
+                    this.goodsItemPriceError.pop();
+                    this.checkGoodsItemErrors('Price');
+                    e.price = price;
+                }
+            });
+        }
         this.isGoodsChanges = true;
+    }
+    isNumber(num) {
+        const regExp = new RegExp('^[0-9]*$');
+        return regExp.test(num);
     }
     imagesPickerShow(e) {
         // change blockDefiner for working only in one block, else pictures will change in all blocks
