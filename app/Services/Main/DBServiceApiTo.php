@@ -130,7 +130,7 @@ class DBServiceApiTo implements ServiceApiTo
             }
             if ($data['action']==='update' && $data['is_goods_changes']==='true'){
                 To_auto_goods::where('id_auto', $data['id'])->delete();
-                if ($data['goods'] === '') return ['response'=>'update success'];
+                if (strlen($data['goods']) === 0) return ['response'=>'update success'];
                 $goods_ids_array = $this->addGoods($data['goods']);
                 array_map(function ($e) use ($data){
                     To_auto_goods::create(['id_auto'=>$data['id'],'id_goods'=>$e]);
