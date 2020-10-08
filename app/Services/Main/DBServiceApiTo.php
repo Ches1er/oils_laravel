@@ -16,6 +16,7 @@ use App\Models\To_auto;
 use App\Models\To_auto_goods;
 use App\Models\To_goods;
 use App\Models\To_groups;
+use App\Models\To_model;
 use App\Models\To_price_exchange;
 use App\Traits\getObjWithImagesPath;
 use App\Traits\getToObjWithAddProperties;
@@ -30,13 +31,13 @@ class DBServiceApiTo implements ServiceApiTo
         return $this->getWithImagePath($autos);
     }
 
-    public function getAutos($idbrand)
+    public function getAutos($idmodel)
     {
-        if ($idbrand === 'all') {
+        if ($idmodel === 'all') {
             $autos =  To_auto::all();
             return $this->getWithImagePath($autos);
         }
-        $autos =  To_auto::where('id_brand',$idbrand)->get();
+        $autos =  To_auto::where('id_model',$idmodel)->get();
         return $this->getWithImagePath($autos);
     }
 
@@ -89,10 +90,10 @@ class DBServiceApiTo implements ServiceApiTo
 
     public function getBrands()
     {
-        $autos =  To_auto::all();
+        $models =  To_model::all();
         $brand_ids = [];
-        foreach ($autos as $auto){
-            array_push($brand_ids, $auto->id_brand);
+        foreach ($models as $model){
+            array_push($brand_ids, $model->id_brand);
         }
         return Brand::whereIn('id',$brand_ids)->get();
     }
@@ -175,5 +176,16 @@ class DBServiceApiTo implements ServiceApiTo
     {
         $exchanges = To_price_exchange::all();
         return $exchanges;
+    }
+
+    public function getModels($idbrand)
+    {
+        $models = To_model::where('id_brand', $idbrand)->get();
+        return $models;
+    }
+
+    public function addModel(array $data)
+    {
+        // TODO: Implement addModel() method.
     }
 }

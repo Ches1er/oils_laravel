@@ -24,8 +24,8 @@ class ApiToController extends Controller
         $this->brandService = $brandService;
     }
 
-    public function actionGetAutos($idbrand){
-        return json_encode($this->toService->getAutos($idbrand));
+    public function actionGetAutos($idmodel){
+        return json_encode($this->toService->getAutos($idmodel));
     }
     public function actionGetAuto($id){
         return json_encode($this->toService->getAuto($id));
@@ -38,6 +38,9 @@ class ApiToController extends Controller
     }
     public function actionGetBrands(){
         return json_encode($this->brandService->getAutoBrands());
+    }
+    public function actionGetModels($idbrand){
+        return json_encode($this->toService->getModels($idbrand));
     }
     public function actionGetExchanges() {
         return json_encode($this->toService->getExchanges());

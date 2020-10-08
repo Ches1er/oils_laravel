@@ -71,7 +71,7 @@ class DBServiceMainProperties implements ServiceApiMainProperties
             array_push($visc_ids, $good->id_viscosity);
         }
         $visc_ids = $this->uniqueElementsInArray($visc_ids);
-        $result = Viscosity::whereIn('id',$visc_ids)->get();
+        $result = Viscosity::whereIn('id',$visc_ids)->orderBy('name', 'DESC')->get();
         return $result;
     }
 
