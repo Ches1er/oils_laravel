@@ -180,6 +180,7 @@ class DBServiceApiTo implements ServiceApiTo
 
     public function getModels($idbrand)
     {
+        if ($idbrand === 'all') return To_model::all();
         $models = To_model::where('id_brand', $idbrand)->get();
         return $models;
     }

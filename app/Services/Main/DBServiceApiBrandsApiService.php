@@ -97,6 +97,7 @@ class DBServiceApiBrandsApiService implements ServiceApiBrands
                 array_push($brand_ids, $good->id_brand);
             }
             $brands_ = $this->getWithImagePath($producttype->Brands());
+            $brands = $this->addTypesToTheBrands($brands);
             foreach ($brands_ as $brand){
                 if (in_array($brand->id,$brand_ids)){
                     array_push($brands, $brand);
@@ -104,14 +105,13 @@ class DBServiceApiBrandsApiService implements ServiceApiBrands
             }
             return $brands;
         }
-        return $this->getWithImagePath($producttype->Brands());
-
+        $brands = $this->getWithImagePath($producttype->Brands());
+        $brands = $this->addTypesToTheBrands($brands);
+        return $brands;
     }
 
     public function getAutoBrands()
     {
-        $auto_product_group = Product_type::where('name','Авто')->first();
-        $brands = $this->getWithImagePath($auto_product_group->Brands());
-        return $brands;
+        // TODO: Implement getAutoBrands() method.
     }
 }
