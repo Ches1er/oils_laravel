@@ -182,7 +182,7 @@ class DBServiceApiTo implements ServiceApiTo
 
     public function addModel(array $data)
     {
-        if (To_auto::where('name',$data['name'])
+        if (To_model::where('name',$data['name'])
                 ->first() && $data['action']==='add') return ['response'=>'this object exists'];
 
         // Create-update
