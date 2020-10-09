@@ -53,8 +53,9 @@ class ApiToController extends Controller
         $data = $request->only('id','name','id_brand','goods','id_image', 'action', 'is_goods_changes');
         return json_encode($this->toService->addTo($data));
     }
-    public function actionAddGoods(Request $request){
-
+    public function actionAddModel(Request $request){
+        $data = $request->only('id','name','id_brand');
+        return json_encode($this->toService->addModel($data));
     }
 
 }

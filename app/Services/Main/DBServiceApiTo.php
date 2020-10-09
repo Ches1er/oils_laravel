@@ -90,12 +90,7 @@ class DBServiceApiTo implements ServiceApiTo
 
     public function getBrands()
     {
-        $models =  To_model::all();
-        $brand_ids = [];
-        foreach ($models as $model){
-            array_push($brand_ids, $model->id_brand);
-        }
-        return Brand::whereIn('id',$brand_ids)->get();
+        // todo
     }
 
     public function addExchange(array $data)
@@ -187,6 +182,20 @@ class DBServiceApiTo implements ServiceApiTo
 
     public function addModel(array $data)
     {
-        // TODO: Implement addModel() method.
+        if (To_auto::where('name',$data['name'])
+                ->first() && $data['action']==='add') return ['response'=>'this object exists'];
+
+        // Create-update
+        if ($model = To_model::updateOrCreate(['id'=> $data['id']],[
+            'name'=>$data['name'],
+            'id_brand'=>(int)$data['id_brand']
+        ])){
+            if ($data['action']==='update'){
+                return ['response'=>'update success'];
+            } else {
+                return ['response'=>'insert success'];
+            }
+        }
+        return ['response'=>'error'];
     }
 }
