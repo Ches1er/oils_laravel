@@ -50,7 +50,7 @@ class ApiToController extends Controller
         return json_encode($this->toService->addExchange($data));
     }
     public function actionAddTo(Request $request){
-        $data = $request->only('id','name','id_brand','goods','id_image', 'action', 'is_goods_changes');
+        $data = $request->only('id','name','id_model','goods','id_image', 'action', 'is_goods_changes');
         return json_encode($this->toService->addTo($data));
     }
     public function actionAddModel(Request $request){

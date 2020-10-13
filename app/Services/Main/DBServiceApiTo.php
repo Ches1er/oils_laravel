@@ -118,7 +118,7 @@ class DBServiceApiTo implements ServiceApiTo
         // Create-update
         if ($auto = To_auto::updateOrCreate(['id'=> $data['id']],[
             'name'=>$data['name'],
-            'id_brand'=>(int)$data['id_brand'],
+            'id_model'=>(int)$data['id_model'],
             'id_image'=>(int)$data['id_image']
         ])){
             if ($data['action']==='update' && $data['is_goods_changes']==='false'){
