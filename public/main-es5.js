@@ -98,7 +98,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"contacts_block\">\n  <div class=\"contacts_header\">\n    Контакты\n  </div>\n  <div class=\"contacts\">\n    <div class=\"delivery_info\">\n      Доставка осуществляется службой доставки \"Новая почта\" без предварительной предоплаты\n    </div>\n    <div class=\"phones\">\n      Уважаемые покупатели, получить консультацию или заказать материалы вы можете в нашем сообществе, или позвонив по телефону: <span>0983291945</span>\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"contacts_block\">\n  <div class=\"contacts_header\">\n    Контакты\n  </div>\n  <div class=\"contacts\">\n    <div class=\"delivery_info\">\n      Доставка осуществляется \"Новой почтой\" без предварительной оплаты.\n    </div>\n    <div class=\"phones\">\n      Уважаемые покупатели, получить консультацию или заказать материалы вы можете в нашем сообществе, или позвонив по телефону: <span>0983291945</span>\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -583,6 +583,26 @@
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.html":
+  /*!******************************************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.html ***!
+    \******************************************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppModulesAdminAdminMainAdminContentAdminToAdminToModelsAdminToModelsComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<form class=\"admin_content_form\" [formGroup]=\"addChangeModels\" (ngSubmit)=\"onChangeModelsSubmit()\">\n  <div class=\"admin_block_header_small\">Форма добавления-изменения моделей авто.</div>\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Для поиска модели по бренду, выберите последний из списка</p>\n    <p class=\"admin_content_block_label_small\">*При добавлении модели обязательно выберите из списка бренд</p>\n    <p class=\"admin_content_block_label\">Бренд</p>\n    <select name=\"\" id=\"brands\" (change)=\"updateModels($event.target.value)\">\n      <option disabled selected value> -- Выберите значение бренд -- </option>\n      <option *ngFor=\"let br of brands\" value=\"{{br.id}}\">{{br.name}}</option>\n    </select>\n  </div>\n  <div class=\"form-group\">\n    <div *ngIf=\"models.length > 0\">\n      <select name=\"\" id=\"models\" formControlName = \"id\" (change)=\"fillInModel($event.target.value)\">\n        <option disabled selected value> -- Выберите модель -- </option>\n        <option *ngFor=\"let model of models\" value=\"{{model.id}}\">{{model.name}}</option>\n      </select>\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <p class=\"admin_content_block_label\">Название модели</p>\n    <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n    <div class=\"validation_error\"\n         *ngIf=\"fc.name.getError('required') &&\n                (fc.name.dirty || fc.name.touched)\">\n      Введите пожалуйста название модели.\n    </div>\n  </div>\n  <div class=\"admin_content_button_block\">\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить модель</button>\n    </div>\n    <div *ngIf=\"f.valid\">\n      <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n    </div>\n    <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n  </div>\n</form>\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to.component.html":
   /*!*******************************************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to.component.html ***!
@@ -598,7 +618,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"admin_unit_block\">\n  <div class=\"admin_block_header\">В данном блоке вы можете изменять существующие или добавлять новые автомобильные марки и статьи о техобслуживании для конкретных моделей</div>\n  <div class=\"articles_main\">\n    <div class=\"articles_nav\">\n      <div *ngIf=\"!articles\">К сожалению пока-что нет статей</div>\n      <div *ngIf=\"articles\">\n        <div class=\"article\" *ngFor=\"let article of articles\" (click)=\"getArticle(article)\">\n          {{article.name}}\n        </div>\n      </div>\n    </div>\n    <div class=\"article_block\">\n      <app-admin-to-brands></app-admin-to-brands>\n      <form class=\"admin_content_form\" [formGroup]=\"addChangeArticle\" (ngSubmit)=\"onArticleSubmit()\">\n        <div class=\"admin_block_header_small\">Форма добавления-изменения статей. Для изменения существующей статьи, выберите ее из меню слева</div>\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Выберите марку</p>\n          <select name=\"\" id=\"themes\" formControlName = \"idBrand\">\n            <option disabled selected value> -- Выберите авто -- </option>\n            <option *ngFor=\"let brand of brands\" value=\"{{brand.id}}\">{{brand.name}}</option>\n          </select>\n        </div>\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Модель автомобиля</p>\n          <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n          <div class=\"validation_error\"\n               *ngIf=\"ca.get('name').getError('required') &&\n                (ca.get('name').dirty || ca.get('name').touched)\">\n            Введите пожалуйста название автомобиля.\n          </div>\n        </div>\n\n        <div class=\"form-group\" *ngIf=\"choosenImg\">\n          <img class=\"choosenImg\" src=\"{{choosenImg.path}}\" alt=\"\">\n        </div>\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Выберите картинку авто</p>\n          <p class=\"admin_content_block_label_small\">*Если картинка не будет выбрана, то будет установлена картинка по-умолчанию</p>\n          <p class=\"admin_content_block_label_small red\">*Формат картинки 400*225 px.</p>\n          <button class=\"admin-btn\" (click)=\"imagesPickerShow($event)\">Выберите картинку авто</button>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"goods\">\n            <div *ngIf=\"goods.length !== 0\">\n              <p class=\"admin_content_block_label\">Удаление-изменение товарных позиций</p>\n              <div class=\"goods_unit\" *ngFor=\"let g of goods\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.name}}\" (change)=\"nameChange($event.target.value, g.id)\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.catNumber}}\"\n                       (change)=\"catNumberChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"groupChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option\n                    *ngFor=\"let group of groups\"\n                    [selected]=\"g.idGroup == group.id\"\n                    value=\"{{group.id}}\"\n                  >\n                    {{group.name}}\n                  </option>\n                </select>\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.price}}\" (change)=\"priceChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"exchangeChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option *ngFor=\"let e of exchanges\" [selected]=\"g.idExchange === e.id\" value=\"{{e.id}}\">{{e.name}}</option>\n                </select>\n                <button class=\"admin-btn\" (click)=\"removeItemFromGoods($event, g.id)\">-</button>\n              </div>\n          </div>\n            <div class=\"new_item\">\n\n\n              <!--Add goods-->\n\n              <div class=\"form-group\">\n                <p class=\"admin_content_block_label\">Добавление товарных позиций</p>\n                <p class=\"admin_content_block_label_small\">\n                  *После того, как заполните все поля, нажмите кнопку \"+\", это добавит товарную позицию к автобомилю.\n                </p>\n                <form class=\"admin_content_form\" [formGroup]=\"addGoodsItem\" (ngSubmit)=\"onGoodsItemSubmit()\">\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Название</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"name\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('name').getError('required') &&\n                (gi.get('name').dirty || gi.get('name').touched)\">\n                      Введите пожалуйста название автомобиля.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Каталожный номер</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"catNumber\">\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Группа товаров</p>\n                    <select name=\"\" formControlName=\"idGroup\">\n                      <option\n                        *ngFor=\"let group of groups\"\n                        value=\"{{group.id}}\"\n                      >\n                        {{group.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idGroup').getError('required') &&\n                (gi.get('idGroup').dirty || gi.get('idGroup').touched)\">\n                      Выберите пожалуйста группу.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Цена</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"price\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('price').getError('required') &&\n                (gi.get('price').dirty || gi.get('price').touched)\">\n                      Введите цену.\n                    </div>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('price').getError('pattern') &&\n                (gi.get('price').dirty || gi.get('price').touched)\">\n                      К вводу допускаются только цифры.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Валюта</p>\n                    <select name=\"\" formControlName=\"idExchange\">\n                      <option\n                        *ngFor=\"let e of exchanges\"\n                        value=\"{{e.id}}\"\n                      >\n                        {{e.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idExchange').getError('required') &&\n                (gi.get('idExchange').dirty || gi.get('idExchange').touched)\">\n                      Выберите пожалуйста валюту.\n                    </div>\n                  </div>\n                  <button type=\"submit\" class=\"admin-btn\">+</button>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"admin_content_button_block\">\n          <div *ngIf=\"ca.valid\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить значение</button>\n          </div>\n          <div *ngIf=\"goodsItemNameError.length > 0 || goodsItemArtError.length > 0 || goodsItemPriceError.length > 0\">\n            <div class=\"validation_error\">\n              <b>Ошибки в блоке: \"Удаление-изменение товарных позиций, ошибки указаны ниже:</b>\n            </div>\n            <div *ngIf=\"goodsItemNameError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemNameError\">\n                {{er}}\n              </div>\n            </div>\n            <div *ngIf=\"goodsItemArtError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemArtError\">\n                {{er}}\n              </div>\n            </div>\n            <div *ngIf=\"goodsItemPriceError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemPriceError\">\n                {{er}}\n              </div>\n            </div>\n          </div>\n          <div *ngIf=\"ca.valid && goodsItemNameError.length === 0 && goodsItemArtError.length === 0 && goodsItemPriceError.length === 0\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n          </div>\n          <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n";
+    __webpack_exports__["default"] = "<div class=\"admin_unit_block\">\n  <div class=\"admin_block_header\">В данном блоке вы можете изменять существующие или добавлять новые автомобильные марки и статьи о техобслуживании для конкретных моделей</div>\n  <div class=\"articles_main\">\n<!--    <div class=\"articles_nav\">\n      <div *ngIf=\"!articles\">К сожалению пока-что нет статей</div>\n      <div *ngIf=\"articles\">\n        <div class=\"article\" *ngFor=\"let article of articles\" (click)=\"getArticle(article)\">\n          {{article.name}}\n        </div>\n      </div>\n    </div>-->\n    <div class=\"article_block\">\n      <app-admin-to-brands></app-admin-to-brands>\n      <app-admin-to-models></app-admin-to-models>\n      <form class=\"admin_content_form\" [formGroup]=\"addChangeArticle\" (ngSubmit)=\"onArticleSubmit()\">\n        <div class=\"admin_block_header_small\">Форма добавления-изменения авто. Для изменения существующего авто,\n          выберите модель из списка, а потом авто из меню слева.\n        </div>\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Для поиска модели по бренду, выберите последний из списка</p>\n          <p class=\"admin_content_block_label_small\">*При добавлении модели обязательно выберите из списка бренд</p>\n          <p class=\"admin_content_block_label\">Бренд</p>\n          <select name=\"\" id=\"brands\" (change)=\"updateModels($event.target.value)\">\n            <option disabled selected value> -- Выберите значение бренд -- </option>\n            <option *ngFor=\"let br of brands\" value=\"{{br.id}}\">{{br.name}}</option>\n          </select>\n        </div>\n        <div *ngIf=\"models\">\n          <div class=\"form-group\">\n            <p class=\"admin_content_block_label\">Для поиска авто по модели, выберите модель из списка</p>\n            <p class=\"admin_content_block_label_small\">*При добавлении авто обязательно выберите из списка модель</p>\n            <p class=\"admin_content_block_label\">Модель</p>\n            <select name=\"\" id=\"models\" (change)=\"updateAutos($event.target.value)\">\n              <option disabled selected value> -- Выберите значение модель -- </option>\n              <option *ngFor=\"let br of models\" value=\"{{br.id}}\">{{br.name}}</option>\n            </select>\n          </div>\n        </div>\n        <div *ngIf=\"articles\">\n          <div class=\"form-group\">\n            <p class=\"admin_content_block_label\">Для изменения авто, выберите его из списка</p>\n            <p class=\"admin_content_block_label\">Авто</p>\n            <select name=\"\" id=\"auto\" (change)=\"getAuto($event.target.value)\">\n              <option disabled selected value> -- Выберите авто -- </option>\n              <option *ngFor=\"let br of models\" value=\"{{br.id}}\">{{br.name}}</option>\n            </select>\n          </div>\n        </div>\n\n\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Автомобиль</p>\n          <input class=\"admin_content_input\" type=\"text\" id=\"name\" formControlName = \"name\">\n          <div class=\"validation_error\"\n               *ngIf=\"ca.get('name').getError('required') &&\n                (ca.get('name').dirty || ca.get('name').touched)\">\n            Введите пожалуйста название автомобиля.\n          </div>\n        </div>\n\n        <div class=\"form-group\" *ngIf=\"choosenImg\">\n          <img class=\"choosenImg\" src=\"{{choosenImg.path}}\" alt=\"\">\n        </div>\n        <div class=\"form-group\">\n          <p class=\"admin_content_block_label\">Выберите картинку авто</p>\n          <p class=\"admin_content_block_label_small\">*Если картинка не будет выбрана, то будет установлена картинка по-умолчанию</p>\n          <p class=\"admin_content_block_label_small red\">*Формат картинки 400*225 px.</p>\n          <button class=\"admin-btn\" (click)=\"imagesPickerShow($event)\">Выберите картинку авто</button>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"goods\">\n            <div *ngIf=\"goods.length !== 0\">\n              <p class=\"admin_content_block_label\">Удаление-изменение товарных позиций</p>\n              <div class=\"goods_unit\" *ngFor=\"let g of goods\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.name}}\" (change)=\"nameChange($event.target.value, g.id)\">\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.catNumber}}\"\n                       (change)=\"catNumberChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"groupChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option\n                    *ngFor=\"let group of groups\"\n                    [selected]=\"g.idGroup == group.id\"\n                    value=\"{{group.id}}\"\n                  >\n                    {{group.name}}\n                  </option>\n                </select>\n                <input class=\"goods_unit_name\" type=\"text\" value=\"{{g.price}}\" (change)=\"priceChange($event.target.value, g.id)\">\n                <select name=\"\" (change)=\"exchangeChange($event.target.value, g.id)\">\n                  <!--[selected]=\"g.idGroup === group.id\" - выбор группы-->\n                  <option *ngFor=\"let e of exchanges\" [selected]=\"g.idExchange === e.id\" value=\"{{e.id}}\">{{e.name}}</option>\n                </select>\n                <button class=\"admin-btn\" (click)=\"removeItemFromGoods($event, g.id)\">-</button>\n              </div>\n          </div>\n            <div class=\"new_item\">\n\n\n              <!--Add goods-->\n\n              <div class=\"form-group\">\n                <p class=\"admin_content_block_label\">Добавление товарных позиций</p>\n                <p class=\"admin_content_block_label_small\">\n                  *После того, как заполните все поля, нажмите кнопку \"+\", это добавит товарную позицию к автобомилю.\n                </p>\n                <form class=\"admin_content_form\" [formGroup]=\"addGoodsItem\" (ngSubmit)=\"onGoodsItemSubmit()\">\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Название</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"name\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('name').getError('required') &&\n                (gi.get('name').dirty || gi.get('name').touched)\">\n                      Введите пожалуйста название автомобиля.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Каталожный номер</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"catNumber\">\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Группа товаров</p>\n                    <select name=\"\" formControlName=\"idGroup\">\n                      <option\n                        *ngFor=\"let group of groups\"\n                        value=\"{{group.id}}\"\n                      >\n                        {{group.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idGroup').getError('required') &&\n                (gi.get('idGroup').dirty || gi.get('idGroup').touched)\">\n                      Выберите пожалуйста группу.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Цена</p>\n                    <input class=\"admin_content_input\" type=\"text\" formControlName = \"price\">\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('price').getError('required') &&\n                (gi.get('price').dirty || gi.get('price').touched)\">\n                      Введите цену.\n                    </div>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('price').getError('pattern') &&\n                (gi.get('price').dirty || gi.get('price').touched)\">\n                      К вводу допускаются только цифры.\n                    </div>\n                  </div>\n\n                  <div class=\"form-group\">\n                    <p class=\"admin_content_block_label\">Валюта</p>\n                    <select name=\"\" formControlName=\"idExchange\">\n                      <option\n                        *ngFor=\"let e of exchanges\"\n                        value=\"{{e.id}}\"\n                      >\n                        {{e.name}}\n                      </option>\n                    </select>\n                    <div class=\"validation_error\"\n                         *ngIf=\"gi.get('idExchange').getError('required') &&\n                (gi.get('idExchange').dirty || gi.get('idExchange').touched)\">\n                      Выберите пожалуйста валюту.\n                    </div>\n                  </div>\n                  <button type=\"submit\" class=\"admin-btn\">+</button>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"admin_content_button_block\">\n          <div *ngIf=\"ca.valid\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='add'\">Добавить значение</button>\n          </div>\n          <div *ngIf=\"goodsItemNameError.length > 0 || goodsItemArtError.length > 0 || goodsItemPriceError.length > 0\">\n            <div class=\"validation_error\">\n              <b>Ошибки в блоке: \"Удаление-изменение товарных позиций, ошибки указаны ниже:</b>\n            </div>\n            <div *ngIf=\"goodsItemNameError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemNameError\">\n                {{er}}\n              </div>\n            </div>\n            <div *ngIf=\"goodsItemArtError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemArtError\">\n                {{er}}\n              </div>\n            </div>\n            <div *ngIf=\"goodsItemPriceError.length > 0\">\n              <div class=\"validation_error\" *ngFor=\"let er of goodsItemPriceError\">\n                {{er}}\n              </div>\n            </div>\n          </div>\n          <div *ngIf=\"ca.valid && goodsItemNameError.length === 0 && goodsItemArtError.length === 0 && goodsItemPriceError.length === 0\">\n            <button class=\"admin-btn\" type=\"submit\" *ngIf=\"whatHaveToDo==='update'\">Обновить информацию</button>\n          </div>\n          <button class=\"admin-btn\" type=\"submit\" (click)=\"clearFields($event)\">Очистить поля</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>\n<app-images-picker></app-images-picker>\n<app-server-response></app-server-response>\n";
     /***/
   },
 
@@ -738,7 +758,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ngx-loading [show]=\"loading\"></ngx-loading>\n<div class=\"main_content\">\n  <div class=\"filters\">\n    <div class=\"filter_unit\">Производители</div>\n    <app-checkbox-component [options]='brandsOptions' (toggle)='onBrandsChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Объем, л.</div>\n    <app-checkbox-component [options]=\"volOptions\" (toggle)=\"onVolumeChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Вязкость</div>\n    <app-checkbox-component [options]=\"viscOptions\" (toggle)=\"onViscosityChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">ACEA</div>\n    <app-checkbox-component [options]='aceaOptions' (toggle)='onAceaChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">ILSAC</div>\n    <app-checkbox-component [options]='ilsacOptions' (toggle)='onIlsacChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">API</div>\n    <app-checkbox-component [options]='apiOptions' (toggle)='onApiChange($event)'></app-checkbox-component>\n<!--    <div class=\"filter_unit\">База</div>\n    <app-checkbox-component [options]='baseOptions' (toggle)='onBaseChange($event)'></app-checkbox-component>-->\n    <span class=\"filter_unit\" (click)=\"hideAll=!hideAll\">Допуски {{hideAll?'+':'-'}}</span>\n    <div [hidden]=\"hideAll\">\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Mercedes-Benz</div>\n          <div class=\"approval_fold\" (click)=\"hideMb=!hideMb\">{{hideMb?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideMb\"\n          [options]='mbOptions'\n          (toggle)='onApprovalChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Vw</div>\n          <div class=\"approval_fold\" (click)=\"hideVw=!hideVw\">{{hideVw?'+':'-'}}</div>\n        </div>\n            <app-checkbox-component\n              [hidden]=\"hideVw\"\n              [options]='vwOptions'\n              (toggle)='onApprovalChange($event, \"vwApprovals\")'>\n            </app-checkbox-component>\n        </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Ford</div>\n          <div class=\"approval_fold\" (click)=\"hideFord=!hideFord\">{{hideFord?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFord\"\n          [options]='fordOptions'\n          (toggle)='onApprovalChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Fiat</div>\n          <div class=\"approval_fold\" (click)=\"hideFiat=!hideFiat\">{{hideFiat?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFiat\"\n          [options]='fiatOptions'\n          (toggle)='onApprovalChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">BMW</div>\n          <div class=\"approval_fold\" (click)=\"hideBmw=!hideBmw\">{{hideBmw?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideBmw\"\n          [options]='bmwOptions'\n          (toggle)='onApprovalChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Renault</div>\n          <div class=\"approval_fold\" (click)=\"hideRen=!hideRen\">{{hideRen?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideRen\"\n          [options]='renOptions'\n          (toggle)='onApprovalChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Porsche</div>\n          <div class=\"approval_fold\" (click)=\"hidePorsche=!hidePorsche\">{{hidePorsche?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePorsche\"\n          [options]='porscheOptions'\n          (toggle)='onApprovalChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Gm</div>\n          <div class=\"approval_fold\" (click)=\"hideGm=!hideGm\">{{hideGm?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideGm\"\n          [options]='gmOptions'\n          (toggle)='onApprovalChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Koenig</div>\n          <div class=\"approval_fold\" (click)=\"hideKoenig=!hideKoenig\">{{hideKoenig?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideKoenig\"\n          [options]='koenigOptions'\n          (toggle)='onApprovalChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Chrysler</div>\n        <div class=\"approval_fold\" (click)=\"hideChrysler=!hideChrysler\">{{hideChrysler?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideChrysler\"\n        [options]='chryslerOptions'\n        (toggle)='onApprovalChange($event, \"chryslerApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Psa</div>\n          <div class=\"approval_fold\" (click)=\"hidePsa=!hidePsa\">{{hidePsa?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePsa\"\n          [options]='psaOptions'\n          (toggle)='onApprovalChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Volvo</div>\n          <div class=\"approval_fold\" (click)=\"hideVolvo=!hideVolvo\">{{hideVolvo?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideVolvo\"\n          [options]='volvoOptions'\n          (toggle)='onApprovalChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaguar</div>\n          <div class=\"approval_fold\" (click)=\"hideJaguar=!hideJaguar\">{{hideJaguar?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaguar\"\n          [options]='jaguarOptions'\n          (toggle)='onApprovalChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaso</div>\n          <div class=\"approval_fold\" (click)=\"hideJaso=!hideJaso\">{{hideJaso?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaso\"\n          [options]='jasoOptions'\n          (toggle)='onApprovalChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Mazda</div>\n        <div class=\"approval_fold\" (click)=\"hideMazda=!hideMazda\">{{hideMazda?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideMazda\"\n        [options]='mazdaOptions'\n        (toggle)='onApprovalChange($event, \"mazdaApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Nissan</div>\n          <div class=\"approval_fold\" (click)=\"hideNissan=!hideNissan\">{{hideNissan?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideNissan\"\n          [options]='nissanOptions'\n          (toggle)='onApprovalChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n\n\n    </div>\n  </div>\n  <div class=\"products\">\n    <div class=\"products_header\">Список моторных масел</div>\n    <div *ngIf=\"!nonEmptyProductList\">Товаров нет</div>\n    <div class=\"products_list\" *ngIf=\"nonEmptyProductList\">\n        <div class=\"product\" *ngFor=\"let product of products| paginate: { itemsPerPage: 5, currentPage: p, totalItems: totalItems }\" (click)=\"onClickProduct(product.id)\">\n          <div *ngIf=\"product.show\">\n            <div class=\"product_name\">{{product.name}}</div>\n            <img class=\"product_img\" src=\"{{product.img}}\" alt=\"\">\n          </div>\n        </div>\n    </div>\n  </div>\n</div>\n<div class=\"pagination\">\n  <!--https://www.npmjs.com/package/ngx-pagination-->\n  <pagination-controls class=\"my-pagination\" (pageChange)=\"p = $event\" previousLabel=\"Пред.\" nextLabel=\"След.\"></pagination-controls>\n</div>\n\n\n";
+    __webpack_exports__["default"] = "<ngx-loading [show]=\"loading\"></ngx-loading>\n<div class=\"main_content\">\n  <div class=\"filters\">\n    <div class=\"filter_unit\">Производители</div>\n    <app-checkbox-component [options]='brandsOptions' (toggle)='onBrandsChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">Объем, л.</div>\n    <app-checkbox-component [options]=\"volOptions\" (toggle)=\"onVolumeChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">Вязкость</div>\n    <app-checkbox-component [options]=\"viscOptions\" (toggle)=\"onViscosityChange($event)\"></app-checkbox-component>\n    <div class=\"filter_unit\">ACEA</div>\n    <app-checkbox-component [options]='aceaOptions' (toggle)='onAceaChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">ILSAC</div>\n    <app-checkbox-component [options]='ilsacOptions' (toggle)='onIlsacChange($event)'></app-checkbox-component>\n    <div class=\"filter_unit\">API</div>\n    <app-checkbox-component [options]='apiOptions' (toggle)='onApiChange($event)'></app-checkbox-component>\n<!--    <div class=\"filter_unit\">База</div>\n    <app-checkbox-component [options]='baseOptions' (toggle)='onBaseChange($event)'></app-checkbox-component>-->\n    <span class=\"filter_unit\" (click)=\"hideAll=!hideAll\">Допуски {{hideAll?'+':'-'}}</span>\n    <div [hidden]=\"hideAll\">\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Mercedes-Benz</div>\n          <div class=\"approval_fold\" (click)=\"hideMb=!hideMb\">{{hideMb?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideMb\"\n          [options]='mbOptions'\n          (toggle)='onApprovalChange($event, \"mbApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Vw</div>\n          <div class=\"approval_fold\" (click)=\"hideVw=!hideVw\">{{hideVw?'+':'-'}}</div>\n        </div>\n            <app-checkbox-component\n              [hidden]=\"hideVw\"\n              [options]='vwOptions'\n              (toggle)='onApprovalChange($event, \"vwApprovals\")'>\n            </app-checkbox-component>\n        </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Ford</div>\n          <div class=\"approval_fold\" (click)=\"hideFord=!hideFord\">{{hideFord?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFord\"\n          [options]='fordOptions'\n          (toggle)='onApprovalChange($event, \"fordApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Fiat</div>\n          <div class=\"approval_fold\" (click)=\"hideFiat=!hideFiat\">{{hideFiat?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideFiat\"\n          [options]='fiatOptions'\n          (toggle)='onApprovalChange($event, \"fiatApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">BMW</div>\n          <div class=\"approval_fold\" (click)=\"hideBmw=!hideBmw\">{{hideBmw?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideBmw\"\n          [options]='bmwOptions'\n          (toggle)='onApprovalChange($event, \"bmwApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Renault</div>\n          <div class=\"approval_fold\" (click)=\"hideRen=!hideRen\">{{hideRen?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideRen\"\n          [options]='renOptions'\n          (toggle)='onApprovalChange($event, \"renApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Porsche</div>\n          <div class=\"approval_fold\" (click)=\"hidePorsche=!hidePorsche\">{{hidePorsche?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePorsche\"\n          [options]='porscheOptions'\n          (toggle)='onApprovalChange($event, \"porscheApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Gm</div>\n          <div class=\"approval_fold\" (click)=\"hideGm=!hideGm\">{{hideGm?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideGm\"\n          [options]='gmOptions'\n          (toggle)='onApprovalChange($event, \"gmApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Koenig</div>\n          <div class=\"approval_fold\" (click)=\"hideKoenig=!hideKoenig\">{{hideKoenig?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideKoenig\"\n          [options]='koenigOptions'\n          (toggle)='onApprovalChange($event, \"koenigApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Chrysler</div>\n        <div class=\"approval_fold\" (click)=\"hideChrysler=!hideChrysler\">{{hideChrysler?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideChrysler\"\n        [options]='chryslerOptions'\n        (toggle)='onApprovalChange($event, \"chryslerApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Psa</div>\n          <div class=\"approval_fold\" (click)=\"hidePsa=!hidePsa\">{{hidePsa?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hidePsa\"\n          [options]='psaOptions'\n          (toggle)='onApprovalChange($event, \"psaApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Volvo</div>\n          <div class=\"approval_fold\" (click)=\"hideVolvo=!hideVolvo\">{{hideVolvo?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideVolvo\"\n          [options]='volvoOptions'\n          (toggle)='onApprovalChange($event, \"volvoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaguar</div>\n          <div class=\"approval_fold\" (click)=\"hideJaguar=!hideJaguar\">{{hideJaguar?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaguar\"\n          [options]='jaguarOptions'\n          (toggle)='onApprovalChange($event, \"jaguarApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Jaso</div>\n          <div class=\"approval_fold\" (click)=\"hideJaso=!hideJaso\">{{hideJaso?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideJaso\"\n          [options]='jasoOptions'\n          (toggle)='onApprovalChange($event, \"jasoApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n      <div class=\"approval_data\">\n        <div class=\"approval_name\">Mazda</div>\n        <div class=\"approval_fold\" (click)=\"hideMazda=!hideMazda\">{{hideMazda?'+':'-'}}</div>\n      </div>\n      <app-checkbox-component\n        [hidden]=\"hideMazda\"\n        [options]='mazdaOptions'\n        (toggle)='onApprovalChange($event, \"mazdaApprovals\")'>\n      </app-checkbox-component>\n      </div>\n\n      <div class=\"approval\">\n        <div class=\"approval_data\">\n          <div class=\"approval_name\">Nissan</div>\n          <div class=\"approval_fold\" (click)=\"hideNissan=!hideNissan\">{{hideNissan?'+':'-'}}</div>\n        </div>\n        <app-checkbox-component\n          [hidden]=\"hideNissan\"\n          [options]='nissanOptions'\n          (toggle)='onApprovalChange($event, \"nissanApprovals\")'>\n        </app-checkbox-component>\n      </div>\n\n\n\n    </div>\n  </div>\n  <div class=\"products\">\n    <div class=\"products_header\">Список моторных масел</div>\n    <div *ngIf=\"!nonEmptyProductList\">Товаров нет</div>\n    <div class=\"products_list\" *ngIf=\"nonEmptyProductList\">\n        <div class=\"product\" *ngFor=\"let product of products| paginate: { itemsPerPage: 6, currentPage: p, totalItems: totalItems }\" (click)=\"onClickProduct(product.id)\">\n          <div *ngIf=\"product.show\">\n            <div class=\"product_name\">{{product.name}}</div>\n            <img class=\"product_img\" src=\"{{product.img}}\" alt=\"\">\n          </div>\n        </div>\n    </div>\n  </div>\n</div>\n<div class=\"pagination\">\n  <!--https://www.npmjs.com/package/ngx-pagination-->\n  <pagination-controls class=\"my-pagination\" (pageChange)=\"p = $event\" previousLabel=\"Пред.\" nextLabel=\"След.\"></pagination-controls>\n</div>\n\n\n";
     /***/
   },
 
@@ -898,7 +918,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"articles_nav\">\n  <div class=\"articles_nav_header\" *ngIf=\"!brands\">\n    К сожалению статей пока-что нет!\n  </div>\n  <div class=\"articles_nav_header\" *ngIf=\"brands\">\n    <div class=\"header\">Марки автомобилей:</div>\n    <div class=\"header_remark\">*Для отображения списка моделей, кликните на марке</div>\n  </div>\n  <div *ngIf=\"brands\" class=\"themes_list\">\n    <div *ngFor=\"let brand of brands\" class=\"theme\" (click)=\"getArticles(brand.id)\">\n      {{brand.name}}\n      <div *ngIf=\"autos && brand.id === choosenTheme\" >\n        <div class=\"articles_list\">\n          <div *ngFor=\"let auto of autos\">\n            <a routerLink=\"auto_goods/{{auto.id}}\" [routerLinkActive]=\"'active'\" class=\"article_list_unit\" >\n              <i class=\"fa fa-shield fa-rotate-270\"></i> {{auto.name}}</a>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"!autos && brand.id === choosenTheme\">\n        <div class=\"article_list_unit\">К сожалению пока авто нет.</div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"articles_nav\">\n  <div class=\"articles_nav_header\" *ngIf=\"!brands\">\n    К сожалению статей пока-что нет!\n  </div>\n  <div class=\"articles_nav_header\" *ngIf=\"brands\">\n    <div class=\"header\">Марки автомобилей:</div>\n    <div class=\"header_remark\">*Для отображения списка моделей, кликните на марке</div>\n  </div>\n  <div *ngIf=\"brands\" class=\"themes_list\">\n    <div *ngFor=\"let brand of brands\" class=\"theme\" (click)=\"getModels(brand.id)\">\n      {{brand.name}}\n      <div *ngIf=\"models && brand.id === choosenTheme\">\n        <div class=\"models_list\">\n          <div *ngFor=\"let model of models\" class=\"model\" (click)=\"getArticles(model.id)\">\n            <i class=\"fa fa-arrow-right\"></i>{{model.name}}\n            <div *ngIf=\"autos && model.id === choosenModel\" >\n              <div class=\"autos_list\">\n                <div *ngFor=\"let auto of autos\" class=\"auto\">\n                  <a routerLink=\"auto_goods/{{auto.id}}\" [routerLinkActive]=\"'active'\" class=\"article_list_unit\" >\n                    <i class=\"fa fa-arrow-right\"></i> {{auto.name}}</a>\n                </div>\n              </div>\n              <div *ngIf=\"!autos && model.id === choosenModel\">\n                <div class=\"article_list_unit\">К сожалению пока авто нет.</div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n\n      </div>\n\n      <div *ngIf=\"!models && brand.id === choosenTheme\">\n        <div class=\"article_list_unit\">К сожалению пока авто нет.</div>\n      </div>\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -3119,7 +3139,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".header_title {\n  width: 100%;\n  padding: 15px 0 15px 50px;\n  box-sizing: border-box;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  cursor: pointer;\n  -webkit-box-align: center;\n          align-items: center;\n}\n.header_title .logo {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.header_title .logo .header_logo img {\n  width: 200px;\n}\n.header_title .logo .header_text {\n  width: 100%;\n  margin-left: 30px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.header_title .logo .header_text .header_text_main {\n  text-transform: uppercase;\n  font-family: 'Roboto Slab', serif;\n  font-size: 4em;\n  font-weight: bold;\n}\n.header_title .viber {\n  width: 100%;\n  text-align: center;\n}\n.header_title .viber a {\n  padding: 10px;\n  text-align: center;\n  text-decoration: none;\n  font-size: 22px;\n  color: #5a5a5a;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n}\n.header_title .viber:hover a {\n  color: #1d4ebe;\n}\n.header_nav {\n  border-top: 1px solid #b7b7b7;\n  border-bottom: 1px solid #b7b7b7;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.header_nav .header_menu {\n  box-sizing: border-box;\n  padding: 10px;\n  width: 70%;\n  -webkit-box-flex: 1;\n          flex-grow: 1;\n}\n.header_nav .header_auth {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 5%;\n}\n.header_nav .header_find {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 25%;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  -webkit-box-align: center;\n          align-items: center;\n}\n@media print {\n  .header_nav {\n    display: none;\n  }\n}\n@media (min-width: 641px) and (max-width: 860px) {\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n  }\n  .header_nav .header_find {\n    width: 100%;\n  }\n}\n@media (min-width: 200px) and (max-width: 640px) {\n  .header_title {\n    padding: 5px 0 5px 20px;\n  }\n  .header_title .header_logo img {\n    width: 100px;\n  }\n  .header_title .header_text .header_text_main {\n    text-transform: uppercase;\n    font-family: 'Roboto Slab', serif;\n    /*color: @header_main_color;*/\n    font-size: 2.5em;\n    font-weight: bold;\n  }\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n    border: none;\n  }\n  .header_nav .header_find {\n    width: 100%;\n    border: none;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzovVXNlcnMvSXZhbi9EZXNrdG9wL29pbHMvb2lscy9zcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsV0FBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLHdCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNERjtBRE5BO0VBU0ksMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDhCQUFBO0VBQUEsNkJBQUE7VUFBQSxxQkFBQTtFQUNBLFdBQUE7QUNBSjtBRFhBO0VBY1EsWUFBQTtBQ0FSO0FEZEE7RUFrQk0sV0FBQTtFQUNBLGlCQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSxpQkFBQTtFQUNBLHdCQUFBO1VBQUEsdUJBQUE7QUNETjtBRHJCQTtFQXdCUSx5QkFBQTtFQUNBLGlDQUFBO0VBQ0EsY0FBQTtFQUNBLGlCQUFBO0FDQVI7QUQzQkE7RUFnQ0ksV0FBQTtFQUNBLGtCQUFBO0FDRko7QUQvQkE7RUFtQ00sYUFBQTtFQUNBLGtCQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtFQUNBLDhDQUFBO0VBQ0EsaUJBQUE7QUNETjtBREdJO0VBQ0UsY0FBQTtBQ0ROO0FES0E7RUFDRSw2QkFBQTtFQUNBLGdDQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDhCQUFBO0VBQUEsNkJBQUE7VUFBQSxxQkFBQTtFQUNBLFdBQUE7QUNIRjtBREZBO0VBT0ksc0JBQUE7RUFDQSxhQUFBO0VBQ0EsVUFBQTtFQUNBLG1CQUFBO1VBQUEsWUFBQTtBQ0ZKO0FEUkE7RUFhSSxzQkFBQTtFQUNBLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFNBQUE7QUNGSjtBRGRBO0VBbUJJLHNCQUFBO0VBQ0EsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsVUFBQTtFQUNBLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEscUJBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0FDRko7QURLQTtFQUNFO0lBQWEsYUFBQTtFQ0ZiO0FBQ0Y7QURHQTtFQUNFO0lBQ0UsNEJBQUE7SUFBQSw2QkFBQTtZQUFBLHdCQUFBO0VDREY7RURBQTtJQUdJLDJCQUFBO0lBQUEsb0JBQUE7SUFDQSw4QkFBQTtJQUFBLDZCQUFBO1lBQUEscUJBQUE7SUFDQSxZQUFBO0lBQ0EsV0FBQTtFQ0FKO0VETkE7SUFTSSxXQUFBO0VDQUo7RURUQTtJQVlJLFdBQUE7RUNBSjtBQUNGO0FER0E7RUFDRTtJQUNFLHVCQUFBO0VDREY7RURBQTtJQUlNLFlBQUE7RUNETjtFREhBO0lBU00seUJBQUE7SUFDQSxpQ0FBQTtJQ0hKLDZCQUE2QjtJREt6QixnQkFBQTtJQUNBLGlCQUFBO0VDSE47RURPQTtJQUNFLDRCQUFBO0lBQUEsNkJBQUE7WUFBQSx3QkFBQTtFQ0xGO0VESUE7SUFHSSwyQkFBQTtJQUFBLG9CQUFBO0lBQ0EsOEJBQUE7SUFBQSw2QkFBQTtZQUFBLHFCQUFBO0lBQ0EsWUFBQTtJQUNBLFdBQUE7RUNKSjtFREZBO0lBU0ksV0FBQTtJQUNBLFlBQUE7RUNKSjtFRE5BO0lBYUksV0FBQTtJQUNBLFlBQUE7RUNKSjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2NvbW1vblwiO1xuXG4uaGVhZGVyX3RpdGxle1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTVweCAwIDE1cHggNTBweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAubG9nbyB7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIC5oZWFkZXJfbG9nb3tcbiAgICAgIGltZyB7XG4gICAgICAgIHdpZHRoOiAyMDBweDtcbiAgICAgIH1cbiAgICB9XG4gICAgLmhlYWRlcl90ZXh0e1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBtYXJnaW4tbGVmdDogMzBweDtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiBjb2x1bW47XG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgIC5oZWFkZXJfdGV4dF9tYWlue1xuICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gICAgICAgIGZvbnQtc2l6ZTogNGVtO1xuICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgLnZpYmVye1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBhe1xuICAgICAgcGFkZGluZzogMTBweDtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgIGZvbnQtc2l6ZTogMjJweDtcbiAgICAgIGNvbG9yOiBAbWFpbl9uYXZfZm9udF9jb2xvcjtcbiAgICAgIGZvbnQtZmFtaWx5OiBAaGVhZGVyc19mb250O1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICAgICY6aG92ZXIgYXtcbiAgICAgIGNvbG9yOiAjMWQ0ZWJlO1xuICAgIH1cbiAgfVxufVxuLmhlYWRlcl9uYXZ7XG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICB3aWR0aDogMTAwJTtcbiAgLmhlYWRlcl9tZW51e1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgcGFkZGluZzogMTBweDtcbiAgICB3aWR0aDogNzAlO1xuICAgIGZsZXgtZ3JvdzogMTtcbiAgfVxuICAuaGVhZGVyX2F1dGh7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgd2lkdGg6IDUlO1xuICB9XG4gIC5oZWFkZXJfZmluZHtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICB3aWR0aDogMjUlO1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICB9XG59XG5AbWVkaWEgcHJpbnQge1xuICAuaGVhZGVyX25hdiB7ZGlzcGxheTogbm9uZX1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiA2NDFweCkgYW5kIChtYXgtd2lkdGg6IDg2MHB4KXtcbiAgLmhlYWRlcl9uYXZ7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgIC5oZWFkZXJfbWVudXtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5oZWFkZXJfYXV0aHtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgIH1cbiAgICAuaGVhZGVyX2ZpbmR7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICB9XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiAyMDBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KXtcbiAgLmhlYWRlcl90aXRsZXtcbiAgICBwYWRkaW5nOiA1cHggMCA1cHggMjBweDtcbiAgICAuaGVhZGVyX2xvZ297XG4gICAgICBpbWcge1xuICAgICAgICB3aWR0aDogMTAwcHg7XG4gICAgICB9XG4gICAgfVxuICAgIC5oZWFkZXJfdGV4dHtcbiAgICAgIC5oZWFkZXJfdGV4dF9tYWlue1xuICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gICAgICAgIC8qY29sb3I6IEBoZWFkZXJfbWFpbl9jb2xvcjsqL1xuICAgICAgICBmb250LXNpemU6IDIuNWVtO1xuICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgLmhlYWRlcl9uYXZ7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgIC5oZWFkZXJfbWVudXtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5oZWFkZXJfYXV0aHtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgYm9yZGVyOiBub25lO1xuICAgIH1cbiAgICAuaGVhZGVyX2ZpbmR7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICAgIGJvcmRlcjogbm9uZTtcbiAgICB9XG4gIH1cbn1cblxuXG5cblxuXG4iLCIuaGVhZGVyX3RpdGxlIHtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDE1cHggMCAxNXB4IDUwcHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbi5oZWFkZXJfdGl0bGUgLmxvZ28ge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICB3aWR0aDogMTAwJTtcbn1cbi5oZWFkZXJfdGl0bGUgLmxvZ28gLmhlYWRlcl9sb2dvIGltZyB7XG4gIHdpZHRoOiAyMDBweDtcbn1cbi5oZWFkZXJfdGl0bGUgLmxvZ28gLmhlYWRlcl90ZXh0IHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuLmhlYWRlcl90aXRsZSAubG9nbyAuaGVhZGVyX3RleHQgLmhlYWRlcl90ZXh0X21haW4ge1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gIGZvbnQtc2l6ZTogNGVtO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5oZWFkZXJfdGl0bGUgLnZpYmVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5oZWFkZXJfdGl0bGUgLnZpYmVyIGEge1xuICBwYWRkaW5nOiAxMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgZm9udC1zaXplOiAyMnB4O1xuICBjb2xvcjogIzVhNWE1YTtcbiAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMgQ29uZGVuc2VkJywgc2Fucy1zZXJpZjtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG4uaGVhZGVyX3RpdGxlIC52aWJlcjpob3ZlciBhIHtcbiAgY29sb3I6ICMxZDRlYmU7XG59XG4uaGVhZGVyX25hdiB7XG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCAjYjdiN2I3O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2I3YjdiNztcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG59XG4uaGVhZGVyX25hdiAuaGVhZGVyX21lbnUge1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBwYWRkaW5nOiAxMHB4O1xuICB3aWR0aDogNzAlO1xuICBmbGV4LWdyb3c6IDE7XG59XG4uaGVhZGVyX25hdiAuaGVhZGVyX2F1dGgge1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3JkZXItbGVmdDogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIHdpZHRoOiA1JTtcbn1cbi5oZWFkZXJfbmF2IC5oZWFkZXJfZmluZCB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgI2I3YjdiNztcbiAgd2lkdGg6IDI1JTtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbkBtZWRpYSBwcmludCB7XG4gIC5oZWFkZXJfbmF2IHtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogNjQxcHgpIGFuZCAobWF4LXdpZHRoOiA4NjBweCkge1xuICAuaGVhZGVyX25hdiB7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfbWVudSB7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAuaGVhZGVyX25hdiAuaGVhZGVyX2F1dGgge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfZmluZCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiAyMDBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KSB7XG4gIC5oZWFkZXJfdGl0bGUge1xuICAgIHBhZGRpbmc6IDVweCAwIDVweCAyMHB4O1xuICB9XG4gIC5oZWFkZXJfdGl0bGUgLmhlYWRlcl9sb2dvIGltZyB7XG4gICAgd2lkdGg6IDEwMHB4O1xuICB9XG4gIC5oZWFkZXJfdGl0bGUgLmhlYWRlcl90ZXh0IC5oZWFkZXJfdGV4dF9tYWluIHtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvIFNsYWInLCBzZXJpZjtcbiAgICAvKmNvbG9yOiBAaGVhZGVyX21haW5fY29sb3I7Ki9cbiAgICBmb250LXNpemU6IDIuNWVtO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICB9XG4gIC5oZWFkZXJfbmF2IHtcbiAgICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9tZW51IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gICAgcGFkZGluZzogNXB4O1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfYXV0aCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYm9yZGVyOiBub25lO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfZmluZCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYm9yZGVyOiBub25lO1xuICB9XG59XG4iXX0= */";
+    __webpack_exports__["default"] = ".header_title {\n  width: 100%;\n  padding: 15px 0 15px 50px;\n  box-sizing: border-box;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  cursor: pointer;\n  -webkit-box-align: center;\n          align-items: center;\n}\n.header_title .logo {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.header_title .logo .header_logo img {\n  width: 200px;\n}\n.header_title .logo .header_text {\n  width: 100%;\n  margin-left: 30px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.header_title .logo .header_text .header_text_main {\n  text-transform: uppercase;\n  font-family: 'Roboto Slab', serif;\n  font-size: 4em;\n  font-weight: bold;\n}\n.header_title .viber {\n  width: 100%;\n  text-align: center;\n}\n.header_title .viber a {\n  padding: 10px;\n  text-align: center;\n  text-decoration: none;\n  font-size: 22px;\n  color: #5a5a5a;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n}\n.header_title .viber:hover a {\n  color: #1d4ebe;\n}\n.header_nav {\n  border-top: 1px solid #b7b7b7;\n  border-bottom: 1px solid #b7b7b7;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n}\n.header_nav .header_menu {\n  box-sizing: border-box;\n  padding: 10px;\n  width: 70%;\n  -webkit-box-flex: 1;\n          flex-grow: 1;\n}\n.header_nav .header_auth {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 5%;\n}\n.header_nav .header_find {\n  box-sizing: border-box;\n  padding: 10px;\n  border-left: 1px solid #b7b7b7;\n  width: 25%;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  -webkit-box-align: center;\n          align-items: center;\n}\n@media print {\n  .header_nav {\n    display: none;\n  }\n}\n@media (min-width: 641px) and (max-width: 860px) {\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n  }\n  .header_nav .header_find {\n    width: 100%;\n  }\n}\n@media (min-width: 200px) and (max-width: 640px) {\n  .header_title {\n    padding: 5px 0 5px 20px;\n  }\n  .header_title .logo {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_title .logo .header_logo {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    -webkit-box-pack: center;\n            justify-content: center;\n  }\n  .header_title .header_text .header_text_main {\n    text-transform: uppercase;\n    font-family: 'Roboto Slab', serif;\n    /*color: @header_main_color;*/\n    font-size: 2.5em;\n    font-weight: bold;\n  }\n  .header_nav {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .header_nav .header_menu {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row nowrap;\n    padding: 5px;\n    width: 100%;\n  }\n  .header_nav .header_auth {\n    width: 100%;\n    border: none;\n  }\n  .header_nav .header_find {\n    width: 100%;\n    border: none;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzovVXNlcnMvSXZhbi9EZXNrdG9wL29pbHMvb2lscy9zcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsV0FBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLHdCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNERjtBRE5BO0VBU0ksMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDhCQUFBO0VBQUEsNkJBQUE7VUFBQSxxQkFBQTtFQUNBLFdBQUE7QUNBSjtBRFhBO0VBY1EsWUFBQTtBQ0FSO0FEZEE7RUFrQk0sV0FBQTtFQUNBLGlCQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSxpQkFBQTtFQUNBLHdCQUFBO1VBQUEsdUJBQUE7QUNETjtBRHJCQTtFQXdCUSx5QkFBQTtFQUNBLGlDQUFBO0VBQ0EsY0FBQTtFQUNBLGlCQUFBO0FDQVI7QUQzQkE7RUFnQ0ksV0FBQTtFQUNBLGtCQUFBO0FDRko7QUQvQkE7RUFtQ00sYUFBQTtFQUNBLGtCQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtFQUNBLDhDQUFBO0VBQ0EsaUJBQUE7QUNETjtBREdJO0VBQ0UsY0FBQTtBQ0ROO0FES0E7RUFDRSw2QkFBQTtFQUNBLGdDQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDhCQUFBO0VBQUEsNkJBQUE7VUFBQSxxQkFBQTtFQUNBLFdBQUE7QUNIRjtBREZBO0VBT0ksc0JBQUE7RUFDQSxhQUFBO0VBQ0EsVUFBQTtFQUNBLG1CQUFBO1VBQUEsWUFBQTtBQ0ZKO0FEUkE7RUFhSSxzQkFBQTtFQUNBLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFNBQUE7QUNGSjtBRGRBO0VBbUJJLHNCQUFBO0VBQ0EsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsVUFBQTtFQUNBLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEscUJBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0FDRko7QURLQTtFQUNFO0lBQWEsYUFBQTtFQ0ZiO0FBQ0Y7QURHQTtFQUNFO0lBQ0UsNEJBQUE7SUFBQSw2QkFBQTtZQUFBLHdCQUFBO0VDREY7RURBQTtJQUdJLDJCQUFBO0lBQUEsb0JBQUE7SUFDQSw4QkFBQTtJQUFBLDZCQUFBO1lBQUEscUJBQUE7SUFDQSxZQUFBO0lBQ0EsV0FBQTtFQ0FKO0VETkE7SUFTSSxXQUFBO0VDQUo7RURUQTtJQVlJLFdBQUE7RUNBSjtBQUNGO0FER0E7RUFDRTtJQUNFLHVCQUFBO0VDREY7RURBQTtJQUdJLDJCQUFBO0lBQUEsb0JBQUE7SUFDQSw0QkFBQTtJQUFBLDZCQUFBO1lBQUEsd0JBQUE7RUNBSjtFREpBO0lBTU0sMkJBQUE7SUFBQSxvQkFBQTtJQUNBLDhCQUFBO0lBQUEsNkJBQUE7WUFBQSxxQkFBQTtJQUNBLHdCQUFBO1lBQUEsdUJBQUE7RUNDTjtFRFRBO0lBYU0seUJBQUE7SUFDQSxpQ0FBQTtJQ0RKLDZCQUE2QjtJREd6QixnQkFBQTtJQUNBLGlCQUFBO0VDRE47RURLQTtJQUNFLDRCQUFBO0lBQUEsNkJBQUE7WUFBQSx3QkFBQTtFQ0hGO0VERUE7SUFHSSwyQkFBQTtJQUFBLG9CQUFBO0lBQ0EsOEJBQUE7SUFBQSw2QkFBQTtZQUFBLHFCQUFBO0lBQ0EsWUFBQTtJQUNBLFdBQUE7RUNGSjtFREpBO0lBU0ksV0FBQTtJQUNBLFlBQUE7RUNGSjtFRFJBO0lBYUksV0FBQTtJQUNBLFlBQUE7RUNGSjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2NvbW1vblwiO1xuXG4uaGVhZGVyX3RpdGxle1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTVweCAwIDE1cHggNTBweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAubG9nbyB7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIC5oZWFkZXJfbG9nb3tcbiAgICAgIGltZyB7XG4gICAgICAgIHdpZHRoOiAyMDBweDtcbiAgICAgIH1cbiAgICB9XG4gICAgLmhlYWRlcl90ZXh0e1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBtYXJnaW4tbGVmdDogMzBweDtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiBjb2x1bW47XG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgIC5oZWFkZXJfdGV4dF9tYWlue1xuICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJywgc2VyaWY7XG4gICAgICAgIGZvbnQtc2l6ZTogNGVtO1xuICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgLnZpYmVye1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBhe1xuICAgICAgcGFkZGluZzogMTBweDtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgIGZvbnQtc2l6ZTogMjJweDtcbiAgICAgIGNvbG9yOiBAbWFpbl9uYXZfZm9udF9jb2xvcjtcbiAgICAgIGZvbnQtZmFtaWx5OiBAaGVhZGVyc19mb250O1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICAgICY6aG92ZXIgYXtcbiAgICAgIGNvbG9yOiAjMWQ0ZWJlO1xuICAgIH1cbiAgfVxufVxuLmhlYWRlcl9uYXZ7XG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICB3aWR0aDogMTAwJTtcbiAgLmhlYWRlcl9tZW51e1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgcGFkZGluZzogMTBweDtcbiAgICB3aWR0aDogNzAlO1xuICAgIGZsZXgtZ3JvdzogMTtcbiAgfVxuICAuaGVhZGVyX2F1dGh7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgd2lkdGg6IDUlO1xuICB9XG4gIC5oZWFkZXJfZmluZHtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICB3aWR0aDogMjUlO1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICB9XG59XG5AbWVkaWEgcHJpbnQge1xuICAuaGVhZGVyX25hdiB7ZGlzcGxheTogbm9uZX1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiA2NDFweCkgYW5kIChtYXgtd2lkdGg6IDg2MHB4KXtcbiAgLmhlYWRlcl9uYXZ7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgIC5oZWFkZXJfbWVudXtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5oZWFkZXJfYXV0aHtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgIH1cbiAgICAuaGVhZGVyX2ZpbmR7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICB9XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiAyMDBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KXtcbiAgLmhlYWRlcl90aXRsZXtcbiAgICBwYWRkaW5nOiA1cHggMCA1cHggMjBweDtcbiAgICAubG9nb3tcbiAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgICAgLmhlYWRlcl9sb2dve1xuICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgIH1cbiAgICB9XG4gICAgLmhlYWRlcl90ZXh0e1xuICAgICAgLmhlYWRlcl90ZXh0X21haW57XG4gICAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvIFNsYWInLCBzZXJpZjtcbiAgICAgICAgLypjb2xvcjogQGhlYWRlcl9tYWluX2NvbG9yOyovXG4gICAgICAgIGZvbnQtc2l6ZTogMi41ZW07XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgfVxuICAgIH1cbiAgfVxuICAuaGVhZGVyX25hdntcbiAgICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gICAgLmhlYWRlcl9tZW51e1xuICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gICAgICBwYWRkaW5nOiA1cHg7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICB9XG4gICAgLmhlYWRlcl9hdXRoe1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBib3JkZXI6IG5vbmU7XG4gICAgfVxuICAgIC5oZWFkZXJfZmluZHtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgYm9yZGVyOiBub25lO1xuICAgIH1cbiAgfVxufVxuXG5cblxuXG5cbiIsIi5oZWFkZXJfdGl0bGUge1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTVweCAwIDE1cHggNTBweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuLmhlYWRlcl90aXRsZSAubG9nbyB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmhlYWRlcl90aXRsZSAubG9nbyAuaGVhZGVyX2xvZ28gaW1nIHtcbiAgd2lkdGg6IDIwMHB4O1xufVxuLmhlYWRlcl90aXRsZSAubG9nbyAuaGVhZGVyX3RleHQge1xuICB3aWR0aDogMTAwJTtcbiAgbWFyZ2luLWxlZnQ6IDMwcHg7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG4uaGVhZGVyX3RpdGxlIC5sb2dvIC5oZWFkZXJfdGV4dCAuaGVhZGVyX3RleHRfbWFpbiB7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvIFNsYWInLCBzZXJpZjtcbiAgZm9udC1zaXplOiA0ZW07XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuLmhlYWRlcl90aXRsZSAudmliZXIge1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmhlYWRlcl90aXRsZSAudmliZXIgYSB7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICBmb250LXNpemU6IDIycHg7XG4gIGNvbG9yOiAjNWE1YTVhO1xuICBmb250LWZhbWlseTogJ09wZW4gU2FucyBDb25kZW5zZWQnLCBzYW5zLXNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5oZWFkZXJfdGl0bGUgLnZpYmVyOmhvdmVyIGEge1xuICBjb2xvcjogIzFkNGViZTtcbn1cbi5oZWFkZXJfbmF2IHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjYjdiN2I3O1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICB3aWR0aDogMTAwJTtcbn1cbi5oZWFkZXJfbmF2IC5oZWFkZXJfbWVudSB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIHdpZHRoOiA3MCU7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5oZWFkZXJfbmF2IC5oZWFkZXJfYXV0aCB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgI2I3YjdiNztcbiAgd2lkdGg6IDUlO1xufVxuLmhlYWRlcl9uYXYgLmhlYWRlcl9maW5kIHtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgcGFkZGluZzogMTBweDtcbiAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjYjdiN2I3O1xuICB3aWR0aDogMjUlO1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiByb3cgbm93cmFwO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuQG1lZGlhIHByaW50IHtcbiAgLmhlYWRlcl9uYXYge1xuICAgIGRpc3BsYXk6IG5vbmU7XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiA2NDFweCkgYW5kIChtYXgtd2lkdGg6IDg2MHB4KSB7XG4gIC5oZWFkZXJfbmF2IHtcbiAgICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9tZW51IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gICAgcGFkZGluZzogNXB4O1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gIC5oZWFkZXJfbmF2IC5oZWFkZXJfYXV0aCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9maW5kIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxufVxuQG1lZGlhIChtaW4td2lkdGg6IDIwMHB4KSBhbmQgKG1heC13aWR0aDogNjQwcHgpIHtcbiAgLmhlYWRlcl90aXRsZSB7XG4gICAgcGFkZGluZzogNXB4IDAgNXB4IDIwcHg7XG4gIH1cbiAgLmhlYWRlcl90aXRsZSAubG9nbyB7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICB9XG4gIC5oZWFkZXJfdGl0bGUgLmxvZ28gLmhlYWRlcl9sb2dvIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIH1cbiAgLmhlYWRlcl90aXRsZSAuaGVhZGVyX3RleHQgLmhlYWRlcl90ZXh0X21haW4ge1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgZm9udC1mYW1pbHk6ICdSb2JvdG8gU2xhYicsIHNlcmlmO1xuICAgIC8qY29sb3I6IEBoZWFkZXJfbWFpbl9jb2xvcjsqL1xuICAgIGZvbnQtc2l6ZTogMi41ZW07XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIH1cbiAgLmhlYWRlcl9uYXYge1xuICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgfVxuICAuaGVhZGVyX25hdiAuaGVhZGVyX21lbnUge1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgICBwYWRkaW5nOiA1cHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9hdXRoIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBib3JkZXI6IG5vbmU7XG4gIH1cbiAgLmhlYWRlcl9uYXYgLmhlYWRlcl9maW5kIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBib3JkZXI6IG5vbmU7XG4gIH1cbn1cbiJdfQ== */";
     /***/
   },
 
@@ -3753,12 +3773,14 @@
 
         this.toBase = this.CORE + 'to/';
         this.GETGROUPS = this.toBase + 'groups';
+        this.GETMODELS = this.toBase + 'models/';
         this.GETAUTOS = this.toBase + 'autos';
         this.GETAUTOGOODS = this.toBase + 'auto_goods/';
         this.GETAUTO = this.toBase + 'auto/';
         this.GETEXCHANGES = this.toBase + 'exchanges';
         this.GETTOBRANDS = this.toBase + 'brands';
         this.ADDEXCHANGE = this.toBase + 'addexchange';
+        this.ADDMODEL = this.toBase + 'addmodel';
         this.ADDTO = this.toBase + 'addto';
       }
 
@@ -7640,20 +7662,20 @@
     "./node_modules/tslib/tslib.es6.js");
 
     class Auto {
-      constructor(pId, pName, pImgId, pImg, pIdBrand) {
+      constructor(pId, pName, pImgId, pImg, pIdModel) {
         this.pId = pId;
         this.pName = pName;
         this.pImgId = pImgId;
         this.pImg = pImg;
-        this.pIdBrand = pIdBrand;
+        this.pIdModel = pIdModel;
       }
 
-      get idBrand() {
-        return this.pIdBrand;
+      get idModel() {
+        return this.pIdModel;
       }
 
-      set idBrand(value) {
-        this.pIdBrand = value;
+      set idModel(value) {
+        this.pIdModel = value;
       }
 
       get id() {
@@ -7689,7 +7711,7 @@
       }
 
       static fromJson(jsonObj) {
-        return new Auto(jsonObj.id, jsonObj.name, jsonObj.id_image, jsonObj.img, jsonObj.id_brand);
+        return new Auto(jsonObj.id, jsonObj.name, jsonObj.id_image, jsonObj.img, jsonObj.id_model);
       }
 
     }
@@ -8029,6 +8051,126 @@
 
       static fromJson(jsonObj) {
         return new GroupResponse(jsonObj.map(e => _Group__WEBPACK_IMPORTED_MODULE_1__["Group"].fromJson(e)));
+      }
+
+    }
+    /***/
+
+  },
+
+  /***/
+  "./src/app/dto/to/model/Model.ts":
+  /*!***************************************!*\
+    !*** ./src/app/dto/to/model/Model.ts ***!
+    \***************************************/
+
+  /*! exports provided: Model */
+
+  /***/
+  function srcAppDtoToModelModelTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Model", function () {
+      return Model;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    class Model {
+      constructor(pId, pName, pIdBrand) {
+        this.pId = pId;
+        this.pName = pName;
+        this.pIdBrand = pIdBrand;
+      }
+
+      get id() {
+        return this.pId;
+      }
+
+      set id(value) {
+        this.pId = value;
+      }
+
+      get name() {
+        return this.pName;
+      }
+
+      set name(value) {
+        this.pName = value;
+      }
+
+      get idBrand() {
+        return this.pIdBrand;
+      }
+
+      set idBrand(value) {
+        this.pIdBrand = value;
+      }
+
+      static fromJson(jsonObj) {
+        return new Model(jsonObj.id, jsonObj.name, jsonObj.id_brand);
+      }
+
+    }
+    /***/
+
+  },
+
+  /***/
+  "./src/app/dto/to/model/ModelResponse.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/dto/to/model/ModelResponse.ts ***!
+    \***********************************************/
+
+  /*! exports provided: ModelResponse */
+
+  /***/
+  function srcAppDtoToModelModelResponseTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ModelResponse", function () {
+      return ModelResponse;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _Model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./Model */
+    "./src/app/dto/to/model/Model.ts");
+
+    class ModelResponse {
+      constructor(pData) {
+        this.pData = pData;
+      }
+
+      get data() {
+        return this.pData;
+      }
+
+      set data(value) {
+        this.pData = value;
+      }
+
+      static fromJson(jsonObj) {
+        return new ModelResponse(jsonObj.map(e => _Model__WEBPACK_IMPORTED_MODULE_1__["Model"].fromJson(e)));
       }
 
     }
@@ -8430,7 +8572,6 @@
       fillInTheme(id) {
         this.themes.filter(th => {
           if (th.id == id) {
-            console.log(th);
             this.addChangeTheme.patchValue({
               id: th.id,
               name: th.name,
@@ -8565,6 +8706,7 @@
         this.pGoods = [];
         this.pArticles = null;
         this.whatHaveToDo = 'add';
+        this.blockDefiner = false;
         this.whatToFind = '';
         this.oldWhatToFind = null;
         this.products = null;
@@ -8614,14 +8756,35 @@
         this.pChoosenImg = value;
       }
 
+      get ca() {
+        return this.addChangeArticle;
+      }
+
       ngOnInit() {
+        this.choosenImg = null;
         this.whatHaveToDo = 'add';
         this.updateThemes();
         this.updateArticles();
-        this.adminMessageService.articlesThemesChangesMessage.subscribe(resp => this.updateThemes());
-        this.addChangeArticle.get('foundGoods').valueChanges.subscribe(e => {
+        this.adminMessageService.articlesThemesChangesMessage.subscribe(() => this.updateThemes());
+        this.ca.get('foundGoods').valueChanges.subscribe(() => {
           this.whatToFind = this.addChangeArticle.get('foundGoods').value;
           this.find();
+        });
+        this.adminMessageService.imageHasChoosen.subscribe(i => {
+          // blockDefiner controls that image will change only in one block
+          if (this.blockDefiner) {
+            this.moveImageToTheFormControl(i);
+            this.choosenImg = i;
+            console.log(this.choosenImg);
+          }
+
+          this.blockDefiner = false;
+        });
+      }
+
+      moveImageToTheFormControl(image) {
+        this.ca.patchValue({
+          imgId: image.id
         });
       }
 
@@ -8647,18 +8810,18 @@
           goods: article.pGoods,
           idTheme: article.idTheme
         });
-        this.getGoods(article.pGoods);
+        if (article.pGoods) this.getGoods(article.pGoods);
         this.choosenImg = new _dto_images_Image__WEBPACK_IMPORTED_MODULE_4__["Image"](article.imgId, 'name', article.img);
         this.whatHaveToDo = 'update';
       }
 
       getGoods(goodsStr) {
         const goodsArr = goodsStr.split(',');
-        goodsArr.map(estr => {
-          const eArr = estr.split(':');
+        goodsArr.map(str => {
+          const eArr = str.split(':');
 
           if (eArr[1] === 'goods_oils') {
-            this.productService.getOil(eArr[0]).subscribe(resp => {
+            this.productService.getGoodsUnit(eArr[0], 'goods_oils').subscribe(resp => {
               this.goods.push(resp);
             });
           }
@@ -8678,7 +8841,7 @@
 
       onArticleSubmit() {
         this.makeGoodsStr();
-        this.articleService.addArticle(this.addChangeArticle.value, this.whatHaveToDo).subscribe(resp => {
+        this.articleService.addArticle(this.ca.value, this.whatHaveToDo).subscribe(resp => {
           this.adminMessageService.ShowServerResponseWindow();
 
           if (resp === 'update success') {
@@ -8728,6 +8891,8 @@
       }
 
       imagesPickerShow(e) {
+        // change blockDefiner for working only in one block, else pictures will change in all blocks
+        this.blockDefiner = true;
         this.adminMessageService.imagesPickerWindowShow();
         e.preventDefault();
       }
@@ -8755,7 +8920,7 @@
 
       addProduct(id, tableDefiner) {
         if (tableDefiner === 'goods_oils') {
-          this.productService.getOil(id).subscribe(resp => {
+          this.productService.getGoodsUnit(id, tableDefiner).subscribe(resp => {
             this.goods.push(resp);
           });
         }
@@ -11353,9 +11518,9 @@
     "./src/app/dto/images/Image.ts");
 
     let AdminToBrandsComponent = class AdminToBrandsComponent {
-      constructor(brandsService, adminMessageService) {
-        this.brandsService = brandsService;
+      constructor(adminMessageService, brandsService) {
         this.adminMessageService = adminMessageService;
+        this.brandsService = brandsService;
         this.pBrands = [];
         this.pChoosenImg = null;
         this.blockDefiner = false;
@@ -11407,7 +11572,7 @@
       }
 
       updateBrands() {
-        this.brandsService.brands.subscribe(resp => {
+        this.brandsService.brandsByType(4, 'all').subscribe(resp => {
           resp.forEach(e => {
             if (e.types) e.types = e.types.split(',');
           });
@@ -11433,12 +11598,14 @@
 
           if (resp === 'update success') {
             const data = ['обновление данных о бренде', 'Данные успешно обновлены'];
+            this.adminMessageService.brandUpdateCreate();
             this.adminMessageService.DataToServerResponseData(data.join(';'));
             this.clearFields();
           }
 
           if (resp === 'insert success') {
             const data = ['добавление нового бренда', 'Данные успешно добавлены'];
+            this.adminMessageService.brandUpdateCreate();
             this.adminMessageService.DataToServerResponseData(data.join(';'));
             this.clearFields();
           }
@@ -11481,6 +11648,7 @@
       fillInBrand(value) {
         this.brands.filter(brand => {
           if (brand.id == value) {
+            console.log(brand);
             this.addChangeBrands.patchValue({
               id: brand.id,
               name: brand.name,
@@ -11496,9 +11664,9 @@
     };
 
     AdminToBrandsComponent.ctorParameters = () => [{
-      type: _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_4__["BrandsService"]
-    }, {
       type: _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_3__["AdminMessagesService"]
+    }, {
+      type: _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_4__["BrandsService"]
     }];
 
     AdminToBrandsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -11509,7 +11677,7 @@
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./admin-to-brands.component.less */
       "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-brands/admin-to-brands.component.less")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_4__["BrandsService"], _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_3__["AdminMessagesService"]])], AdminToBrandsComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_3__["AdminMessagesService"], _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_4__["BrandsService"]])], AdminToBrandsComponent);
     /***/
   },
 
@@ -11657,6 +11825,239 @@
   },
 
   /***/
+  "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.less":
+  /*!****************************************************************************************************************!*\
+    !*** ./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.less ***!
+    \****************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppModulesAdminAdminMainAdminContentAdminToAdminToModelsAdminToModelsComponentLess(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvYWRtaW4vYWRtaW4tbWFpbi9hZG1pbi1jb250ZW50L2FkbWluLXRvL2FkbWluLXRvLW1vZGVscy9hZG1pbi10by1tb2RlbHMuY29tcG9uZW50Lmxlc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.ts":
+  /*!**************************************************************************************************************!*\
+    !*** ./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.ts ***!
+    \**************************************************************************************************************/
+
+  /*! exports provided: AdminToModelsComponent */
+
+  /***/
+  function srcAppModulesAdminAdminMainAdminContentAdminToAdminToModelsAdminToModelsComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AdminToModelsComponent", function () {
+      return AdminToModelsComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../../../../../services/goods/brands/brands.service */
+    "./src/app/services/goods/brands/brands.service.ts");
+    /* harmony import */
+
+
+    var _services_to_to_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../../../../services/to/to.service */
+    "./src/app/services/to/to.service.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../../../../../../services/messages/admin-messages.service */
+    "./src/app/services/messages/admin-messages.service.ts");
+
+    let AdminToModelsComponent = class AdminToModelsComponent {
+      constructor(brandsService, toService, adminMessageService) {
+        this.brandsService = brandsService;
+        this.toService = toService;
+        this.adminMessageService = adminMessageService;
+        this.pBrands = [];
+        this.pModels = [];
+        this.pProductType = 4;
+        this.addChangeModels = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormGroup"]({
+          id: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+          name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
+          idBrand: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required)
+        });
+      }
+
+      get models() {
+        return this.pModels;
+      }
+
+      set models(value) {
+        this.pModels = value;
+      }
+
+      get brands() {
+        return this.pBrands;
+      }
+
+      set brands(value) {
+        this.pBrands = value;
+      }
+
+      get whatHaveToDo() {
+        return this.pWhatHaveToDo;
+      }
+
+      set whatHaveToDo(value) {
+        this.pWhatHaveToDo = value;
+      }
+
+      get productType() {
+        return this.pProductType;
+      }
+
+      get f() {
+        return this.addChangeModels;
+      }
+
+      get fc() {
+        return this.addChangeModels.controls;
+      }
+
+      ngOnInit() {
+        this.whatHaveToDo = 'add';
+        this.adminMessageService.brandsUpdateCreateMessage.subscribe(() => {
+          this.updateBrands();
+        });
+        this.updateBrands();
+      }
+
+      updateBrands() {
+        this.brandsService.brandsByType(4, 'all').subscribe(resp => {
+          resp.forEach(e => {
+            if (e.types) e.types = e.types.split(',');
+          });
+          this.brands = resp;
+        });
+      }
+
+      updateModels(brandId) {
+        this.toService.models(brandId).subscribe(r => {
+          this.f.patchValue({
+            idBrand: brandId
+          });
+          this.models = r;
+        });
+      }
+
+      onChangeModelsSubmit() {
+        this.toService.addModel(this.f.value, this.whatHaveToDo).subscribe(resp => {
+          this.adminMessageService.ShowServerResponseWindow();
+
+          if (resp === 'update success') {
+            const data = ['обновление данных о модели', 'Данные успешно обновлены'];
+            this.adminMessageService.brandUpdateCreate();
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+            this.clearFields();
+          }
+
+          if (resp === 'insert success') {
+            const data = ['добавление новой модели', 'Данные успешно добавлены'];
+            this.adminMessageService.brandUpdateCreate();
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+            this.clearFields();
+          }
+
+          if (resp === 'error') {
+            const data = ['добавление новой модели', 'Ой, что-то пошло не так! Повторите попытку.'];
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+          }
+
+          if (resp === 'this object exists') {
+            const data = ['добавление новой модели', 'Модель с таким названием уже существует! Если хотите изменить данные, выберите из списка.'];
+            this.adminMessageService.DataToServerResponseData(data.join(';'));
+          }
+
+          this.updateModels(this.fc.idBrand.value);
+        });
+      }
+
+      fillInModel(value) {
+        this.models.filter(model => {
+          if (model.id == value) {
+            this.f.patchValue({
+              id: model.id,
+              name: model.name,
+              idBrand: model.idBrand
+            });
+            this.whatHaveToDo = 'update';
+          }
+        });
+      }
+
+      clearFields(e) {
+        if (e) {
+          e.preventDefault();
+        }
+
+        this.f.patchValue({
+          id: '',
+          name: '',
+          idBrand: ''
+        });
+        this.whatHaveToDo = 'add';
+      }
+
+    };
+
+    AdminToModelsComponent.ctorParameters = () => [{
+      type: _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_2__["BrandsService"]
+    }, {
+      type: _services_to_to_service__WEBPACK_IMPORTED_MODULE_3__["ToService"]
+    }, {
+      type: _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_5__["AdminMessagesService"]
+    }];
+
+    AdminToModelsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-admin-to-models',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./admin-to-models.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./admin-to-models.component.less */
+      "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.less")).default]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_2__["BrandsService"], _services_to_to_service__WEBPACK_IMPORTED_MODULE_3__["ToService"], _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_5__["AdminMessagesService"]])], AdminToModelsComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to.component.less":
   /*!*****************************************************************************************!*\
     !*** ./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to.component.less ***!
@@ -11737,12 +12138,20 @@
     var _dto_to_goods_Goods__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../../../../../dto/to/goods/Goods */
     "./src/app/dto/to/goods/Goods.ts");
+    /* harmony import */
+
+
+    var _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../../../../../services/goods/brands/brands.service */
+    "./src/app/services/goods/brands/brands.service.ts");
 
     let AdminToComponent = class AdminToComponent {
-      constructor(adminMessageService, toService) {
+      constructor(adminMessageService, toService, brandsService) {
         this.adminMessageService = adminMessageService;
         this.toService = toService;
+        this.brandsService = brandsService;
         this.pBrands = null;
+        this.pModels = null;
         this.pArticles = null;
         this.whatHaveToDo = 'add';
         this.isGoodsChanges = false;
@@ -11758,7 +12167,7 @@
         this.addChangeArticle = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormGroup"]({
           id: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
           name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
-          idBrand: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
+          idModel: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
           goods: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
           img: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('')
         });
@@ -11769,6 +12178,14 @@
           price: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].pattern('^[0-9]*$')]),
           idExchange: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required)
         });
+      }
+
+      get models() {
+        return this.pModels;
+      }
+
+      set models(value) {
+        this.pModels = value;
       }
 
       get groups() {
@@ -11828,7 +12245,6 @@
       }
 
       ngOnInit() {
-        this.updateArticles();
         this.updateBrands();
         this.toService.groups.subscribe(g => this.groups = g);
         this.toService.exchanges.subscribe(e => this.exchanges = e);
@@ -11847,11 +12263,6 @@
         this.ca.patchValue({
           img: image.id
         });
-      }
-
-      updateArticles() {
-        this.articles = null;
-        this.toService.autos('all').subscribe(resp => this.articles = resp);
       }
 
       onArticleSubmit() {
@@ -11887,7 +12298,7 @@
             this.adminMessageService.DataToServerResponseData(data.join(';'));
           }
 
-          this.updateArticles();
+          this.updateAutos(this.ca.controls.idModel);
         });
       }
 
@@ -11909,23 +12320,43 @@
       }
 
       updateBrands() {
-        this.toService.brands.subscribe(resp => this.brands = resp);
+        this.brandsService.brandsByType(4, 'all').subscribe(resp => {
+          this.brands = resp;
+        });
       }
 
-      getArticle(article) {
-        this.isGoodsChanges = false;
+      updateModels(brandId) {
+        this.toService.models(brandId).subscribe(r => {
+          this.models = r;
+        });
+      }
+
+      updateAutos(modelId) {
+        this.articles = null;
         this.ca.patchValue({
-          id: article.id,
-          name: article.name,
-          idBrand: article.idBrand,
-          img: article.imgId
+          idModel: modelId
         });
-        this.choosenImg = new _dto_images_Image__WEBPACK_IMPORTED_MODULE_2__["Image"](article.id_image, 'name', article.img);
-        this.toService.goods(article.id, 0).subscribe(g => {
-          g.idGroup = Number(g.idGroup);
-          this.pGoods = g;
+        this.toService.autos(modelId).subscribe(resp => this.articles = resp);
+      }
+
+      getAuto(autoId) {
+        this.isGoodsChanges = false;
+        this.articles.map(article => {
+          if (article.id == autoId) {
+            this.ca.patchValue({
+              id: article.id,
+              name: article.name,
+              idBrand: article.idBrand,
+              img: article.imgId
+            });
+            this.choosenImg = new _dto_images_Image__WEBPACK_IMPORTED_MODULE_2__["Image"](article.id_image, 'name', article.img);
+            this.toService.goods(article.id, 0).subscribe(g => {
+              g.idGroup = Number(g.idGroup);
+              this.pGoods = g;
+            });
+            this.whatHaveToDo = 'update';
+          }
         });
-        this.whatHaveToDo = 'update';
       }
 
       groupChange(idGroup, idGoods) {
@@ -12053,6 +12484,8 @@
       type: _services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_3__["AdminMessagesService"]
     }, {
       type: _services_to_to_service__WEBPACK_IMPORTED_MODULE_5__["ToService"]
+    }, {
+      type: _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_7__["BrandsService"]
     }];
 
     AdminToComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -12063,7 +12496,7 @@
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./admin-to.component.less */
       "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to.component.less")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_3__["AdminMessagesService"], _services_to_to_service__WEBPACK_IMPORTED_MODULE_5__["ToService"]])], AdminToComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_messages_admin_messages_service__WEBPACK_IMPORTED_MODULE_3__["AdminMessagesService"], _services_to_to_service__WEBPACK_IMPORTED_MODULE_5__["ToService"], _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_7__["BrandsService"]])], AdminToComponent);
     /***/
   },
 
@@ -12388,6 +12821,12 @@
     var _admin_main_admin_content_admin_oils_params_admin_params_ilsac_admin_params_ilsac_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
     /*! ./admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component */
     "./src/app/modules/admin/admin-main/admin-content/admin-oils-params/admin-params-ilsac/admin-params-ilsac.component.ts");
+    /* harmony import */
+
+
+    var _admin_main_admin_content_admin_to_admin_to_models_admin_to_models_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+    /*! ./admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component */
+    "./src/app/modules/admin/admin-main/admin-content/admin-to/admin-to-models/admin-to-models.component.ts");
 
     const routes = [{
       path: '',
@@ -12419,7 +12858,7 @@
     }];
     let AdminModule = class AdminModule {};
     AdminModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_admin_main_admin_main_component__WEBPACK_IMPORTED_MODULE_3__["AdminMainComponent"], _admin_main_admin_nav_admin_nav_component__WEBPACK_IMPORTED_MODULE_5__["AdminNavComponent"], _admin_main_admin_content_admin_oils_params_admin_oils_params_component__WEBPACK_IMPORTED_MODULE_6__["AdminOilsParamsComponent"], _admin_main_admin_content_admin_oils_approvals_admin_oils_approvals_component__WEBPACK_IMPORTED_MODULE_7__["AdminOilsApprovalsComponent"], _admin_main_admin_content_admin_oils_goods_admin_oils_goods_component__WEBPACK_IMPORTED_MODULE_8__["AdminOilsGoodsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_products_groups_admin_params_products_groups_component__WEBPACK_IMPORTED_MODULE_11__["AdminParamsProductsGroupsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_brands_admin_params_brands_component__WEBPACK_IMPORTED_MODULE_12__["AdminParamsBrandsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_volume_admin_params_volume_component__WEBPACK_IMPORTED_MODULE_15__["AdminParamsVolumeComponent"], _admin_main_admin_content_admin_oils_params_admin_params_visc_admin_params_visc_component__WEBPACK_IMPORTED_MODULE_16__["AdminParamsViscComponent"], _admin_main_admin_content_admin_oils_params_admin_params_acea_admin_params_acea_component__WEBPACK_IMPORTED_MODULE_17__["AdminParamsAceaComponent"], _admin_main_admin_content_admin_oils_params_admin_params_api_admin_params_api_component__WEBPACK_IMPORTED_MODULE_18__["AdminParamsApiComponent"], _admin_main_admin_content_admin_articles_admin_articles_component__WEBPACK_IMPORTED_MODULE_21__["AdminArticlesComponent"], _admin_main_admin_content_admin_articles_admin_articles_themes_admin_articles_themes_component__WEBPACK_IMPORTED_MODULE_22__["AdminArticlesThemesComponent"], _admin_main_admin_content_admin_to_admin_to_component__WEBPACK_IMPORTED_MODULE_23__["AdminToComponent"], _admin_main_admin_content_admin_to_admin_to_brands_admin_to_brands_component__WEBPACK_IMPORTED_MODULE_24__["AdminToBrandsComponent"], _admin_main_admin_content_admin_to_admin_to_exchange_admin_to_exchange_component__WEBPACK_IMPORTED_MODULE_25__["AdminToExchangeComponent"], _admin_main_admin_content_admin_oils_params_admin_params_ilsac_admin_params_ilsac_component__WEBPACK_IMPORTED_MODULE_26__["AdminParamsIlsacComponent"]],
+      declarations: [_admin_main_admin_main_component__WEBPACK_IMPORTED_MODULE_3__["AdminMainComponent"], _admin_main_admin_nav_admin_nav_component__WEBPACK_IMPORTED_MODULE_5__["AdminNavComponent"], _admin_main_admin_content_admin_oils_params_admin_oils_params_component__WEBPACK_IMPORTED_MODULE_6__["AdminOilsParamsComponent"], _admin_main_admin_content_admin_oils_approvals_admin_oils_approvals_component__WEBPACK_IMPORTED_MODULE_7__["AdminOilsApprovalsComponent"], _admin_main_admin_content_admin_oils_goods_admin_oils_goods_component__WEBPACK_IMPORTED_MODULE_8__["AdminOilsGoodsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_products_groups_admin_params_products_groups_component__WEBPACK_IMPORTED_MODULE_11__["AdminParamsProductsGroupsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_brands_admin_params_brands_component__WEBPACK_IMPORTED_MODULE_12__["AdminParamsBrandsComponent"], _admin_main_admin_content_admin_oils_params_admin_params_volume_admin_params_volume_component__WEBPACK_IMPORTED_MODULE_15__["AdminParamsVolumeComponent"], _admin_main_admin_content_admin_oils_params_admin_params_visc_admin_params_visc_component__WEBPACK_IMPORTED_MODULE_16__["AdminParamsViscComponent"], _admin_main_admin_content_admin_oils_params_admin_params_acea_admin_params_acea_component__WEBPACK_IMPORTED_MODULE_17__["AdminParamsAceaComponent"], _admin_main_admin_content_admin_oils_params_admin_params_api_admin_params_api_component__WEBPACK_IMPORTED_MODULE_18__["AdminParamsApiComponent"], _admin_main_admin_content_admin_articles_admin_articles_component__WEBPACK_IMPORTED_MODULE_21__["AdminArticlesComponent"], _admin_main_admin_content_admin_articles_admin_articles_themes_admin_articles_themes_component__WEBPACK_IMPORTED_MODULE_22__["AdminArticlesThemesComponent"], _admin_main_admin_content_admin_to_admin_to_component__WEBPACK_IMPORTED_MODULE_23__["AdminToComponent"], _admin_main_admin_content_admin_to_admin_to_brands_admin_to_brands_component__WEBPACK_IMPORTED_MODULE_24__["AdminToBrandsComponent"], _admin_main_admin_content_admin_to_admin_to_exchange_admin_to_exchange_component__WEBPACK_IMPORTED_MODULE_25__["AdminToExchangeComponent"], _admin_main_admin_content_admin_oils_params_admin_params_ilsac_admin_params_ilsac_component__WEBPACK_IMPORTED_MODULE_26__["AdminParamsIlsacComponent"], _admin_main_admin_content_admin_to_admin_to_models_admin_to_models_component__WEBPACK_IMPORTED_MODULE_27__["AdminToModelsComponent"]],
       imports: [ngx_loading__WEBPACK_IMPORTED_MODULE_19__["NgxLoadingModule"].forRoot({
         animationType: ngx_loading__WEBPACK_IMPORTED_MODULE_19__["ngxLoadingAnimationTypes"].circleSwish,
         backdropBackgroundColour: 'rgba(0,0,0,0.1)',
@@ -12448,7 +12887,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ":host {\n  width: 100%;\n}\n.article_main_unit {\n  border: 1px solid #b7b7b7;\n  padding: 5px;\n  box-sizing: border-box;\n  width: 100%;\n}\n.article_main_unit .article_header {\n  width: 100%;\n  text-align: center;\n  font-size: 28px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 20px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n}\n.article_main_unit .article_info {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  width: 100%;\n}\n.article_main_unit .article_info .article_name {\n  font-size: 24px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 10px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n  text-align: center;\n  width: 100%;\n}\n.article_main_unit .article_info .article_short {\n  width: 100%;\n  margin-top: 15px;\n  text-indent: 10px;\n  color: #626262;\n  padding: 10px;\n  border-bottom: 1px solid #b7b7b7;\n  border-top: 1px solid #b7b7b7;\n  font-family: 'Roboto Mono', monospace;\n  box-sizing: border-box;\n}\n.article_main_unit .article_info .article_full {\n  margin: 15px;\n  text-indent: 10px;\n  color: #353535;\n  box-sizing: border-box;\n  font-family: 'PT Sans Narrow', sans-serif;\n}\n.article_main_unit .article_info .goods_in_articles {\n  font-size: 20px;\n  border-bottom: 1px solid #b7b7b7;\n  border-top: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 10px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n  text-align: center;\n  width: 100%;\n}\n.article_main_unit .article_info .article_goods {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row wrap;\n  -webkit-box-pack: start;\n          justify-content: flex-start;\n  font-family: 'Open Sans Condensed', sans-serif;\n  color: #626262;\n}\n.article_main_unit .article_info .article_goods .goods {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  margin-right: 10px;\n  cursor: pointer;\n  border: 1px solid #b7b7b7;\n  box-sizing: border-box;\n  color: #626262;\n  padding: 5px;\n  width: 160px;\n}\n.article_main_unit .article_info .article_goods .goods:hover {\n  color: #1b6ab8;\n  border-color: #1b6ab8;\n}\n.article_main_unit .article_info .article_goods .goods .goods_name {\n  font-family: 'Oswald';\n  text-transform: uppercase;\n}\n.article_main_unit .article_info .article_goods .goods img {\n  width: 150px;\n  height: 150px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9hcnRpY2xlcy9hcnRpY2xlcy9hcnRpY2xlcy1tYWluL2FydGljbGVzLWNvbnRlbnQvQzovVXNlcnMvSXZhbi9EZXNrdG9wL29pbHMvb2lscy9zcmMvYXBwL21vZHVsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMtbWFpbi9hcnRpY2xlcy1jb250ZW50L2FydGljbGVzLWNvbnRlbnQuY29tcG9uZW50Lmxlc3MiLCJzcmMvYXBwL21vZHVsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMtbWFpbi9hcnRpY2xlcy1jb250ZW50L2FydGljbGVzLWNvbnRlbnQuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFBTyxXQUFBO0FDQVA7QURDQTtFQUNFLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLHNCQUFBO0VBQ0EsV0FBQTtBQ0NGO0FETEE7RUFNSSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0NBQUE7RUFDQSxjQUFBO0VBQ0EsbUJBQUE7RUFDQSw4Q0FBQTtFQUNBLGlCQUFBO0FDRUo7QURmQTtFQWdCSSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLHdCQUFBO0VBQ0EsV0FBQTtBQ0VKO0FEcEJBO0VBb0JNLGVBQUE7RUFDQSxnQ0FBQTtFQUNBLGNBQUE7RUFDQSxtQkFBQTtFQUNBLDhDQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7QUNHTjtBRDlCQTtFQThCTSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7RUFDQSxhQUFBO0VBQ0EsZ0NBQUE7RUFDQSw2QkFBQTtFQUNBLHFDQUFBO0VBQ0Esc0JBQUE7QUNHTjtBRHpDQTtFQXlDTSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0VBQ0Esc0JBQUE7RUFDQSx5Q0FBQTtBQ0dOO0FEaERBO0VBZ0RNLGVBQUE7RUFDQSxnQ0FBQTtFQUNBLDZCQUFBO0VBQ0EsY0FBQTtFQUNBLG1CQUFBO0VBQ0EsOENBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtBQ0dOO0FEM0RBO0VBMkRNLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEsbUJBQUE7RUFDQSx1QkFBQTtVQUFBLDJCQUFBO0VBQ0EsOENBQUE7RUFDQSxjQUFBO0FDR047QURsRUE7RUFpRVEsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSx3QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUNJUjtBREhRO0VBQ0UsY0FBQTtFQUNBLHFCQUFBO0FDS1Y7QURqRkE7RUErRVUscUJBQUE7RUFDQSx5QkFBQTtBQ0tWO0FEckZBO0VBbUZVLFlBQUE7RUFDQSxhQUFBO0FDS1YiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL2FydGljbGVzL2FydGljbGVzL2FydGljbGVzLW1haW4vYXJ0aWNsZXMtY29udGVudC9hcnRpY2xlcy1jb250ZW50LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uLy4uLy4uLy4uL2NvbW1vblwiO1xuXG46aG9zdCB7d2lkdGg6IDEwMCV9XG4uYXJ0aWNsZV9tYWluX3VuaXR7XG4gIGJvcmRlcjogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHdpZHRoOiAxMDAlO1xuICAuYXJ0aWNsZV9oZWFkZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGZvbnQtc2l6ZTogMjhweDtcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgY29sb3I6IEBtYWluX25hdl9mb250X2NvbG9yO1xuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgZm9udC1mYW1pbHk6IEBoZWFkZXJzX2ZvbnQ7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIH1cbiAgLmFydGljbGVfaW5mb3tcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgLmFydGljbGVfbmFtZXtcbiAgICAgIGZvbnQtc2l6ZTogMjRweDtcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGNvbG9yOiBAbWFpbl9uYXZfZm9udF9jb2xvcjtcbiAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICBmb250LWZhbWlseTogQGhlYWRlcnNfZm9udDtcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5hcnRpY2xlX3Nob3J0e1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBtYXJnaW4tdG9wOiAxNXB4O1xuICAgICAgdGV4dC1pbmRlbnQ6IDEwcHg7XG4gICAgICBjb2xvcjogQG1haW5fY29udGVudF9mb250X2NvbG9yO1xuICAgICAgcGFkZGluZzogMTBweDtcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGZvbnQtZmFtaWx5OiBAc2hvcnRfZGVzY19mb250O1xuICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICB9XG4gICAgLmFydGljbGVfZnVsbHtcbiAgICAgIG1hcmdpbjogMTVweDtcbiAgICAgIHRleHQtaW5kZW50OiAxMHB4O1xuICAgICAgY29sb3I6IEBmdWxsX2Rlc2NfZm9udF9jb2xvcjtcbiAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICBmb250LWZhbWlseTogQGZ1bGxfZGVzY19mb250O1xuICAgIH1cbiAgICAuZ29vZHNfaW5fYXJ0aWNsZXN7XG4gICAgICBmb250LXNpemU6MjBweDtcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGNvbG9yOiBAbWFpbl9uYXZfZm9udF9jb2xvcjtcbiAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICBmb250LWZhbWlseTogQGhlYWRlcnNfZm9udDtcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5hcnRpY2xlX2dvb2Rze1xuICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICBmbGV4LWZsb3c6IHJvdyB3cmFwO1xuICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xuICAgICAgZm9udC1mYW1pbHk6IEBoZWFkZXJzX2ZvbnQ7XG4gICAgICBjb2xvcjogQG1haW5fY29udGVudF9mb250X2NvbG9yO1xuICAgICAgLmdvb2Rze1xuICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgICAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgIGNvbG9yOiBAbWFpbl9jb250ZW50X2ZvbnRfY29sb3I7XG4gICAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgICAgd2lkdGg6IDE2MHB4O1xuICAgICAgICAmOmhvdmVye1xuICAgICAgICAgIGNvbG9yOiAjMWI2YWI4O1xuICAgICAgICAgIGJvcmRlci1jb2xvcjogQG1haW5fY29udGVudF9ib3JkZXJfaG92ZXI7XG4gICAgICAgIH1cbiAgICAgICAgLmdvb2RzX25hbWV7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IEBwcm9kdWN0c19uYW1lX2ZvbnQ7XG4gICAgICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgICAgICAgfVxuICAgICAgICBpbWcge1xuICAgICAgICAgIHdpZHRoOiAxNTBweDtcbiAgICAgICAgICBoZWlnaHQ6IDE1MHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVfbWFpbl91bml0IHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2I3YjdiNztcbiAgcGFkZGluZzogNXB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICB3aWR0aDogMTAwJTtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9oZWFkZXIge1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LXNpemU6IDI4cHg7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjYjdiN2I3O1xuICBjb2xvcjogIzVhNWE1YTtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbiAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMgQ29uZGVuc2VkJywgc2Fucy1zZXJpZjtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmFydGljbGVfbmFtZSB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGNvbG9yOiAjNWE1YTVhO1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICBmb250LWZhbWlseTogJ09wZW4gU2FucyBDb25kZW5zZWQnLCBzYW5zLXNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB3aWR0aDogMTAwJTtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX3Nob3J0IHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbi10b3A6IDE1cHg7XG4gIHRleHQtaW5kZW50OiAxMHB4O1xuICBjb2xvcjogIzYyNjI2MjtcbiAgcGFkZGluZzogMTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCAjYjdiN2I3O1xuICBmb250LWZhbWlseTogJ1JvYm90byBNb25vJywgbW9ub3NwYWNlO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmFydGljbGVfZnVsbCB7XG4gIG1hcmdpbjogMTVweDtcbiAgdGV4dC1pbmRlbnQ6IDEwcHg7XG4gIGNvbG9yOiAjMzUzNTM1O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBmb250LWZhbWlseTogJ1BUIFNhbnMgTmFycm93Jywgc2Fucy1zZXJpZjtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5nb29kc19pbl9hcnRpY2xlcyB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCAjYjdiN2I3O1xuICBjb2xvcjogIzVhNWE1YTtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMgQ29uZGVuc2VkJywgc2Fucy1zZXJpZjtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9nb29kcyB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyB3cmFwO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7XG4gIGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zIENvbmRlbnNlZCcsIHNhbnMtc2VyaWY7XG4gIGNvbG9yOiAjNjI2MjYyO1xufVxuLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmFydGljbGVfZ29vZHMgLmdvb2RzIHtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGNvbG9yOiAjNjI2MjYyO1xuICBwYWRkaW5nOiA1cHg7XG4gIHdpZHRoOiAxNjBweDtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX2dvb2RzIC5nb29kczpob3ZlciB7XG4gIGNvbG9yOiAjMWI2YWI4O1xuICBib3JkZXItY29sb3I6ICMxYjZhYjg7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9nb29kcyAuZ29vZHMgLmdvb2RzX25hbWUge1xuICBmb250LWZhbWlseTogJ09zd2FsZCc7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9nb29kcyAuZ29vZHMgaW1nIHtcbiAgd2lkdGg6IDE1MHB4O1xuICBoZWlnaHQ6IDE1MHB4O1xufVxuIl19 */";
+    __webpack_exports__["default"] = ":host {\n  width: 100%;\n}\n.article_main_unit {\n  border: 1px solid #b7b7b7;\n  padding: 5px;\n  box-sizing: border-box;\n  width: 100%;\n}\n.article_main_unit .article_header {\n  width: 100%;\n  text-align: center;\n  font-size: 28px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 20px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n}\n.article_main_unit .article_info {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  width: 100%;\n}\n.article_main_unit .article_info .article_name {\n  font-size: 24px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 10px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n  text-align: center;\n  width: 100%;\n}\n.article_main_unit .article_info .article_short {\n  width: 100%;\n  margin-top: 15px;\n  text-indent: 10px;\n  color: #626262;\n  padding: 10px;\n  border-bottom: 1px solid #b7b7b7;\n  border-top: 1px solid #b7b7b7;\n  font-family: 'Roboto Mono', monospace;\n  box-sizing: border-box;\n}\n.article_main_unit .article_info .article_full {\n  margin: 15px;\n  text-indent: 10px;\n  color: #353535;\n  box-sizing: border-box;\n  font-family: 'PT Sans Narrow', sans-serif;\n}\n.article_main_unit .article_info .goods_in_articles {\n  font-size: 20px;\n  border-bottom: 1px solid #b7b7b7;\n  border-top: 1px solid #b7b7b7;\n  color: #5a5a5a;\n  margin-bottom: 10px;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: bold;\n  text-align: center;\n  width: 100%;\n}\n.article_main_unit .article_info .article_goods {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row wrap;\n  -webkit-box-pack: start;\n          justify-content: flex-start;\n  font-family: 'Open Sans Condensed', sans-serif;\n  color: #626262;\n}\n.article_main_unit .article_info .article_goods .goods {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  margin-right: 10px;\n  cursor: pointer;\n  border: 1px solid #b7b7b7;\n  box-sizing: border-box;\n  color: #626262;\n  padding: 5px;\n  width: 160px;\n}\n.article_main_unit .article_info .article_goods .goods:hover {\n  color: #1b6ab8;\n  border-color: #1b6ab8;\n}\n.article_main_unit .article_info .article_goods .goods .goods_name {\n  font-family: 'Oswald';\n  text-transform: uppercase;\n}\n.article_main_unit .article_info .article_goods .goods img {\n  width: 150px;\n  height: 150px;\n}\n@media (min-width: 200px) and (max-width: 640px) {\n  .article_main_unit .article_header {\n    font-size: 20px;\n  }\n  .article_main_unit .article_info .article_name {\n    font-size: 18px;\n  }\n  .article_main_unit .article_info .article_full div {\n    background-color: red;\n  }\n  .article_main_unit .article_info .goods_in_articles {\n    font-size: 20px;\n    border-bottom: 1px solid #b7b7b7;\n    border-top: 1px solid #b7b7b7;\n    color: #5a5a5a;\n    margin-bottom: 10px;\n    font-family: 'Open Sans Condensed', sans-serif;\n    font-weight: bold;\n    text-align: center;\n    width: 100%;\n  }\n  .article_main_unit .article_info .article_goods {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-flow: row wrap;\n    -webkit-box-pack: start;\n            justify-content: flex-start;\n    font-family: 'Open Sans Condensed', sans-serif;\n    color: #626262;\n  }\n  .article_main_unit .article_info .article_goods .goods {\n    display: -webkit-inline-box;\n    display: inline-flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n    margin-right: 10px;\n    cursor: pointer;\n    border: 1px solid #b7b7b7;\n    box-sizing: border-box;\n    color: #626262;\n    padding: 5px;\n    width: 160px;\n  }\n  .article_main_unit .article_info .article_goods .goods:hover {\n    color: #1b6ab8;\n    border-color: #1b6ab8;\n  }\n  .article_main_unit .article_info .article_goods .goods .goods_name {\n    font-family: 'Oswald';\n    text-transform: uppercase;\n  }\n  .article_main_unit .article_info .article_goods .goods img {\n    width: 150px;\n    height: 150px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9hcnRpY2xlcy9hcnRpY2xlcy9hcnRpY2xlcy1tYWluL2FydGljbGVzLWNvbnRlbnQvQzovVXNlcnMvSXZhbi9EZXNrdG9wL29pbHMvb2lscy9zcmMvYXBwL21vZHVsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMtbWFpbi9hcnRpY2xlcy1jb250ZW50L2FydGljbGVzLWNvbnRlbnQuY29tcG9uZW50Lmxlc3MiLCJzcmMvYXBwL21vZHVsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMvYXJ0aWNsZXMtbWFpbi9hcnRpY2xlcy1jb250ZW50L2FydGljbGVzLWNvbnRlbnQuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFBTyxXQUFBO0FDQVA7QURDQTtFQUNFLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLHNCQUFBO0VBQ0EsV0FBQTtBQ0NGO0FETEE7RUFNSSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0NBQUE7RUFDQSxjQUFBO0VBQ0EsbUJBQUE7RUFDQSw4Q0FBQTtFQUNBLGlCQUFBO0FDRUo7QURmQTtFQWdCSSwyQkFBQTtFQUFBLG9CQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLHdCQUFBO0VBQ0EsV0FBQTtBQ0VKO0FEcEJBO0VBb0JNLGVBQUE7RUFDQSxnQ0FBQTtFQUNBLGNBQUE7RUFDQSxtQkFBQTtFQUNBLDhDQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7QUNHTjtBRDlCQTtFQThCTSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7RUFDQSxhQUFBO0VBQ0EsZ0NBQUE7RUFDQSw2QkFBQTtFQUNBLHFDQUFBO0VBQ0Esc0JBQUE7QUNHTjtBRHpDQTtFQXlDTSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0VBQ0Esc0JBQUE7RUFDQSx5Q0FBQTtBQ0dOO0FEaERBO0VBZ0RNLGVBQUE7RUFDQSxnQ0FBQTtFQUNBLDZCQUFBO0VBQ0EsY0FBQTtFQUNBLG1CQUFBO0VBQ0EsOENBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtBQ0dOO0FEM0RBO0VBMkRNLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEsbUJBQUE7RUFDQSx1QkFBQTtVQUFBLDJCQUFBO0VBQ0EsOENBQUE7RUFDQSxjQUFBO0FDR047QURsRUE7RUFpRVEsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSx3QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUNJUjtBREhRO0VBQ0UsY0FBQTtFQUNBLHFCQUFBO0FDS1Y7QURqRkE7RUErRVUscUJBQUE7RUFDQSx5QkFBQTtBQ0tWO0FEckZBO0VBbUZVLFlBQUE7RUFDQSxhQUFBO0FDS1Y7QURDQTtFQUNFO0lBRUksZUFBQTtFQ0FKO0VERkE7SUFNTSxlQUFBO0VDRE47RURMQTtJQWFRLHFCQUFBO0VDTFI7RURSQTtJQWlCTSxlQUFBO0lBQ0EsZ0NBQUE7SUFDQSw2QkFBQTtJQUNBLGNBQUE7SUFDQSxtQkFBQTtJQUNBLDhDQUFBO0lBQ0EsaUJBQUE7SUFDQSxrQkFBQTtJQUNBLFdBQUE7RUNOTjtFRG5CQTtJQTRCTSwyQkFBQTtJQUFBLG9CQUFBO0lBQ0EsOEJBQUE7SUFBQSw2QkFBQTtZQUFBLG1CQUFBO0lBQ0EsdUJBQUE7WUFBQSwyQkFBQTtJQUNBLDhDQUFBO0lBQ0EsY0FBQTtFQ05OO0VEMUJBO0lBa0NRLDJCQUFBO0lBQUEsb0JBQUE7SUFDQSw0QkFBQTtJQUFBLDZCQUFBO1lBQUEsd0JBQUE7SUFDQSxrQkFBQTtJQUNBLGVBQUE7SUFDQSx5QkFBQTtJQUNBLHNCQUFBO0lBQ0EsY0FBQTtJQUNBLFlBQUE7SUFDQSxZQUFBO0VDTFI7RURNUTtJQUNFLGNBQUE7SUFDQSxxQkFBQTtFQ0pWO0VEekNBO0lBZ0RVLHFCQUFBO0lBQ0EseUJBQUE7RUNKVjtFRDdDQTtJQW9EVSxZQUFBO0lBQ0EsYUFBQTtFQ0pWO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL2FydGljbGVzL2FydGljbGVzL2FydGljbGVzLW1haW4vYXJ0aWNsZXMtY29udGVudC9hcnRpY2xlcy1jb250ZW50LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uLy4uLy4uLy4uL2NvbW1vblwiO1xuXG46aG9zdCB7d2lkdGg6IDEwMCV9XG4uYXJ0aWNsZV9tYWluX3VuaXR7XG4gIGJvcmRlcjogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHdpZHRoOiAxMDAlO1xuICAuYXJ0aWNsZV9oZWFkZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGZvbnQtc2l6ZTogMjhweDtcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgY29sb3I6IEBtYWluX25hdl9mb250X2NvbG9yO1xuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgZm9udC1mYW1pbHk6IEBoZWFkZXJzX2ZvbnQ7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIH1cbiAgLmFydGljbGVfaW5mb3tcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgLmFydGljbGVfbmFtZXtcbiAgICAgIGZvbnQtc2l6ZTogMjRweDtcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGNvbG9yOiBAbWFpbl9uYXZfZm9udF9jb2xvcjtcbiAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICBmb250LWZhbWlseTogQGhlYWRlcnNfZm9udDtcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5hcnRpY2xlX3Nob3J0e1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBtYXJnaW4tdG9wOiAxNXB4O1xuICAgICAgdGV4dC1pbmRlbnQ6IDEwcHg7XG4gICAgICBjb2xvcjogQG1haW5fY29udGVudF9mb250X2NvbG9yO1xuICAgICAgcGFkZGluZzogMTBweDtcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGZvbnQtZmFtaWx5OiBAc2hvcnRfZGVzY19mb250O1xuICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICB9XG4gICAgLmFydGljbGVfZnVsbHtcbiAgICAgIG1hcmdpbjogMTVweDtcbiAgICAgIHRleHQtaW5kZW50OiAxMHB4O1xuICAgICAgY29sb3I6IEBmdWxsX2Rlc2NfZm9udF9jb2xvcjtcbiAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICBmb250LWZhbWlseTogQGZ1bGxfZGVzY19mb250O1xuICAgIH1cbiAgICAuZ29vZHNfaW5fYXJ0aWNsZXN7XG4gICAgICBmb250LXNpemU6MjBweDtcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgIGNvbG9yOiBAbWFpbl9uYXZfZm9udF9jb2xvcjtcbiAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICBmb250LWZhbWlseTogQGhlYWRlcnNfZm9udDtcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxuICAgIC5hcnRpY2xlX2dvb2Rze1xuICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICBmbGV4LWZsb3c6IHJvdyB3cmFwO1xuICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xuICAgICAgZm9udC1mYW1pbHk6IEBoZWFkZXJzX2ZvbnQ7XG4gICAgICBjb2xvcjogQG1haW5fY29udGVudF9mb250X2NvbG9yO1xuICAgICAgLmdvb2Rze1xuICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgICAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgIGNvbG9yOiBAbWFpbl9jb250ZW50X2ZvbnRfY29sb3I7XG4gICAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgICAgd2lkdGg6IDE2MHB4O1xuICAgICAgICAmOmhvdmVye1xuICAgICAgICAgIGNvbG9yOiAjMWI2YWI4O1xuICAgICAgICAgIGJvcmRlci1jb2xvcjogQG1haW5fY29udGVudF9ib3JkZXJfaG92ZXI7XG4gICAgICAgIH1cbiAgICAgICAgLmdvb2RzX25hbWV7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IEBwcm9kdWN0c19uYW1lX2ZvbnQ7XG4gICAgICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgICAgICAgfVxuICAgICAgICBpbWcge1xuICAgICAgICAgIHdpZHRoOiAxNTBweDtcbiAgICAgICAgICBoZWlnaHQ6IDE1MHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogMjAwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCl7XG4gIC5hcnRpY2xlX21haW5fdW5pdHtcbiAgICAuYXJ0aWNsZV9oZWFkZXJ7XG4gICAgICBmb250LXNpemU6IDIwcHg7XG4gICAgfVxuICAgIC5hcnRpY2xlX2luZm97XG4gICAgICAuYXJ0aWNsZV9uYW1le1xuICAgICAgICBmb250LXNpemU6IDE4cHg7XG4gICAgICB9XG4gICAgICAuYXJ0aWNsZV9zaG9ydHtcblxuICAgICAgfVxuICAgICAgLmFydGljbGVfZnVsbHtcbiAgICAgICAgZGl2IHtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICAgIC5nb29kc19pbl9hcnRpY2xlc3tcbiAgICAgICAgZm9udC1zaXplOjIwcHg7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgICAgICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAgICAgICBjb2xvcjogQG1haW5fbmF2X2ZvbnRfY29sb3I7XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiBAaGVhZGVyc19mb250O1xuICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgIH1cbiAgICAgIC5hcnRpY2xlX2dvb2Rze1xuICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgZmxleC1mbG93OiByb3cgd3JhcDtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xuICAgICAgICBmb250LWZhbWlseTogQGhlYWRlcnNfZm9udDtcbiAgICAgICAgY29sb3I6IEBtYWluX2NvbnRlbnRfZm9udF9jb2xvcjtcbiAgICAgICAgLmdvb2Rze1xuICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICAgICAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgICAgY29sb3I6IEBtYWluX2NvbnRlbnRfZm9udF9jb2xvcjtcbiAgICAgICAgICBwYWRkaW5nOiA1cHg7XG4gICAgICAgICAgd2lkdGg6IDE2MHB4O1xuICAgICAgICAgICY6aG92ZXJ7XG4gICAgICAgICAgICBjb2xvcjogIzFiNmFiODtcbiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogQG1haW5fY29udGVudF9ib3JkZXJfaG92ZXI7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5nb29kc19uYW1le1xuICAgICAgICAgICAgZm9udC1mYW1pbHk6IEBwcm9kdWN0c19uYW1lX2ZvbnQ7XG4gICAgICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICAgIH1cbiAgICAgICAgICBpbWcge1xuICAgICAgICAgICAgd2lkdGg6IDE1MHB4O1xuICAgICAgICAgICAgaGVpZ2h0OiAxNTBweDtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQge1xuICBib3JkZXI6IDFweCBzb2xpZCAjYjdiN2I3O1xuICBwYWRkaW5nOiA1cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2hlYWRlciB7XG4gIHdpZHRoOiAxMDAlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGZvbnQtc2l6ZTogMjhweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGNvbG9yOiAjNWE1YTVhO1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICBmb250LWZhbWlseTogJ09wZW4gU2FucyBDb25kZW5zZWQnLCBzYW5zLXNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIHtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9uYW1lIHtcbiAgZm9udC1zaXplOiAyNHB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2I3YjdiNztcbiAgY29sb3I6ICM1YTVhNWE7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gIGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zIENvbmRlbnNlZCcsIHNhbnMtc2VyaWY7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmFydGljbGVfc2hvcnQge1xuICB3aWR0aDogMTAwJTtcbiAgbWFyZ2luLXRvcDogMTVweDtcbiAgdGV4dC1pbmRlbnQ6IDEwcHg7XG4gIGNvbG9yOiAjNjI2MjYyO1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2I3YjdiNztcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvIE1vbm8nLCBtb25vc3BhY2U7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9mdWxsIHtcbiAgbWFyZ2luOiAxNXB4O1xuICB0ZXh0LWluZGVudDogMTBweDtcbiAgY29sb3I6ICMzNTM1MzU7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGZvbnQtZmFtaWx5OiAnUFQgU2FucyBOYXJyb3cnLCBzYW5zLXNlcmlmO1xufVxuLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmdvb2RzX2luX2FydGljbGVzIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2I3YjdiNztcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGNvbG9yOiAjNWE1YTVhO1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICBmb250LWZhbWlseTogJ09wZW4gU2FucyBDb25kZW5zZWQnLCBzYW5zLXNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB3aWR0aDogMTAwJTtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX2dvb2RzIHtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IHdyYXA7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcbiAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMgQ29uZGVuc2VkJywgc2Fucy1zZXJpZjtcbiAgY29sb3I6ICM2MjYyNjI7XG59XG4uYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9nb29kcyAuZ29vZHMge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgYm9yZGVyOiAxcHggc29saWQgI2I3YjdiNztcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgY29sb3I6ICM2MjYyNjI7XG4gIHBhZGRpbmc6IDVweDtcbiAgd2lkdGg6IDE2MHB4O1xufVxuLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmFydGljbGVfZ29vZHMgLmdvb2RzOmhvdmVyIHtcbiAgY29sb3I6ICMxYjZhYjg7XG4gIGJvcmRlci1jb2xvcjogIzFiNmFiODtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX2dvb2RzIC5nb29kcyAuZ29vZHNfbmFtZSB7XG4gIGZvbnQtZmFtaWx5OiAnT3N3YWxkJztcbiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbn1cbi5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX2dvb2RzIC5nb29kcyBpbWcge1xuICB3aWR0aDogMTUwcHg7XG4gIGhlaWdodDogMTUwcHg7XG59XG5AbWVkaWEgKG1pbi13aWR0aDogMjAwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCkge1xuICAuYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaGVhZGVyIHtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gIH1cbiAgLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmFydGljbGVfbmFtZSB7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICB9XG4gIC5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX2Z1bGwgZGl2IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XG4gIH1cbiAgLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmdvb2RzX2luX2FydGljbGVzIHtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNiN2I3Yjc7XG4gICAgY29sb3I6ICM1YTVhNWE7XG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICBmb250LWZhbWlseTogJ09wZW4gU2FucyBDb25kZW5zZWQnLCBzYW5zLXNlcmlmO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAuYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9nb29kcyB7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC1mbG93OiByb3cgd3JhcDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7XG4gICAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMgQ29uZGVuc2VkJywgc2Fucy1zZXJpZjtcbiAgICBjb2xvcjogIzYyNjI2MjtcbiAgfVxuICAuYXJ0aWNsZV9tYWluX3VuaXQgLmFydGljbGVfaW5mbyAuYXJ0aWNsZV9nb29kcyAuZ29vZHMge1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNiN2I3Yjc7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICBjb2xvcjogIzYyNjI2MjtcbiAgICBwYWRkaW5nOiA1cHg7XG4gICAgd2lkdGg6IDE2MHB4O1xuICB9XG4gIC5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX2dvb2RzIC5nb29kczpob3ZlciB7XG4gICAgY29sb3I6ICMxYjZhYjg7XG4gICAgYm9yZGVyLWNvbG9yOiAjMWI2YWI4O1xuICB9XG4gIC5hcnRpY2xlX21haW5fdW5pdCAuYXJ0aWNsZV9pbmZvIC5hcnRpY2xlX2dvb2RzIC5nb29kcyAuZ29vZHNfbmFtZSB7XG4gICAgZm9udC1mYW1pbHk6ICdPc3dhbGQnO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIH1cbiAgLmFydGljbGVfbWFpbl91bml0IC5hcnRpY2xlX2luZm8gLmFydGljbGVfZ29vZHMgLmdvb2RzIGltZyB7XG4gICAgd2lkdGg6IDE1MHB4O1xuICAgIGhlaWdodDogMTUwcHg7XG4gIH1cbn1cbiJdfQ== */";
     /***/
   },
 
@@ -12609,7 +13048,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ":host {\n  width: 100%;\n}\n.articles_block {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n  border: 1px solid #b7b7b7;\n  padding: 10px;\n  box-sizing: border-box;\n}\n.articles_block .articles_nav {\n  font-family: 'Varela Round', sans-serif;\n  color: #0a196f;\n  padding: 5px;\n  box-sizing: border-box;\n  border: 1px solid #b7b7b7;\n}\n.articles_block .article_main {\n  border: 1px solid #b7b7b7;\n  padding: 5px;\n  box-sizing: border-box;\n  margin-left: 10px;\n  -webkit-box-flex: 1;\n          flex-grow: 1;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9hcnRpY2xlcy9hcnRpY2xlcy9hcnRpY2xlcy1tYWluL0M6L1VzZXJzL0l2YW4vRGVza3RvcC9vaWxzL29pbHMvc3JjL2FwcC9tb2R1bGVzL2FydGljbGVzL2FydGljbGVzL2FydGljbGVzLW1haW4vYXJ0aWNsZXMtbWFpbi5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvbW9kdWxlcy9hcnRpY2xlcy9hcnRpY2xlcy9hcnRpY2xlcy1tYWluL2FydGljbGVzLW1haW4uY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFBTyxXQUFBO0FDQ1A7QURBQTtFQUNFLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEscUJBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7QUNFRjtBRFJBO0VBUUksdUNBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7QUNHSjtBRGZBO0VBZUkseUJBQUE7RUFDQSxZQUFBO0VBQ0Esc0JBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO1VBQUEsWUFBQTtBQ0dKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9hcnRpY2xlcy9hcnRpY2xlcy9hcnRpY2xlcy1tYWluL2FydGljbGVzLW1haW4uY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vLi4vLi4vY29tbW9uXCI7XG46aG9zdCB7d2lkdGg6IDEwMCV9XG4uYXJ0aWNsZXNfYmxvY2t7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXI6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgcGFkZGluZzogMTBweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgLmFydGljbGVzX25hdntcbiAgICBmb250LWZhbWlseTogQG5hdl9maWx0ZXJzX2ZvbnQ7XG4gICAgY29sb3I6IEBmaWx0ZXJfZm9udF9jb2xvcjtcbiAgICBwYWRkaW5nOiA1cHg7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgfVxuICAuYXJ0aWNsZV9tYWlue1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xuICAgIGZsZXgtZ3JvdzogMTtcbiAgfVxufVxuIiwiOmhvc3Qge1xuICB3aWR0aDogMTAwJTtcbn1cbi5hcnRpY2xlc19ibG9jayB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXI6IDFweCBzb2xpZCAjYjdiN2I3O1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuLmFydGljbGVzX2Jsb2NrIC5hcnRpY2xlc19uYXYge1xuICBmb250LWZhbWlseTogJ1ZhcmVsYSBSb3VuZCcsIHNhbnMtc2VyaWY7XG4gIGNvbG9yOiAjMGExOTZmO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNiN2I3Yjc7XG59XG4uYXJ0aWNsZXNfYmxvY2sgLmFydGljbGVfbWFpbiB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIHBhZGRpbmc6IDVweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbiJdfQ== */";
+    __webpack_exports__["default"] = ":host {\n  width: 100%;\n}\n.articles_block {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-flow: row nowrap;\n  width: 100%;\n  border: 1px solid #b7b7b7;\n  padding: 10px;\n  box-sizing: border-box;\n}\n.articles_block .articles_nav {\n  font-family: 'Varela Round', sans-serif;\n  color: #0a196f;\n  padding: 5px;\n  box-sizing: border-box;\n  border: 1px solid #b7b7b7;\n}\n.articles_block .article_main {\n  border: 1px solid #b7b7b7;\n  padding: 5px;\n  box-sizing: border-box;\n  margin-left: 10px;\n  -webkit-box-flex: 1;\n          flex-grow: 1;\n}\n@media (min-width: 200px) and (max-width: 640px) {\n  .articles_block {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column nowrap;\n  }\n  .articles_block .article_main {\n    margin-left: 0;\n    margin-top: 5px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9hcnRpY2xlcy9hcnRpY2xlcy9hcnRpY2xlcy1tYWluL0M6L1VzZXJzL0l2YW4vRGVza3RvcC9vaWxzL29pbHMvc3JjL2FwcC9tb2R1bGVzL2FydGljbGVzL2FydGljbGVzL2FydGljbGVzLW1haW4vYXJ0aWNsZXMtbWFpbi5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvbW9kdWxlcy9hcnRpY2xlcy9hcnRpY2xlcy9hcnRpY2xlcy1tYWluL2FydGljbGVzLW1haW4uY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFBTyxXQUFBO0FDQ1A7QURBQTtFQUNFLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw4QkFBQTtFQUFBLDZCQUFBO1VBQUEscUJBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7QUNFRjtBRFJBO0VBUUksdUNBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7QUNHSjtBRGZBO0VBZUkseUJBQUE7RUFDQSxZQUFBO0VBQ0Esc0JBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO1VBQUEsWUFBQTtBQ0dKO0FEQ0E7RUFDRTtJQUNFLDRCQUFBO0lBQUEsNkJBQUE7WUFBQSx3QkFBQTtFQ0NGO0VERkE7SUFHSSxjQUFBO0lBQ0EsZUFBQTtFQ0VKO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL2FydGljbGVzL2FydGljbGVzL2FydGljbGVzLW1haW4vYXJ0aWNsZXMtbWFpbi5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCIuLi8uLi8uLi8uLi9jb21tb25cIjtcbjpob3N0IHt3aWR0aDogMTAwJX1cbi5hcnRpY2xlc19ibG9ja3tcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogcm93IG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvcmRlcjogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAuYXJ0aWNsZXNfbmF2e1xuICAgIGZvbnQtZmFtaWx5OiBAbmF2X2ZpbHRlcnNfZm9udDtcbiAgICBjb2xvcjogQGZpbHRlcl9mb250X2NvbG9yO1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICB9XG4gIC5hcnRpY2xlX21haW57XG4gICAgYm9yZGVyOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICAgcGFkZGluZzogNXB4O1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gICAgZmxleC1ncm93OiAxO1xuICB9XG59XG5cbkBtZWRpYSAobWluLXdpZHRoOiAyMDBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KXtcbiAgLmFydGljbGVzX2Jsb2Nre1xuICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICAuYXJ0aWNsZV9tYWluIHtcbiAgICAgIG1hcmdpbi1sZWZ0OiAwO1xuICAgICAgbWFyZ2luLXRvcDogNXB4O1xuICAgIH1cbiAgfVxufVxuIiwiOmhvc3Qge1xuICB3aWR0aDogMTAwJTtcbn1cbi5hcnRpY2xlc19ibG9jayB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IHJvdyBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXI6IDFweCBzb2xpZCAjYjdiN2I3O1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuLmFydGljbGVzX2Jsb2NrIC5hcnRpY2xlc19uYXYge1xuICBmb250LWZhbWlseTogJ1ZhcmVsYSBSb3VuZCcsIHNhbnMtc2VyaWY7XG4gIGNvbG9yOiAjMGExOTZmO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNiN2I3Yjc7XG59XG4uYXJ0aWNsZXNfYmxvY2sgLmFydGljbGVfbWFpbiB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIHBhZGRpbmc6IDVweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbkBtZWRpYSAobWluLXdpZHRoOiAyMDBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KSB7XG4gIC5hcnRpY2xlc19ibG9jayB7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICB9XG4gIC5hcnRpY2xlc19ibG9jayAuYXJ0aWNsZV9tYWluIHtcbiAgICBtYXJnaW4tbGVmdDogMDtcbiAgICBtYXJnaW4tdG9wOiA1cHg7XG4gIH1cbn1cbiJdfQ== */";
     /***/
   },
 
@@ -15320,7 +15759,7 @@
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".articles_nav_header {\n  margin-bottom: 10px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #000;\n  text-align: center;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  width: 100%;\n}\n.articles_nav_header .header {\n  width: 100%;\n}\n.articles_nav_header .header_remark {\n  font-size: 12px;\n  width: 100%;\n}\n.theme {\n  cursor: pointer;\n  color: #0a196f;\n  border-bottom: 1px solid #b7b7b7;\n}\n.theme:hover {\n  color: #0c28cc;\n  border-color: #d94f5c;\n}\n.theme .article_list_unit {\n  font-size: 16px;\n  text-decoration: none;\n  color: #1b6ab8;\n}\n.theme .article_list_unit:hover {\n  color: #0f2f54;\n  border-bottom: 1px solid #d94f5c;\n}\n@media (min-width: 200px) and (max-width: 640px) {\n  .theme .article_list_unit {\n    font-size: 14px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy90by90by1tYWluL3RvLW5hdi9DOi9Vc2Vycy9JdmFuL0Rlc2t0b3Avb2lscy9vaWxzL3NyYy9hcHAvbW9kdWxlcy90by90by1tYWluL3RvLW5hdi90by1uYXYuY29tcG9uZW50Lmxlc3MiLCJzcmMvYXBwL21vZHVsZXMvdG8vdG8tbWFpbi90by1uYXYvdG8tbmF2LmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsbUJBQUE7RUFDQSxnQ0FBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw0QkFBQTtFQUFBLDZCQUFBO1VBQUEsd0JBQUE7RUFDQSxXQUFBO0FDREY7QUROQTtFQVNJLFdBQUE7QUNBSjtBRFRBO0VBWUksZUFBQTtFQUNBLFdBQUE7QUNBSjtBREdBO0VBQ0UsZUFBQTtFQUNBLGNBQUE7RUFDQSxnQ0FBQTtBQ0RGO0FERUU7RUFDRSxjQUFBO0VBQ0EscUJBQUE7QUNBSjtBRE5BO0VBU0ksZUFBQTtFQUNBLHFCQUFBO0VBQ0EsY0FBQTtBQ0FKO0FEQ0k7RUFDRSxjQUFBO0VBQ0EsZ0NBQUE7QUNDTjtBREdBO0VBQ0U7SUFFSSxlQUFBO0VDRko7QUFDRiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvdG8vdG8tbWFpbi90by1uYXYvdG8tbmF2LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uLy4uLy4uL2NvbW1vblwiO1xuXG4uYXJ0aWNsZXNfbmF2X2hlYWRlcntcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICBjb2xvcjogIzAwMDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICB3aWR0aDogMTAwJTtcbiAgLmhlYWRlcntcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAuaGVhZGVyX3JlbWFya3tcbiAgICBmb250LXNpemU6IDEycHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbn1cbi50aGVtZXtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogQGZpbHRlcl9mb250X2NvbG9yO1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgQG1haW5fY29udGVudF9ib3JkZXI7XG4gICY6aG92ZXJ7XG4gICAgY29sb3I6IEBhcnRpY2xlX3RoZW1lX2hvdmVyX2ZvbnRfY29sb3I7XG4gICAgYm9yZGVyLWNvbG9yOiAjZDk0ZjVjO1xuICB9XG4gIC5hcnRpY2xlX2xpc3RfdW5pdCB7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBjb2xvcjogQGFydGljbGVfYXJ0aWNsZV9mb250X2NvbG9yO1xuICAgICY6aG92ZXJ7XG4gICAgICBjb2xvcjogQGFydGljbGVfYXJ0aWNsZV9ob3Zlcl9mb250X2NvbG9yO1xuICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNkOTRmNWM7XG4gICAgfVxuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogMjAwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCl7XG4gIC50aGVtZXtcbiAgICAuYXJ0aWNsZV9saXN0X3VuaXR7XG4gICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgfVxuICB9XG59XG5cbiIsIi5hcnRpY2xlc19uYXZfaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGNvbG9yOiAjMDAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVzX25hdl9oZWFkZXIgLmhlYWRlciB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVzX25hdl9oZWFkZXIgLmhlYWRlcl9yZW1hcmsge1xuICBmb250LXNpemU6IDEycHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuLnRoZW1lIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogIzBhMTk2ZjtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG59XG4udGhlbWU6aG92ZXIge1xuICBjb2xvcjogIzBjMjhjYztcbiAgYm9yZGVyLWNvbG9yOiAjZDk0ZjVjO1xufVxuLnRoZW1lIC5hcnRpY2xlX2xpc3RfdW5pdCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICBjb2xvcjogIzFiNmFiODtcbn1cbi50aGVtZSAuYXJ0aWNsZV9saXN0X3VuaXQ6aG92ZXIge1xuICBjb2xvcjogIzBmMmY1NDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNkOTRmNWM7XG59XG5AbWVkaWEgKG1pbi13aWR0aDogMjAwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCkge1xuICAudGhlbWUgLmFydGljbGVfbGlzdF91bml0IHtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gIH1cbn1cbiJdfQ== */";
+    __webpack_exports__["default"] = ".articles_nav_header {\n  margin-bottom: 10px;\n  border-bottom: 1px solid #b7b7b7;\n  color: #000;\n  text-align: center;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n  width: 100%;\n}\n.articles_nav_header .header {\n  width: 100%;\n}\n.articles_nav_header .header_remark {\n  font-size: 12px;\n  width: 100%;\n}\n.theme {\n  cursor: pointer;\n  color: #0a196f;\n  border-bottom: 1px solid #b7b7b7;\n}\n.theme:hover {\n  color: #0c28cc;\n  border-color: #d94f5c;\n}\n.theme .models_list {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n}\n.theme .models_list .model {\n  text-indent: 10px;\n  font-size: smaller;\n}\n.theme .models_list .model i {\n  margin-right: 3px;\n}\n.theme .models_list .model .autos_list {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-flow: column nowrap;\n}\n.theme .models_list .model .autos_list .auto {\n  text-indent: 10px;\n  font-size: smaller;\n}\n.theme .models_list .model .autos_list .auto i {\n  margin-right: 3px;\n}\n.theme .article_list_unit {\n  font-size: 16px;\n  text-decoration: none;\n  color: #1b6ab8;\n}\n.theme .article_list_unit:hover {\n  color: #0f2f54;\n  border-bottom: 1px solid #d94f5c;\n}\n@media (min-width: 200px) and (max-width: 640px) {\n  .theme .article_list_unit {\n    font-size: 14px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy90by90by1tYWluL3RvLW5hdi9DOi9Vc2Vycy9JdmFuL0Rlc2t0b3Avb2lscy9vaWxzL3NyYy9hcHAvbW9kdWxlcy90by90by1tYWluL3RvLW5hdi90by1uYXYuY29tcG9uZW50Lmxlc3MiLCJzcmMvYXBwL21vZHVsZXMvdG8vdG8tbWFpbi90by1uYXYvdG8tbmF2LmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsbUJBQUE7RUFDQSxnQ0FBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSw0QkFBQTtFQUFBLDZCQUFBO1VBQUEsd0JBQUE7RUFDQSxXQUFBO0FDREY7QUROQTtFQVNJLFdBQUE7QUNBSjtBRFRBO0VBWUksZUFBQTtFQUNBLFdBQUE7QUNBSjtBREdBO0VBQ0UsZUFBQTtFQUNBLGNBQUE7RUFDQSxnQ0FBQTtBQ0RGO0FERUU7RUFDRSxjQUFBO0VBQ0EscUJBQUE7QUNBSjtBRE5BO0VBU0ksMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSx3QkFBQTtBQ0FKO0FEVkE7RUFZTSxpQkFBQTtFQUNBLGtCQUFBO0FDQ047QURkQTtFQWNTLGlCQUFBO0FDR1Q7QURqQkE7RUFnQlEsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSx3QkFBQTtBQ0lSO0FEckJBO0VBbUJVLGlCQUFBO0VBQ0Esa0JBQUE7QUNLVjtBRHpCQTtFQXFCYSxpQkFBQTtBQ09iO0FENUJBO0VBMkJJLGVBQUE7RUFDQSxxQkFBQTtFQUNBLGNBQUE7QUNJSjtBREhJO0VBQ0UsY0FBQTtFQUNBLGdDQUFBO0FDS047QUREQTtFQUNFO0lBRUksZUFBQTtFQ0VKO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3RvL3RvLW1haW4vdG8tbmF2L3RvLW5hdi5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCIuLi8uLi8uLi8uLi9jb21tb25cIjtcblxuLmFydGljbGVzX25hdl9oZWFkZXJ7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBAbWFpbl9jb250ZW50X2JvcmRlcjtcbiAgY29sb3I6ICMwMDA7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgd2lkdGg6IDEwMCU7XG4gIC5oZWFkZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbiAgLmhlYWRlcl9yZW1hcmt7XG4gICAgZm9udC1zaXplOiAxMnB4O1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4udGhlbWV7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgY29sb3I6IEBmaWx0ZXJfZm9udF9jb2xvcjtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIEBtYWluX2NvbnRlbnRfYm9yZGVyO1xuICAmOmhvdmVye1xuICAgIGNvbG9yOiBAYXJ0aWNsZV90aGVtZV9ob3Zlcl9mb250X2NvbG9yO1xuICAgIGJvcmRlci1jb2xvcjogI2Q5NGY1YztcbiAgfVxuICAubW9kZWxzX2xpc3R7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC1mbG93OiBjb2x1bW4gbm93cmFwO1xuICAgIC5tb2RlbHtcbiAgICAgIHRleHQtaW5kZW50OiAxMHB4O1xuICAgICAgZm9udC1zaXplOiBzbWFsbGVyO1xuICAgICAgaSB7bWFyZ2luLXJpZ2h0OiAzcHh9XG4gICAgICAuYXV0b3NfbGlzdHtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICAgIGZsZXgtZmxvdzogY29sdW1uIG5vd3JhcDtcbiAgICAgICAgLmF1dG97XG4gICAgICAgICAgdGV4dC1pbmRlbnQ6IDEwcHg7XG4gICAgICAgICAgZm9udC1zaXplOiBzbWFsbGVyO1xuICAgICAgICAgIGkge21hcmdpbi1yaWdodDogM3B4fVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG4gIC5hcnRpY2xlX2xpc3RfdW5pdCB7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBjb2xvcjogQGFydGljbGVfYXJ0aWNsZV9mb250X2NvbG9yO1xuICAgICY6aG92ZXJ7XG4gICAgICBjb2xvcjogQGFydGljbGVfYXJ0aWNsZV9ob3Zlcl9mb250X2NvbG9yO1xuICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNkOTRmNWM7XG4gICAgfVxuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogMjAwcHgpIGFuZCAobWF4LXdpZHRoOiA2NDBweCl7XG4gIC50aGVtZXtcbiAgICAuYXJ0aWNsZV9saXN0X3VuaXR7XG4gICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgfVxuICB9XG59XG5cbiIsIi5hcnRpY2xlc19uYXZfaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG4gIGNvbG9yOiAjMDAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVzX25hdl9oZWFkZXIgLmhlYWRlciB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFydGljbGVzX25hdl9oZWFkZXIgLmhlYWRlcl9yZW1hcmsge1xuICBmb250LXNpemU6IDEycHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuLnRoZW1lIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogIzBhMTk2ZjtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNiN2I3Yjc7XG59XG4udGhlbWU6aG92ZXIge1xuICBjb2xvcjogIzBjMjhjYztcbiAgYm9yZGVyLWNvbG9yOiAjZDk0ZjVjO1xufVxuLnRoZW1lIC5tb2RlbHNfbGlzdCB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG59XG4udGhlbWUgLm1vZGVsc19saXN0IC5tb2RlbCB7XG4gIHRleHQtaW5kZW50OiAxMHB4O1xuICBmb250LXNpemU6IHNtYWxsZXI7XG59XG4udGhlbWUgLm1vZGVsc19saXN0IC5tb2RlbCBpIHtcbiAgbWFyZ2luLXJpZ2h0OiAzcHg7XG59XG4udGhlbWUgLm1vZGVsc19saXN0IC5tb2RlbCAuYXV0b3NfbGlzdCB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBmbGV4LWZsb3c6IGNvbHVtbiBub3dyYXA7XG59XG4udGhlbWUgLm1vZGVsc19saXN0IC5tb2RlbCAuYXV0b3NfbGlzdCAuYXV0byB7XG4gIHRleHQtaW5kZW50OiAxMHB4O1xuICBmb250LXNpemU6IHNtYWxsZXI7XG59XG4udGhlbWUgLm1vZGVsc19saXN0IC5tb2RlbCAuYXV0b3NfbGlzdCAuYXV0byBpIHtcbiAgbWFyZ2luLXJpZ2h0OiAzcHg7XG59XG4udGhlbWUgLmFydGljbGVfbGlzdF91bml0IHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGNvbG9yOiAjMWI2YWI4O1xufVxuLnRoZW1lIC5hcnRpY2xlX2xpc3RfdW5pdDpob3ZlciB7XG4gIGNvbG9yOiAjMGYyZjU0O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2Q5NGY1Yztcbn1cbkBtZWRpYSAobWluLXdpZHRoOiAyMDBweCkgYW5kIChtYXgtd2lkdGg6IDY0MHB4KSB7XG4gIC50aGVtZSAuYXJ0aWNsZV9saXN0X3VuaXQge1xuICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgfVxufVxuIl19 */";
     /***/
   },
 
@@ -15361,13 +15800,30 @@
     var _services_to_to_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../../../../services/to/to.service */
     "./src/app/services/to/to.service.ts");
+    /* harmony import */
+
+
+    var _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../../services/goods/brands/brands.service */
+    "./src/app/services/goods/brands/brands.service.ts");
 
     let ToNavComponent = class ToNavComponent {
-      constructor(toService) {
+      constructor(toService, brandsService) {
         this.toService = toService;
+        this.brandsService = brandsService;
         this.pAutos = null;
         this.pBrands = null;
+        this.pModels = null;
         this.choosenTheme = null;
+        this.choosenModel = null;
+      }
+
+      get models() {
+        return this.pModels;
+      }
+
+      set models(value) {
+        this.pModels = value;
       }
 
       get brands() {
@@ -15387,12 +15843,21 @@
       }
 
       ngOnInit() {
-        this.toService.brands.subscribe(resp => this.brands = resp);
+        this.brandsService.brandsByType(4, 'all').subscribe(resp => this.brands = resp);
+      }
+
+      getModels(id) {
+        this.models = null;
+        this.choosenTheme = id;
+        this.toService.models(id).subscribe(resp => {
+          this.models = resp;
+          if (this.models.length == 0) this.models = null;
+        });
       }
 
       getArticles(id) {
         this.autos = null;
-        this.choosenTheme = id;
+        this.choosenModel = id;
         this.toService.autos(id).subscribe(resp => {
           this.autos = resp;
           if (this.autos.length == 0) this.autos = null;
@@ -15403,6 +15868,8 @@
 
     ToNavComponent.ctorParameters = () => [{
       type: _services_to_to_service__WEBPACK_IMPORTED_MODULE_2__["ToService"]
+    }, {
+      type: _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_3__["BrandsService"]
     }];
 
     ToNavComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -15413,7 +15880,7 @@
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./to-nav.component.less */
       "./src/app/modules/to/to-main/to-nav/to-nav.component.less")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_to_to_service__WEBPACK_IMPORTED_MODULE_2__["ToService"]])], ToNavComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_to_to_service__WEBPACK_IMPORTED_MODULE_2__["ToService"], _services_goods_brands_brands_service__WEBPACK_IMPORTED_MODULE_3__["BrandsService"]])], ToNavComponent);
     /***/
   },
 
@@ -16356,7 +16823,6 @@
       }
 
       addBrand(data, action) {
-        console.log(data);
         const params = new FormData();
         params.append('name', data.name);
         params.append('id', data.id);
@@ -16932,6 +17398,7 @@
         this.pShowServerResponseWindowMessage = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         this.pTypeUpdateCreateMessage = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         this.pArticlesThemesChangesMessage = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.pBrandsUpdateCreateMessage = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
       } // Windows
 
 
@@ -16976,8 +17443,16 @@
         return this.pArticlesThemesChangesMessage;
       }
 
+      get brandsUpdateCreateMessage() {
+        return this.pBrandsUpdateCreateMessage;
+      }
+
       typeUpdateCreate() {
         this.pTypeUpdateCreateMessage.next();
+      }
+
+      brandUpdateCreate() {
+        this.pBrandsUpdateCreateMessage.next();
       }
 
       articlesThemesChanges() {
@@ -17238,33 +17713,33 @@
     /* harmony import */
 
 
-    var _dto_brands_BrandResponse__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ../../dto/brands/BrandResponse */
-    "./src/app/dto/brands/BrandResponse.ts");
-    /* harmony import */
-
-
-    var _dto_to_goods_GoodsResponse__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _dto_to_goods_GoodsResponse__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../../dto/to/goods/GoodsResponse */
     "./src/app/dto/to/goods/GoodsResponse.ts");
     /* harmony import */
 
 
-    var _dto_to_groups_GroupResponse__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _dto_to_groups_GroupResponse__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ../../dto/to/groups/GroupResponse */
     "./src/app/dto/to/groups/GroupResponse.ts");
     /* harmony import */
 
 
-    var _dto_to_priceExchange_PriceExchangeResponse__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _dto_to_priceExchange_PriceExchangeResponse__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../../dto/to/priceExchange/PriceExchangeResponse */
     "./src/app/dto/to/priceExchange/PriceExchangeResponse.ts");
     /* harmony import */
 
 
-    var _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ../../dto/ServerResponse/ServerResponse */
     "./src/app/dto/ServerResponse/ServerResponse.ts");
+    /* harmony import */
+
+
+    var _dto_to_model_ModelResponse__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ../../dto/to/model/ModelResponse */
+    "./src/app/dto/to/model/ModelResponse.ts");
 
     let ToService = class ToService {
       constructor(http) {
@@ -17272,8 +17747,8 @@
         this.urlConfig = new _config_urlConfig__WEBPACK_IMPORTED_MODULE_2__["urlConfig"]();
       }
 
-      get brands() {
-        return this.http.get(this.urlConfig.GETTOBRANDS).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_brands_BrandResponse__WEBPACK_IMPORTED_MODULE_6__["BrandResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(br => br.data));
+      models(id) {
+        return this.http.get(this.urlConfig.GETMODELS + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_to_model_ModelResponse__WEBPACK_IMPORTED_MODULE_10__["ModelResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(br => br.data));
       }
 
       autos(id) {
@@ -17281,11 +17756,11 @@
       }
 
       get groups() {
-        return this.http.get(this.urlConfig.GETGROUPS).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_to_groups_GroupResponse__WEBPACK_IMPORTED_MODULE_8__["GroupResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(gr => gr.data));
+        return this.http.get(this.urlConfig.GETGROUPS).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_to_groups_GroupResponse__WEBPACK_IMPORTED_MODULE_7__["GroupResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(gr => gr.data));
       }
 
       get exchanges() {
-        return this.http.get(this.urlConfig.GETEXCHANGES).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_to_priceExchange_PriceExchangeResponse__WEBPACK_IMPORTED_MODULE_9__["PriceExchangeResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(pr => pr.data));
+        return this.http.get(this.urlConfig.GETEXCHANGES).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_to_priceExchange_PriceExchangeResponse__WEBPACK_IMPORTED_MODULE_8__["PriceExchangeResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(pr => pr.data));
       }
 
       auto(id) {
@@ -17293,7 +17768,7 @@
       }
 
       goods(id, exchange) {
-        return this.http.get(this.urlConfig.GETAUTOGOODS + id + '/' + exchange).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_to_goods_GoodsResponse__WEBPACK_IMPORTED_MODULE_7__["GoodsResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(gr => gr.data));
+        return this.http.get(this.urlConfig.GETAUTOGOODS + id + '/' + exchange).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_to_goods_GoodsResponse__WEBPACK_IMPORTED_MODULE_6__["GoodsResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(gr => gr.data));
       }
 
       addExchange(data, action) {
@@ -17302,7 +17777,7 @@
         params.append('id', data.id);
         params.append('exchange', data.exchange);
         params.append('action', action);
-        return this.http.post(this.urlConfig.ADDEXCHANGE, params).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_10__["ServerResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(sr => sr.response));
+        return this.http.post(this.urlConfig.ADDEXCHANGE, params).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_9__["ServerResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(sr => sr.response));
       }
 
       addTo(data, action, isGoodsChanges) {
@@ -17314,7 +17789,17 @@
         params.append('id_image', data.img);
         params.append('action', action);
         params.append('is_goods_changes', isGoodsChanges);
-        return this.http.post(this.urlConfig.ADDTO, params).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_10__["ServerResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(sr => sr.response));
+        return this.http.post(this.urlConfig.ADDTO, params).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_9__["ServerResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(sr => sr.response));
+      }
+
+      addModel(data, action) {
+        console.log(data);
+        const params = new FormData();
+        params.append('name', data.name);
+        params.append('id', data.id);
+        params.append('id_brand', data.idBrand);
+        params.append('action', action);
+        return this.http.post(this.urlConfig.ADDMODEL, params).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(resp => _dto_ServerResponse_ServerResponse__WEBPACK_IMPORTED_MODULE_9__["ServerResponse"].fromJson(resp))).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(sr => sr.response));
       }
 
     };
