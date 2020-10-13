@@ -12470,7 +12470,7 @@
       }
 
       isNumber(num) {
-        const regExp = new RegExp('^[0-9]*$');
+        const regExp = new RegExp('^(0|[1-9]\\d*)(\\.\\d+)?$');
         return regExp.test(num);
       }
 
@@ -15646,6 +15646,7 @@
       getGoods(id, exchange) {
         this.toService.groups.subscribe(g => this.groups = g);
         this.toService.goods(id, exchange).subscribe(g => {
+          console.log(g);
           this.goods = g;
         });
       }

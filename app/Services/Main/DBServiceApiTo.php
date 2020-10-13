@@ -157,7 +157,7 @@ class DBServiceApiTo implements ServiceApiTo
         array_map(function ($e) use (&$ids){
             $obj = To_goods::updateOrCreate(['id' => $e->pId],[
                 'name'=>$e->pName,
-                'price'=>(int)$e->pPrice,
+                'price'=>(float)$e->pPrice,
                 'cat_number'=>$e->pCatNumber,
                 'id_group'=>$e->pIdGroup,
                 'id_exchange'=>$e->pIdExchange

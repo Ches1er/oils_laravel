@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiToController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/ApiToController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/To_auto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/To_auto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,7 +50,7 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
+            <state relative-caret-position="-1102">
               <caret line="105" column="19" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
               <folding>
                 <element signature="e#7#35#0#PHP" expanded="true" />
@@ -60,14 +59,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBServiceApiTo.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBServiceApiTo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+            <state relative-caret-position="484">
+              <caret line="48" column="35" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="35" />
               <folding>
                 <element signature="e#119#150#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getToObjWithAddProperties.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="62" column="52" lean-forward="true" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -131,7 +139,6 @@
         <option value="$PROJECT_DIR$/app/Contracts/ServiceApiGoods.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiGoodsController.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" />
-        <option value="$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Contracts/ServiceApiTo.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php" />
@@ -140,6 +147,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiToController.php" />
         <option value="$PROJECT_DIR$/app/Models/To_auto.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" />
+        <option value="$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php" />
       </list>
     </option>
   </component>
@@ -377,12 +385,12 @@
       <workItem from="1598516486530" duration="20916000" />
       <workItem from="1599036166333" duration="16414000" />
       <workItem from="1599466046613" duration="37095000" />
-      <workItem from="1600776256845" duration="46727000" />
+      <workItem from="1600776256845" duration="49420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406214000" />
+    <option name="totallyTimeSpent" value="408907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -393,8 +401,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2078346" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17217484" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2078346" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17217484" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.09115139" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -673,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Brand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -734,16 +735,6 @@
         <state relative-caret-position="-132" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="105" column="19" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
-          <folding>
-            <element signature="e#7#35#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiToController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
@@ -758,13 +749,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1102">
+          <caret line="105" column="19" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+        <state relative-caret-position="484">
+          <caret line="48" column="35" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="35" />
           <folding>
             <element signature="e#119#150#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="62" column="52" lean-forward="true" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
         </state>
       </provider>
     </entry>

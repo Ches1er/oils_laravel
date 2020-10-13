@@ -8331,7 +8331,7 @@ let AdminToComponent = class AdminToComponent {
         this.isGoodsChanges = true;
     }
     isNumber(num) {
-        const regExp = new RegExp('^[0-9]*$');
+        const regExp = new RegExp('^(0|[1-9]\\d*)(\\.\\d+)?$');
         return regExp.test(num);
     }
     imagesPickerShow(e) {
@@ -10622,6 +10622,7 @@ let ToContentComponent = class ToContentComponent {
     getGoods(id, exchange) {
         this.toService.groups.subscribe(g => this.groups = g);
         this.toService.goods(id, exchange).subscribe(g => {
+            console.log(g);
             this.goods = g;
         });
     }
