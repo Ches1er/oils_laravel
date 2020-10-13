@@ -39,7 +39,6 @@ trait getToObjWithAddProperties
               {
                   $max_id = $this->getMax($group->id, $goods_ids)->id;
                   $min_id = $this->getMin($group->id, $goods_ids)->id;
-                  echo $group->id. ':' .$min_id;
               }
               foreach ($objects as &$object){
                   if ($object->id == $max_id){
