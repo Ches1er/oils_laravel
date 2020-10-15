@@ -14885,9 +14885,13 @@
     /*! ngx-pagination */
     "./node_modules/ngx-pagination/dist/ngx-pagination.js");
 
-    const routes = [{
+    const routes = [
+    /*{path: 'main', component: ProductsMainComponent},*/
+    // Use redirect while use only one product type, after uncomment 1-st item, and comment 2-nd
+    {
       path: 'main',
-      component: _products_main_products_main_component__WEBPACK_IMPORTED_MODULE_5__["ProductsMainComponent"]
+      redirectTo: 'oils',
+      pathMatch: 'full'
     }, {
       path: 'oils',
       component: _oils_oils_component__WEBPACK_IMPORTED_MODULE_4__["OilsComponent"],

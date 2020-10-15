@@ -10079,7 +10079,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: 'main', component: _products_main_products_main_component__WEBPACK_IMPORTED_MODULE_5__["ProductsMainComponent"] },
+    /*{path: 'main', component: ProductsMainComponent},*/
+    // Use redirect while use only one product type, after uncomment 1-st item, and comment 2-nd
+    { path: 'main', redirectTo: 'oils', pathMatch: 'full' },
     { path: 'oils', component: _oils_oils_component__WEBPACK_IMPORTED_MODULE_4__["OilsComponent"], data: { definer: ['oils'] } },
     { path: 'transmission', component: _transmission_transmission_component__WEBPACK_IMPORTED_MODULE_6__["TransmissionComponent"], data: { definer: ['transmission'] } }
 ];

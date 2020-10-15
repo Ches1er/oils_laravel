@@ -30,10 +30,13 @@ trait getToObjWithAddProperties
       }
       private function getMaxMinMidPrices($objects) {
         $goods_ids = [];
+        $groups_ids = [];
         foreach ($objects as $o){
             $goods_ids[]=$o->id;
+            $groups_ids[]=$o->id_group;
         }
-          $groups = DB::table('to_groups')->select('id')->get();
+          $groups_ids = array_unique($groups_ids);
+          $groups = DB::table('to_groups')->select('id')->whereIn('id', $groups_ids)->get();
           foreach ($groups as $group){
               if (count(DB::table('to_goods')->where('id_group',$group->id)->get()))
               {
