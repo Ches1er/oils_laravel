@@ -93,6 +93,12 @@ class DBServiceApiGoodsService implements ServiceApiGoods
         if (Goods_oils::where('name',$data['name'])
                 ->first() && $data['action']==='add') return ['response'=>'this object exists'];
 
+        // Create-update
+
+        //Check if full desc has % symbols, and replace em
+        if (preg_match('/%/', $data['full_desc'])){
+            $data['full_desc'] = preg_replace('/%/','&#37', $data['full_desc']);
+        }
         if (Goods_oils::updateOrCreate(['id'=> $data['id']],[
             'name'=>$data['name'],
             'id_image'=>(int)$data['id_image'],

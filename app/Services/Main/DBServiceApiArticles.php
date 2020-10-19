@@ -79,6 +79,11 @@ class DBServiceApiArticles implements ServiceApiArticles
                 ->first() && $data['action']==='add') return ['response'=>'this object exists'];
 
         // Create-update
+
+            //Check if full desc has % symbols, and replace em
+        if (preg_match('/%/', $data['full_desc'])){
+            $data['full_desc'] = preg_replace('/%/','&#37', $data['full_desc']);
+        }
         if (Article::updateOrCreate(['id'=> $data['id']],[
             'name'=>$data['name'],
             'id_image'=>(int)$data['id_image'],
