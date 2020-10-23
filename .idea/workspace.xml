@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiArticles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" afterDir="false" />
-    </list>
+    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +68,8 @@
       <file leaf-file-name="DBServiceApiGoodsService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="99" column="9" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+            <state relative-caret-position="113">
+              <caret line="89" column="51" lean-forward="true" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
               <folding>
                 <element signature="e#119#153#0#PHP" expanded="true" />
               </folding>
@@ -237,7 +233,7 @@
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="3" />
     <option name="y" value="2" />
     <option name="width" value="1350" />
@@ -263,19 +259,6 @@
               <item name="oils" type="b2602c69:ProjectViewProjectNode" />
               <item name="oils" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oils" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oils" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,15 +328,16 @@
       <workItem from="1599036166333" duration="16414000" />
       <workItem from="1599466046613" duration="37095000" />
       <workItem from="1600776256845" duration="53956000" />
-      <workItem from="1603112382674" duration="1650000" />
+      <workItem from="1603112382674" duration="4233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="415093000" />
+    <option name="totallyTimeSpent" value="417676000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.3297062" />
@@ -734,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="99" column="9" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        <state relative-caret-position="113">
+          <caret line="89" column="51" lean-forward="true" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
           <folding>
             <element signature="e#119#153#0#PHP" expanded="true" />
           </folding>
