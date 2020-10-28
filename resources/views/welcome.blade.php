@@ -25,6 +25,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.5ffd63fd4a109f346894.css">
 </head>
 <body>
 <app-root></app-root>
