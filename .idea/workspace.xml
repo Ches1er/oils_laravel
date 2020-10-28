@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/main-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es5.js.map" beforeDir="false" />
-    </list>
+    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBServiceApiGoodsService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBServiceApiGoodsService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="113">
@@ -98,6 +73,24 @@
               <folding>
                 <element signature="e#119#153#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="14" column="51" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Desktop/oils/old_public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="14" column="246" selection-start-line="14" selection-start-column="242" selection-end-line="14" selection-end-column="246" />
             </state>
           </provider>
         </entry>
@@ -353,12 +346,12 @@
       <workItem from="1599036166333" duration="16414000" />
       <workItem from="1599466046613" duration="37095000" />
       <workItem from="1600776256845" duration="53956000" />
-      <workItem from="1603112382674" duration="5922000" />
+      <workItem from="1603112382674" duration="7787000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419365000" />
+    <option name="totallyTimeSpent" value="421230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -427,18 +420,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Main/ApiApprovalsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/DBServiceApiGoodsService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2342" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
@@ -725,9 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/oils/old_public/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/oils/oils/dist/oils/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -752,6 +730,23 @@
           <folding>
             <element signature="e#119#153#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/runtime-es5.f9b32fd211f1e32954f6.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/oils/old_public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="14" column="246" selection-start-line="14" selection-start-column="242" selection-end-line="14" selection-end-column="246" />
         </state>
       </provider>
     </entry>
