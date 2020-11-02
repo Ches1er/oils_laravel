@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8MZZKB9WC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q8MZZKB9WC');
+    </script>
     <meta charset="utf-8">
     <title>Oils</title>
     <base href="/">
