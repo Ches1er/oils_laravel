@@ -10,6 +10,7 @@
 
         gtag('config', 'G-Q8MZZKB9WC');
     </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8">
     <title>Oils</title>
     <base href="/">
