@@ -32,7 +32,7 @@ class DBServiceMainProperties implements ServiceApiMainProperties
     {
         $acea = [];
         $acea_ids = [];
-        if ($definer === 'all') return Acea::all();
+        if ($definer === 'all') return Acea::orderBy('name', 'DESC')->get();
         $goods = Goods_oils::all();
         foreach ($goods as $good){
             $acea = array_merge($acea, $good->Acea());
@@ -41,7 +41,7 @@ class DBServiceMainProperties implements ServiceApiMainProperties
             array_push($acea_ids, $item->id);
         }
         $acea_ids = $this->uniqueElementsInArray($acea_ids);
-        $result = Acea::whereIn('id',$acea_ids)->get();
+        $result = Acea::whereIn('id',$acea_ids)->orderBy('name', 'DESC')->get();
         return $result;
     }
 
@@ -49,7 +49,7 @@ class DBServiceMainProperties implements ServiceApiMainProperties
     {
         $api = [];
         $api_ids = [];
-        if ($definer === 'all') return Api::all();
+        if ($definer === 'all') return Api::orderBy('name', 'DESC')->get();
         $goods = Goods_oils::all();
         foreach ($goods as $good){
             $api = array_merge($api, $good->Api());
@@ -58,7 +58,7 @@ class DBServiceMainProperties implements ServiceApiMainProperties
             array_push($api_ids, $item->id);
         }
         $api_ids = $this->uniqueElementsInArray($api_ids);
-        $result = Api::whereIn('id',$api_ids)->get();
+        $result = Api::whereIn('id',$api_ids)->orderBy('name', 'DESC')->get();
         return $result;
     }
 
@@ -148,7 +148,7 @@ class DBServiceMainProperties implements ServiceApiMainProperties
     {
         $ilsac = [];
         $ilsac_ids = [];
-        if ($definer === 'all') return Ilsac::all();
+        if ($definer === 'all') return Ilsac::orderBy('name', 'DESC')->get();
         $goods = Goods_oils::all();
         foreach ($goods as $good){
             $ilsac = array_merge($ilsac, $good->Ilsac());
@@ -157,7 +157,7 @@ class DBServiceMainProperties implements ServiceApiMainProperties
             array_push($ilsac_ids, $item->id);
         }
         $ilsac_ids = $this->uniqueElementsInArray($ilsac_ids);
-        $result = Ilsac::whereIn('id',$ilsac_ids)->get();
+        $result = Ilsac::whereIn('id',$ilsac_ids)->orderBy('name', 'DESC')->get();
         return $result;
     }
 
