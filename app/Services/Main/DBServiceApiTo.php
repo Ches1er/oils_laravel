@@ -10,7 +10,6 @@ namespace App\Services\Main;
 
 
 use App\Contracts\ServiceApiTo;
-use App\Models\Brand;
 use App\Models\Image;
 use App\Models\To_auto;
 use App\Models\To_auto_goods;
@@ -119,7 +118,8 @@ class DBServiceApiTo implements ServiceApiTo
         if ($auto = To_auto::updateOrCreate(['id'=> $data['id']],[
             'name'=>$data['name'],
             'id_model'=>(int)$data['id_model'],
-            'id_image'=>(int)$data['id_image']
+            'id_image'=>(int)$data['id_image'],
+            'short_desc' => $data['short_desc']
         ])){
             if ($data['action']==='update' && $data['is_goods_changes']==='false'){
                 return ['response'=>'update success'];

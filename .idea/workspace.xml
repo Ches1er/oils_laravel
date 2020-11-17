@@ -2,60 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/3rdpartylicenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/5-es2015.dc60776e24a13a6012c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/5-es5.dc60776e24a13a6012c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/6-es2015.7b8f0136287a52025e4a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/6-es5.7b8f0136287a52025e4a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/7-es2015.296a454af95e3d1d0bc3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/7-es5.296a454af95e3d1d0bc3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/8-es2015.2b78abff5438986dccd4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/8-es5.2b78abff5438986dccd4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/9-es2015.4911aaf2287a27358bb7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/9-es5.4911aaf2287a27358bb7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es2015.9fdf05e99ee796f92820.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es5.9fdf05e99ee796f92820.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.5b10b8fd823b6392f1fd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.8e50a9832860f7cf804a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/polyfills.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.f9b32fd211f1e32954f6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es5.f9b32fd211f1e32954f6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/runtime.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles.5ffd63fd4a109f346894.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,20 +47,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBServiceMainProperties.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php">
+      <file leaf-file-name="DBServiceApiTo.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="43" column="69" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="23" column="84" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
+            <state relative-caret-position="220">
+              <caret line="117" column="65" lean-forward="true" selection-start-line="117" selection-start-column="65" selection-end-line="117" selection-end-column="65" />
+              <folding>
+                <element signature="e#119#150#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,14 +110,14 @@
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiBrandsApiService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Main/ApiToController.php" />
         <option value="$PROJECT_DIR$/app/Models/To_auto.php" />
-        <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" />
         <option value="$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiArticles.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiGoodsService.php" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$USER_HOME$/Desktop/oils/old_public/index.html" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" />
       </list>
     </option>
   </component>
@@ -313,17 +254,6 @@
               <item name="Services" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="oils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oils" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oils" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -394,15 +324,16 @@
       <workItem from="1599466046613" duration="37095000" />
       <workItem from="1600776256845" duration="53956000" />
       <workItem from="1603112382674" duration="17801000" />
-      <workItem from="1604930595856" duration="1760000" />
+      <workItem from="1604930595856" duration="3436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="433004000" />
+    <option name="totallyTimeSpent" value="434680000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.3297062" />
@@ -410,8 +341,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.19260065" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1673774" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.19260065" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1673774" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.042643923" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -670,13 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/oils/oils/dist/oils/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -695,13 +619,6 @@
     <entry file="file://$PROJECT_DIR$/index.php" />
     <entry file="file://$USER_HOME$/Desktop/oils/welcome.blade.php" />
     <entry file="file://$PROJECT_DIR$/public/index.html" />
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/oils/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -717,13 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="14" selection-start-line="14" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="23" column="84" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -751,6 +661,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="43" column="69" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
@@ -761,10 +692,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php">
+    <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="43" column="69" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
+        <state relative-caret-position="220">
+          <caret line="117" column="65" lean-forward="true" selection-start-line="117" selection-start-column="65" selection-end-line="117" selection-end-column="65" />
+          <folding>
+            <element signature="e#119#150#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
