@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="" />
+    <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/public/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/3rdpartylicenses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/5-es2015.dc60776e24a13a6012c0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/5-es5.dc60776e24a13a6012c0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/6-es2015.7b8f0136287a52025e4a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/6-es5.7b8f0136287a52025e4a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/7-es2015.296a454af95e3d1d0bc3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/7-es5.296a454af95e3d1d0bc3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/8-es2015.2b78abff5438986dccd4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/8-es5.2b78abff5438986dccd4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9-es2015.4911aaf2287a27358bb7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9-es5.4911aaf2287a27358bb7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main-es2015.9fdf05e99ee796f92820.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main-es5.9fdf05e99ee796f92820.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modules-product-product-module.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.5b10b8fd823b6392f1fd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.8e50a9832860f7cf804a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.f9b32fd211f1e32954f6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime-es5.f9b32fd211f1e32954f6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles.5ffd63fd4a109f346894.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor.js.map" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +103,8 @@
       <file leaf-file-name="DBServiceMainProperties.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="159" column="76" selection-start-line="159" selection-start-column="76" selection-end-line="159" selection-end-column="76" />
+            <state relative-caret-position="320">
+              <caret line="43" column="69" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -339,15 +394,15 @@
       <workItem from="1599466046613" duration="37095000" />
       <workItem from="1600776256845" duration="53956000" />
       <workItem from="1603112382674" duration="17801000" />
-      <workItem from="1604930595856" duration="771000" />
+      <workItem from="1604930595856" duration="1760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432015000" />
+    <option name="totallyTimeSpent" value="433004000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.3297062" />
@@ -708,8 +763,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Main/DBServiceMainProperties.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="159" column="76" selection-start-line="159" selection-start-column="76" selection-end-line="159" selection-end-column="76" />
+        <state relative-caret-position="320">
+          <caret line="43" column="69" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
         </state>
       </provider>
     </entry>
