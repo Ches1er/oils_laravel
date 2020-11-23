@@ -26,7 +26,7 @@ class DBServiceApiTo implements ServiceApiTo
     use getToObjWithAddProperties;
     public function getAuto($id)
     {
-        $autos =  To_auto::where('id',$id)->get();
+        $autos =  To_auto::where('id',$id)->orderBy('name', 'ASC')->get();
         return $this->getWithImagePath($autos);
     }
 
@@ -36,7 +36,7 @@ class DBServiceApiTo implements ServiceApiTo
             $autos =  To_auto::all();
             return $this->getWithImagePath($autos);
         }
-        $autos =  To_auto::where('id_model',$idmodel)->get();
+        $autos =  To_auto::where('id_model',$idmodel)->orderBy('name', 'ASC')->get();
         return $this->getWithImagePath($autos);
     }
 
@@ -176,7 +176,7 @@ class DBServiceApiTo implements ServiceApiTo
     public function getModels($idbrand)
     {
         if ($idbrand === 'all') return To_model::all();
-        $models = To_model::where('id_brand', $idbrand)->get();
+        $models = To_model::where('id_brand', $idbrand)->orderBy('name', 'ASC')->get();
         return $models;
     }
 

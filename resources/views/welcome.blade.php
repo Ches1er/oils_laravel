@@ -45,7 +45,7 @@
 <script src="runtime.bf81bbedf378e465764e.js" defer></script>
 <script src="polyfills-es5.ba8d83ab941aae0554d5.js" nomodule defer></script>
 <script src="polyfills.99d8e4e32ae07d5fa317.js" defer></script>
-<script src="main.9b801f033104a5c2416d.js" defer></script>
+<script src="main.481b7cc73f69b60b279f.js" defer></script>
 
 {{--dev mode--}}
 
