@@ -43,9 +43,13 @@ class DBServiceApiTo implements ServiceApiTo
     public function getGoods($id_auto, $exchange=null)
     {
         $auto = To_auto::where('id',$id_auto)->get();
-        $goods = $auto[0]->goods();
-        $this->getExchangesFromPBApi();
-        return $this->getToObjWProp($goods, $exchange);
+        if (count($auto)){
+            $goods = $auto[0]->goods();
+            $this->getExchangesFromPBApi();
+            print_r($goods);
+            return $this->getToObjWProp($goods, $exchange);
+        }
+        return null;
     }
 
     // Update Exchanges from Privatbank API
