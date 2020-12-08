@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08ac8326-b154-494e-837d-84488ce5c735" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Main/DBServiceApiTo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +56,8 @@
       <file leaf-file-name="getToObjWithAddProperties.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="220">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -359,12 +358,12 @@
       <workItem from="1600776256845" duration="53956000" />
       <workItem from="1603112382674" duration="17801000" />
       <workItem from="1604930595856" duration="9599000" />
-      <workItem from="1607438223499" duration="3179000" />
+      <workItem from="1607438223499" duration="3463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="444022000" />
+    <option name="totallyTimeSpent" value="444306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -708,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        <state relative-caret-position="220">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
         </state>
       </provider>
     </entry>
