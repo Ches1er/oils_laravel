@@ -24,7 +24,6 @@ trait getToObjWithAddProperties
           foreach ($objects as &$object){
               $id_exchange = $object->id_exchange;
               $exchange = To_price_exchange::where('id',$id_exchange)->first();
-              echo $object->name;
               $object->price = round($object->price*$exchange->exchange,2);
           }
           return $objects;
@@ -53,6 +52,7 @@ trait getToObjWithAddProperties
                   }
               }
           }
+          print_r($objects);
           return $objects;
       }
       private function getMax($id, $goods_ids){
