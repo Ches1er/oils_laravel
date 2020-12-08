@@ -46,7 +46,6 @@ class DBServiceApiTo implements ServiceApiTo
         if (count($auto)){
             $goods = $auto[0]->goods();
             $this->getExchangesFromPBApi();
-            print_r($goods);
             return $this->getToObjWProp($goods, $exchange);
         }
         return null;
