@@ -39,7 +39,7 @@ trait getToObjWithAddProperties
           // print_r($goods_ids);
           $groups = DB::table('to_groups')->select('id')->whereIn('id', $groups_ids)->get();
           foreach ($groups as $group){
-              echo count(DB::table('to_goods')->where('id_group',$group->id)->get());
+              echo count(DB::table('to_goods')->where('id_group',$group->id)->get()).';';
               if (count(DB::table('to_goods')->where('id_group',$group->id)->get()))
               {
                   $max_id = $this->getMax($group->id, $goods_ids)->id;
