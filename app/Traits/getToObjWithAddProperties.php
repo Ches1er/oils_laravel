@@ -36,16 +36,12 @@ trait getToObjWithAddProperties
             $groups_ids[]=$o->id_group;
         }
           $groups_ids = array_unique($groups_ids);
-          // print_r($goods_ids);
           $groups = DB::table('to_groups')->select('id')->whereIn('id', $groups_ids)->get();
           foreach ($groups as $group){
               if (count(DB::table('to_goods')->where('id_group',$group->id)->get()))
               {
                   $max_id = $this->getMax($group->id, $goods_ids)->id;
                   $min_id = $this->getMin($group->id, $goods_ids)->id;
-                  echo 'group_id: ' . $group->id . ' ; ';
-                  echo $max_id . ' ; ';
-                  echo $min_id . ' ; ';
               }
               foreach ($objects as &$object){
                   if ($object->id == $max_id){
@@ -56,21 +52,16 @@ trait getToObjWithAddProperties
                   }
               }
           }
-          // print_r($objects);
           return $objects;
       }
       private function getMax($id, $goods_ids){
           $goods = DB::table('to_goods');
           $max = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->max('price');
-          echo 'max';
-          print_r($goods->whereIn('id', $goods_ids)->where('price',$max)->first());
           return $goods->whereIn('id', $goods_ids)->where('price',$max)->first();
       }
       private function getMin($id, $goods_ids){
         $goods = DB::table('to_goods');
         $min = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->min('price');
-        echo 'min';
-        print_r($goods->whereIn('id', $goods_ids)->get());
         return $goods->whereIn('id', $goods_ids)->where('price',$min)->first();
     }
 }
