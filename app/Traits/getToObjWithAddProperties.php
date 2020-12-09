@@ -41,7 +41,6 @@ trait getToObjWithAddProperties
           foreach ($groups as $group){
               if (count(DB::table('to_goods')->where('id_group',$group->id)->get()))
               {
-                  echo $group->id .':'. count(DB::table('to_goods')->where('id_group',$group->id)->get()).';';
                   $max_id = $this->getMax($group->id, $goods_ids)->id;
                   $min_id = $this->getMin($group->id, $goods_ids)->id;
 /*                  echo 'group_id: ' . $group->id . ' ; ';
@@ -63,11 +62,13 @@ trait getToObjWithAddProperties
       private function getMax($id, $goods_ids){
           $goods = DB::table('to_goods');
           $max = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->max('price');
+          echo 'group_id: '. $id. 'max: ' . $max;
           return $goods->where('price',$max)->first();
       }
       private function getMin($id, $goods_ids){
         $goods = DB::table('to_goods');
           $min = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->min('price');
+          echo 'group_id: '. $id. 'min: ' . $min;
         return $goods->where('price',$min)->first();
     }
 }
