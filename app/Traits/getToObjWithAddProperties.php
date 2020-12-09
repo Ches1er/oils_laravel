@@ -62,12 +62,14 @@ trait getToObjWithAddProperties
       private function getMax($id, $goods_ids){
           $goods = DB::table('to_goods');
           $max = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->max('price');
+          echo 'max';
           print_r($goods->whereIn('id', $goods_ids)->where('price',$max)->first());
           return $goods->whereIn('id', $goods_ids)->where('price',$max)->first();
       }
       private function getMin($id, $goods_ids){
         $goods = DB::table('to_goods');
         $min = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->min('price');
+        echo 'min';
         print_r($goods->whereIn('id', $goods_ids)->where('price',$min)->first());
         return $goods->whereIn('id', $goods_ids)->where('price',$min)->first();
     }
