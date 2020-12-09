@@ -70,7 +70,7 @@ trait getToObjWithAddProperties
         $goods = DB::table('to_goods');
         $min = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->min('price');
         echo 'min';
-        print_r($goods->whereIn('id', $goods_ids)->where('price',$min)->get());
+        print_r($goods->whereIn('id', $goods_ids)->get());
         return $goods->whereIn('id', $goods_ids)->where('price',$min)->first();
     }
 }
