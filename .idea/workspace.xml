@@ -56,8 +56,8 @@
       <file leaf-file-name="getToObjWithAddProperties.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="286">
+              <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -358,15 +358,16 @@
       <workItem from="1600776256845" duration="53956000" />
       <workItem from="1603112382674" duration="17801000" />
       <workItem from="1604930595856" duration="9599000" />
-      <workItem from="1607438223499" duration="4812000" />
+      <workItem from="1607438223499" duration="5118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="445655000" />
+    <option name="totallyTimeSpent" value="445961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.3297062" />
@@ -707,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Traits/getToObjWithAddProperties.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="286">
+          <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
         </state>
       </provider>
     </entry>
