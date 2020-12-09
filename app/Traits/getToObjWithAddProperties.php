@@ -36,13 +36,16 @@ trait getToObjWithAddProperties
             $groups_ids[]=$o->id_group;
         }
           $groups_ids = array_unique($groups_ids);
-          print_r($goods_ids);
+          // print_r($goods_ids);
           $groups = DB::table('to_groups')->select('id')->whereIn('id', $groups_ids)->get();
           foreach ($groups as $group){
               if (count(DB::table('to_goods')->where('id_group',$group->id)->get()))
               {
                   $max_id = $this->getMax($group->id, $goods_ids)->id;
                   $min_id = $this->getMin($group->id, $goods_ids)->id;
+                  echo 'group_id: ' . $group->id . ' ; ';
+                  echo $max_id . ' ; ';
+                  echo $min_id . ' ; ';
               }
               foreach ($objects as &$object){
                   if ($object->id == $max_id){
