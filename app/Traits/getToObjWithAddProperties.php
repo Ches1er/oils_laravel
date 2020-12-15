@@ -29,7 +29,7 @@ trait getToObjWithAddProperties
           return $objects;
       }
       private function getMaxMinMidPrices($objects) {
-        $goods_ids = [];
+/*        $goods_ids = [];
         $groups_ids = [];
         foreach ($objects as $o){
             $goods_ids[]=$o->id;
@@ -51,7 +51,7 @@ trait getToObjWithAddProperties
                       $object->min = true;
                   }
               }
-          }
+          }*/
           return $objects;
       }
       private function getMax($id, $goods_ids){
