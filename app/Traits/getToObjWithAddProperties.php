@@ -17,19 +17,20 @@ trait getToObjWithAddProperties
 {
     private function getToObjWProp($objects, $exchange){
         if ($exchange)$objects = $this->getHrnPrice($objects);
-        $objects = $this->getMaxMinMidPrices($objects);
+        // $objects = $this->getMaxMinMidPrices($objects);
         return $objects;
     }
-      private function getHrnPrice($objects) {
+    private function getHrnPrice($objects) {
           foreach ($objects as &$object){
               $id_exchange = $object->id_exchange;
               $exchange = To_price_exchange::where('id',$id_exchange)->first();
               $object->price = round($object->price*$exchange->exchange,2);
           }
           return $objects;
-      }
-      private function getMaxMinMidPrices($objects) {
-/*        $goods_ids = [];
+    }
+
+/*    private function getMaxMinMidPrices($objects) {
+        $goods_ids = [];
         $groups_ids = [];
         foreach ($objects as $o){
             $goods_ids[]=$o->id;
@@ -51,7 +52,7 @@ trait getToObjWithAddProperties
                       $object->min = true;
                   }
               }
-          }*/
+          }
           return $objects;
       }
       private function getMax($id, $goods_ids){
@@ -63,5 +64,5 @@ trait getToObjWithAddProperties
         $goods = DB::table('to_goods');
         $min = $goods->where('id_group',$id)->whereIn('id', $goods_ids)->min('price');
         return $goods->whereIn('id', $goods_ids)->where('price',$min)->first();
-    }
+    }*/
 }
