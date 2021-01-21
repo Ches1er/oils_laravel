@@ -16,7 +16,6 @@ trait getObjWithImagesPath
     private function getWithImagePath($objects){
         if ($objects){
             foreach ($objects as $object){
-                echo $object->name;
                 $img_path = Image::where('id',$object->id_image)->first();
                 $object->img = $img_path->path;
             }
