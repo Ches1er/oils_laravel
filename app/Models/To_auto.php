@@ -8,15 +8,23 @@ class To_auto extends Model
 {
     protected $table = 'to_auto';
 
-    protected $fillable = ['name','id_image','id_model', 'short_desc'];
+    protected $fillable = ['name', 'id_image', 'id_model', 'short_desc'];
 
-    public function Goods() {
-        $goods = $this->hasManyThrough(To_goods::class, To_auto_goods::class,'id_auto', 'id',
+    public function Goods()
+    {
+        $goods = $this->hasManyThrough(To_goods::class, To_auto_goods::class, 'id_auto', 'id',
             'id', 'id_goods')->get();
-        foreach ($goods as &$item){
+        foreach ($goods as &$item) {
             $item->max = null;
             $item->min = null;
         }
         return $goods;
+    }
+
+    public function Brand()
+    {
+        $model = $this->hasOne(To_model::class, 'id', 'id_model')->get();
+        // print_r($model);
+        return $model[0]->id_brand;
     }
 }

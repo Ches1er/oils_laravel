@@ -24,18 +24,24 @@ class DBServiceApiTo implements ServiceApiTo
 {
     use getObjWithImagesPath;
     use getToObjWithAddProperties;
-    public function getAuto($id)
+    private function getBrand($autos){
+        foreach ($autos as &$a){
+            $a->id_brand = $a->brand();
+        }
+        return $autos;
+
+    }    public function getAuto($id)
     {
         if ($id === 'lastAdded') {
             $auto =  To_auto::orderBy('id','desc')->take(1)->get();
-            return $this->getWithImagePath($auto);
+            return $this->getWithImagePath($this->getBrand($auto));
         }
         if ($id === 'lastUpdated') {
             $auto =  To_auto::orderBy('updated_at','desc')->take(1)->get();
-            return $this->getWithImagePath($auto);
+            return $this->getWithImagePath($this->getBrand($auto));
         }
         $auto =  To_auto::where('id',$id)->get();
-        return $this->getWithImagePath($auto);
+        return $this->getWithImagePath($this->getBrand($auto));
     }
 
     public function getAutos($idmodel)
@@ -45,7 +51,7 @@ class DBServiceApiTo implements ServiceApiTo
             return $this->getWithImagePath($autos);
         }
         $autos =  To_auto::where('id_model',$idmodel)->orderBy('name', 'ASC')->get();
-        return $this->getWithImagePath($autos);
+        return $this->getWithImagePath($this->getBrand($autos));
     }
 
     public function getGoods($id_auto, $exchange=null)
